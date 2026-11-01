@@ -1,0 +1,693 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[EXEMPLO] Molho de tomate com manjericão — embasamento científico</title><style>
+body{background:#fcfcfb;color:#0b0b0b;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+h1{margin-bottom:.2rem} h2{margin-top:2.2rem;border-bottom:1px solid #e6e5e1;padding-bottom:.3rem}
+.muted{color:#52514e;font-size:.92em} .card{background:#fff;border:1px solid #e6e5e1;border-radius:8px;padding:1rem;margin:1rem 0}
+.tbl{border-collapse:collapse;width:100%;font-size:.9em} .tbl th{text-align:left;color:#52514e;border-bottom:1px solid #e6e5e1;padding:.35rem}
+.tbl td{border-bottom:1px solid #f0efec;padding:.35rem;vertical-align:top}
+.warn{background:#fff7e6;border-left:3px solid #eda100;padding:.5rem 1rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem} @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+</style></head><body>
+<h1>[EXEMPLO] Molho de tomate com manjericão</h1>
+<p class="muted">Embasamento científico da receita · FlavorDB2 + FlavorGraph</p>
+<p><b>Técnica:</b> refogado + redução</p><p><b>Por que gostei:</b> (preencha: o que você sentiu e por que gostou)</p><p><b>Observações:</b> receita de exemplo para testar o relatório</p><div class='warn'>olive_oil: sem dados moleculares</div>
+<h2>Ingredientes</h2><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>no banco</th>
+      <th>id</th>
+      <th>moléculas</th>
+      <th>obs.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tomato</td>
+      <td>tomato</td>
+      <td>fg:6441</td>
+      <td>271</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>basil</td>
+      <td>basil</td>
+      <td>fg:328</td>
+      <td>210</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>garlic</td>
+      <td>garlic</td>
+      <td>fg:2793</td>
+      <td>143</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>olive_oil</td>
+      <td>olive_oil</td>
+      <td>fg:4472</td>
+      <td>0</td>
+      <td>sem dados moleculares</td>
+    </tr>
+    <tr>
+      <td>parmesan_cheese</td>
+      <td>parmesan_cheese</td>
+      <td>fg:4615</td>
+      <td>165</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h2>Por que combina</h2>
+<p class="muted"><b>Química</b> = fração de moléculas de sabor compartilhadas (Jaccard, 0–1).
+<b>Prática</b> = associação do par em &gt;1 milhão de receitas (NPMI, 0–1): mede se aparecem juntos
+<i>mais do que o acaso</i>. Ingredientes onipresentes (alho, cebola, sal) têm NPMI baixo mesmo aparecendo
+juntos com frequência — 0 significa "sem associação especial", não "nunca juntos".</p>
+<div class="card"><ul><li><b>basil + garlic</b>: 101 moléculas em comum (Jaccard 0.40); sem associação acima do acaso em receitas.<br><span class=muted>destaques: L-Rhamnose (sweet), Isorhamnetin (bitter), Vanillic acid (powdery/vanilla/bean), Linalool (lemon/citrus/orange), quercetin (bitter)</span></li><li><b>tomato + garlic</b>: 108 moléculas em comum (Jaccard 0.35); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Vitamin U (potato/tomato/sulfurous), Isorhamnetin (bitter), 2,6-Dimethylpyrazine (roast beef/roasted nuts/coffee), Alpha-Phellandrene (minty/citrus/peppery), Dimethyl trisulfide (sulfurous/cabbage/onion)</span></li><li><b>tomato + basil</b>: 116 moléculas em comum (Jaccard 0.32); associação comum em receitas (NPMI 0.20).<br><span class=muted>destaques: 2-Ethylfuran (earthy/sweet/burnt), Mesityl Oxide (acrylic/vegetable/chemical), (Z)-Hex-3-en-1-ol (leafy/grass/foliage), Isorhamnetin (bitter), Linalyl Acetate (citrus/fruity/sweet)</span></li><li><b>tomato + parmesan_cheese</b>: 72 moléculas em comum (Jaccard 0.20); sem associação acima do acaso em receitas.<br><span class=muted>destaques: 3,4-Dimethylphenol (flat/dry/phenol), 2-Ethylfuran (earthy/sweet/burnt), Geranylacetone (magnolia/rose/fresh), trans-2-Pentenal (apple/orange/tomato), Salicylaldehyde (cooling/medical/wintergreen)</span></li><li><b>garlic + parmesan_cheese</b>: 27 moléculas em comum (Jaccard 0.10); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Tiglic aldehyde (ethereal/anisic/fruity), 2,6-Dimethylpyrazine (roast beef/roasted nuts/coffee), 2,5-Dimethylpyrazine (roast beef/roasted nuts/grass), Dimethyl trisulfide (sulfurous/cabbage/onion), Dimethyl disulfide (citrus/cabbage/sulfurous)</span></li><li><b>basil + parmesan_cheese</b>: 30 moléculas em comum (Jaccard 0.09); associação comum em receitas (NPMI 0.22).<br><span class=muted>destaques: 2-Ethylfuran (earthy/sweet/burnt), Mesityl Oxide (acrylic/vegetable/chemical), Isoborneol (musty/herbal/woody), Thymol (herbal/thyme/camphoreous), 3-Octanone (butter/herbal/resin)</span></li><li><b>basil + olive_oil</b>: 0 moléculas em comum (Jaccard 0.00); sem associação acima do acaso em receitas.</li><li><b>tomato + olive_oil</b>: 0 moléculas em comum (Jaccard 0.00); sem associação acima do acaso em receitas.</li></ul></div>
+<h2>Rede de sabor</h2>
+<p class="muted">Azul: ingredientes. Laranja: moléculas presentes em 2+ ingredientes (passe o mouse
+para ver aroma, peso molecular e xlogP — xlogP alto = solúvel em gordura). Verde: par associado em receitas.</p>
+<div style="height:640px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="a25c9231-9f59-49b2-a6af-931716fc1303" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a25c9231-9f59-49b2-a6af-931716fc1303")) {                    Plotly.newPlot(                        "a25c9231-9f59-49b2-a6af-931716fc1303",                        [{"hoverinfo":"skip","line":{"color":"#c9c8c3","width":1},"mode":"lines","name":"cont\u00e9m a mol\u00e9cula","x":[6.123233995736766e-17,4.5934571311968886e-17,null,6.123233995736766e-17,-0.051617560087887135,null,6.123233995736766e-17,0.38042260651806153,null,6.123233995736766e-17,-0.23511410091698925,null,6.123233995736766e-17,-0.4103578049567005,null,6.123233995736766e-17,0.09687233706738146,null,6.123233995736766e-17,0.32880504643017433,null,6.123233995736766e-17,0.3890845639532362,null,6.123233995736766e-17,0.4541812835115442,null,6.123233995736766e-17,0.24256630670688376,null,6.123233995736766e-17,-0.11755705045849461,null,6.123233995736766e-17,0.5125066435546324,null,6.123233995736766e-17,0.33587321008507715,null,6.123233995736766e-17,0.2951037381544518,null,6.123233995736766e-17,0.566378747847828,null,6.123233995736766e-17,0.18628353378609627,null,6.123233995736766e-17,0.04525477697949428,null,6.123233995736766e-17,0.47431863243505445,null,6.123233995736766e-17,0.4498158609404229,null,6.123233995736766e-17,-0.38042260651806137,null,6.123233995736766e-17,0.10553429450255614,null,6.123233995736766e-17,0.17063101406086412,null,-0.9510565162951535,4.5934571311968886e-17,null,-0.9510565162951535,-0.051617560087887135,null,-0.9510565162951535,-0.4103578049567005,null,-0.9510565162951535,-0.6155367074350507,null,-0.9510565162951535,-0.11755705045849461,null,-0.9510565162951535,4.4408920985006264e-17,null,-0.9510565162951535,-0.38042260651806137,null,-0.5877852522924732,-0.23511410091698925,null,-0.5877852522924732,-0.4103578049567005,null,-0.5877852522924732,0.09687233706738146,null,-0.5877852522924732,-0.6155367074350507,null,-0.5877852522924732,-0.11755705045849461,null,-0.5877852522924732,0.04525477697949428,null,-0.5877852522924732,0.14530850560107217,null,-0.5877852522924732,0.10553429450255614,null,-0.5877852522924732,0.17063101406086412,null,0.9510565162951536,4.5934571311968886e-17,null,0.9510565162951536,-0.051617560087887135,null,0.9510565162951536,0.38042260651806153,null,0.9510565162951536,0.09687233706738146,null,0.9510565162951536,0.32880504643017433,null,0.9510565162951536,0.3890845639532362,null,0.9510565162951536,0.4541812835115442,null,0.9510565162951536,0.24256630670688376,null,0.9510565162951536,-0.11755705045849461,null,0.9510565162951536,0.5125066435546324,null,0.9510565162951536,0.33587321008507715,null,0.9510565162951536,0.2951037381544518,null,0.9510565162951536,0.566378747847828,null,0.9510565162951536,0.18628353378609627,null,0.9510565162951536,4.4408920985006264e-17,null,0.9510565162951536,0.04525477697949428,null,0.9510565162951536,0.47431863243505445,null,0.9510565162951536,0.4498158609404229,null,0.9510565162951536,0.14530850560107217,null,0.9510565162951536,0.10553429450255614,null,0.9510565162951536,0.17063101406086412,null],"y":[1.0,0.4314757303333052,null,1.0,0.4787581529718858,null,1.0,0.5236067977499789,null,1.0,0.07639320225002107,null,1.0,0.1333333333333334,null,1.0,0.13333333333333328,null,1.0,0.5708892203885594,null,1.0,0.4249915327379574,null,1.0,0.6198339122664762,null,1.0,0.4992010483787617,null,1.0,0.16180339887498948,null,1.0,0.4396198513825713,null,1.0,0.6891826150587175,null,1.0,0.3592270827570606,null,1.0,0.5915796857402938,null,1.0,0.603669400997517,null,1.0,0.18061575597191384,null,1.0,0.32314848209059943,null,1.0,0.7451571898522575,null,1.0,0.523606797749979,null,1.0,0.034718068321311815,null,1.0,0.22956044784983062,null,0.3090169943749475,0.4314757303333052,null,0.3090169943749475,0.4787581529718858,null,0.3090169943749475,0.1333333333333334,null,0.3090169943749475,-0.19999999999999996,null,0.3090169943749475,0.16180339887498948,null,0.3090169943749475,0.2472135954999579,null,0.3090169943749475,0.523606797749979,null,-0.8090169943749473,0.07639320225002107,null,-0.8090169943749473,0.1333333333333334,null,-0.8090169943749473,0.13333333333333328,null,-0.8090169943749473,-0.19999999999999996,null,-0.8090169943749473,0.16180339887498948,null,-0.8090169943749473,0.18061575597191384,null,-0.8090169943749473,-0.2000000000000001,null,-0.8090169943749473,0.034718068321311815,null,-0.8090169943749473,0.22956044784983062,null,0.3090169943749472,0.4314757303333052,null,0.3090169943749472,0.4787581529718858,null,0.3090169943749472,0.5236067977499789,null,0.3090169943749472,0.13333333333333328,null,0.3090169943749472,0.5708892203885594,null,0.3090169943749472,0.4249915327379574,null,0.3090169943749472,0.6198339122664762,null,0.3090169943749472,0.4992010483787617,null,0.3090169943749472,0.16180339887498948,null,0.3090169943749472,0.4396198513825713,null,0.3090169943749472,0.6891826150587175,null,0.3090169943749472,0.3592270827570606,null,0.3090169943749472,0.5915796857402938,null,0.3090169943749472,0.603669400997517,null,0.3090169943749472,0.2472135954999579,null,0.3090169943749472,0.18061575597191384,null,0.3090169943749472,0.32314848209059943,null,0.3090169943749472,0.7451571898522575,null,0.3090169943749472,-0.2000000000000001,null,0.3090169943749472,0.034718068321311815,null,0.3090169943749472,0.22956044784983062,null],"type":"scatter"},{"hoverinfo":"text","legendgroup":"recipe","line":{"color":"#1baf7a","width":4.783575459629727},"mode":"lines","name":"associados em receitas (espessura = for\u00e7a)","opacity":0.75,"showlegend":true,"text":"tomato + basil\u003cbr\u003eNPMI 0.20 \u2014 associa\u00e7\u00e3o comum em receitas","x":[6.123233995736766e-17,-0.9510565162951535],"y":[1.0,0.3090169943749475],"type":"scatter"},{"hoverinfo":"text","legendgroup":"recipe","line":{"color":"#1baf7a","width":5.110504136699429},"mode":"lines","name":"associados em receitas (espessura = for\u00e7a)","opacity":0.75,"showlegend":false,"text":"basil + parmesan_cheese\u003cbr\u003eNPMI 0.22 \u2014 associa\u00e7\u00e3o comum em receitas","x":[-0.9510565162951535,0.9510565162951536],"y":[0.3090169943749475,0.3090169943749472],"type":"scatter"},{"hoverinfo":"text","hovertext":["\u003cb\u003e2-Ethylfuran\u003c\u002fb\u003e (PubChem 18554)\u003cbr\u003esabor\u002faroma: earthy, sweet, burnt, malty, butter, caramel\u003cbr\u003epresente em: tomato, basil, parmesan_cheese\u003cbr\u003eMW 96.129 \u00b7 xlogP 2.4\u003cbr\u003eaparece em 15 ingredientes do banco","\u003cb\u003eMesityl Oxide\u003c\u002fb\u003e (PubChem 8858)\u003cbr\u003esabor\u002faroma: acrylic, vegetable, chemical, earthy, sweet, pungent +2\u003cbr\u003epresente em: tomato, basil, parmesan_cheese\u003cbr\u003eMW 98.145 \u00b7 xlogP 1.4\u003cbr\u003eaparece em 21 ingredientes do banco","\u003cb\u003e3,4-Dimethylphenol\u003c\u002fb\u003e (PubChem 7249)\u003cbr\u003esabor\u002faroma: flat, dry, phenol\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 122.167 \u00b7 xlogP 2.2\u003cbr\u003eaparece em 6 ingredientes do banco","\u003cb\u003eVitamin U\u003c\u002fb\u003e (PubChem 16217806)\u003cbr\u003esabor\u002faroma: potato, tomato, sulfurous, malty, green\u003cbr\u003epresente em: tomato, garlic\u003cbr\u003eMW 199.693 \u00b7 xlogP nan\u003cbr\u003eaparece em 11 ingredientes do banco","\u003cb\u003eIsorhamnetin\u003c\u002fb\u003e (PubChem 5281654)\u003cbr\u003esabor\u002faroma: bitter\u003cbr\u003epresente em: tomato, basil, garlic\u003cbr\u003eMW 316.265 \u00b7 xlogP 1.9\u003cbr\u003eaparece em 39 ingredientes do banco","\u003cb\u003e2,6-Dimethylpyrazine\u003c\u002fb\u003e (PubChem 7938)\u003cbr\u003esabor\u002faroma: roast beef, roasted nuts, coffee, cocoa, roasted nut, green\u003cbr\u003epresente em: tomato, garlic, parmesan_cheese\u003cbr\u003eMW 108.144 \u00b7 xlogP 0.5\u003cbr\u003eaparece em 42 ingredientes do banco","\u003cb\u003eGeranylacetone\u003c\u002fb\u003e (PubChem 1549778)\u003cbr\u003esabor\u002faroma: magnolia, rose, fresh, floral, aldehydic, fruity +2\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 194.318 \u00b7 xlogP 3.7\u003cbr\u003eaparece em 17 ingredientes do banco","\u003cb\u003etrans-2-Pentenal\u003c\u002fb\u003e (PubChem 5364752)\u003cbr\u003esabor\u002faroma: apple, orange, tomato, strawberry, fruity, pungent +1\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 84.118 \u00b7 xlogP 1.0\u003cbr\u003eaparece em 18 ingredientes do banco","\u003cb\u003eSalicylaldehyde\u003c\u002fb\u003e (PubChem 6998)\u003cbr\u003esabor\u002faroma: cooling, medical, wintergreen, spicy, cinnamon, burning taste +4\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 122.123 \u00b7 xlogP 1.8\u003cbr\u003eaparece em 18 ingredientes do banco","\u003cb\u003eL-Rhamnose\u003c\u002fb\u003e (PubChem 25310)\u003cbr\u003esabor\u002faroma: sweet\u003cbr\u003epresente em: basil, garlic\u003cbr\u003eMW 164.157 \u00b7 xlogP -2.1\u003cbr\u003eaparece em 22 ingredientes do banco","\u003cb\u003eMethyl propenyl ketone\u003c\u002fb\u003e (PubChem 637920)\u003cbr\u003esabor\u002faroma: acetone, fishy, fruity, phenolic\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 84.118 \u00b7 xlogP 0.5\u003cbr\u003eaparece em 23 ingredientes do banco","\u003cb\u003eLinalool\u003c\u002fb\u003e (PubChem 6549)\u003cbr\u003esabor\u002faroma: lemon, citrus, orange, floral, sweet, woody +7\u003cbr\u003epresente em: tomato, basil, garlic, parmesan_cheese\u003cbr\u003eMW 154.253 \u00b7 xlogP 2.7\u003cbr\u003eaparece em 103 ingredientes do banco","\u003cb\u003e1-butanol\u003c\u002fb\u003e (PubChem 263)\u003cbr\u003esabor\u002faroma: oily, vanilla, fruity, fusel, sweet, balsamic +5\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 74.123 \u00b7 xlogP 0.9\u003cbr\u003eaparece em 24 ingredientes do banco","\u003cb\u003e4&#x27;-Methylacetophenone\u003c\u002fb\u003e (PubChem 8500)\u003cbr\u003esabor\u002faroma: hawthorne, acetophenone, coumarin, sweet, bitter almond, hawthorn +5\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 134.178 \u00b7 xlogP 2.1\u003cbr\u003eaparece em 24 ingredientes do banco","\u003cb\u003eButylamine\u003c\u002fb\u003e (PubChem 8007)\u003cbr\u003esabor\u002faroma: ammonia, fishy\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 73.139 \u00b7 xlogP 1.0\u003cbr\u003eaparece em 26 ingredientes do banco","\u003cb\u003e2-Tridecanone\u003c\u002fb\u003e (PubChem 11622)\u003cbr\u003esabor\u002faroma: coconut, herbal, milky, waxy, fatty, earthy +3\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 198.35 \u00b7 xlogP 5.2\u003cbr\u003eaparece em 29 ingredientes do banco","\u003cb\u003eHexyl Hexanoate\u003c\u002fb\u003e (PubChem 22873)\u003cbr\u003esabor\u002faroma: peach, vegetable, herbal, apple peel, fresh, cut grass +2\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 200.322 \u00b7 xlogP 4.4\u003cbr\u003eaparece em 31 ingredientes do banco","\u003cb\u003eIsoborneol\u003c\u002fb\u003e (PubChem 6321405)\u003cbr\u003esabor\u002faroma: musty, herbal, woody, balsamic, camphoreous, fragrant +2\u003cbr\u003epresente em: basil, parmesan_cheese\u003cbr\u003eMW 154.253 \u00b7 xlogP 2.7\u003cbr\u003eaparece em 31 ingredientes do banco","\u003cb\u003eDimethyl trisulfide\u003c\u002fb\u003e (PubChem 19310)\u003cbr\u003esabor\u002faroma: sulfurous, cabbage, onion, fishy, savory, meaty +1\u003cbr\u003epresente em: tomato, garlic, parmesan_cheese\u003cbr\u003eMW 126.25 \u00b7 xlogP 1.3\u003cbr\u003eaparece em 78 ingredientes do banco","\u003cb\u003eMethyl butyrate\u003c\u002fb\u003e (PubChem 12180)\u003cbr\u003esabor\u002faroma: apple, pineapple, ethereal, banana, fruity, sweet +5\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 102.133 \u00b7 xlogP 1.3\u003cbr\u003eaparece em 36 ingredientes do banco","\u003cb\u003eIsoamylamine\u003c\u002fb\u003e (PubChem 7894)\u003cbr\u003esabor\u002faroma: unpleasant, ammonia\u003cbr\u003epresente em: tomato, parmesan_cheese\u003cbr\u003eMW 87.166 \u00b7 xlogP 1.0\u003cbr\u003eaparece em 38 ingredientes do banco","\u003cb\u003e(Z)-Hex-3-en-1-ol\u003c\u002fb\u003e (PubChem 5281167)\u003cbr\u003esabor\u002faroma: leafy, grass, foliage, vegetable, herbal, fresh +6\u003cbr\u003epresente em: tomato, basil\u003cbr\u003eMW 100.161 \u00b7 xlogP 1.3\u003cbr\u003eaparece em 38 ingredientes do banco","\u003cb\u003eTiglic aldehyde\u003c\u002fb\u003e (PubChem 5321950)\u003cbr\u003esabor\u002faroma: ethereal, anisic, fruity, pungent, nutty, green\u003cbr\u003epresente em: garlic, parmesan_cheese\u003cbr\u003eMW 84.118 \u00b7 xlogP 0.9\u003cbr\u003eaparece em 38 ingredientes do banco","\u003cb\u003eDimethyl disulfide\u003c\u002fb\u003e (PubChem 12232)\u003cbr\u003esabor\u002faroma: citrus, cabbage, sulfurous, putrid, wine_like, onion +13\u003cbr\u003epresente em: tomato, garlic, parmesan_cheese\u003cbr\u003eMW 94.19 \u00b7 xlogP 1.8\u003cbr\u003eaparece em 89 ingredientes do banco","\u003cb\u003edimethyl sulfide\u003c\u002fb\u003e (PubChem 1068)\u003cbr\u003esabor\u002faroma: sulfurous, cabbage, onion, gasoline, vegetable, sweet corn +7\u003cbr\u003epresente em: tomato, garlic, parmesan_cheese\u003cbr\u003eMW 62.13 \u00b7 xlogP 0.9\u003cbr\u003eaparece em 91 ingredientes do banco"],"marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":2},"size":{"dtype":"i1","bdata":"ExMQEBMTEBAQEBAWEBAQEBAQExAQEBATEw=="}},"mode":"markers+text","name":"mol\u00e9cula compartilhada","text":["2-Ethylfuran","Mesityl Oxide","3,4-Dimethylphenol","Vitamin U","Isorhamnetin","2,6-Dimethylpyrazine","Geranylacetone","trans-2-Pentenal","Salicylaldehyde","L-Rhamnose","","","","","","","","","","","","","","",""],"textfont":{"color":"#52514e","size":10},"textposition":"bottom center","x":[4.5934571311968886e-17,-0.051617560087887135,0.38042260651806153,-0.23511410091698925,-0.4103578049567005,0.09687233706738146,0.32880504643017433,0.3890845639532362,0.4541812835115442,-0.6155367074350507,0.24256630670688376,-0.11755705045849461,0.5125066435546324,0.33587321008507715,0.2951037381544518,0.566378747847828,0.18628353378609627,4.4408920985006264e-17,0.04525477697949428,0.47431863243505445,0.4498158609404229,-0.38042260651806137,0.14530850560107217,0.10553429450255614,0.17063101406086412],"y":[0.4314757303333052,0.4787581529718858,0.5236067977499789,0.07639320225002107,0.1333333333333334,0.13333333333333328,0.5708892203885594,0.4249915327379574,0.6198339122664762,-0.19999999999999996,0.4992010483787617,0.16180339887498948,0.4396198513825713,0.6891826150587175,0.3592270827570606,0.5915796857402938,0.603669400997517,0.2472135954999579,0.18061575597191384,0.32314848209059943,0.7451571898522575,0.523606797749979,-0.2000000000000001,0.034718068321311815,0.22956044784983062],"type":"scatter"},{"hoverinfo":"text","hovertext":["\u003cb\u003etomato\u003c\u002fb\u003e (fg:6441)\u003cbr\u003e271 mol\u00e9culas","\u003cb\u003ebasil\u003c\u002fb\u003e (fg:328)\u003cbr\u003e210 mol\u00e9culas","\u003cb\u003egarlic\u003c\u002fb\u003e (fg:2793)\u003cbr\u003e143 mol\u00e9culas","\u003cb\u003eolive_oil\u003c\u002fb\u003e (fg:4472)\u003cbr\u003e0 mol\u00e9culas\u003cbr\u003esem dados moleculares","\u003cb\u003eparmesan_cheese\u003c\u002fb\u003e (fg:4615)\u003cbr\u003e165 mol\u00e9culas"],"marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":3},"size":34},"mode":"markers+text","name":"ingrediente da receita","text":["\u003cb\u003etomato\u003c\u002fb\u003e","\u003cb\u003ebasil\u003c\u002fb\u003e","\u003cb\u003egarlic\u003c\u002fb\u003e","\u003cb\u003eolive oil\u003c\u002fb\u003e","\u003cb\u003eparmesan cheese\u003c\u002fb\u003e"],"textfont":{"color":"#0b0b0b","size":14},"textposition":"top center","x":[6.123233995736766e-17,-0.9510565162951535,-0.5877852522924732,0.5877852522924729,0.9510565162951536],"y":[1.0,0.3090169943749475,-0.8090169943749473,-0.8090169943749476,0.3090169943749472],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"legend":{"orientation":"h","y":-0.02,"x":0},"xaxis":{"visible":false,"range":[-1.35,1.35]},"yaxis":{"visible":false,"range":[-1.25,1.3],"scaleanchor":"x"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":640,"title":{"text":"Rede de sabor da receita"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<div class="grid2"><div style="height:350px; width:100%;">                            <div id="15d62193-d265-410c-8216-34c24e7d6688" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("15d62193-d265-410c-8216-34c24e7d6688")) {                    Plotly.newPlot(                        "15d62193-d265-410c-8216-34c24e7d6688",                        [{"colorbar":{"outlinewidth":0,"thickness":10},"colorscale":[[0,"#f3f7fd"],[0.5,"#6da7ec"],[1,"#104281"]],"hovertemplate":"%{y} + %{x}\u003cbr\u003eQu\u00edmica: similaridade molecular (Jaccard): %{z:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","text":[["","0.32","0.35","0.00","0.20"],["0.32","","0.40","0.00","0.09"],["0.35","0.40","","0.00","0.10"],["0.00","0.00","0.00","","0.00"],["0.20","0.09","0.10","0.00",""]],"texttemplate":"%{text}","x":["tomato","basil","garlic","olive oil","parmesan cheese"],"xgap":2,"y":["tomato","basil","garlic","olive oil","parmesan cheese"],"ygap":2,"z":{"dtype":"f8","bdata":"AAAAAAAA+H9wRfFI+FbUP5eWlpaWltY\u002fAAAAAAAAAAAZlVEZlVHJP3BF8Uj4VtQ\u002fAAAAAAAA+H9qmqZpmqbZPwAAAAAAAAAAZCELWchCtj+XlpaWlpbWP2qapmmaptk\u002fAAAAAAAA+H8AAAAAAAAAAN7sXKoNmbg\u002fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8AAAAAAAAAABmVURmVUck\u002fZCELWchCtj\u002fe7FyqDZm4PwAAAAAAAAAAAAAAAAAA+H8=","shape":"5, 5"},"zmin":0,"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"yaxis":{"autorange":"reversed"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":350,"title":{"text":"Qu\u00edmica: similaridade molecular (Jaccard)"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div><div style="height:350px; width:100%;">                            <div id="bded4efa-7c01-4aae-b8fd-a86e26294fd5" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("bded4efa-7c01-4aae-b8fd-a86e26294fd5")) {                    Plotly.newPlot(                        "bded4efa-7c01-4aae-b8fd-a86e26294fd5",                        [{"colorbar":{"outlinewidth":0,"thickness":10},"colorscale":[[0,"#fdf4ef"],[0.5,"#f19a6f"],[1,"#9a3a12"]],"hovertemplate":"%{y} + %{x}\u003cbr\u003ePr\u00e1tica: co-ocorr\u00eancia em receitas (NPMI): %{z:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","text":[["","0.20","0.00","0.00","0.00"],["0.20","","0.00","0.00","0.22"],["0.00","0.00","","0.00","0.00"],["0.00","0.00","0.00","","0.00"],["0.00","0.22","0.00","0.00",""]],"texttemplate":"%{text}","x":["tomato","basil","garlic","olive oil","parmesan cheese"],"xgap":2,"y":["tomato","basil","garlic","olive oil","parmesan cheese"],"ygap":2,"z":{"dtype":"f8","bdata":"AAAAAAAA+H8b9Zs9KHPJPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABv1mz0oc8k\u002fAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAQDqda1twzD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAQDqda1twzD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8=","shape":"5, 5"},"zmin":0,"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"yaxis":{"autorange":"reversed"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":350,"title":{"text":"Pr\u00e1tica: co-ocorr\u00eancia em receitas (NPMI)"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div></div>
+<h2>Perfil sensorial</h2><div style="height:532px; width:100%;">                            <div id="197798e3-8dc7-4f00-9d81-cac747f32b17" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("197798e3-8dc7-4f00-9d81-cac747f32b17")) {                    Plotly.newPlot(                        "197798e3-8dc7-4f00-9d81-cac747f32b17",                        [{"hovertemplate":"tomato: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2}},"name":"tomato","orientation":"h","x":{"dtype":"f8","bdata":"D3rr\u002fuRckj8Fhy+kCNiYPzLaTrOCw5c\u002f2TMQlY7smT\u002fZMxCVjuyZP63g8IUUAZs\u002f2TMQlY7smT9UOrJnICqdP+MmzO9qcaM\u002freDwhRQBqz9UOrJnICqtP9J2mhUcvrA\u002f2k6zgsMXsj+TWKY+HvS2Pw=="},"y":["citrus","spicy","herbal","pungent","oily","fresh","woody","waxy","fatty","floral","bitter","fruity","green","sweet"],"type":"bar"},{"hovertemplate":"basil: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":2}},"name":"basil","orientation":"h","x":{"dtype":"f8","bdata":"+RklfkaJnz+96U1vetObP9uBuXZgrp0\u002fZCELWchClj+CuXZgrh2YP9uBuXZgrp0\u002fgrl2YK4dqD+gUeJnlPiZP4K5dmCuHZg\u002fBHPtwFw7sD8hC1nIQhayPynxM0r8jKI\u002f24G5dmCurT+CuXZgrh24Pw=="},"y":["citrus","spicy","herbal","pungent","oily","fresh","woody","waxy","fatty","floral","bitter","fruity","green","sweet"],"type":"bar"},{"hovertemplate":"garlic: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":2}},"name":"garlic","orientation":"h","x":{"dtype":"f8","bdata":"NSeBuFBzkj81J4G4UHOSP04CcaHmJJA\u002f6ZWx\u002fY5emT8cTJHPusGUP+mVsf2OXpk\u002fNSeBuFBzkj81J4G4UHOSPwJxoeYkEJc\u002f0LrBFPmsqz\u002fiQs1JIC60P49eGdvv6KU\u002fiAs1J4G4sD\u002fJZ91giny2Pw=="},"y":["citrus","spicy","herbal","pungent","oily","fresh","woody","waxy","fatty","floral","bitter","fruity","green","sweet"],"type":"bar"},{"hovertemplate":"parmesan_cheese: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":2}},"name":"parmesan cheese","orientation":"h","x":{"dtype":"f8","bdata":"fJu\u002fwqxGkT\u002fkxZbg2\u002fyVP27+CrMaRZw\u002fkAyoZyrXnT98m7\u002fCrEahP5AMqGcq150\u002fBtQzleuOlz\u002f1TOW648WmP5AMqGcq160\u002fXXe82BJ8qz+zGkUcOmmfP9QzleuOF7s\u002fOXTSPkgGtD8n7YNkQD2zPw=="},"y":["citrus","spicy","herbal","pungent","oily","fresh","woody","waxy","fatty","floral","bitter","fruity","green","sweet"],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"xaxis":{"tickformat":".0%","gridcolor":"#e6e5e1","title":{"text":"fra\u00e7\u00e3o m\u00e9dia das mol\u00e9culas com o descritor"}},"legend":{"orientation":"h","y":-0.15,"x":0},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","barmode":"stack","height":532,"title":{"text":"Perfil sensorial: quem traz cada nota"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>Moléculas-ponte</h2>
+<p class="muted">Moléculas presentes em 2 ou mais ingredientes, priorizando as mais específicas
+(raras no banco) — são elas que dão "assinatura" à combinação.</p>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>molécula</th>
+      <th>aroma/sabor</th>
+      <th>presente em</th>
+      <th>peso molecular</th>
+      <th>xlogP</th>
+      <th>nº alimentos no banco</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2-Ethylfuran</td>
+      <td>earthy, sweet, burnt, malty, butter, caramel</td>
+      <td>tomato, basil, parmesan_cheese</td>
+      <td>96.1</td>
+      <td>2.40</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Mesityl Oxide</td>
+      <td>acrylic, vegetable, chemical, earthy, sweet, pungent +2</td>
+      <td>tomato, basil, parmesan_cheese</td>
+      <td>98.1</td>
+      <td>1.40</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>3,4-Dimethylphenol</td>
+      <td>flat, dry, phenol</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>122.2</td>
+      <td>2.20</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Vitamin U</td>
+      <td>potato, tomato, sulfurous, malty, green</td>
+      <td>tomato, garlic</td>
+      <td>199.7</td>
+      <td></td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Isorhamnetin</td>
+      <td>bitter</td>
+      <td>tomato, basil, garlic</td>
+      <td>316.3</td>
+      <td>1.90</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>2,6-Dimethylpyrazine</td>
+      <td>roast beef, roasted nuts, coffee, cocoa, roasted nut, green</td>
+      <td>tomato, garlic, parmesan_cheese</td>
+      <td>108.1</td>
+      <td>0.50</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>Geranylacetone</td>
+      <td>magnolia, rose, fresh, floral, aldehydic, fruity +2</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>194.3</td>
+      <td>3.70</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>trans-2-Pentenal</td>
+      <td>apple, orange, tomato, strawberry, fruity, pungent +1</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>84.1</td>
+      <td>1.00</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>Salicylaldehyde</td>
+      <td>cooling, medical, wintergreen, spicy, cinnamon, burning taste +4</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>122.1</td>
+      <td>1.80</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>L-Rhamnose</td>
+      <td>sweet</td>
+      <td>basil, garlic</td>
+      <td>164.2</td>
+      <td>-2.10</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Methyl propenyl ketone</td>
+      <td>acetone, fishy, fruity, phenolic</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>84.1</td>
+      <td>0.50</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Linalool</td>
+      <td>lemon, citrus, orange, floral, sweet, woody +7</td>
+      <td>tomato, basil, garlic, parmesan_cheese</td>
+      <td>154.3</td>
+      <td>2.70</td>
+      <td>103</td>
+    </tr>
+    <tr>
+      <td>1-butanol</td>
+      <td>oily, vanilla, fruity, fusel, sweet, balsamic +5</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>74.1</td>
+      <td>0.90</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>4'-Methylacetophenone</td>
+      <td>hawthorne, acetophenone, coumarin, sweet, bitter almond, hawthorn +5</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>134.2</td>
+      <td>2.10</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Butylamine</td>
+      <td>ammonia, fishy</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>73.1</td>
+      <td>1.00</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>2-Tridecanone</td>
+      <td>coconut, herbal, milky, waxy, fatty, earthy +3</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>198.3</td>
+      <td>5.20</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>Hexyl Hexanoate</td>
+      <td>peach, vegetable, herbal, apple peel, fresh, cut grass +2</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>200.3</td>
+      <td>4.40</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <td>Isoborneol</td>
+      <td>musty, herbal, woody, balsamic, camphoreous, fragrant +2</td>
+      <td>basil, parmesan_cheese</td>
+      <td>154.3</td>
+      <td>2.70</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <td>Dimethyl trisulfide</td>
+      <td>sulfurous, cabbage, onion, fishy, savory, meaty +1</td>
+      <td>tomato, garlic, parmesan_cheese</td>
+      <td>126.2</td>
+      <td>1.30</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Methyl butyrate</td>
+      <td>apple, pineapple, ethereal, banana, fruity, sweet +5</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>102.1</td>
+      <td>1.30</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>Isoamylamine</td>
+      <td>unpleasant, ammonia</td>
+      <td>tomato, parmesan_cheese</td>
+      <td>87.2</td>
+      <td>1.00</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>(Z)-Hex-3-en-1-ol</td>
+      <td>leafy, grass, foliage, vegetable, herbal, fresh +6</td>
+      <td>tomato, basil</td>
+      <td>100.2</td>
+      <td>1.30</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>Tiglic aldehyde</td>
+      <td>ethereal, anisic, fruity, pungent, nutty, green</td>
+      <td>garlic, parmesan_cheese</td>
+      <td>84.1</td>
+      <td>0.90</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>Dimethyl disulfide</td>
+      <td>citrus, cabbage, sulfurous, putrid, wine_like, onion +13</td>
+      <td>tomato, garlic, parmesan_cheese</td>
+      <td>94.2</td>
+      <td>1.80</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>dimethyl sulfide</td>
+      <td>sulfurous, cabbage, onion, gasoline, vegetable, sweet corn +7</td>
+      <td>tomato, garlic, parmesan_cheese</td>
+      <td>62.1</td>
+      <td>0.90</td>
+      <td>91</td>
+    </tr>
+  </tbody>
+</table>
+<h2>O que acrescentar?</h2>
+<div class="grid2"><div><h3>Clássicas (prática)</h3><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mozzarella_cheese</td>
+      <td>Dairy</td>
+      <td>0.207</td>
+      <td>0.13</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>eggplant</td>
+      <td>Plant/Vegetable</td>
+      <td>0.281</td>
+      <td>0.13</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>oregano</td>
+      <td>Spice</td>
+      <td>0.301</td>
+      <td>0.10</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>pasta</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.308</td>
+      <td>0.09</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>ravioli</td>
+      <td>Dish/End Product</td>
+      <td>0.010</td>
+      <td>0.09</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>swordfish</td>
+      <td>Seafood</td>
+      <td>0.010</td>
+      <td>0.08</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>green_zucchini</td>
+      <td>Plant/Vegetable</td>
+      <td>0.304</td>
+      <td>0.07</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>thyme</td>
+      <td>Plant/Vegetable</td>
+      <td>0.290</td>
+      <td>0.07</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>grouper</td>
+      <td>Seafood</td>
+      <td>0.006</td>
+      <td>0.07</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>lettuce</td>
+      <td>Plant/Vegetable</td>
+      <td>0.293</td>
+      <td>0.07</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>ricotta_cheese</td>
+      <td>Dairy</td>
+      <td>0.061</td>
+      <td>0.07</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>marjoram</td>
+      <td>Plant/Vegetable</td>
+      <td>0.293</td>
+      <td>0.06</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h3>Química parecida</h3><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>chive</td>
+      <td>Plant/Vegetable</td>
+      <td>0.319</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sweet_potato</td>
+      <td>Plant/Vegetable</td>
+      <td>0.313</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>Fruit</td>
+      <td>0.312</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>leek</td>
+      <td>Plant/Vegetable</td>
+      <td>0.311</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>shallot</td>
+      <td>Plant/Vegetable</td>
+      <td>0.311</td>
+      <td>0.04</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>watercress</td>
+      <td>Plant/Vegetable</td>
+      <td>0.310</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>wheat</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.310</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>mung_bean</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.309</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>winter_savory</td>
+      <td>Plant/Vegetable</td>
+      <td>0.309</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>rutabaga</td>
+      <td>Dairy</td>
+      <td>0.309</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>arrowroot</td>
+      <td>Sauce/Powder/Dressing</td>
+      <td>0.308</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>bamboo_shoot</td>
+      <td>Plant/Vegetable</td>
+      <td>0.308</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div></div>
+<h3>Ousadas — química alta, sem associação em receitas (combinações pouco exploradas)</h3>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>chive</td>
+      <td>Plant/Vegetable</td>
+      <td>0.319</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sweet_potato</td>
+      <td>Plant/Vegetable</td>
+      <td>0.313</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>Fruit</td>
+      <td>0.312</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>leek</td>
+      <td>Plant/Vegetable</td>
+      <td>0.311</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>watercress</td>
+      <td>Plant/Vegetable</td>
+      <td>0.310</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>wheat</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.310</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>mung_bean</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.309</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>winter_savory</td>
+      <td>Plant/Vegetable</td>
+      <td>0.309</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>rutabaga</td>
+      <td>Dairy</td>
+      <td>0.309</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>arrowroot</td>
+      <td>Sauce/Powder/Dressing</td>
+      <td>0.308</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>biscuit</td>
+      <td>Bakery/Dessert/Snack</td>
+      <td>0.308</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>millet</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.308</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Tabela de pares</h2><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>a</th>
+      <th>b</th>
+      <th>moléculas em comum</th>
+      <th>jaccard</th>
+      <th>npmi</th>
+      <th>destaques</th>
+      <th>em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>basil</td>
+      <td>garlic</td>
+      <td>101</td>
+      <td>0.401</td>
+      <td>0.00</td>
+      <td>L-Rhamnose (sweet), Isorhamnetin (bitter), Vanillic acid (powdery/vanilla/bean), Linalool (lemon/citrus/orange), quercetin (bitter)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>tomato</td>
+      <td>garlic</td>
+      <td>108</td>
+      <td>0.353</td>
+      <td>0.00</td>
+      <td>Vitamin U (potato/tomato/sulfurous), Isorhamnetin (bitter), 2,6-Dimethylpyrazine (roast beef/roasted nuts/coffee), Alpha-Phellandrene (minty/citrus/peppery), Dimethyl trisulfide (sulfurous/cabbage/onion)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>tomato</td>
+      <td>basil</td>
+      <td>116</td>
+      <td>0.318</td>
+      <td>0.20</td>
+      <td>2-Ethylfuran (earthy/sweet/burnt), Mesityl Oxide (acrylic/vegetable/chemical), (Z)-Hex-3-en-1-ol (leafy/grass/foliage), Isorhamnetin (bitter), Linalyl Acetate (citrus/fruity/sweet)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>tomato</td>
+      <td>parmesan_cheese</td>
+      <td>72</td>
+      <td>0.198</td>
+      <td>0.00</td>
+      <td>3,4-Dimethylphenol (flat/dry/phenol), 2-Ethylfuran (earthy/sweet/burnt), Geranylacetone (magnolia/rose/fresh), trans-2-Pentenal (apple/orange/tomato), Salicylaldehyde (cooling/medical/wintergreen)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>garlic</td>
+      <td>parmesan_cheese</td>
+      <td>27</td>
+      <td>0.096</td>
+      <td>0.00</td>
+      <td>Tiglic aldehyde (ethereal/anisic/fruity), 2,6-Dimethylpyrazine (roast beef/roasted nuts/coffee), 2,5-Dimethylpyrazine (roast beef/roasted nuts/grass), Dimethyl trisulfide (sulfurous/cabbage/onion), Dimethyl disulfide (citrus/cabbage/sulfurous)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>basil</td>
+      <td>parmesan_cheese</td>
+      <td>30</td>
+      <td>0.087</td>
+      <td>0.22</td>
+      <td>2-Ethylfuran (earthy/sweet/burnt), Mesityl Oxide (acrylic/vegetable/chemical), Isoborneol (musty/herbal/woody), Thymol (herbal/thyme/camphoreous), 3-Octanone (butter/herbal/resin)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>basil</td>
+      <td>olive_oil</td>
+      <td>0</td>
+      <td>0.000</td>
+      <td>0.00</td>
+      <td></td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>tomato</td>
+      <td>olive_oil</td>
+      <td>0</td>
+      <td>0.000</td>
+      <td>0.00</td>
+      <td></td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>garlic</td>
+      <td>olive_oil</td>
+      <td>0</td>
+      <td>0.000</td>
+      <td>0.00</td>
+      <td></td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>olive_oil</td>
+      <td>parmesan_cheese</td>
+      <td>0</td>
+      <td>0.000</td>
+      <td>0.00</td>
+      <td></td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+  </tbody>
+</table>
+<p class="muted">Fontes: FlavorDB2 (CC BY-NC-SA 3.0) · FlavorGraph (Apache 2.0). Ver data/SOURCES.md.</p>
+</body></html>

@@ -20,10 +20,16 @@ data/
   processed/                     tabelas unificadas (geradas pelo build)
   experiments/                   seus testes de receitas (modelo)
   SOURCES.md                     fontes, licenças e citações
+flavorlab/                       pacote Python (análise + relatório)
+  db.py                          carrega o banco, resolve nomes, perfis moleculares
+  analysis.py                    química (Jaccard), prática (NPMI), sugestões
+  report.py                      relatório HTML interativo (plotly)
 scripts/
   download_flavordb.py           baixa o FlavorDB2 (lento, retomável)
   download_flavorgraph.py        baixa o FlavorGraph
   build_database.py              monta data/processed/
+  recipe_report.py               gera reports/<receita>.html
+reports/                         relatórios gerados
 ```
 
 ## Reconstruir do zero
@@ -34,7 +40,7 @@ python scripts/download_flavordb.py      # ~2 h, 1 requisição/s, retomável
 python scripts/build_database.py
 ```
 
-Requer apenas `pandas` e `numpy`.
+Requer `pip install -r requirements.txt` (pandas, numpy, plotly, networkx).
 
 ## Tabelas em `data/processed/`
 
@@ -61,15 +67,52 @@ Algumas colunas úteis para engenharia de sabor:
   (perdem-se com cozimento longo; adicionar no fim).
 - `functional_groups` — família química (terpeno, fenol, aldeído, pirazina...).
 
+## Embasamento científico de uma receita
+
+```bash
+python scripts/recipe_report.py                     # todas as receitas de data/experiments/
+python scripts/recipe_report.py --recipe EX02       # uma receita
+python scripts/recipe_report.py --ingredients "tomato,basil,garlic" --name "teste"
+python scripts/recipe_report.py --search pepper     # achar o nome certo no banco
+```
+
+O relatório (`reports/<recipe_id>.html`) mostra:
+
+- **Rede de sabor** — ingredientes ligados pelas moléculas que compartilham
+  (passe o mouse: aroma, peso molecular, xlogP) e pelos pares associados em receitas.
+- **Química × Prática** — dois mapas de calor por par de ingredientes:
+  - *Química*: Jaccard = moléculas em comum / moléculas no total (0–1).
+  - *Prática*: NPMI do FlavorGraph — associação **acima do acaso** em >1 milhão
+    de receitas. Ingredientes onipresentes (alho, cebola) têm NPMI baixo mesmo
+    aparecendo juntos sempre; 0 = "sem associação especial".
+- **Perfil sensorial** — quais notas (doce, amadeirado, picante…) cada ingrediente traz.
+- **Moléculas-ponte** — presentes em 2+ ingredientes, priorizando as mais
+  específicas (raras no banco), que dão a "assinatura" da combinação.
+- **O que acrescentar** — sugestões *clássicas* (prática), *químicas* e
+  *ousadas* (química alta, sem associação em receitas: território a explorar).
+
+Ingredientes sem moléculas próprias (ex.: `ground_cinnamon`) herdam as do
+ingrediente base (`cinnamon`); o relatório avisa quando isso acontece.
+
+Uso em Python/notebook:
+
+```python
+from flavorlab import FlavorDB, analyze_recipe
+db = FlavorDB()
+a = analyze_recipe(db, ["cinnamon", "clove", "orange"])
+a.pairs; a.bridges; a.profile; a.suggestions["ousadas"]
+```
+
 ## Seus experimentos (`data/experiments/`)
 
-Modelo inicial para registrar testes de receitas — a proposta é discutir e
-ajustar antes de usar:
+Registre aqui as receitas que você fez e gostou (EX01 e EX02 são exemplos — pode apagar):
 
-- `receitas.csv` — um teste por linha (data, prato, técnica, nota 1–5).
-- `receita_ingredientes.csv` — ingredientes de cada teste, com quantidade,
-  preparo (cru/tostado/moído/frito no óleo) e momento de adição; a coluna
-  `ingredient_id` liga ao banco molecular.
+- `receitas.csv` — uma receita por linha: data, nome, técnica, nota 1–5,
+  **por que gostei**, observações.
+- `receita_ingredientes.csv` — ingredientes de cada receita: nome em português
+  (`ingrediente`), **nome no banco em inglês** (`nome_no_banco`, ex.: `black_pepper`
+  — use `--search` para achar), quantidade, preparo (cru/tostado/moído/frito no
+  óleo) e momento de adição.
 
 ## Fontes
 
