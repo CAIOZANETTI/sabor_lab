@@ -1,0 +1,47 @@
+fdb_id,fg_id,matched_name,match
+fdb:2,fg:668,bread,name
+fdb:3,fg:5569,rye bread,name
+fdb:5,fg:6838,white bread,name
+fdb:9,fg:423,beer,name
+fdb:11,fg:662,brandy,name
+fdb:12,fg:662,brandy,synonym
+fdb:13,fg:159,apple brandy,name
+fdb:15,fg:519,blackberry brandy,name
+fdb:16,fg:1112,cherry brandy,name
+fdb:19,fg:4702,pear brandy,name
+fdb:20,fg:4930,plum brandy,name
+fdb:23,fg:2836,gin,name
+fdb:24,fg:5558,rum,name
+fdb:31,fg:5676,scotch whisky,name
+fdb:32,fg:7017,wine,name
+fdb:35,fg:1069,champagne,name
+fdb:36,fg:1361,cider,name
+fdb:37,fg:4937,plum wine,name
+fdb:38,fg:5016,port wine,name
+fdb:39,fg:5345,red wine,name
+fdb:40,fg:5534,rose wine,name
+fdb:41,fg:5587,sake,name
+fdb:43,fg:6031,sparkling wine,name
+fdb:45,fg:6918,white wine,name
+fdb:46,fg:1458,coffee,name
+fdb:48,fg:510,black tea,name
+fdb:49,fg:3035,green tea,name
+fdb:51,fg:321,barley,name
+fdb:52,fg:1659,cracker,synonym
+fdb:55,fg:5431,rice,name
+fdb:56,fg:1595,corn,name
+fdb:57,fg:1608,corn oil,name
+fdb:58,fg:4958,popcorn,name
+fdb:59,fg:6287,sweetcorn,name
+fdb:60,fg:781,butter,name
+fdb:61,fg:805,buttermilk,name
+fdb:62,fg:1089,cheese,name
+fdb:63,fg:537,blue cheese,name
+fdb:64,fg:854,camembert cheese,name
+fdb:65,fg:1083,cheddar cheese,name
+fdb:66,fg:1488,comte cheese,name
+fdb:67,fg:1631,cottage cheese,name
+fdb:68,fg:1682,cream cheese,name
+fdb:69,fg:6849,white cheese,synonym
+fdb:71,fg:2320,feta cheese,name
+fdb:72,fg:2890,goat cheese,name
