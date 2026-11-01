@@ -17,19 +17,20 @@ data/
   raw/
     flavordb/entities.jsonl.gz   FlavorDB2 bruto (1 JSON por ingrediente)
     flavorgraph/*.csv            FlavorGraph bruto (nós e arestas do grafo)
-  processed/                     tabelas unificadas (geradas pelo build)
+  processed/                     tabelas unificadas em Parquet (geradas pelo build)
   experiments/                   seus testes de receitas (modelo)
   SOURCES.md                     fontes, licenças e citações
 flavorlab/                       pacote Python (análise + relatório)
   db.py                          carrega o banco, resolve nomes, perfis moleculares
   analysis.py                    química (Jaccard), prática (NPMI), sugestões
-  report.py                      relatório HTML interativo (plotly)
+  report.py                      relatório HTML interativo (vis-network + plotly)
 scripts/
   download_flavordb.py           baixa o FlavorDB2 (lento, retomável)
   download_flavorgraph.py        baixa o FlavorGraph
   build_database.py              monta data/processed/
   recipe_report.py               gera reports/<receita>.html
 reports/                         relatórios gerados
+tests/                           testes automatizados (pytest)
 ```
 
 ## Reconstruir do zero
@@ -40,18 +41,26 @@ python scripts/download_flavordb.py      # ~2 h, 1 requisição/s, retomável
 python scripts/build_database.py
 ```
 
-Requer `pip install -r requirements.txt` (pandas, numpy, plotly, networkx).
+Requer `pip install -r requirements.txt` (pandas, numpy, pyarrow, plotly).
+
+Testes: `pip install -r requirements-dev.txt && pytest` (usam um banco sintético
+com respostas conhecidas + verificações de integridade no banco real).
 
 ## Tabelas em `data/processed/`
 
+Formato **Parquet**: ~4× menor e ~3× mais rápido de ler que CSV, e preserva os
+tipos (ids PubChem continuam inteiros). Para abrir no Excel, gere cópias CSV com
+`python scripts/build_database.py --csv`. Leitura no pandas:
+`pd.read_parquet("data/processed/molecules.parquet")`.
+
 | Arquivo | Uma linha por | Colunas principais |
 |---|---|---|
-| `ingredients.csv` | ingrediente | `ingredient_id`, `source`, `name`, `category`, `scientific_name`, `n_molecules` |
-| `molecules.csv` | molécula | `pubchem_id`, `name`, `smiles`, `molecular_weight`, `xlogp`, `flavor_profile`, `odor`, `taste`, `functional_groups` |
-| `ingredient_molecules.csv` | ingrediente × molécula | `ingredient_id`, `pubchem_id`, `source` |
-| `molecule_descriptors.csv` | molécula × descritor | `pubchem_id`, `descriptor` (ex.: *woody*, *sweet*, *pungent*), `origin` |
-| `ingredient_pairs.csv` | par de ingredientes | `ingredient_a`, `ingredient_b`, `npmi_score` (co-ocorrência em receitas, −1 a 1) |
-| `ingredient_crosswalk.csv` | ingrediente nas duas fontes | `fdb_id`, `fg_id`, `matched_name` |
+| `ingredients.parquet` | ingrediente | `ingredient_id`, `source`, `name`, `category`, `scientific_name`, `n_molecules` |
+| `molecules.parquet` | molécula | `pubchem_id`, `name`, `smiles`, `molecular_weight`, `xlogp`, `flavor_profile`, `odor`, `taste`, `functional_groups` |
+| `ingredient_molecules.parquet` | ingrediente × molécula | `ingredient_id`, `pubchem_id`, `source` |
+| `molecule_descriptors.parquet` | molécula × descritor | `pubchem_id`, `descriptor` (ex.: *woody*, *sweet*, *pungent*), `origin` |
+| `ingredient_pairs.parquet` | par de ingredientes | `ingredient_a`, `ingredient_b`, `npmi_score` (co-ocorrência em receitas, −1 a 1) |
+| `ingredient_crosswalk.parquet` | ingrediente nas duas fontes | `fdb_id`, `fg_id`, `matched_name` |
 
 **Chaves de ligação**
 
@@ -76,10 +85,13 @@ python scripts/recipe_report.py --ingredients "tomato,basil,garlic" --name "test
 python scripts/recipe_report.py --search pepper     # achar o nome certo no banco
 ```
 
-O relatório (`reports/<recipe_id>.html`) mostra:
+O relatório (`reports/<recipe_id>.html`, abre em qualquer navegador) mostra:
 
-- **Rede de sabor** — ingredientes ligados pelas moléculas que compartilham
-  (passe o mouse: aroma, peso molecular, xlogP) e pelos pares associados em receitas.
+- **Rede de sabor interativa** — ingredientes ligados pelas moléculas que
+  compartilham e pelos pares associados em receitas. Arraste os nós, dê zoom,
+  **clique** num nó para destacar as conexões e ver os detalhes (aroma, peso
+  molecular, xlogP, link PubChem), **busque** por nome e clique nas **notas de
+  sabor** (woody, citrus, spicy…) para acender as moléculas com aquela nota.
 - **Química × Prática** — dois mapas de calor por par de ingredientes:
   - *Química*: Jaccard = moléculas em comum / moléculas no total (0–1).
   - *Prática*: NPMI do FlavorGraph — associação **acima do acaso** em >1 milhão
@@ -90,6 +102,9 @@ O relatório (`reports/<recipe_id>.html`) mostra:
   específicas (raras no banco), que dão a "assinatura" da combinação.
 - **O que acrescentar** — sugestões *clássicas* (prática), *químicas* e
   *ousadas* (química alta, sem associação em receitas: território a explorar).
+- Todas as tabelas são **ordenáveis** (clique no cabeçalho).
+
+Desempenho: carregar o banco leva ~0,3 s; cada análise de receita, ~30 ms.
 
 Ingredientes sem moléculas próprias (ex.: `ground_cinnamon`) herdam as do
 ingrediente base (`cinnamon`); o relatório avisa quando isso acontece.

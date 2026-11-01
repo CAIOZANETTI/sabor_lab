@@ -62,7 +62,7 @@ class RecipeAnalysis:
 
 
 def analyze_recipe(db: FlavorDB, ingredients: list[str], name: str = "receita",
-                   n_bridges: int = 25, n_suggestions: int = 12) -> RecipeAnalysis:
+                   n_bridges: int = 40, n_suggestions: int = 12) -> RecipeAnalysis:
     items, warnings = [], []
     for q in ingredients:
         try:

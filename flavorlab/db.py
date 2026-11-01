@@ -48,21 +48,29 @@ class Resolved:
 
 
 class FlavorDB:
+    """Banco de sabores em memória. Carregue uma vez e reutilize (consultas em ms)."""
+
     def __init__(self, path: Path = PROCESSED):
         self.path = Path(path)
-        self.ingredients = pd.read_csv(self.path / "ingredients.csv")
-        self.molecules = pd.read_csv(self.path / "molecules.csv").set_index("pubchem_id")
-        self.links = pd.read_csv(self.path / "ingredient_molecules.csv")
-        self.pairs = pd.read_csv(self.path / "ingredient_pairs.csv")
-        self.crosswalk = pd.read_csv(self.path / "ingredient_crosswalk.csv")
-        desc = pd.read_csv(self.path / "molecule_descriptors.csv")
+        if not (self.path / "ingredients.parquet").exists():
+            raise FileNotFoundError(
+                f"banco não encontrado em {self.path}. Rode: python scripts/build_database.py")
+        read = lambda name: pd.read_parquet(self.path / f"{name}.parquet")  # noqa: E731
+        self.ingredients = read("ingredients")
+        self.molecules = read("molecules").set_index("pubchem_id")
+        self.links = read("ingredient_molecules")
+        self.pairs = read("ingredient_pairs")
+        self.crosswalk = read("ingredient_crosswalk")
+        desc = read("molecule_descriptors")
         desc["descriptor"] = desc["descriptor"].replace(DESCRIPTOR_ALIASES)
         noisy = (desc["descriptor"].str.split().str.len() > 3) | desc["descriptor"].str.contains("odor")
         self.descriptors = (desc[~desc["descriptor"].isin(DESCRIPTOR_DROP) & ~noisy]
                             .drop_duplicates(["pubchem_id", "descriptor"]))
 
+        # índices em dicionário: consultas O(1) em vez de filtrar DataFrames
         self._names = dict(zip(self.ingredients["ingredient_id"], self.ingredients["name"]))
         self._category = dict(zip(self.ingredients["ingredient_id"], self.ingredients["category"]))
+        self._fdb2fg = dict(zip(self.crosswalk["fdb_id"], self.crosswalk["fg_id"]))
 
     # ------------------------------------------------------------------ perfis
     @cached_property
@@ -135,47 +143,49 @@ class FlavorDB:
                   .head(limit)[["ingredient_id", "name", "source", "category", "has_molecules"]])
 
     # ------------------------------------------------------------ co-ocorrência
-    @cached_property
-    def _npmi(self) -> dict[frozenset, float]:
-        return {frozenset((a, b)): s for a, b, s in
-                zip(self.pairs["ingredient_a"], self.pairs["ingredient_b"], self.pairs["npmi_score"])}
-
     def _fg_id(self, iid: str) -> str | None:
-        if iid.startswith("fg:"):
-            return iid
-        hit = self.crosswalk.loc[self.crosswalk["fdb_id"] == iid, "fg_id"]
-        return hit.iloc[0] if len(hit) else None
+        return iid if iid.startswith("fg:") else self._fdb2fg.get(iid)
 
     def npmi(self, a: str, b: str) -> float:
-        """Co-ocorrência em receitas (FlavorGraph). 0 = não aparecem juntos com frequência."""
+        """Co-ocorrência em receitas (FlavorGraph). 0 = sem associação acima do acaso."""
         fa, fb = self._fg_id(a), self._fg_id(b)
         if not fa or not fb:
             return np.nan
-        return self._npmi.get(frozenset((fa, fb)), 0.0)
+        return self.recipe_neighbors(fa).get(fb, 0.0)
+
+    @cached_property
+    def _neighbors(self) -> dict[str, dict[str, float]]:
+        """fg_id -> {fg_id vizinho: NPMI} (grafo de receitas como lista de adjacência)."""
+        adj: dict[str, dict[str, float]] = {}
+        for a, b, w in zip(self.pairs["ingredient_a"], self.pairs["ingredient_b"],
+                           self.pairs["npmi_score"]):
+            adj.setdefault(a, {})[b] = w
+            adj.setdefault(b, {})[a] = w
+        return adj
 
     def recipe_neighbors(self, iid: str) -> dict[str, float]:
         """Todos os ingredientes que co-ocorrem com iid em receitas -> score."""
         f = self._fg_id(iid)
-        if not f:
-            return {}
-        p = self.pairs
-        a = p.loc[p["ingredient_a"] == f, ["ingredient_b", "npmi_score"]].to_numpy()
-        b = p.loc[p["ingredient_b"] == f, ["ingredient_a", "npmi_score"]].to_numpy()
-        return {k: float(v) for k, v in np.vstack([a, b])} if len(a) + len(b) else {}
+        return self._neighbors.get(f, {}) if f else {}
 
     # ------------------------------------------------------------- descritores
     @cached_property
     def descriptors_by_molecule(self) -> dict[int, list[str]]:
         return self.descriptors.groupby("pubchem_id")["descriptor"].agg(list).to_dict()
 
+    @cached_property
+    def _molecule_records(self) -> dict[int, dict]:
+        cols = ["name", "molecular_weight", "xlogp", "functional_groups"]
+        df = self.molecules[cols].astype(object).where(self.molecules[cols].notna(), None)
+        return df.to_dict("index")
+
     def molecule_info(self, cid: int) -> dict:
-        row = self.molecules.loc[cid] if cid in self.molecules.index else None
-        get = (lambda c: row[c] if row is not None and c in row and pd.notna(row[c]) else None)
+        rec = self._molecule_records.get(cid, {})
         return {
             "pubchem_id": cid,
-            "name": get("name") or str(cid),
+            "name": rec.get("name") or str(cid),
             "descriptors": self.descriptors_by_molecule.get(cid, []),
-            "molecular_weight": get("molecular_weight"),
-            "xlogp": get("xlogp"),
-            "functional_groups": get("functional_groups"),
+            "molecular_weight": rec.get("molecular_weight"),
+            "xlogp": rec.get("xlogp"),
+            "functional_groups": rec.get("functional_groups"),
         }

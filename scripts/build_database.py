@@ -6,24 +6,27 @@ Entradas (geradas pelos scripts de download):
     data/raw/flavorgraph/edges_191120.csv
     data/raw/flavorgraph/dict_ingr2cate.csv
 
-Saídas (data/processed/, CSV para abrir direto no pandas):
-    ingredients.csv           um ingrediente por linha (FlavorDB e FlavorGraph)
-    molecules.csv             uma molécula por linha (chave: pubchem_id)
-    ingredient_molecules.csv  ingrediente -> molécula (a "composição química")
-    molecule_descriptors.csv  molécula -> descritor sensorial (sweet, woody...)
-    ingredient_pairs.csv      co-ocorrência de ingredientes em receitas (FlavorGraph)
-    ingredient_crosswalk.csv  mesmo ingrediente nas duas fontes (por nome)
+Saídas (data/processed/, Parquet — ~4x menor e ~3x mais rápido de ler que CSV,
+e preserva os tipos das colunas; use --csv para exportar também em CSV):
+    ingredients.parquet           um ingrediente por linha (FlavorDB e FlavorGraph)
+    molecules.parquet             uma molécula por linha (chave: pubchem_id)
+    ingredient_molecules.parquet  ingrediente -> molécula (a "composição química")
+    molecule_descriptors.parquet  molécula -> descritor sensorial (sweet, woody...)
+    ingredient_pairs.parquet      co-ocorrência de ingredientes em receitas (FlavorGraph)
+    ingredient_crosswalk.parquet  mesmo ingrediente nas duas fontes (por nome)
 
 Chaves:
     ingredient_id = "fdb:<entity_id>" (FlavorDB) ou "fg:<node_id>" (FlavorGraph)
     pubchem_id    = PubChem CID (inteiro), comum às duas fontes
 
 Uso:
-    python scripts/build_database.py
+    python scripts/build_database.py          # Parquet
+    python scripts/build_database.py --csv    # Parquet + cópia em CSV
 """
 
 from __future__ import annotations
 
+import argparse
 import gzip
 import json
 import re
@@ -234,8 +237,8 @@ def build_crosswalk(fdb_ing: pd.DataFrame, fg_ing: pd.DataFrame) -> pd.DataFrame
     return pd.DataFrame(rows)
 
 
-def main() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
+def build() -> dict[str, pd.DataFrame]:
+    """Monta todas as tabelas em memória (sem gravar)."""
     pack_flavordb()
 
     fdb_ing, fdb_lnk, fdb_mol = build_flavordb(load_flavordb())
@@ -248,7 +251,11 @@ def main() -> None:
     molecules["name"] = molecules["name"].fillna(molecules["fg_name"])
     molecules["in_flavordb"] = molecules["pubchem_id"].isin(fdb_mol["pubchem_id"])
     molecules["in_flavorgraph"] = molecules["pubchem_id"].isin(fg_mol["pubchem_id"])
-    molecules = molecules.drop(columns="fg_name").sort_values("pubchem_id")
+    molecules = molecules.drop(columns="fg_name").sort_values("pubchem_id", ignore_index=True)
+    # colunas de texto com mistura de tipos (ex.: fema_number) -> string
+    for col in molecules.columns:
+        if molecules[col].dtype == object:
+            molecules[col] = molecules[col].astype("string")
 
     ingredients = pd.concat([fdb_ing, fg_ing], ignore_index=True)
     fg_counts = fg_lnk.groupby("ingredient_id").size()
@@ -256,24 +263,39 @@ def main() -> None:
     ingredients.loc[mask, "n_molecules"] = (
         ingredients.loc[mask, "ingredient_id"].map(fg_counts).fillna(0))
     ingredients["n_molecules"] = ingredients["n_molecules"].astype(int)
+    ingredients["is_hub"] = ingredients["is_hub"].astype("boolean")
 
     links = pd.concat([fdb_lnk, fg_lnk], ignore_index=True)
-    links["pubchem_id"] = links["pubchem_id"].astype("Int64")
+    links["pubchem_id"] = links["pubchem_id"].astype("int64")
+    links = links.drop_duplicates(ignore_index=True)
     descriptors = build_descriptors(fdb_mol)
+    descriptors["pubchem_id"] = descriptors["pubchem_id"].astype("int64")
     crosswalk = build_crosswalk(fdb_ing, fg_ing)
 
-    outputs = {
-        "ingredients.csv": ingredients,
-        "molecules.csv": molecules,
-        "ingredient_molecules.csv": links,
-        "molecule_descriptors.csv": descriptors,
-        "ingredient_pairs.csv": pairs,
-        "ingredient_crosswalk.csv": crosswalk,
+    return {
+        "ingredients": ingredients,
+        "molecules": molecules,
+        "ingredient_molecules": links,
+        "molecule_descriptors": descriptors,
+        "ingredient_pairs": pairs.reset_index(drop=True),
+        "ingredient_crosswalk": crosswalk,
     }
-    for name, df in outputs.items():
-        path = OUT / name
-        df.to_csv(path, index=False)
-        print(f"{name:28s} {len(df):>8,d} linhas  {path.stat().st_size / 1e6:6.2f} MB")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Monta data/processed/ (Parquet).")
+    ap.add_argument("--csv", action="store_true", help="exporta também em CSV")
+    args = ap.parse_args()
+
+    OUT.mkdir(parents=True, exist_ok=True)
+    for name, df in build().items():
+        path = OUT / f"{name}.parquet"
+        df.to_parquet(path, index=False, compression="zstd")
+        extra = ""
+        if args.csv:
+            df.to_csv(OUT / f"{name}.csv", index=False)
+            extra = " (+ CSV)"
+        print(f"{path.name:30s} {len(df):>8,d} linhas  {path.stat().st_size / 1e6:6.2f} MB{extra}")
 
 
 if __name__ == "__main__":

@@ -10,3 +10,6 @@ __pycache__/
 .venv/
 
 # relatórios: versionados (são o "produto"), mas o cache python não
+
+# cópias CSV opcionais do banco (build_database.py --csv)
+data/processed/*.csv
