@@ -19,6 +19,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
+ALIASES = ROOT / "data" / "ingredient_aliases.csv"
 
 # Unifica variações de descritores sensoriais (singular/plural, sinônimos).
 DESCRIPTOR_ALIASES = {
@@ -50,7 +51,7 @@ class Resolved:
 class FlavorDB:
     """Banco de sabores em memória. Carregue uma vez e reutilize (consultas em ms)."""
 
-    def __init__(self, path: Path = PROCESSED):
+    def __init__(self, path: Path = PROCESSED, aliases: Path | None = ALIASES):
         self.path = Path(path)
         if not (self.path / "ingredients.parquet").exists():
             raise FileNotFoundError(
@@ -71,6 +72,13 @@ class FlavorDB:
         self._names = dict(zip(self.ingredients["ingredient_id"], self.ingredients["name"]))
         self._category = dict(zip(self.ingredients["ingredient_id"], self.ingredients["category"]))
         self._fdb2fg = dict(zip(self.crosswalk["fdb_id"], self.crosswalk["fg_id"]))
+
+        # apelidos curados (editáveis): nome -> ingrediente base, com justificativa
+        self.aliases: dict[str, tuple[str, str]] = {}
+        if aliases and Path(aliases).exists():
+            al = pd.read_csv(aliases, dtype=str).fillna("")
+            self.aliases = {norm_name(n): (norm_name(b), j)
+                            for n, b, j in zip(al["nome"], al["base"], al["justificativa"])}
 
     # ------------------------------------------------------------------ perfis
     @cached_property
@@ -115,6 +123,10 @@ class FlavorDB:
         else:
             ids = self._by_name.get(norm_name(query))
             if not ids:
+                alias = self.aliases.get(norm_name(query))
+                if alias:  # nome fora do banco (ex.: em português) -> ingrediente base
+                    r = self.resolve(alias[0])
+                    return Resolved(query, r.ingredient_id, r.name, r.molecules_from, r.note)
                 raise KeyError(f"ingrediente não encontrado: {query!r}. "
                                f"Parecidos: {self.search(query, 8)['name'].tolist()}")
             # prefere um id que tenha moléculas
@@ -122,6 +134,14 @@ class FlavorDB:
 
         if iid in self.profiles:
             return Resolved(query, iid, self.name(iid), iid)
+
+        # apelido curado (data/ingredient_aliases.csv) tem prioridade sobre a heurística
+        alias = self.aliases.get(norm_name(self.name(iid)))
+        if alias:
+            for cand in self._by_name.get(alias[0], []):
+                if cand in self.profiles:
+                    note = f"moléculas de '{self.name(cand)}'" + (f" — {alias[1]}" if alias[1] else "")
+                    return Resolved(query, iid, self.name(iid), cand, note=note)
 
         # herança: tira palavras do início ("ground cinnamon" -> "cinnamon")
         words = norm_name(self.name(iid)).split()

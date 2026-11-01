@@ -106,8 +106,15 @@ O relatório (`reports/<recipe_id>.html`, abre em qualquer navegador) mostra:
 
 Desempenho: carregar o banco leva ~0,3 s; cada análise de receita, ~30 ms.
 
-Ingredientes sem moléculas próprias (ex.: `ground_cinnamon`) herdam as do
-ingrediente base (`cinnamon`); o relatório avisa quando isso acontece.
+Ingredientes sem moléculas próprias herdam as de um ingrediente base, e o
+relatório sempre avisa quando isso acontece:
+
+1. **Apelidos curados** em `data/ingredient_aliases.csv` (`nome,base,justificativa`)
+   — ex.: `olive_oil → olive` (os voláteis do azeite vêm da azeitona). Também
+   serve para nomes em português: acrescente `canela,cinnamon,` e use "canela"
+   direto nas receitas.
+2. **Heurística**: tira palavras do início do nome até achar um ingrediente com
+   moléculas (`ground_cinnamon → cinnamon`).
 
 Uso em Python/notebook:
 

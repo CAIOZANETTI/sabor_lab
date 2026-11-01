@@ -82,7 +82,14 @@ def tiny_db_path(tmp_path: Path) -> Path:
 
 @pytest.fixture()
 def tiny_db(tiny_db_path: Path) -> FlavorDB:
-    return FlavorDB(tiny_db_path)
+    aliases = tiny_db_path / "aliases.csv"
+    pd.DataFrame({"nome": ["canela", "tomato_sauce"], "base": ["cinnamon", "tomato"],
+                  "justificativa": ["", "molho é tomate"]}).to_csv(aliases, index=False)
+    ing = pd.read_parquet(tiny_db_path / "ingredients.parquet")
+    extra = pd.DataFrame([("fg:6", "flavorgraph", "tomato_sauce", "tomato sauce", None, None, 0)],
+                         columns=ing.columns)
+    pd.concat([ing, extra], ignore_index=True).to_parquet(tiny_db_path / "ingredients.parquet", index=False)
+    return FlavorDB(tiny_db_path, aliases=aliases)
 
 
 @pytest.fixture(scope="session")

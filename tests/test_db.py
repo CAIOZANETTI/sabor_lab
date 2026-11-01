@@ -75,3 +75,21 @@ def test_molecule_info(tiny_db):
     assert info["name"] == "mol3" and info["descriptors"] == ["sweet"]
     assert info["molecular_weight"] == pytest.approx(103.0)
     assert tiny_db.molecule_info(999)["name"] == "999"
+
+
+def test_alias_for_name_outside_database(tiny_db):
+    r = tiny_db.resolve("Canela")
+    assert r.ingredient_id == "fg:1" and r.query == "Canela"
+
+
+def test_alias_takes_priority_and_explains(tiny_db):
+    # "tomato_sauce" -> heurística daria "sauce" (inexistente); apelido manda para tomato
+    r = tiny_db.resolve("tomato_sauce")
+    assert r.ingredient_id == "fg:6" and r.molecules_from == "fg:4"
+    assert "molho é tomate" in r.note
+
+
+def test_real_db_curated_aliases(real_db):
+    r = real_db.resolve("olive_oil")
+    assert len(real_db.molecules_of(r.molecules_from)) > 0 and "azeitona" in r.note
+    assert "Piper" in real_db.resolve("black_pepper").note
