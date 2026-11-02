@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mockup de storytelling gastronômico adaptativo do SaborLab.">
+  <title>Apresente o prato — SaborLab</title>
+  <style>
+    :root { color-scheme:light; --ink:#172019; --muted:#637067; --paper:#f5f1e7;
+      --surface:#fffdf8; --accent:#b94b28; --green:#286044; --gold:#d79b31; --line:#d9d2c3; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif; }
+    button { font:inherit; }
+    nav { display:flex; justify-content:space-between; padding:1rem max(1rem,calc((100% - 1040px)/2));
+      border-bottom:1px solid var(--line); }
+    nav a,.links a { color:var(--ink); font-weight:750; text-decoration:none; }
+    main { width:min(1040px,calc(100% - 2rem)); margin:0 auto; padding:3.5rem 0 5rem; }
+    .eyebrow { color:var(--accent); font-size:.76rem; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+    h1 { max-width:850px; margin:.35rem 0 1rem; font:700 clamp(2.8rem,8vw,6rem)/.94 Georgia,serif; }
+    h2 { margin:.3rem 0 1rem; font:700 clamp(1.8rem,4vw,2.6rem)/1.1 Georgia,serif; }
+    h3 { margin:0 0 .45rem; font:700 1.1rem/1.25 Georgia,serif; }
+    .lead,.muted { color:var(--muted); }
+    .lead { max-width:720px; font-size:1.1rem; }
+    .notice { margin:1.5rem 0 2rem; padding:1rem; background:#fff5d9; border:1px solid #e4ca80; border-radius:14px; }
+    .audiences { display:grid; grid-template-columns:repeat(3,1fr); gap:.7rem; margin:1.5rem 0; }
+    .audience { padding:1rem; text-align:left; color:var(--ink); background:var(--surface);
+      border:1px solid var(--line); border-radius:15px; cursor:pointer; transition:.15s ease; }
+    .audience strong,.audience small { display:block; }
+    .audience small { margin-top:.25rem; color:var(--muted); }
+    .audience:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .audience[aria-pressed="true"] { color:white; background:var(--green); border-color:var(--green); }
+    .audience[aria-pressed="true"] small { color:#e1eee5; }
+    .stage { display:grid; grid-template-columns:1.35fr .65fr; overflow:hidden; margin-top:1rem;
+      background:var(--surface); border:1px solid var(--line); border-radius:24px; }
+    .story,.evidence { padding:clamp(1.3rem,4vw,2.2rem); }
+    .story { min-height:330px; display:flex; flex-direction:column; justify-content:center; }
+    blockquote { margin:1rem 0; color:#23382b; font:500 clamp(1.35rem,3vw,2rem)/1.42 Georgia,serif; }
+    .meta { color:var(--muted); font-size:.88rem; }
+    .evidence { background:#e9e2d2; }
+    .fact { margin:.7rem 0; padding:.7rem; background:#fffaf0; border-left:3px solid var(--gold); border-radius:0 10px 10px 0; }
+    .fact code { display:block; color:var(--green); font-size:.72rem; font-weight:800; }
+    .links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.3rem; }
+    @media(max-width:720px) { .audiences,.stage { grid-template-columns:1fr; } main { padding-top:2rem; } }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html">SaborLab</a><a href="app.html">montar experiência</a></nav>
+  <main>
+    <span class="eyebrow">Mockup de comunicação adaptativa</span>
+    <h1>O mesmo prato, três formas de contar.</h1>
+    <p class="lead">Escolha quem vai ouvir. O vocabulário e o detalhe mudam; os fatos do prato continuam iguais e rastreáveis.</p>
+    <div class="notice"><strong>Demonstração estática.</strong> Os textos pressupõem que a receita FRALDINHA_001 foi preparada conforme descrito. A implementação final só afirmará técnicas e resultados confirmados pelo registro do preparo.</div>
+
+    <section aria-labelledby="audience-title">
+      <h2 id="audience-title">Quem vai degustar?</h2>
+      <div class="audiences">
+        <button class="audience" data-level="leigo" aria-pressed="true"><strong>Leigo</strong><small>Direto, acolhedor e sensorial</small></button>
+        <button class="audience" data-level="curioso" aria-pressed="false"><strong>Curioso gastronômico</strong><small>Ingredientes, técnica e descoberta</small></button>
+        <button class="audience" data-level="tecnico" aria-pressed="false"><strong>Técnico/profissional</strong><small>Precisão culinária e relações sustentadas</small></button>
+      </div>
+    </section>
+
+    <section class="stage" aria-live="polite">
+      <div class="story">
+        <span class="eyebrow" id="level-label">Para público leigo</span>
+        <h2>Fraldinha com molho de queijo azul e kefir</h2>
+        <blockquote id="narrative"></blockquote>
+        <div class="meta"><span id="word-count"></span> · template demonstrativo 1.0 · pt-BR</div>
+      </div>
+      <aside class="evidence">
+        <h3>Fatos que não mudam</h3>
+        <p class="muted">Cada apresentação usa somente estes registros.</p>
+        <div class="fact"><code>OBS-FRALDINHA-01</code>Fraldinha rosada e suculenta</div>
+        <div class="fact"><code>PREP-MOLHO-01</code>Molho de Dana Blue e kefir</div>
+        <div class="fact"><code>PREP-CEBOLA-01</code>Cebola dourada</div>
+        <div class="fact"><code>PREP-CONTRASTE-01</code>Brócolis tostados e amêndoas</div>
+        <div class="fact"><code>SENS-TEXTURA-01</code>Contraste entre cremosidade e crocância</div>
+      </aside>
+    </section>
+    <div class="links"><a href="cozinhar.html">Ver saída para quem cozinha →</a><a href="app.html">Voltar ao planejador →</a></div>
+  </main>
+  <script>
+    const stories = {
+      leigo: {
+        label: 'Para público leigo',
+        text: 'Hoje temos uma fraldinha macia e rosada, acompanhada de um molho cremoso de queijo azul, com o frescor do kefir e o sabor adocicado da cebola dourada. O brócolis e as amêndoas completam o prato com um contraste crocante.'
+      },
+      curioso: {
+        label: 'Para público curioso gastronômico',
+        text: 'A fraldinha rosada encontra a intensidade do Dana Blue em um molho suavizado pelo toque ácido do kefir. A cebola dourada acrescenta notas doces e tostadas, enquanto o brócolis e as amêndoas equilibram a cremosidade do conjunto com textura e crocância.'
+      },
+      tecnico: {
+        label: 'Para público técnico ou profissional',
+        text: 'A fraldinha preserva interior rosado e suculento, em contraste com a fase cremosa do molho de Dana Blue e kefir. O douramento da cebola introduz dulçor e notas tostadas; brócolis tostados e amêndoas ampliam a variação mecânica do prato, contrapondo crocância à cremosidade sem ocultar a intensidade do queijo azul.'
+      }
+    };
+    const narrative = document.getElementById('narrative');
+    const label = document.getElementById('level-label');
+    const count = document.getElementById('word-count');
+
+    function render(level) {
+      const story = stories[level];
+      narrative.textContent = `“${story.text}”`;
+      label.textContent = story.label;
+      count.textContent = `${story.text.trim().split(/\s+/).length} palavras`;
+      document.querySelectorAll('.audience').forEach(button =>
+        button.setAttribute('aria-pressed', button.dataset.level === level));
+    }
+    document.querySelector('.audiences').addEventListener('click', event => {
+      const button = event.target.closest('button[data-level]');
+      if (button) render(button.dataset.level);
+    });
+    render('leigo');
+  </script>
+</body>
+</html>

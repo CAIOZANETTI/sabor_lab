@@ -16,6 +16,7 @@ independentes. Claude não deve fazer merge.
 | 6 | [004 — Modo cozinha e timers](004-modo-cozinha-timers.md) | 003, 005 | interface operacional, cronograma paralelo e contadores |
 | 7 | [001 — Recomendador guiado](001-recomendador-guiado.md) | 002, 003, 005–007 | pessoas, metas, candidatos e interface guiada |
 | 8 | [008 — Compositor e FRALDINHA_001](008-compositor-fraldinha.md) | 001–007 | prato completo e teste de integração ponta a ponta |
+| 9 | [009 — Storytelling adaptativo](009-storytelling-adaptativo.md) | 005, 008 | apresentação determinística por público, sem alterar os fatos |
 
 ## Regras de execução
 

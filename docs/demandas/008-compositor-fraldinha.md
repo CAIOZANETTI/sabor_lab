@@ -58,6 +58,10 @@ PlateCompositionResult(
 )
 ```
 
+O resultado também deve expor IDs estáveis para prato, componentes e claims.
+Esses IDs serão a única entrada factual da camada de storytelling da demanda
+009; texto livre do compositor não deve ser reinterpretado como evidência.
+
 Gerar mais de uma alternativa quando escolhas relevantes dependem de preferência
 ou dados ausentes. Não esconder trade-offs em uma pontuação única.
 
@@ -176,6 +180,7 @@ Cobrir:
 11. claims e fontes acompanham justificativas;
 12. resultado é determinístico e sem chamadas externas;
 13. toda a suíte existente passa.
+14. fatos narráveis e seus IDs ficam disponíveis sem alertas técnicos embutidos.
 
 ## Interface e relatório
 

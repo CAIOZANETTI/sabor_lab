@@ -33,12 +33,21 @@ Otimização
   pessoas + restrições + alternativas + prato completo
        ↓
 Explicação e execução
-  justificativas + incertezas + relatório + modo cozinha
+  saída técnica + justificativas + incertezas + modo cozinha
+       ↓
+Comunicação
+  narrativa para quem degusta + linguagem adaptada + fatos rastreáveis
 ```
 
 Um LLM pode interpretar pedidos e explicar alternativas, mas os cálculos e
 regras críticas precisam ser determinísticos. Nenhum módulo pode inventar
 temperaturas, concentrações, propriedades ou referências.
+
+A comunicação recebe somente fatos estruturados e evidências liberados pelas
+camadas anteriores. Ela pode selecionar, ordenar e reformular esses fatos, mas
+não criar ingredientes, procedências, técnicas executadas ou efeitos sensoriais.
+O mesmo prato pode ser apresentado em linguagem leiga, curiosa ou técnica sem
+que seu estado factual mude.
 
 ## Princípios
 
@@ -50,6 +59,9 @@ temperaturas, concentrações, propriedades ou referências.
 6. Segurança alimentar fica separada de preferência culinária.
 7. Peso corporal isolado não determina necessidade energética.
 8. Recomendações mostram fonte, confiança, limitações e alternativas.
+9. O conhecimento permanece constante; a linguagem muda por escolha explícita.
+10. A saída para quem cozinha e a apresentação para quem degusta são produtos
+    distintos do mesmo registro estruturado.
 
 ## Caso integrador FRALDINHA_001
 
@@ -69,6 +81,8 @@ O caso valida se o sistema:
 - propõe acompanhamentos contrastantes e alternativas;
 - calcula nutrição somente onde há mapeamento suficiente;
 - separa fatos, estimativas, heurísticas e hipóteses.
+- apresenta os mesmos fatos em níveis leigo, curioso e técnico;
+- não descreve como executada uma técnica apenas sugerida.
 
 “Fraldinha com molho de queijo azul e kefir, brócolis tostados, amêndoas e
 limão” é candidato de avaliação, não resposta obrigatória.
@@ -83,5 +97,6 @@ Claude Code implementa; Codex revisa arquitetura, ciência, dados e integração
 
 O motor estará integrado quando transformar ingredientes disponíveis e seus
 estados em alternativas completas de prato, com sequência técnica coerente,
-alertas físico-químicos, contraste sensorial, nutrição rastreável e evidência
-explícita — sem apresentar hipóteses como fatos científicos.
+alertas físico-químicos, contraste sensorial, nutrição rastreável, evidência
+explícita e comunicação adequada ao público — sem apresentar hipóteses como
+fatos científicos.
