@@ -1,0 +1,20 @@
+equipment_id,type,name_pt,capacity,capacity_unit,heat_mode,min_temp_c,max_temp_c,is_heat_source,attributes,sources
+oven,oven,forno convencional,1,assadeira por prateleira,dry_heat_convection_natural,,,true,potencia=desconhecida;termostato=impreciso_possivel,saborlab_culinary_curation
+convection_oven,oven,forno com convecção (ventilado),1,assadeira por prateleira,dry_heat_forced_convection,,,true,potencia=desconhecida,saborlab_culinary_curation
+air_fryer,oven,air fryer,1,cesto,dry_heat_forced_convection,,,true,potencia=desconhecida,saborlab_culinary_curation
+stovetop_burner,heat_source,boca de fogão,1,panela/frigideira,conduction,,,true,potencia=desconhecida;fogo_baixo_medio_alto=rotulo_sem_potencia,saborlab_culinary_curation
+frying_pan,cookware,frigideira,1,preparação,conduction,,,false,,saborlab_culinary_curation
+saucepan,cookware,panela,1,preparação,conduction,,,false,volume=desconhecido,saborlab_culinary_curation
+pressure_cooker,cookware,panela de pressão,1,preparação,pressurized_moist_heat,,,false,pressao=desconhecida,saborlab_culinary_curation
+baking_sheet,cookware,assadeira,1,lote,support,,,false,,saborlab_culinary_curation
+blender,appliance,liquidificador,1,lote,mechanical,,,false,,saborlab_culinary_curation
+food_processor,appliance,processador de alimentos,1,lote,mechanical,,,false,,saborlab_culinary_curation
+mixer,appliance,batedeira,1,lote,mechanical,,,false,,saborlab_culinary_curation
+mixing_bowl,utensil,tigela,1,preparação,none,,,false,,saborlab_culinary_curation
+cutting_board,utensil,tábua e faca,1,preparação,none,,,false,,saborlab_culinary_curation
+grater,utensil,ralador,1,preparação,none,,,false,,saborlab_culinary_curation
+strainer,utensil,coador/peneira,1,preparação,none,,,false,,saborlab_culinary_curation
+refrigerator,storage,geladeira,1,espaço,refrigeration,,,false,temperatura_real=medir,saborlab_culinary_curation
+countertop,workspace,bancada,1,área,none,,,false,temperatura_ambiente=desconhecida,saborlab_culinary_curation
+cooling_rack,utensil,grade de resfriamento,1,lote,none,,,false,,saborlab_culinary_curation
+kitchen_thermometer,instrument,termômetro culinário,1,leitura,none,,,false,instrumento_de_medicao=true;nao_e_fonte_de_calor=true,saborlab_culinary_curation
