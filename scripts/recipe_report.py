@@ -18,6 +18,7 @@ Uso:
     python scripts/recipe_report.py --ingredients "tomate,manjericão,alho" --name "teste"
     python scripts/recipe_report.py --search pimenta   # procurar no banco de sabores
     python scripts/recipe_report.py --search-food "queijo minas"   # procurar alimento (nutrição)
+    python scripts/recipe_report.py --temperature-experiment data/experiments/exemplo.json
 """
 
 from __future__ import annotations
@@ -65,7 +66,18 @@ def main() -> None:
     ap.add_argument("--name", default="teste rápido")
     ap.add_argument("--search", help="procura ingredientes no banco de sabores (inglês)")
     ap.add_argument("--search-food", help="procura alimentos no banco nutricional (português ou inglês)")
+    ap.add_argument("--temperature-experiment", type=Path,
+                    help="JSON térmico/sensorial; gera relatório separado sem recalcular sabor/nutrição")
+    ap.add_argument("--temperature-output", type=Path, help="HTML do relatório térmico")
     args = ap.parse_args()
+
+    if args.temperature_experiment:
+        from scripts.temperature_report import generate_report
+        output = args.temperature_output or REPORTS / f"{args.temperature_experiment.stem}.html"
+        html_path, json_path = generate_report(args.temperature_experiment, output)
+        print(f"relatório térmico: {html_path}")
+        print(f"resultado térmico: {json_path}")
+        return
 
     if args.search_food:
         print(NutritionDB().search(args.search_food, 30).to_string(index=False))
