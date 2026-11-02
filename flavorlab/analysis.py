@@ -58,6 +58,7 @@ class RecipeAnalysis:
     profile: pd.DataFrame
     suggestions: dict[str, pd.DataFrame] = field(default_factory=dict)
     n_molecules: dict[str, int] = field(default_factory=dict)
+    db_names: dict[str, str] = field(default_factory=dict)  # ingredient_id -> nome no banco (inglês)
     warnings: list[str] = field(default_factory=list)
 
 
@@ -135,7 +136,8 @@ def analyze_recipe(db: FlavorDB, ingredients: list[str], name: str = "receita",
         profile = profile.loc[profile.mean(axis=1).sort_values(ascending=False).index]
 
     analysis = RecipeAnalysis(name, items, pairs, bridges, profile, warnings=warnings,
-                              n_molecules={k: len(v) for k, v in mols.items()})
+                              n_molecules={k: len(v) for k, v in mols.items()},
+                              db_names={r.ingredient_id: db.name(r.ingredient_id) for r in items})
     analysis.suggestions = suggest(db, items, mols, n_suggestions)
     return analysis
 
@@ -165,7 +167,7 @@ def suggest(db: FlavorDB, items: list[Resolved], mols: dict, n: int) -> dict[str
 
     df = pd.DataFrame({
         "ingredient_id": ids,
-        "name": [db.name(i) for i in ids],
+        "name": [db.display_name(i) for i in ids],
         "category": [db.category(i) for i in ids],
         "chemistry": jac.mean(1),
         "practice": practice.mean(1),

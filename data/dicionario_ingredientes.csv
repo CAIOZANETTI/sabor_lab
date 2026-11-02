@@ -1,0 +1,83 @@
+nome,sabor,nutricao,complemento,medidas_pof,observacao
+canela,cinnamon,usda:171320,,,canela em pó
+cravo,clove,usda:171321,,,cravo-da-índia
+cardamomo,cardamom,usda:170919,,,
+cominho,cumin,usda:170923,,,
+coentro,coriander,usda:169997,,COENTRO,folha fresca; sabor do FlavorDB 'Coriander' (folha e semente)
+semente de coentro,coriander,usda:170922,,,
+noz-moscada,nutmeg,usda:171326,,,
+pimenta-do-reino,black_pepper,usda:170931,,,Piper nigrum
+gengibre,ginger,usda:169231,,,raiz fresca
+cúrcuma,turmeric,usda:172231,,,açafrão-da-terra
+páprica,paprika,usda:171329,,,Capsicum annuum
+açafrão,saffron,usda:170934,,,Crocus sativus (estigmas)
+anis-estrelado,star_anise,usda:171316,,,"nutrição do anis (Pimpinella anisum), espécie diferente do anis-estrelado"
+erva-doce,fennel,usda:171323,,ERVA DOCE,semente de funcho
+louro,laurel,usda:170917,,,Laurus nobilis
+orégano,oregano,usda:171328,,OREGANO,seco
+manjericão,basil,taco:133,usda:172232,,
+alecrim,rosemary,usda:173473,,,
+tomilho,thyme,usda:173470,,,
+salsa,parsley,taco:153,usda:170416,,salsinha
+cebolinha,chive,taco:108,usda:169994,CEBOLINHA,
+hortelã,mint,usda:173474,,HORTELA,
+baunilha,vanilla,usda:173471,,,extrato de baunilha
+mostarda em grão,mustard,usda:170929,,,
+pimenta caiena,cayenne,usda:170932,,,Capsicum annuum
+pimenta dedo-de-moça,chili_pepper,usda:170106,,,Capsicum
+sal,salt,usda:173468,,,
+açúcar,sugar,taco:494,usda:169655,ACUCAR,refinado
+açúcar mascavo,brown_sugar,taco:493,usda:168833,ACUCAR MASCAVO,
+mel,honey,taco:507,usda:169640,MEL,
+azeite,olive_oil,taco:260,usda:171413,AZEITE DE OLIVA,extra virgem
+óleo de soja,soybean_oil,usda:171411,,OLEO DE SOJA,
+manteiga,butter,taco:261,usda:173410,MANTEIGA COM OU SEM SAL,com sal
+leite,milk,taco:458,usda:171265,LEITE DE VACA INTEGRAL,integral
+creme de leite,cream,usda:170859,,CREME DE LEITE,
+ovo,egg,taco:489,usda:171287,OVO DE GALINHA,"inteiro, cru"
+farinha de trigo,wheat,taco:35,usda:168894,,sabor herdado do trigo
+arroz,rice,taco:4,usda:168877,"ARROZ (POLIDO, PARBOILIZADO)","branco, cru"
+feijão preto,black_bean,usda:173734,,"FEIJAO (PRETO, MULATINHO, ROXO, ROSINHA, ETC)",cru
+queijo parmesão,parmesan_cheese,taco:464,usda:171247,QUEIJO RALADO,
+muçarela,mozzarella_cheese,taco:463,usda:170845,,
+iogurte natural,yogurt,taco:448,usda:171284,IOGURTE NATURAL,
+vinagre,vinegar,usda:173469,,,de maçã
+shoyu,soy_sauce,taco:518,usda:174277,MOLHO DE SOJA,
+chocolate amargo,dark_chocolate,taco:498,usda:170273,CHOCOLATE,TACO: meio amargo
+cacau em pó,cocoa,usda:169593,,,sem açúcar
+café,coffee,taco:471,usda:171890,CAFE,coado
+chá preto,black_tea,taco:477,usda:173227,"CHA (PRETO, CAMOMILA, ERVA CIDREIRA, CAPIM LIMAO, ETC)",infusão
+vinho tinto,red_wine,usda:173190,,VINHO,
+limão,lime,taco:220,usda:168155,"LIMAO (COMUM, GALEGO, ETC)",tahiti
+limão-siciliano,lemon,usda:167746,,,
+laranja,orange,taco:208,usda:169097,"LARANJA (PERA, SELETA, LIMA, DA TERRA, ETC)",
+maçã,apple,taco:222,usda:171688,MACA,com casca
+banana,banana,taco:179,usda:173944,"BANANA (OURO, PRATA, D´AGUA, DA TERRA, ETC)",nanica
+morango,strawberry,taco:239,usda:167762,MORANGO,
+abacaxi,pineapple,taco:164,usda:169124,ABACAXI,
+manga,mango,taco:231,usda:169910,MANGA,
+coco,coconut,taco:590,usda:170169,COCO,polpa
+leite de coco,coconut_milk,usda:170172,,LEITE DE COCO,
+tomate,tomato,taco:157,usda:170457,TOMATE,
+cebola,onion,taco:107,usda:170000,CEBOLA,
+alho,garlic,taco:82,usda:169230,ALHO,
+cenoura,carrot,taco:110,usda:170393,CENOURA,
+batata,potato,usda:170026,,BATATA INGLESA,"com casca, crua"
+pimentão,bell_pepper,taco:145,usda:170108,PIMENTAO,vermelho
+abóbora,pumpkin,taco:67,usda:168448,ABOBORA,
+espinafre,spinach,taco:119,usda:168462,ESPINAFRE,
+cogumelo,mushroom,usda:169251,,COGUMELO IN NATURA,champignon
+peito de frango,chicken,usda:171077,,FRANGO EM PEDACOS,"sem pele, cru"
+carne moída,ground_beef,taco:327,usda:174036,CARNE BOVINA,acém
+lombo de porco,pork,usda:167818,,LOMBO SUINO,
+bacon,bacon,usda:168277,,BACON,
+camarão,shrimp,taco:285,usda:175179,CAMARAO,
+salmão,salmon,taco:316,usda:175167,,
+amendoim,peanut,taco:557,usda:172430,AMENDOIM (EM GRAO) (IN NATURA),
+castanha-de-caju,cashew_nut,taco:588,usda:170162,CASTANHA DE CAJU,TACO: torrada e salgada
+amêndoa,almond,taco:587,usda:170567,AMENDOA,TACO: torrada e salgada
+nozes,walnut,taco:597,usda:170187,NOZ,
+gergelim,sesame,taco:593,usda:170150,,
+milho verde,corn,taco:44,usda:169998,,
+grão-de-bico,chickpea,taco:575,usda:173756,GRAO DE BICO,cru
+lentilha,lentil,taco:578,usda:172420,LENTILHA,crua

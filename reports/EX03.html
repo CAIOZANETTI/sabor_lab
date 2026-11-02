@@ -1,0 +1,1126 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[EXEMPLO] Cookies de chocolate (receita americana) — embasamento científico</title><style>
+body{background:#fcfcfb;color:#0b0b0b;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+h1{margin-bottom:.2rem} h2{margin-top:2.2rem;border-bottom:1px solid #e6e5e1;padding-bottom:.3rem}
+.muted{color:#52514e;font-size:.92em} .card{background:#fff;border:1px solid #e6e5e1;border-radius:8px;padding:1rem;margin:1rem 0}
+.tbl{border-collapse:collapse;width:100%;font-size:.9em} .tbl th{text-align:left;color:#52514e;border-bottom:1px solid #e6e5e1;padding:.35rem}
+.tbl td{border-bottom:1px solid #f0efec;padding:.35rem;vertical-align:top}
+.warn{background:#fff7e6;border-left:3px solid #eda100;padding:.5rem 1rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem} @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+.tbl th{cursor:pointer;user-select:none} .tbl th.asc::after{content:" ▲"} .tbl th.desc::after{content:" ▼"}
+.net-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}
+.net-tools input{flex:1;min-width:220px;padding:.45rem .6rem;border:1px solid #e6e5e1;border-radius:6px;font:inherit}
+button{font:inherit;padding:.35rem .7rem;border:1px solid #e6e5e1;border-radius:6px;background:#fff;cursor:pointer}
+button:hover{border-color:#52514e} #net-tags button{margin:.15rem;padding:.15rem .55rem;border-radius:999px;font-size:.88em}
+#net-tags button.on{background:#0b0b0b;color:#fff;border-color:#0b0b0b}
+.net-legend{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.88em;color:#52514e;margin:.5rem 0}
+.net-legend .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.35rem;vertical-align:-1px}
+.net-legend .bar{display:inline-block;width:22px;height:2px;margin-right:.35rem;vertical-align:3px}
+.net-legend .bar.thick{height:6px;vertical-align:1px}
+.net-wrap{display:grid;grid-template-columns:1fr 280px;gap:1rem} @media(max-width:800px){.net-wrap{grid-template-columns:1fr}}
+#net{height:620px;background:#fff;border:1px solid #e6e5e1;border-radius:8px}
+#net-info{background:#fff;border:1px solid #e6e5e1;border-radius:8px;padding:.8rem 1rem;font-size:.92em;overflow:auto;max-height:620px}
+#net-info h4{margin:.2rem 0 .4rem} #net-info p{margin:.35rem 0}
+div.vis-tooltip{white-space:pre-line;font-family:system-ui,sans-serif;font-size:13px;padding:6px 8px;
+background:#fff;border:1px solid #e6e5e1;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+</style>
+<script src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script src="https://unpkg.com/vis-network@10.1.4/standalone/umd/vis-network.min.js"></script></head><body>
+<h1>[EXEMPLO] Cookies de chocolate (receita americana)</h1>
+<p class="muted">Embasamento científico da receita · sabor: FlavorDB2 + FlavorGraph · nutrição: TACO + USDA</p>
+<p><b>Técnica:</b> forno a 177 °C por 12 min, bolinhas de 5,1 cm</p><p><b>Porções:</b> 12</p><p><b>Por que gostei:</b> (preencha: o que você sentiu e por que gostou)</p><p><b>Observações:</b> exemplo em unidades imperiais: tudo é convertido para o métrico</p><div class='warn'>açúcar mascavo: moléculas herdadas de &#x27;sugar&#x27;<br>chocolate amargo: moléculas herdadas de &#x27;chocolate&#x27;</div>
+<h2>Sabor: ingredientes no banco molecular</h2><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>no banco</th>
+      <th>id</th>
+      <th>moléculas</th>
+      <th>obs.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>wheat</td>
+      <td>fg:6803</td>
+      <td>112</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>butter</td>
+      <td>fg:781</td>
+      <td>131</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>açúcar mascavo</td>
+      <td>brown_sugar</td>
+      <td>fg:747</td>
+      <td>5</td>
+      <td>moléculas herdadas de 'sugar'</td>
+    </tr>
+    <tr>
+      <td>açúcar</td>
+      <td>sugar</td>
+      <td>fg:6172</td>
+      <td>5</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ovo</td>
+      <td>egg</td>
+      <td>fg:2188</td>
+      <td>55</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>baunilha</td>
+      <td>vanilla</td>
+      <td>fg:6631</td>
+      <td>174</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>sal</td>
+      <td>salt</td>
+      <td>fg:5608</td>
+      <td>4</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>chocolate amargo</td>
+      <td>dark_chocolate</td>
+      <td>fg:1810</td>
+      <td>13</td>
+      <td>moléculas herdadas de 'chocolate'</td>
+    </tr>
+  </tbody>
+</table>
+<style>
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin:1rem 0}
+.tile{background:#fff;border:1px solid #e6e5e1;border-radius:8px;padding:.6rem .8rem}
+.tile .v{font-size:1.45rem;font-weight:600;font-variant-numeric:tabular-nums} .tile .l{color:#52514e;font-size:.85em}
+.num{text-align:right;font-variant-numeric:tabular-nums} tr.tot td{font-weight:600;border-top:2px solid #e6e5e1}
+.vdbar{background:#eef3fb;border-radius:3px;height:10px;width:160px;display:inline-block;vertical-align:middle}
+.vdbar i{display:block;height:10px;border-radius:3px;background:#2a78d6}
+.scroll{overflow-x:auto}
+</style><h2>Nutrição</h2><p class='muted'>Valores por porção (12 porção(ões)), unidades métricas. Composição: TACO 4ª ed. (NEPA/UNICAMP) e USDA FoodData Central.</p><div class='tiles'><div class='tile'><div class='v'>452</div><div class='l'>Energia (kcal)</div></div><div class='tile'><div class='v'>4,8</div><div class='l'>Proteínas (g)</div></div><div class='tile'><div class='v'>57,0</div><div class='l'>Carboidratos (g)</div></div><div class='tile'><div class='v'>28,8</div><div class='l'>Açúcares totais (g)</div></div><div class='tile'><div class='v'>25,0</div><div class='l'>Gorduras totais (g)</div></div><div class='tile'><div class='v'>2,0</div><div class='l'>Fibra alimentar (g)</div></div><div class='tile'><div class='v'>323</div><div class='l'>Sódio (mg)</div></div></div><div class='scroll'><table class='tbl'><thead><tr><th>ingrediente</th><th>quantidade</th><th class='num'>gramas</th><th>conversão</th><th class='num'>Energia (kcal)</th><th class='num'>Proteínas (g)</th><th class='num'>Carboidratos (g)</th><th class='num'>Açúcares totais (g)</th><th class='num'>Fibra alimentar (g)</th><th class='num'>Gorduras totais (g)</th><th class='num'>Gorduras saturadas (g)</th><th class='num'>Gorduras trans (g)</th><th class='num'>Colesterol (mg)</th><th class='num'>Sódio (mg)</th></tr></thead><tbody><tr><td><b>farinha de trigo</b><br><span class='muted'>Farinha, de trigo · <code>taco:35</code></span></td><td>2,25 cup</td><td class='num'>281,2</td><td class='muted'>532,3 ml × densidade 0,53 g/ml</td><td class='num'>1.013,8</td><td class='num'>27,5</td><td class='num'>211,2</td><td class='num'>0,8</td><td class='num'>6,6</td><td class='num'>3,8</td><td class='num'>0,9</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>2,1</td></tr><tr><td><b>manteiga</b><br><span class='muted'>Manteiga, com sal · <code>taco:261</code></span></td><td>1 cup</td><td class='num'>227,1</td><td class='muted'>236,6 ml × densidade 0,96 g/ml</td><td class='num'>1.648,7</td><td class='num'>0,9</td><td class='num'>0,1</td><td class='num'>0,1</td><td class='num'>0,0</td><td class='num'>187,0</td><td class='num'>111,7</td><td class='num'>7,5</td><td class='num'>455,4</td><td class='num'>1.314,2</td></tr><tr><td><b>açúcar mascavo</b><br><span class='muted'>Açúcar, mascavo · <code>taco:493</code></span></td><td>0,75 cup</td><td class='num'>115,2</td><td class='muted'>177,4 ml × densidade 0,65 g/ml</td><td class='num'>424,6</td><td class='num'>0,9</td><td class='num'>108,8</td><td class='num'>111,8</td><td class='num'>0,0</td><td class='num'>0,1</td><td class='num'>0,0</td><td class='num'>—</td><td class='num'>0,0</td><td class='num'>29,0</td></tr><tr><td><b>açúcar</b><br><span class='muted'>Açúcar, refinado · <code>taco:494</code></span></td><td>0,75 cup</td><td class='num'>150,6</td><td class='muted'>177,4 ml × densidade 0,85 g/ml</td><td class='num'>582,2</td><td class='num'>0,5</td><td class='num'>149,9</td><td class='num'>150,3</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>—</td><td class='num'>0,0</td><td class='num'>18,3</td></tr><tr><td><b>ovo</b><br><span class='muted'>Ovo, de galinha, inteiro, cru · <code>taco:489</code></span></td><td>2 unidade</td><td class='num'>90,0</td><td class='muted'>medida caseira IBGE: unidade = 45,0 g</td><td class='num'>128,8</td><td class='num'>11,7</td><td class='num'>1,5</td><td class='num'>0,3</td><td class='num'>0,0</td><td class='num'>8,0</td><td class='num'>2,3</td><td class='num'>0,0</td><td class='num'>320,3</td><td class='num'>151,1</td></tr><tr><td><b>baunilha</b><br><span class='muted'>Vanilla extract · <code>usda:173471</code></span></td><td>1 tsp</td><td class='num'>4,3</td><td class='muted'>4,9 ml × densidade 0,88 g/ml</td><td class='num'>12,5</td><td class='num'>0,0</td><td class='num'>0,5</td><td class='num'>0,5</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,4</td></tr><tr><td><b>sal</b><br><span class='muted'>Salt, table · <code>usda:173468</code></span></td><td>1 tsp</td><td class='num'>6,0</td><td class='muted'>4,9 ml × densidade 1,22 g/ml</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>0,0</td><td class='num'>2.325,5</td></tr><tr><td><b>chocolate amargo</b><br><span class='muted'>Chocolate, meio amargo · <code>taco:498</code></span></td><td>12 oz</td><td class='num'>340,2</td><td class='muted'>massa</td><td class='num'>1.615,6</td><td class='num'>16,5</td><td class='num'>212,4</td><td class='num'>81,6</td><td class='num'>16,8</td><td class='num'>101,6</td><td class='num'>44,6</td><td class='num'>0,5</td><td class='num'>7,6</td><td class='num'>30,2</td></tr><tr class='tot'><td>Total</td><td></td><td class='num'>1.214,7</td><td></td><td class='num'>5.426,2</td><td class='num'>58,1</td><td class='num'>684,4</td><td class='num'>345,5</td><td class='num'>23,4</td><td class='num'>300,6</td><td class='num'>159,5</td><td class='num'>8,0</td><td class='num'>783,3</td><td class='num'>3.870,8</td></tr><tr class='tot'><td>Por porção (÷ 12)</td><td></td><td class='num'>101,2</td><td></td><td class='num'>452,2</td><td class='num'>4,8</td><td class='num'>57,0</td><td class='num'>28,8</td><td class='num'>2,0</td><td class='num'>25,0</td><td class='num'>13,3</td><td class='num'>0,7</td><td class='num'>65,3</td><td class='num'>322,6</td></tr></tbody></table></div><div class='grid2'><div style="height:360px; width:100%;">                            <div id="510677e0-682b-471b-b17f-424c9a270a00" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("510677e0-682b-471b-b17f-424c9a270a00")) {                    Plotly.newPlot(                        "510677e0-682b-471b-b17f-424c9a270a00",                        [{"cliponaxis":false,"hovertemplate":"%{y}: %{x:.0f} kcal\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2}},"orientation":"h","text":["0 kcal","12 kcal","129 kcal","425 kcal","582 kcal","1.014 kcal","1.616 kcal","1.649 kcal"],"textposition":"outside","x":{"dtype":"f8","bdata":"AAAAAAAAAAD3KFyPwvUoQIxPATCeGWBA89JN1jOJekA9ZTwXdDGCQB9zQFukro9AbJiWgpI+mUAobqyks8KZQA=="},"y":["sal","baunilha","ovo","a\u00e7\u00facar mascavo","a\u00e7\u00facar","farinha de trigo","chocolate amargo","manteiga"],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"xaxis":{"title":{"text":"kcal"},"gridcolor":"#e6e5e1","range":[0,2060.844291084079]},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","title":{"text":"Energia por ingrediente (receita inteira)"},"height":360,"showlegend":false},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div><div style="height:222px; width:100%;">                            <div id="e4440ef2-29dc-4ec8-8d61-9d4dbf056f61" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e4440ef2-29dc-4ec8-8d61-9d4dbf056f61")) {                    Plotly.newPlot(                        "e4440ef2-29dc-4ec8-8d61-9d4dbf056f61",                        [{"cliponaxis":false,"hovertemplate":"%{y}: %{x:.1f}% da energia\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":2}},"orientation":"h","text":["48%","48%","4%"],"textposition":"outside","x":[47.57795457106409,48.150758307637666,4.087764662764868],"y":["Gorduras","Carboidratos","Prote\u00ednas"],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"xaxis":{"title":{"text":"% das kcal"},"gridcolor":"#e6e5e1","range":[0,100]},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","title":{"text":"De onde vem a energia (fatores de Atwater)"},"height":222,"showlegend":false},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div></div><h3>% do valor diário (por porção)</h3><table class='tbl'><thead><tr><th>nutriente</th><th class='num'>por porção</th><th class='num'>referência</th><th class='num'>%VD</th><th></th></tr></thead><tbody><tr><td>Energia (kcal)</td><td class='num'>452,2</td><td class='num'>2.000</td><td class='num'>23%</td><td><span class='vdbar'><i style='width:23%'></i></span></td></tr><tr><td>Carboidratos (g)</td><td class='num'>57,0</td><td class='num'>300</td><td class='num'>19%</td><td><span class='vdbar'><i style='width:19%'></i></span></td></tr><tr><td>Proteínas (g)</td><td class='num'>4,8</td><td class='num'>50</td><td class='num'>10%</td><td><span class='vdbar'><i style='width:10%'></i></span></td></tr><tr><td>Gorduras totais (g)</td><td class='num'>25,0</td><td class='num'>65</td><td class='num'>39%</td><td><span class='vdbar'><i style='width:39%'></i></span></td></tr><tr><td>Gorduras saturadas (g)</td><td class='num'>13,3</td><td class='num'>20</td><td class='num'>66%</td><td><span class='vdbar'><i style='width:66%'></i></span></td></tr><tr><td>Fibra alimentar (g)</td><td class='num'>2,0</td><td class='num'>25</td><td class='num'>8%</td><td><span class='vdbar'><i style='width:8%'></i></span></td></tr><tr><td>Sódio (mg)</td><td class='num'>322,6</td><td class='num'>2.000</td><td class='num'>16%</td><td><span class='vdbar'><i style='width:16%'></i></span></td></tr></tbody></table><p class='muted'>%VD: valores diários de referência para adultos, dieta de 2.000 kcal (ANVISA, IN nº 75/2020). Açúcares totais não têm %VD (a referência é para açúcares adicionados).</p><p class='muted'>Lacunas preenchidas: <b>farinha de trigo</b>: Açúcares totais, Colesterol vieram do complemento USDA; <b>manteiga</b>: Açúcares totais, Fibra alimentar vieram do complemento USDA; <b>açúcar mascavo</b>: Açúcares totais, Colesterol, Fibra alimentar, Gorduras saturadas vieram do complemento USDA; <b>açúcar</b>: Açúcares totais, Colesterol, Fibra alimentar, Gorduras saturadas vieram do complemento USDA; <b>ovo</b>: Açúcares totais, Fibra alimentar, Gorduras trans vieram do complemento USDA; <b>chocolate amargo</b>: Açúcares totais vieram do complemento USDA.</p>
+<h2>Por que combina</h2>
+<p class="muted"><b>Química</b> = fração de moléculas de sabor compartilhadas (Jaccard, 0–1).
+<b>Prática</b> = associação do par em &gt;1 milhão de receitas (NPMI, 0–1): mede se aparecem juntos
+<i>mais do que o acaso</i>. Ingredientes onipresentes (alho, cebola, sal) têm NPMI baixo mesmo aparecendo
+juntos com frequência — 0 significa "sem associação especial", não "nunca juntos".</p>
+<div class="card"><ul><li><b>açúcar mascavo + açúcar</b>: 5 moléculas em comum (Jaccard 1.00); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</span></li><li><b>açúcar mascavo + sal</b>: 4 moléculas em comum (Jaccard 0.80); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</span></li><li><b>açúcar + sal</b>: 4 moléculas em comum (Jaccard 0.80); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</span></li><li><b>farinha de trigo + baunilha</b>: 95 moléculas em comum (Jaccard 0.50); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Vanillic acid (powdery/vanilla/bean), 1-octanol (burnt/orange/rose), 2-Methyl-1-Butanol (roasted/onion/malt), alpha-Maltose (sweet), D-Lactic acid (acidic/taste is acrid)</span></li><li><b>açúcar mascavo + chocolate amargo</b>: 5 moléculas em comum (Jaccard 0.38); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</span></li><li><b>açúcar + chocolate amargo</b>: 5 moléculas em comum (Jaccard 0.38); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</span></li><li><b>sal + chocolate amargo</b>: 4 moléculas em comum (Jaccard 0.31); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</span></li><li><b>manteiga + baunilha</b>: 46 moléculas em comum (Jaccard 0.18); associação comum em receitas (NPMI 0.19).<br><span class=muted>destaques: Anisole (butter/ethereal/alcohol), benzoic acid (balsamic/urine/bitter taste), gamma-Valerolactone (tobacco/warm/herbal), Salicylaldehyde (cooling/medical/wintergreen), trans-2-Pentenal (apple/orange/tomato)</span></li></ul></div>
+<h2>Rede de sabor</h2>
+
+<div class="net-tools">
+  <input id="net-search" list="net-labels" placeholder="buscar ingrediente ou molécula…">
+  <datalist id="net-labels"></datalist>
+  <button id="net-reset" type="button">limpar destaque</button>
+  <button id="net-physics" type="button">reorganizar</button>
+</div>
+<div class="net-tags"><span class="muted">notas de sabor:</span> <span id="net-tags"></span></div>
+<div class="net-legend">
+  <span><i class="dot" style="background:#2a78d6"></i>ingrediente da receita</span>
+  <span><i class="dot" style="background:#eb6834"></i>molécula compartilhada (tamanho = nº de ingredientes)</span>
+  <span><i class="bar" style="background:#c9c8c3"></i>contém a molécula</span>
+  <span><i class="bar thick" style="background:#1baf7a"></i>associados em receitas (espessura = força)</span>
+</div>
+<div class="net-wrap"><div id="net"></div>
+  <aside id="net-info"><p class="muted">Clique num nó para ver os detalhes e destacar as conexões.
+  Arraste para reorganizar; role para dar zoom.</p></aside></div>
+<script type="application/json" id="net-data">{"nodes": [{"id": "i:farinha de trigo", "label": "farinha de trigo", "kind": "ingredient", "x": 2.326828918379971e-14, "y": -300.0, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "farinha de trigo (fg:6803)\n112 moléculas", "info": "<h4>farinha de trigo<\/h4><p>Ingrediente da receita · <code>fg:6803<\/code><\/p><p><b>112<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:manteiga", "label": "manteiga", "kind": "ingredient", "x": 268.70057685088807, "y": -212.13203435596424, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "manteiga (fg:781)\n131 moléculas", "info": "<h4>manteiga<\/h4><p>Ingrediente da receita · <code>fg:781<\/code><\/p><p><b>131<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:açúcar mascavo", "label": "açúcar mascavo", "kind": "ingredient", "x": 380.0, "y": 0.0, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "açúcar mascavo (fg:747)\n5 moléculas\nmoléculas herdadas de 'sugar'", "info": "<h4>açúcar mascavo<\/h4><p>Ingrediente da receita · <code>fg:747<\/code><\/p><p><b>5<\/b> moléculas de sabor no banco<\/p><p class='muted'>moléculas herdadas de &#x27;sugar&#x27;<\/p>", "desc": []}, {"id": "i:açúcar", "label": "açúcar", "kind": "ingredient", "x": 268.70057685088807, "y": 212.13203435596424, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "açúcar (fg:6172)\n5 moléculas", "info": "<h4>açúcar<\/h4><p>Ingrediente da receita · <code>fg:6172<\/code><\/p><p><b>5<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:ovo", "label": "ovo", "kind": "ingredient", "x": 2.326828918379971e-14, "y": 300.0, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "ovo (fg:2188)\n55 moléculas", "info": "<h4>ovo<\/h4><p>Ingrediente da receita · <code>fg:2188<\/code><\/p><p><b>55<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:baunilha", "label": "baunilha", "kind": "ingredient", "x": -268.700576850888, "y": 212.13203435596427, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "baunilha (fg:6631)\n174 moléculas", "info": "<h4>baunilha<\/h4><p>Ingrediente da receita · <code>fg:6631<\/code><\/p><p><b>174<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:sal", "label": "sal", "kind": "ingredient", "x": -380.0, "y": 3.6739403974420595e-14, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "sal (fg:5608)\n4 moléculas", "info": "<h4>sal<\/h4><p>Ingrediente da receita · <code>fg:5608<\/code><\/p><p><b>4<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:chocolate amargo", "label": "chocolate amargo", "kind": "ingredient", "x": -268.7005768508881, "y": -212.13203435596424, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "chocolate amargo (fg:1810)\n13 moléculas\nmoléculas herdadas de 'chocolate'", "info": "<h4>chocolate amargo<\/h4><p>Ingrediente da receita · <code>fg:1810<\/code><\/p><p><b>13<\/b> moléculas de sabor no banco<\/p><p class='muted'>moléculas herdadas de &#x27;chocolate&#x27;<\/p>", "desc": []}, {"id": "m:7519", "label": "Anisole", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Anisole\naroma/sabor: butter, ethereal, alcohol, gasoline, anise, cheese +3\npresente em: manteiga, baunilha", "info": "<h4>Anisole<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7519' target='_blank' rel='noopener'>PubChem 7519<\/a><\/p><p><b>Aroma/sabor:<\/b> butter, ethereal, alcohol, gasoline, anise, cheese, phenolic, spicy-sweet, sweet<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 108.1 · <b>xlogP:<\/b> 2.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 11 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["butter", "ethereal", "alcohol", "gasoline", "anise", "cheese", "phenolic", "spicy-sweet", "sweet"]}, {"id": "m:6202", "label": "Thiamine Hydrochloride", "kind": "molecule", "shape": "dot", "size": 23.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Thiamine Hydrochloride\naroma/sabor: sour, bitter, slight, characteristic\npresente em: farinha de trigo, manteiga, açúcar mascavo, açúcar, ovo, sal +1", "info": "<h4>Thiamine Hydrochloride<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6202' target='_blank' rel='noopener'>PubChem 6202<\/a><\/p><p><b>Aroma/sabor:<\/b> sour, bitter, slight, characteristic<\/p><p><b>Presente em:<\/b> farinha de trigo, manteiga, açúcar mascavo, açúcar, ovo, sal, chocolate amargo<\/p><p><b>Peso molecular:<\/b> 337.3 · <b>xlogP:<\/b> —<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 303 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["sour", "bitter", "slight, characteristic"]}, {"id": "m:6736", "label": "3-Methylindole", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "3-Methylindole\naroma/sabor: very strong, mothball, animal, fecal, indole, civet\npresente em: manteiga, ovo", "info": "<h4>3-Methylindole<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6736' target='_blank' rel='noopener'>PubChem 6736<\/a><\/p><p><b>Aroma/sabor:<\/b> very strong, mothball, animal, fecal, indole, civet<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 131.2 · <b>xlogP:<\/b> 2.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 18 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["very strong", "mothball", "animal", "fecal", "indole", "civet"]}, {"id": "m:243", "label": "benzoic acid", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "benzoic acid\naroma/sabor: balsamic, urine, bitter taste, pungent, sour\npresente em: manteiga, baunilha", "info": "<h4>benzoic acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/243' target='_blank' rel='noopener'>PubChem 243<\/a><\/p><p><b>Aroma/sabor:<\/b> balsamic, urine, bitter taste, pungent, sour<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 122.1 · <b>xlogP:<\/b> 1.90<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 19 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["balsamic", "urine", "bitter taste", "pungent", "sour"]}, {"id": "m:12097", "label": "5-Methylfurfural", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "5-Methylfurfural\naroma/sabor: caramel, spicy, burnt sugar, maple, almond\npresente em: manteiga, ovo, baunilha", "info": "<h4>5-Methylfurfural<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/12097' target='_blank' rel='noopener'>PubChem 12097<\/a><\/p><p><b>Aroma/sabor:<\/b> caramel, spicy, burnt sugar, maple, almond<\/p><p><b>Presente em:<\/b> manteiga, ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 110.1 · <b>xlogP:<\/b> 0.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 71 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["caramel", "spicy", "burnt sugar", "maple", "almond"]}, {"id": "m:8184", "label": "1-Undecanol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "1-Undecanol\naroma/sabor: citrus, clean clothes, rose, waxy, fresh, mandarin +3\npresente em: manteiga, ovo", "info": "<h4>1-Undecanol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8184' target='_blank' rel='noopener'>PubChem 8184<\/a><\/p><p><b>Aroma/sabor:<\/b> citrus, clean clothes, rose, waxy, fresh, mandarin, floral, soapy, fatty flavor<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 172.3 · <b>xlogP:<\/b> 4.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 20 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["citrus", "clean clothes", "rose", "waxy", "fresh", "mandarin", "floral", "soapy", "fatty flavor"]}, {"id": "m:7921", "label": "gamma-Valerolactone", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "gamma-Valerolactone\naroma/sabor: tobacco, warm, herbal, cocoa, sweet, woody\npresente em: manteiga, baunilha", "info": "<h4>gamma-Valerolactone<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7921' target='_blank' rel='noopener'>PubChem 7921<\/a><\/p><p><b>Aroma/sabor:<\/b> tobacco, warm, herbal, cocoa, sweet, woody<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 100.1 · <b>xlogP:<\/b> 0.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 23 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["tobacco", "warm", "herbal", "cocoa", "sweet", "woody"]}, {"id": "m:6998", "label": "Salicylaldehyde", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Salicylaldehyde\naroma/sabor: cooling, medical, wintergreen, spicy, cinnamon, burning taste +4\npresente em: manteiga, baunilha", "info": "<h4>Salicylaldehyde<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6998' target='_blank' rel='noopener'>PubChem 6998<\/a><\/p><p><b>Aroma/sabor:<\/b> cooling, medical, wintergreen, spicy, cinnamon, burning taste, spicy, nut taste, almond, phenol, pungent<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 122.1 · <b>xlogP:<\/b> 1.80<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 24 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["cooling", "medical", "wintergreen", "spicy", "cinnamon", "burning taste", "spicy, nut taste", "almond", "phenol", "pungent"]}, {"id": "m:957", "label": "1-octanol", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "1-octanol\naroma/sabor: burnt, orange, rose, waxy, chemical, metal +7\npresente em: farinha de trigo, manteiga, ovo, baunilha", "info": "<h4>1-octanol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/957' target='_blank' rel='noopener'>PubChem 957<\/a><\/p><p><b>Aroma/sabor:<\/b> burnt, orange, rose, waxy, chemical, metal, aldehydic, mushroom, green, bitter almond, burnt matches, fatty, floral<\/p><p><b>Presente em:<\/b> farinha de trigo, manteiga, ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 130.2 · <b>xlogP:<\/b> 3.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 155 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["burnt", "orange", "rose", "waxy", "chemical", "metal", "aldehydic", "mushroom", "green", "bitter almond", "burnt matches", "fatty", "floral"]}, {"id": "m:5364752", "label": "trans-2-Pentenal", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "trans-2-Pentenal\naroma/sabor: apple, orange, tomato, strawberry, fruity, pungent +1\npresente em: manteiga, baunilha", "info": "<h4>trans-2-Pentenal<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/5364752' target='_blank' rel='noopener'>PubChem 5364752<\/a><\/p><p><b>Aroma/sabor:<\/b> apple, orange, tomato, strawberry, fruity, pungent, green<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 84.1 · <b>xlogP:<\/b> 1.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 27 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["apple", "orange", "tomato", "strawberry", "fruity", "pungent", "green"]}, {"id": "m:2879", "label": "P-Cresol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "P-Cresol\naroma/sabor: smoky, animal, narcissus, phenol, mimosa, medicine +4\npresente em: manteiga, ovo", "info": "<h4>P-Cresol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/2879' target='_blank' rel='noopener'>PubChem 2879<\/a><\/p><p><b>Aroma/sabor:<\/b> smoky, animal, narcissus, phenol, mimosa, medicine, medicinal, phenolic, pungent, stable<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 108.1 · <b>xlogP:<\/b> 1.90<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 34 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["smoky", "animal", "narcissus", "phenol", "mimosa", "medicine", "medicinal", "phenolic", "pungent", "stable"]}, {"id": "m:8093", "label": "Octan-2-one", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Octan-2-one\naroma/sabor: natural, earthy, gasoline, weedy, herbal, woody +8\npresente em: manteiga, ovo, baunilha", "info": "<h4>Octan-2-one<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8093' target='_blank' rel='noopener'>PubChem 8093<\/a><\/p><p><b>Aroma/sabor:<\/b> natural, earthy, gasoline, weedy, herbal, woody, bitter, soap, pleasant, camphor taste, cheese, fatty, fragrant, mold<\/p><p><b>Presente em:<\/b> manteiga, ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 128.2 · <b>xlogP:<\/b> 2.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 106 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["natural", "earthy", "gasoline", "weedy", "herbal", "woody", "bitter", "soap", "pleasant", "camphor taste", "cheese", "fatty", "fragrant", "mold"]}, {"id": "m:7501", "label": "Styrene", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Styrene\naroma/sabor: balsamic, gasoline, floral, sweet, plastic, extremely penetrating\npresente em: manteiga, ovo, baunilha", "info": "<h4>Styrene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7501' target='_blank' rel='noopener'>PubChem 7501<\/a><\/p><p><b>Aroma/sabor:<\/b> balsamic, gasoline, floral, sweet, plastic, extremely penetrating<\/p><p><b>Presente em:<\/b> manteiga, ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 104.2 · <b>xlogP:<\/b> 2.90<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 110 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["balsamic", "gasoline", "floral", "sweet", "plastic", "extremely penetrating"]}, {"id": "m:996", "label": "phenol", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "phenol\naroma/sabor: phenol, plastic, rubber, phenolic, sharp, burning taste\npresente em: manteiga, ovo, baunilha", "info": "<h4>phenol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/996' target='_blank' rel='noopener'>PubChem 996<\/a><\/p><p><b>Aroma/sabor:<\/b> phenol, plastic, rubber, phenolic, sharp, burning taste<\/p><p><b>Presente em:<\/b> manteiga, ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 94.1 · <b>xlogP:<\/b> 1.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 111 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["phenol", "plastic", "rubber", "phenolic", "sharp, burning taste"]}, {"id": "m:7165", "label": "Ethyl Benzoate", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Ethyl Benzoate\naroma/sabor: dry, celery, wintergreen, grape, cherry, fruity +15\npresente em: manteiga, baunilha", "info": "<h4>Ethyl Benzoate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7165' target='_blank' rel='noopener'>PubChem 7165<\/a><\/p><p><b>Aroma/sabor:<\/b> dry, celery, wintergreen, grape, cherry, fruity, sweet, plum, anise, musty, camomile, balsamic, strawberry, minty, berry, cranberry, raspberry, bitter, banana, floral, fatty<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 150.2 · <b>xlogP:<\/b> 2.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 44 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["dry", "celery", "wintergreen", "grape", "cherry", "fruity", "sweet", "plum", "anise", "musty", "camomile", "balsamic", "strawberry", "minty", "berry", "cranberry", "raspberry", "bitter", "banana", "floral", "fatty"]}, {"id": "m:12180", "label": "Methyl butyrate", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Methyl butyrate\naroma/sabor: apple, pineapple, ethereal, banana, fruity, sweet +5\npresente em: manteiga, ovo", "info": "<h4>Methyl butyrate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/12180' target='_blank' rel='noopener'>PubChem 12180<\/a><\/p><p><b>Aroma/sabor:<\/b> apple, pineapple, ethereal, banana, fruity, sweet, apple-like, sweet taste, not very powerful, cheese, ester, floral<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 102.1 · <b>xlogP:<\/b> 1.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 46 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["apple", "pineapple", "ethereal", "banana", "fruity", "sweet", "apple-like, sweet taste", "not very powerful", "cheese", "ester", "floral"]}, {"id": "m:8175", "label": "Decanal", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Decanal\naroma/sabor: citrus, soap, orange peel, tallow, waxy, floral +5\npresente em: farinha de trigo, manteiga", "info": "<h4>Decanal<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8175' target='_blank' rel='noopener'>PubChem 8175<\/a><\/p><p><b>Aroma/sabor:<\/b> citrus, soap, orange peel, tallow, waxy, floral, sweet, aldehydic, sharp, orange flavor, fried, penetrating<\/p><p><b>Presente em:<\/b> farinha de trigo, manteiga<\/p><p><b>Peso molecular:<\/b> 156.3 · <b>xlogP:<\/b> 3.80<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 54 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["citrus", "soap", "orange peel", "tallow", "waxy", "floral", "sweet", "aldehydic", "sharp, orange flavor", "fried", "penetrating"]}, {"id": "m:994", "label": "Dl-Phenylalanine", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Dl-Phenylalanine\naroma/sabor: bitter\npresente em: farinha de trigo, ovo", "info": "<h4>Dl-Phenylalanine<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/994' target='_blank' rel='noopener'>PubChem 994<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> farinha de trigo, ovo<\/p><p><b>Peso molecular:<\/b> 165.2 · <b>xlogP:<\/b> -1.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 55 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:7909", "label": "4-Methyl-2-pentanone", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "4-Methyl-2-pentanone\naroma/sabor: solvent, spicy, herbal, sharp, fruity, dairy +1\npresente em: ovo, baunilha", "info": "<h4>4-Methyl-2-pentanone<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7909' target='_blank' rel='noopener'>PubChem 7909<\/a><\/p><p><b>Aroma/sabor:<\/b> solvent, spicy, herbal, sharp, fruity, dairy, green<\/p><p><b>Presente em:<\/b> ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 100.2 · <b>xlogP:<\/b> 1.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 57 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["solvent", "spicy", "herbal", "sharp", "fruity", "dairy", "green"]}, {"id": "m:2969", "label": "Decanoic acid", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Decanoic acid\naroma/sabor: sour, citrus, fatty, rancid, unpleasant, dust +1\npresente em: manteiga, baunilha", "info": "<h4>Decanoic acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/2969' target='_blank' rel='noopener'>PubChem 2969<\/a><\/p><p><b>Aroma/sabor:<\/b> sour, citrus, fatty, rancid, unpleasant, dust, grass<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 172.3 · <b>xlogP:<\/b> 4.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 59 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["sour", "citrus", "fatty", "rancid", "unpleasant", "dust", "grass"]}, {"id": "m:22386", "label": "2-Pentanol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2-Pentanol\naroma/sabor: oily, fermented, fusel, green, fusel oil\npresente em: manteiga, baunilha", "info": "<h4>2-Pentanol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/22386' target='_blank' rel='noopener'>PubChem 22386<\/a><\/p><p><b>Aroma/sabor:<\/b> oily, fermented, fusel, green, fusel oil<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 88.2 · <b>xlogP:<\/b> 1.20<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 60 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["oily", "fermented", "fusel", "green", "fusel oil"]}, {"id": "m:31252", "label": "2,5-Dimethylpyrazine", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2,5-Dimethylpyrazine\naroma/sabor: roast beef, roasted nuts, grass, medical, cocoa, woody +3\npresente em: manteiga, ovo", "info": "<h4>2,5-Dimethylpyrazine<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/31252' target='_blank' rel='noopener'>PubChem 31252<\/a><\/p><p><b>Aroma/sabor:<\/b> roast beef, roasted nuts, grass, medical, cocoa, woody, medicine, roasted nut, medicinal<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 108.1 · <b>xlogP:<\/b> 0.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 65 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["roast beef", "roasted nuts", "grass", "medical", "cocoa", "woody", "medicine", "roasted nut", "medicinal"]}, {"id": "m:4133", "label": "methyl salicylate", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "methyl salicylate\naroma/sabor: minty, wintergreen, peppermint, almond, caramel, sharp\npresente em: manteiga, baunilha", "info": "<h4>methyl salicylate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/4133' target='_blank' rel='noopener'>PubChem 4133<\/a><\/p><p><b>Aroma/sabor:<\/b> minty, wintergreen, peppermint, almond, caramel, sharp<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 152.1 · <b>xlogP:<\/b> 2.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 66 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["minty", "wintergreen", "peppermint", "almond", "caramel", "sharp"]}, {"id": "m:8193", "label": "1-Dodecanol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "1-Dodecanol\naroma/sabor: coconut, waxy, fatty, earthy, honey, soapy +1\npresente em: manteiga, baunilha", "info": "<h4>1-Dodecanol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8193' target='_blank' rel='noopener'>PubChem 8193<\/a><\/p><p><b>Aroma/sabor:<\/b> coconut, waxy, fatty, earthy, honey, soapy, fatty, waxy flavor<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 186.3 · <b>xlogP:<\/b> 5.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 68 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["coconut", "waxy", "fatty", "earthy", "honey", "soapy", "fatty, waxy flavor"]}, {"id": "m:1049", "label": "Pyridine", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Pyridine\naroma/sabor: sour, putrid, fishy, rancid, sickening, amine +3\npresente em: manteiga, ovo", "info": "<h4>Pyridine<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/1049' target='_blank' rel='noopener'>PubChem 1049<\/a><\/p><p><b>Aroma/sabor:<\/b> sour, putrid, fishy, rancid, sickening, amine, sharp, nauseating, burnt, sickening, amine taste<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 79.1 · <b>xlogP:<\/b> 0.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 68 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["sour", "putrid", "fishy", "rancid", "sickening", "amine", "sharp, nauseating", "burnt, sickening", "amine taste"]}, {"id": "m:31289", "label": "Nonanal", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Nonanal\naroma/sabor: citrus, lime, orange peel, rose, fatty, green +10\npresente em: farinha de trigo, manteiga, ovo", "info": "<h4>Nonanal<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/31289' target='_blank' rel='noopener'>PubChem 31289<\/a><\/p><p><b>Aroma/sabor:<\/b> citrus, lime, orange peel, rose, fatty, green, fishy, waxy, fresh, peely, aldehydic, orris, grapefruit, floral, waxy, green, floral, lemon<\/p><p><b>Presente em:<\/b> farinha de trigo, manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 142.2 · <b>xlogP:<\/b> 3.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 166 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["citrus", "lime", "orange peel", "rose", "fatty", "green", "fishy", "waxy", "fresh", "peely", "aldehydic", "orris", "grapefruit", "floral, waxy, green", "floral", "lemon"]}, {"id": "m:11747", "label": "2,3-Pentanedione", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2,3-Pentanedione\naroma/sabor: butter, cream, caramel, sweet, pungent, creamy +2\npresente em: manteiga, ovo", "info": "<h4>2,3-Pentanedione<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/11747' target='_blank' rel='noopener'>PubChem 11747<\/a><\/p><p><b>Aroma/sabor:<\/b> butter, cream, caramel, sweet, pungent, creamy, nutty, cheese<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 100.1 · <b>xlogP:<\/b> 0.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 70 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["butter", "cream", "caramel", "sweet", "pungent", "creamy", "nutty", "cheese"]}, {"id": "m:7800", "label": "Ethyl dodecanoate", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Ethyl dodecanoate\naroma/sabor: waxy, floral, sweet, clean, leaf, soapy +1\npresente em: manteiga, baunilha", "info": "<h4>Ethyl dodecanoate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7800' target='_blank' rel='noopener'>PubChem 7800<\/a><\/p><p><b>Aroma/sabor:<\/b> waxy, floral, sweet, clean, leaf, soapy, fruity<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 228.4 · <b>xlogP:<\/b> 5.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 74 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["waxy", "floral", "sweet", "clean", "leaf", "soapy", "fruity"]}, {"id": "m:65064", "label": "(-)-Epigallocatechin gal", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(-)-Epigallocatechin gallate\naroma/sabor: bitter\npresente em: farinha de trigo, chocolate amargo", "info": "<h4>(-)-Epigallocatechin gallate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/65064' target='_blank' rel='noopener'>PubChem 65064<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> farinha de trigo, chocolate amargo<\/p><p><b>Peso molecular:<\/b> 458.4 · <b>xlogP:<\/b> 1.20<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 79 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:7895", "label": "2-Pentanone", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2-Pentanone\naroma/sabor: potato, alcohol, ethereal, wine, banana, fishy +4\npresente em: manteiga, ovo", "info": "<h4>2-Pentanone<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7895' target='_blank' rel='noopener'>PubChem 7895<\/a><\/p><p><b>Aroma/sabor:<\/b> potato, alcohol, ethereal, wine, banana, fishy, fruity, sweet, woody, pungent<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 86.1 · <b>xlogP:<\/b> 0.90<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 80 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["potato", "alcohol", "ethereal", "wine", "banana", "fishy", "fruity", "sweet", "woody", "pungent"]}, {"id": "m:19602", "label": "2-Pentylfuran", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2-Pentylfuran\naroma/sabor: butter, green bean, vegetable, earthy, beany, fruity +3\npresente em: manteiga, ovo", "info": "<h4>2-Pentylfuran<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/19602' target='_blank' rel='noopener'>PubChem 19602<\/a><\/p><p><b>Aroma/sabor:<\/b> butter, green bean, vegetable, earthy, beany, fruity, metallic, green, floral<\/p><p><b>Presente em:<\/b> manteiga, ovo<\/p><p><b>Peso molecular:<\/b> 138.2 · <b>xlogP:<\/b> 3.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 81 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["butter", "green bean", "vegetable", "earthy", "beany", "fruity", "metallic", "green", "floral"]}, {"id": "m:107905", "label": "(-)-Epicatechin gallate", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(-)-Epicatechin gallate\naroma/sabor: bitter\npresente em: farinha de trigo, chocolate amargo", "info": "<h4>(-)-Epicatechin gallate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/107905' target='_blank' rel='noopener'>PubChem 107905<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> farinha de trigo, chocolate amargo<\/p><p><b>Peso molecular:<\/b> 442.4 · <b>xlogP:<\/b> 1.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 82 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:612", "label": "lactic acid", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "lactic acid\naroma/sabor: taste is acrid\npresente em: ovo, baunilha", "info": "<h4>lactic acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/612' target='_blank' rel='noopener'>PubChem 612<\/a><\/p><p><b>Aroma/sabor:<\/b> taste is acrid<\/p><p><b>Presente em:<\/b> ovo, baunilha<\/p><p><b>Peso molecular:<\/b> 90.1 · <b>xlogP:<\/b> -0.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 83 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["taste is acrid"]}, {"id": "m:72277", "label": "(-)-Epigallocatechin", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(-)-Epigallocatechin\naroma/sabor: bitter\npresente em: farinha de trigo, chocolate amargo", "info": "<h4>(-)-Epigallocatechin<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/72277' target='_blank' rel='noopener'>PubChem 72277<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> farinha de trigo, chocolate amargo<\/p><p><b>Peso molecular:<\/b> 306.3 · <b>xlogP:<\/b> 0.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 86 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:7710", "label": "gamma-Nonanolactone", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "gamma-Nonanolactone\naroma/sabor: peach, coconut, waxy, oily, creamy, sweet +1\npresente em: manteiga, baunilha", "info": "<h4>gamma-Nonanolactone<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7710' target='_blank' rel='noopener'>PubChem 7710<\/a><\/p><p><b>Aroma/sabor:<\/b> peach, coconut, waxy, oily, creamy, sweet, buttery<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 156.2 · <b>xlogP:<\/b> 2.20<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 87 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["peach", "coconut", "waxy", "oily", "creamy", "sweet", "buttery"]}, {"id": "m:8094", "label": "Heptanoic Acid", "kind": "molecule", "shape": "dot", "size": 23.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Heptanoic Acid\naroma/sabor: sour, cheesy, sweat, rancid, cheese, apricot +1\npresente em: farinha de trigo, manteiga, açúcar mascavo, açúcar, ovo, sal +1", "info": "<h4>Heptanoic Acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8094' target='_blank' rel='noopener'>PubChem 8094<\/a><\/p><p><b>Aroma/sabor:<\/b> sour, cheesy, sweat, rancid, cheese, apricot, floral<\/p><p><b>Presente em:<\/b> farinha de trigo, manteiga, açúcar mascavo, açúcar, ovo, sal, chocolate amargo<\/p><p><b>Peso molecular:<\/b> 130.2 · <b>xlogP:<\/b> 2.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 487 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["sour", "cheesy", "sweat", "rancid", "cheese", "apricot", "floral"]}, {"id": "m:65084", "label": "Gallocatechin", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Gallocatechin\naroma/sabor: bitter\npresente em: farinha de trigo, chocolate amargo", "info": "<h4>Gallocatechin<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/65084' target='_blank' rel='noopener'>PubChem 65084<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> farinha de trigo, chocolate amargo<\/p><p><b>Peso molecular:<\/b> 306.3 · <b>xlogP:<\/b> 0.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 89 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:7824", "label": "Methyl Hexanoate", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Methyl Hexanoate\naroma/sabor: pineapple, ethereal, fresh, fruity, sweet, ester\npresente em: manteiga, baunilha", "info": "<h4>Methyl Hexanoate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7824' target='_blank' rel='noopener'>PubChem 7824<\/a><\/p><p><b>Aroma/sabor:<\/b> pineapple, ethereal, fresh, fruity, sweet, ester<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 130.2 · <b>xlogP:<\/b> 2.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 91 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["pineapple", "ethereal", "fresh", "fruity", "sweet", "ester"]}, {"id": "m:8129", "label": "1-Heptanol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "1-Heptanol\naroma/sabor: leafy, coconut, herbal, peony, strawberry, chemical +8\npresente em: farinha de trigo, manteiga", "info": "<h4>1-Heptanol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8129' target='_blank' rel='noopener'>PubChem 8129<\/a><\/p><p><b>Aroma/sabor:<\/b> leafy, coconut, herbal, peony, strawberry, chemical, musty, sweet, woody, violet, green, fragrant, faint, aromatic, fatty, pungent, spicy taste<\/p><p><b>Presente em:<\/b> farinha de trigo, manteiga<\/p><p><b>Peso molecular:<\/b> 116.2 · <b>xlogP:<\/b> 2.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 97 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["leafy", "coconut", "herbal", "peony", "strawberry", "chemical", "musty", "sweet", "woody", "violet", "green", "fragrant", "faint, aromatic, fatty", "pungent, spicy taste"]}, {"id": "m:1032", "label": "propionic acid", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "propionic acid\naroma/sabor: cheesy, soy, acidic, vinegar, rancid, pungent +3\npresente em: manteiga, baunilha", "info": "<h4>propionic acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/1032' target='_blank' rel='noopener'>PubChem 1032<\/a><\/p><p><b>Aroma/sabor:<\/b> cheesy, soy, acidic, vinegar, rancid, pungent, fatty, fruity, silage<\/p><p><b>Presente em:<\/b> manteiga, baunilha<\/p><p><b>Peso molecular:<\/b> 74.1 · <b>xlogP:<\/b> 0.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 98 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["cheesy", "soy", "acidic", "vinegar", "rancid", "pungent", "fatty", "fruity", "silage"]}], "edges": [{"from": "i:manteiga", "to": "m:7519", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7519", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:açúcar mascavo", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:açúcar", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:sal", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:chocolate amargo", "to": "m:6202", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:6736", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:6736", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:243", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:243", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:12097", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:12097", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:12097", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:8184", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:8184", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7921", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7921", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:6998", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:6998", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:957", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:957", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:957", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:957", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:5364752", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:5364752", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:2879", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:2879", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:8093", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:8093", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:8093", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:7501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:996", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:996", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:996", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7165", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7165", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:12180", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:12180", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:8175", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:8175", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:994", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:994", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:7909", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7909", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:2969", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:2969", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:22386", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:22386", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:31252", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:31252", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:4133", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:4133", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:8193", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:8193", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:1049", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:1049", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:31289", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:31289", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:31289", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:11747", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:11747", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7800", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7800", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:65064", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:chocolate amargo", "to": "m:65064", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7895", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:7895", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:19602", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:19602", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:107905", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:chocolate amargo", "to": "m:107905", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:612", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:612", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:72277", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:chocolate amargo", "to": "m:72277", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7710", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7710", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:açúcar mascavo", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:açúcar", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ovo", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:sal", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:chocolate amargo", "to": "m:8094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:65084", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:chocolate amargo", "to": "m:65084", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:7824", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:7824", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:farinha de trigo", "to": "m:8129", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:8129", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "m:1032", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:baunilha", "to": "m:1032", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:manteiga", "to": "i:baunilha", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 5.0696022493524096, "title": "manteiga + baunilha\nNPMI 0.19 — associação comum em receitas"}, {"from": "i:manteiga", "to": "i:ovo", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 4.836444513440667, "title": "manteiga + ovo\nNPMI 0.18 — associação comum em receitas"}, {"from": "i:ovo", "to": "i:baunilha", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 6.6643156500441725, "title": "ovo + baunilha\nNPMI 0.29 — associação comum em receitas"}, {"from": "i:açúcar", "to": "i:ovo", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 5.049223123804502, "title": "açúcar + ovo\nNPMI 0.19 — associação comum em receitas"}, {"from": "i:ovo", "to": "i:sal", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 4.563332614021645, "title": "ovo + sal\nNPMI 0.16 — associação comum em receitas"}, {"from": "i:manteiga", "to": "i:açúcar mascavo", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 4.350041251887627, "title": "manteiga + açúcar mascavo\nNPMI 0.15 — associação fraca em receitas"}, {"from": "i:açúcar", "to": "i:baunilha", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 6.1058302344891375, "title": "açúcar + baunilha\nNPMI 0.26 — associação comum em receitas"}, {"from": "i:açúcar mascavo", "to": "i:baunilha", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 6.073930531139853, "title": "açúcar mascavo + baunilha\nNPMI 0.25 — associação comum em receitas"}], "tags": ["sweet", "floral", "fruity", "bitter", "pungent", "waxy", "green", "fatty", "cheese", "sour", "woody", "ethereal", "citrus", "herbal", "rancid", "butter"]}</script>
+
+<h2>Química × prática</h2>
+<div class="grid2"><div style="height:488px; width:100%;">                            <div id="e433c0e9-75c1-461e-886f-ff07c8636c69" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e433c0e9-75c1-461e-886f-ff07c8636c69")) {                    Plotly.newPlot(                        "e433c0e9-75c1-461e-886f-ff07c8636c69",                        [{"colorbar":{"outlinewidth":0,"thickness":10},"colorscale":[[0,"#f3f7fd"],[0.5,"#6da7ec"],[1,"#104281"]],"hovertemplate":"%{y} + %{x}\u003cbr\u003eQu\u00edmica: similaridade molecular (Jaccard): %{z:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","text":[["","0.12","0.04","0.04","0.12","0.50","0.04","0.11"],["0.12","","0.04","0.04","0.18","0.18","0.03","0.04"],["0.04","0.04","","1.00","0.09","0.02","0.80","0.38"],["0.04","0.04","1.00","","0.09","0.02","0.80","0.38"],["0.12","0.18","0.09","0.09","","0.10","0.07","0.08"],["0.50","0.18","0.02","0.02","0.10","","0.01","0.02"],["0.04","0.03","0.80","0.80","0.07","0.01","","0.31"],["0.11","0.04","0.38","0.38","0.08","0.02","0.31",""]],"texttemplate":"%{text}","x":["farinha de trigo","manteiga","a\u00e7\u00facar mascavo","a\u00e7\u00facar","ovo","baunilha","sal","chocolate amargo"],"xgap":2,"y":["farinha de trigo","manteiga","a\u00e7\u00facar mascavo","a\u00e7\u00facar","ovo","baunilha","sal","chocolate amargo"],"ygap":2,"z":{"dtype":"f8","bdata":"AAAAAAAA+H8AAAAAAADAP7dt27Zt26Y\u002ft23btm3bpj\u002f9eZXFGe2+PypfhyUc1d8\u002fkiRJkiRJoj80+bJBky+7PwAAAAAAAMA\u002fAAAAAAAA+H+Hae6Cv4qjP4dp7oK\u002fiqM\u002fXi1uwvyuxj+9azGazLvGP3FCSp5lRJ8\u002foBvz9NFqoj+3bdu2bdumP4dp7oK\u002fiqM\u002fAAAAAAAA+H8AAAAAAADwP0YXXXTRRbc\u002fdNFFF110kT+amZmZmZnpP9mJndiJndg\u002ft23btm3bpj+Hae6Cv4qjPwAAAAAAAPA\u002fAAAAAAAA+H9GF1100UW3P3TRRRdddJE\u002fmpmZmZmZ6T\u002fZiZ3YiZ3YP\u002f15lcUZ7b4\u002fXi1uwvyuxj9GF1100UW3P0YXXXTRRbc\u002fAAAAAAAA+H+KndiJndi5P54S5ClBnrI\u002fFEVRFEVRtD8qX4clHNXfP71rMZrMu8Y\u002fdNFFF110kT900UUXXXSRP4qd2Imd2Lk\u002fAAAAAAAA+H9GF1100UWHPwtZyEIWspA\u002fkiRJkiRJoj9xQkqeZUSfP5qZmZmZmek\u002fmpmZmZmZ6T+eEuQpQZ6yP0YXXXTRRYc\u002fAAAAAAAA+H8UO7ETO7HTPzT5skGTL7s\u002foBvz9NFqoj\u002fZiZ3YiZ3YP9mJndiJndg\u002fFEVRFEVRtD8LWchCFrKQPxQ7sRM7sdM\u002fAAAAAAAA+H8=","shape":"8, 8"},"zmin":0,"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"yaxis":{"autorange":"reversed"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":488,"title":{"text":"Qu\u00edmica: similaridade molecular (Jaccard)"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div><div style="height:488px; width:100%;">                            <div id="e35027c3-ed1b-40b9-acba-8ed41ffc99e4" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e35027c3-ed1b-40b9-acba-8ed41ffc99e4")) {                    Plotly.newPlot(                        "e35027c3-ed1b-40b9-acba-8ed41ffc99e4",                        [{"colorbar":{"outlinewidth":0,"thickness":10},"colorscale":[[0,"#fdf4ef"],[0.5,"#f19a6f"],[1,"#9a3a12"]],"hovertemplate":"%{y} + %{x}\u003cbr\u003ePr\u00e1tica: co-ocorr\u00eancia em receitas (NPMI): %{z:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","text":[["","0.00","0.00","0.00","0.00","0.00","0.00","0.00"],["0.00","","0.15","0.00","0.18","0.19","0.00","0.00"],["0.00","0.15","","0.00","0.00","0.25","0.00","0.00"],["0.00","0.00","0.00","","0.19","0.26","0.00","0.00"],["0.00","0.18","0.00","0.19","","0.29","0.16","0.00"],["0.00","0.19","0.25","0.26","0.29","","0.00","0.00"],["0.00","0.00","0.00","0.00","0.16","0.00","","0.00"],["0.00","0.00","0.00","0.00","0.00","0.00","0.00",""]],"texttemplate":"%{text}","x":["farinha de trigo","manteiga","a\u00e7\u00facar mascavo","a\u00e7\u00facar","ovo","baunilha","sal","chocolate amargo"],"xgap":2,"y":["farinha de trigo","manteiga","a\u00e7\u00facar mascavo","a\u00e7\u00facar","ovo","baunilha","sal","chocolate amargo"],"ygap":2,"z":{"dtype":"f8","bdata":"AAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H+23Yht4szCPwAAAAAAAAAAnisx0gmxxj+2ksWfi47IPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALbdiG3izMI\u002fAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAsq\u002f1cbRL0D8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8QlNcXz2TIP0U80MJebNA\u002fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnisx0gmxxj8AAAAAAAAAABCU1xfPZMg\u002fAAAAAAAA+H+PpJxcQqjSP\u002fvxj4e0gcQ\u002fAAAAAAAAAAAAAAAAAAAAALaSxZ+Ljsg\u002fsq\u002f1cbRL0D9FPNDCXmzQP4+knFxCqNI\u002fAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD78Y+HtIHEPwAAAAAAAAAAAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8=","shape":"8, 8"},"zmin":0,"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"yaxis":{"autorange":"reversed"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":488,"title":{"text":"Pr\u00e1tica: co-ocorr\u00eancia em receitas (NPMI)"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div></div>
+<h2>Perfil sensorial</h2><div style="height:532px; width:100%;">                            <div id="2771e8f2-18be-4cef-b261-7ba811f94a18" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("2771e8f2-18be-4cef-b261-7ba811f94a18")) {                    Plotly.newPlot(                        "2771e8f2-18be-4cef-b261-7ba811f94a18",                        [{"hovertemplate":"farinha de trigo: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2}},"name":"farinha de trigo","orientation":"h","x":{"dtype":"f8","bdata":"nhLkKUGeUj+eEuQpQZ5SP+0b1r5h7Ws\u002fnhLkKUGeUj+eEuQpQZ5SP54S5ClBnmI\u002fdNFFF110kT\u002ftG9a+Ye1rP+0b1r5h7Zs\u002fnhLkKUGeYj\u002ftG9a+Ye17P0GeEuQpQZ4\u002fh7VvWPuGpT9wWPuGtW+oPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"manteiga: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":2}},"name":"manteiga","orientation":"h","x":{"dtype":"f8","bdata":"IPiBH\u002fiBTz8g+IEf+IFvPyD4gR\u002f4gV8\u002fIPiBH\u002fiBbz8UO7ETO7FzPyD4gR\u002f4gX8\u002fV2qlVmqlpj8cuZEbuZGLP9VKrdRKraQ\u002fIPiBH\u002fiBXz+SG7mRG7mBPyD4gR\u002f4gZ8\u002fV2qlVmqlpj8YeqEXeqGHPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"a\u00e7\u00facar mascavo: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":2}},"name":"a\u00e7\u00facar mascavo","orientation":"h","x":{"dtype":"f8","bdata":"mpmZmZmZmT+amZmZmZmZP5qZmZmZmZk\u002fmpmZmZmZmT+amZmZmZmZP5qZmZmZmZk\u002fAAAAAAAAAACamZmZmZmZPwAAAAAAAAAAmpmZmZmZqT+amZmZmZmpP5qZmZmZmZk\u002fmpmZmZmZmT+amZmZmZmpPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"a\u00e7\u00facar: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":2}},"name":"a\u00e7\u00facar","orientation":"h","x":{"dtype":"f8","bdata":"mpmZmZmZmT+amZmZmZmZP5qZmZmZmZk\u002fmpmZmZmZmT+amZmZmZmZP5qZmZmZmZk\u002fAAAAAAAAAACamZmZmZmZPwAAAAAAAAAAmpmZmZmZqT+amZmZmZmpP5qZmZmZmZk\u002fmpmZmZmZmT+amZmZmZmpPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"ovo: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","line":{"color":"#fcfcfb","width":2}},"name":"ovo","orientation":"h","x":{"dtype":"f8","bdata":"wXgr+xxSYz\u002fBeCv7HFJjP8F4K\u002fscUmM\u002fwXgr+xxScz8iNcF4K\u002ft8PyI1wXgr+3w\u002fwXgr+xxSkz\u002fyVvY5pCaIPzXBeCv7HKI\u002fwXgr+xxScz\u002fBeCv7HFKDP6kJxlvZ56A\u002f8lb2OaQmmD\u002fZ55CaYLyVPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"baunilha: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#008300","line":{"color":"#fcfcfb","width":2}},"name":"baunilha","orientation":"h","x":{"dtype":"f8","bdata":"9AV9QV\u002fQRz\u002f0BX1BX9BXP3fEHXFH3GE\u002f9AV9QV\u002fQRz\u002f0BX1BX9BXP3FH3BF3xG0\u002fv6Av6Av6oj9xR9wRd8R9P6Ev6Av6gp4\u002f9AV9QV\u002fQRz\u002f0BX1BX9B3P0Ff0Bf0BZ0\u002fs6asKWvKqj8AAAAAAACgPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"sal: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#6250d6","line":{"color":"#fcfcfb","width":2}},"name":"sal","orientation":"h","x":{"dtype":"f8","bdata":"AAAAAAAAoD8AAAAAAACgPwAAAAAAAKA\u002fAAAAAAAAoD8AAAAAAACgPwAAAAAAAKA\u002fAAAAAAAAAAAAAAAAAACgPwAAAAAAAAAAAAAAAAAAsD8AAAAAAACwPwAAAAAAAKA\u002fAAAAAAAAAAAAAAAAAACwPw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"},{"hovertemplate":"chocolate amargo: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e34948","line":{"color":"#fcfcfb","width":2}},"name":"chocolate amargo","orientation":"h","x":{"dtype":"f8","bdata":"FDuxEzuxgz8UO7ETO7GDPxQ7sRM7sYM\u002fFDuxEzuxgz8UO7ETO7GDPxQ7sRM7sYM\u002fAAAAAAAAAAAUO7ETO7GDPwAAAAAAAAAAFDuxEzuxkz8UO7ETO7GTPxQ7sRM7sYM\u002fFDuxEzuxgz\u002fZiZ3YiZ24Pw=="},"y":["very mild","apricot","grassy","cheesy","sweat","rancid","fruity","cheese","green","slight, characteristic","sour","floral","sweet","bitter"],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"xaxis":{"tickformat":".0%","gridcolor":"#e6e5e1","title":{"text":"fra\u00e7\u00e3o m\u00e9dia das mol\u00e9culas com o descritor"}},"legend":{"orientation":"h","y":-0.15,"x":0},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","barmode":"stack","height":532,"title":{"text":"Perfil sensorial: quem traz cada nota"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>Moléculas-ponte</h2>
+<p class="muted">Moléculas presentes em 2 ou mais ingredientes, priorizando as mais específicas
+(raras no banco) — são elas que dão "assinatura" à combinação.</p>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>molécula</th>
+      <th>aroma/sabor</th>
+      <th>presente em</th>
+      <th>peso molecular</th>
+      <th>xlogP</th>
+      <th>nº alimentos no banco</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Anisole</td>
+      <td>butter, ethereal, alcohol, gasoline, anise, cheese +3</td>
+      <td>manteiga, baunilha</td>
+      <td>108.1</td>
+      <td>2.10</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Thiamine Hydrochloride</td>
+      <td>sour, bitter, slight, characteristic</td>
+      <td>farinha de trigo, manteiga, açúcar mascavo, açúcar, ovo, sal, chocolate amargo</td>
+      <td>337.3</td>
+      <td></td>
+      <td>303</td>
+    </tr>
+    <tr>
+      <td>3-Methylindole</td>
+      <td>very strong, mothball, animal, fecal, indole, civet</td>
+      <td>manteiga, ovo</td>
+      <td>131.2</td>
+      <td>2.60</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>benzoic acid</td>
+      <td>balsamic, urine, bitter taste, pungent, sour</td>
+      <td>manteiga, baunilha</td>
+      <td>122.1</td>
+      <td>1.90</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>5-Methylfurfural</td>
+      <td>caramel, spicy, burnt sugar, maple, almond</td>
+      <td>manteiga, ovo, baunilha</td>
+      <td>110.1</td>
+      <td>0.70</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>1-Undecanol</td>
+      <td>citrus, clean clothes, rose, waxy, fresh, mandarin +3</td>
+      <td>manteiga, ovo</td>
+      <td>172.3</td>
+      <td>4.60</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>gamma-Valerolactone</td>
+      <td>tobacco, warm, herbal, cocoa, sweet, woody</td>
+      <td>manteiga, baunilha</td>
+      <td>100.1</td>
+      <td>0.60</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Salicylaldehyde</td>
+      <td>cooling, medical, wintergreen, spicy, cinnamon, burning taste +4</td>
+      <td>manteiga, baunilha</td>
+      <td>122.1</td>
+      <td>1.80</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>1-octanol</td>
+      <td>burnt, orange, rose, waxy, chemical, metal +7</td>
+      <td>farinha de trigo, manteiga, ovo, baunilha</td>
+      <td>130.2</td>
+      <td>3.00</td>
+      <td>155</td>
+    </tr>
+    <tr>
+      <td>trans-2-Pentenal</td>
+      <td>apple, orange, tomato, strawberry, fruity, pungent +1</td>
+      <td>manteiga, baunilha</td>
+      <td>84.1</td>
+      <td>1.00</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>P-Cresol</td>
+      <td>smoky, animal, narcissus, phenol, mimosa, medicine +4</td>
+      <td>manteiga, ovo</td>
+      <td>108.1</td>
+      <td>1.90</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Octan-2-one</td>
+      <td>natural, earthy, gasoline, weedy, herbal, woody +8</td>
+      <td>manteiga, ovo, baunilha</td>
+      <td>128.2</td>
+      <td>2.40</td>
+      <td>106</td>
+    </tr>
+    <tr>
+      <td>Styrene</td>
+      <td>balsamic, gasoline, floral, sweet, plastic, extremely penetrating</td>
+      <td>manteiga, ovo, baunilha</td>
+      <td>104.2</td>
+      <td>2.90</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <td>phenol</td>
+      <td>phenol, plastic, rubber, phenolic, sharp, burning taste</td>
+      <td>manteiga, ovo, baunilha</td>
+      <td>94.1</td>
+      <td>1.50</td>
+      <td>111</td>
+    </tr>
+    <tr>
+      <td>Ethyl Benzoate</td>
+      <td>dry, celery, wintergreen, grape, cherry, fruity +15</td>
+      <td>manteiga, baunilha</td>
+      <td>150.2</td>
+      <td>2.60</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <td>Methyl butyrate</td>
+      <td>apple, pineapple, ethereal, banana, fruity, sweet +5</td>
+      <td>manteiga, ovo</td>
+      <td>102.1</td>
+      <td>1.30</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>Decanal</td>
+      <td>citrus, soap, orange peel, tallow, waxy, floral +5</td>
+      <td>farinha de trigo, manteiga</td>
+      <td>156.3</td>
+      <td>3.80</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <td>Dl-Phenylalanine</td>
+      <td>bitter</td>
+      <td>farinha de trigo, ovo</td>
+      <td>165.2</td>
+      <td>-1.50</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>4-Methyl-2-pentanone</td>
+      <td>solvent, spicy, herbal, sharp, fruity, dairy +1</td>
+      <td>ovo, baunilha</td>
+      <td>100.2</td>
+      <td>1.30</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <td>Decanoic acid</td>
+      <td>sour, citrus, fatty, rancid, unpleasant, dust +1</td>
+      <td>manteiga, baunilha</td>
+      <td>172.3</td>
+      <td>4.10</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>2-Pentanol</td>
+      <td>oily, fermented, fusel, green, fusel oil</td>
+      <td>manteiga, baunilha</td>
+      <td>88.2</td>
+      <td>1.20</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>2,5-Dimethylpyrazine</td>
+      <td>roast beef, roasted nuts, grass, medical, cocoa, woody +3</td>
+      <td>manteiga, ovo</td>
+      <td>108.1</td>
+      <td>0.60</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>methyl salicylate</td>
+      <td>minty, wintergreen, peppermint, almond, caramel, sharp</td>
+      <td>manteiga, baunilha</td>
+      <td>152.1</td>
+      <td>2.30</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <td>1-Dodecanol</td>
+      <td>coconut, waxy, fatty, earthy, honey, soapy +1</td>
+      <td>manteiga, baunilha</td>
+      <td>186.3</td>
+      <td>5.10</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Pyridine</td>
+      <td>sour, putrid, fishy, rancid, sickening, amine +3</td>
+      <td>manteiga, ovo</td>
+      <td>79.1</td>
+      <td>0.70</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Nonanal</td>
+      <td>citrus, lime, orange peel, rose, fatty, green +10</td>
+      <td>farinha de trigo, manteiga, ovo</td>
+      <td>142.2</td>
+      <td>3.30</td>
+      <td>166</td>
+    </tr>
+    <tr>
+      <td>2,3-Pentanedione</td>
+      <td>butter, cream, caramel, sweet, pungent, creamy +2</td>
+      <td>manteiga, ovo</td>
+      <td>100.1</td>
+      <td>0.10</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Ethyl dodecanoate</td>
+      <td>waxy, floral, sweet, clean, leaf, soapy +1</td>
+      <td>manteiga, baunilha</td>
+      <td>228.4</td>
+      <td>5.60</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>(-)-Epigallocatechin gallate</td>
+      <td>bitter</td>
+      <td>farinha de trigo, chocolate amargo</td>
+      <td>458.4</td>
+      <td>1.20</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <td>2-Pentanone</td>
+      <td>potato, alcohol, ethereal, wine, banana, fishy +4</td>
+      <td>manteiga, ovo</td>
+      <td>86.1</td>
+      <td>0.90</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>2-Pentylfuran</td>
+      <td>butter, green bean, vegetable, earthy, beany, fruity +3</td>
+      <td>manteiga, ovo</td>
+      <td>138.2</td>
+      <td>3.70</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>(-)-Epicatechin gallate</td>
+      <td>bitter</td>
+      <td>farinha de trigo, chocolate amargo</td>
+      <td>442.4</td>
+      <td>1.50</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>lactic acid</td>
+      <td>taste is acrid</td>
+      <td>ovo, baunilha</td>
+      <td>90.1</td>
+      <td>-0.70</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <td>(-)-Epigallocatechin</td>
+      <td>bitter</td>
+      <td>farinha de trigo, chocolate amargo</td>
+      <td>306.3</td>
+      <td>0.00</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>gamma-Nonanolactone</td>
+      <td>peach, coconut, waxy, oily, creamy, sweet +1</td>
+      <td>manteiga, baunilha</td>
+      <td>156.2</td>
+      <td>2.20</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Heptanoic Acid</td>
+      <td>sour, cheesy, sweat, rancid, cheese, apricot +1</td>
+      <td>farinha de trigo, manteiga, açúcar mascavo, açúcar, ovo, sal, chocolate amargo</td>
+      <td>130.2</td>
+      <td>2.50</td>
+      <td>487</td>
+    </tr>
+    <tr>
+      <td>Gallocatechin</td>
+      <td>bitter</td>
+      <td>farinha de trigo, chocolate amargo</td>
+      <td>306.3</td>
+      <td>0.00</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>Methyl Hexanoate</td>
+      <td>pineapple, ethereal, fresh, fruity, sweet, ester</td>
+      <td>manteiga, baunilha</td>
+      <td>130.2</td>
+      <td>2.50</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <td>1-Heptanol</td>
+      <td>leafy, coconut, herbal, peony, strawberry, chemical +8</td>
+      <td>farinha de trigo, manteiga</td>
+      <td>116.2</td>
+      <td>2.70</td>
+      <td>97</td>
+    </tr>
+    <tr>
+      <td>propionic acid</td>
+      <td>cheesy, soy, acidic, vinegar, rancid, pungent +3</td>
+      <td>manteiga, baunilha</td>
+      <td>74.1</td>
+      <td>0.30</td>
+      <td>98</td>
+    </tr>
+  </tbody>
+</table>
+<h2>O que acrescentar?</h2>
+<div class="grid2"><div><h3>Clássicas (prática)</h3><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>flour</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.287</td>
+      <td>0.17</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>nut</td>
+      <td>Nut/Seed</td>
+      <td>0.015</td>
+      <td>0.12</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>canela (cinnamon)</td>
+      <td>Spice</td>
+      <td>0.147</td>
+      <td>0.12</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>pecan</td>
+      <td>Nut/Seed</td>
+      <td>0.212</td>
+      <td>0.10</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>shortening</td>
+      <td>Dairy</td>
+      <td>0.287</td>
+      <td>0.10</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>cacau em pó (cocoa)</td>
+      <td>Plant/Vegetable</td>
+      <td>0.130</td>
+      <td>0.07</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>buttermilk</td>
+      <td>Dairy</td>
+      <td>0.150</td>
+      <td>0.06</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>leite (milk)</td>
+      <td>Dairy</td>
+      <td>0.132</td>
+      <td>0.05</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>black_walnut</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.009</td>
+      <td>0.05</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>raisin_bread</td>
+      <td>Bakery/Dessert/Snack</td>
+      <td>0.192</td>
+      <td>0.05</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>cocoa_powder</td>
+      <td>Sauce/Powder/Dressing</td>
+      <td>0.198</td>
+      <td>0.05</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>millet</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.224</td>
+      <td>0.04</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h3>Química parecida</h3><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>creme de leite (cream)</td>
+      <td>Dairy</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ice_cream</td>
+      <td>Bakery/Dessert/Snack</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Soft drink</td>
+      <td>Beverage</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whitefish</td>
+      <td>Fish</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Common Tuna</td>
+      <td>Fish</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>rabbit</td>
+      <td>Meat/Animal Product</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Margarine like spread</td>
+      <td>Additive</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ketchup</td>
+      <td>Sauce/Powder/Dressing</td>
+      <td>0.422</td>
+      <td>0.03</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Other snack food</td>
+      <td>Dish</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>pate</td>
+      <td>Dish/End Product</td>
+      <td>0.422</td>
+      <td>0.01</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>pheasant</td>
+      <td>Meat/Animal Product</td>
+      <td>0.422</td>
+      <td>0.01</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Greylag goose</td>
+      <td>Meat</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div></div>
+<h3>Ousadas — química alta, sem associação em receitas (combinações pouco exploradas)</h3>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>creme de leite (cream)</td>
+      <td>Dairy</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>fruit_juice</td>
+      <td>Beverage</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ice_cream</td>
+      <td>Bakery/Dessert/Snack</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>rabbit</td>
+      <td>Meat/Animal Product</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>soup</td>
+      <td>Dish/End Product</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sausage</td>
+      <td>Meat/Animal Product</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whitefish</td>
+      <td>Fish</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>salad_dressing</td>
+      <td>Sauce/Powder/Dressing</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Gelatin dessert</td>
+      <td>Additive</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Other dish</td>
+      <td>Dish</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Margarine like spread</td>
+      <td>Additive</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Sauce</td>
+      <td>Additive</td>
+      <td>0.422</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Tabela de pares</h2><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>a</th>
+      <th>b</th>
+      <th>moléculas em comum</th>
+      <th>jaccard</th>
+      <th>npmi</th>
+      <th>destaques</th>
+      <th>em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>açúcar mascavo</td>
+      <td>açúcar</td>
+      <td>5</td>
+      <td>1.000</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar mascavo</td>
+      <td>sal</td>
+      <td>4</td>
+      <td>0.800</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar</td>
+      <td>sal</td>
+      <td>4</td>
+      <td>0.800</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>baunilha</td>
+      <td>95</td>
+      <td>0.497</td>
+      <td>0.00</td>
+      <td>Vanillic acid (powdery/vanilla/bean), 1-octanol (burnt/orange/rose), 2-Methyl-1-Butanol (roasted/onion/malt), alpha-Maltose (sweet), D-Lactic acid (acidic/taste is acrid)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar mascavo</td>
+      <td>chocolate amargo</td>
+      <td>5</td>
+      <td>0.385</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar</td>
+      <td>chocolate amargo</td>
+      <td>5</td>
+      <td>0.385</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>sal</td>
+      <td>chocolate amargo</td>
+      <td>4</td>
+      <td>0.308</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>baunilha</td>
+      <td>46</td>
+      <td>0.178</td>
+      <td>0.19</td>
+      <td>Anisole (butter/ethereal/alcohol), benzoic acid (balsamic/urine/bitter taste), gamma-Valerolactone (tobacco/warm/herbal), Salicylaldehyde (cooling/medical/wintergreen), trans-2-Pentenal (apple/orange/tomato)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>ovo</td>
+      <td>28</td>
+      <td>0.177</td>
+      <td>0.18</td>
+      <td>3-Methylindole (very strong/mothball/animal), 1-Undecanol (citrus/clean clothes/rose), P-Cresol (smoky/animal/narcissus), Methyl butyrate (apple/pineapple/ethereal), 2,5-Dimethylpyrazine (roast beef/roasted nuts/grass)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>manteiga</td>
+      <td>27</td>
+      <td>0.125</td>
+      <td>0.00</td>
+      <td>Decanal (citrus/soap/orange peel), 1-Heptanol (leafy/coconut/herbal), 1-Nonanol (fatty/dusty/rose), 1-octanol (burnt/orange/rose), Nonanal (citrus/lime/orange peel)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>ovo</td>
+      <td>18</td>
+      <td>0.121</td>
+      <td>0.00</td>
+      <td>Dl-Phenylalanine (bitter), 1-octanol (burnt/orange/rose), Nonanal (citrus/lime/orange peel), Thiamine Hydrochloride (sour/bitter/slight, characteristic), 3-Hexanone (ethereal/waxy/grape)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>chocolate amargo</td>
+      <td>12</td>
+      <td>0.106</td>
+      <td>0.00</td>
+      <td>(-)-Epigallocatechin gallate (bitter), (-)-Epicatechin gallate (bitter), (-)-Epigallocatechin (bitter), Gallocatechin (bitter), (-)-Epicatechin (bitter)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>ovo</td>
+      <td>baunilha</td>
+      <td>21</td>
+      <td>0.101</td>
+      <td>0.29</td>
+      <td>4-Methyl-2-pentanone (solvent/spicy/herbal), 5-Methylfurfural (caramel/spicy/burnt sugar), lactic acid (taste is acrid), Octan-2-one (natural/earthy/gasoline), Styrene (balsamic/gasoline/floral)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar mascavo</td>
+      <td>ovo</td>
+      <td>5</td>
+      <td>0.091</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar</td>
+      <td>ovo</td>
+      <td>5</td>
+      <td>0.091</td>
+      <td>0.19</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>ovo</td>
+      <td>chocolate amargo</td>
+      <td>5</td>
+      <td>0.079</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>ovo</td>
+      <td>sal</td>
+      <td>4</td>
+      <td>0.073</td>
+      <td>0.16</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>açúcar</td>
+      <td>5</td>
+      <td>0.045</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>açúcar mascavo</td>
+      <td>5</td>
+      <td>0.045</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>açúcar</td>
+      <td>5</td>
+      <td>0.038</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>açúcar mascavo</td>
+      <td>5</td>
+      <td>0.038</td>
+      <td>0.15</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>associação fraca em receitas</td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>chocolate amargo</td>
+      <td>5</td>
+      <td>0.036</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>farinha de trigo</td>
+      <td>sal</td>
+      <td>4</td>
+      <td>0.036</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>manteiga</td>
+      <td>sal</td>
+      <td>4</td>
+      <td>0.031</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar</td>
+      <td>baunilha</td>
+      <td>3</td>
+      <td>0.017</td>
+      <td>0.26</td>
+      <td>betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>açúcar mascavo</td>
+      <td>baunilha</td>
+      <td>3</td>
+      <td>0.017</td>
+      <td>0.25</td>
+      <td>betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>baunilha</td>
+      <td>chocolate amargo</td>
+      <td>3</td>
+      <td>0.016</td>
+      <td>0.00</td>
+      <td>betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>baunilha</td>
+      <td>sal</td>
+      <td>2</td>
+      <td>0.011</td>
+      <td>0.00</td>
+      <td>thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+  </tbody>
+</table>
+<p class="muted">Fontes: FlavorDB2 (CC BY-NC-SA 3.0) · FlavorGraph (Apache 2.0) · TACO 4ª ed. (NEPA/UNICAMP) ·
+USDA FoodData Central (domínio público) · POF 2008-2009 (IBGE). Ver data/SOURCES.md.</p>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('net-data').textContent);
+  if (!window.vis) { document.getElementById('net').innerHTML =
+      '<p class="muted">Não foi possível carregar o vis-network (sem internet?).</p>'; return; }
+  const FADE = {background: '#ecebe7', border: '#ecebe7'};
+  const nodes = new vis.DataSet(D.nodes.map(n => Object.assign({}, n, {orig: n.color, origFont: n.font})));
+  const edges = new vis.DataSet(D.edges.map((e, i) => Object.assign({id: i}, e, {orig: e.color})));
+  const net = new vis.Network(document.getElementById('net'), {nodes, edges}, {
+    physics: {solver: 'forceAtlas2Based', stabilization: {iterations: 300},
+              forceAtlas2Based: {gravitationalConstant: -60, springLength: 110, springConstant: 0.05}},
+    interaction: {hover: true, tooltipDelay: 120, keyboard: true},
+    edges: {smooth: false}, nodes: {borderWidth: 2}
+  });
+  net.once('stabilizationIterationsDone', () => net.setOptions({physics: false}));
+  const info = document.getElementById('net-info'), initialInfo = info.innerHTML;
+
+  function highlight(ids) {
+    const keep = new Set(ids);
+    nodes.update(nodes.get().map(n => keep.has(n.id)
+      ? {id: n.id, color: n.orig, font: n.origFont}
+      : {id: n.id, color: FADE, font: Object.assign({}, n.origFont, {color: '#c9c8c3'})}));
+    edges.update(edges.get().map(e => (keep.has(e.from) && keep.has(e.to))
+      ? {id: e.id, color: e.orig} : {id: e.id, color: {color: '#f1f0ec', opacity: 0.4}}));
+  }
+  function reset() {
+    nodes.update(nodes.get().map(n => ({id: n.id, color: n.orig, font: n.origFont})));
+    edges.update(edges.get().map(e => ({id: e.id, color: e.orig})));
+    info.innerHTML = initialInfo; net.unselectAll();
+    document.querySelectorAll('#net-tags button').forEach(b => b.classList.remove('on'));
+  }
+  function focusNode(id) {
+    const n = nodes.get(id); if (!n) return;
+    highlight([id].concat(net.getConnectedNodes(id)));
+    info.innerHTML = n.info;
+    net.selectNodes([id]);
+  }
+  net.on('click', p => p.nodes.length ? focusNode(p.nodes[0]) : reset());
+
+  const dl = document.getElementById('net-labels');
+  D.nodes.forEach(n => { const o = document.createElement('option'); o.value = n.label; dl.appendChild(o); });
+  document.getElementById('net-search').addEventListener('change', ev => {
+    const q = ev.target.value.trim().toLowerCase();
+    const n = D.nodes.find(n => n.label.toLowerCase() === q) ||
+              D.nodes.find(n => n.label.toLowerCase().includes(q));
+    if (n) { focusNode(n.id); net.focus(n.id, {scale: 1.2, animation: true}); }
+  });
+  document.getElementById('net-reset').addEventListener('click', reset);
+  document.getElementById('net-physics').addEventListener('click', () => {
+    net.setOptions({physics: true}); net.stabilize(200);
+    net.once('stabilizationIterationsDone', () => net.setOptions({physics: false}));
+  });
+
+  const tagBox = document.getElementById('net-tags');
+  D.tags.forEach(t => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = t;
+    b.addEventListener('click', () => {
+      const on = !b.classList.contains('on');
+      reset(); if (!on) return; b.classList.add('on');
+      const mols = D.nodes.filter(n => n.desc.includes(t)).map(n => n.id);
+      const ids = new Set(mols); mols.forEach(m => net.getConnectedNodes(m).forEach(x => ids.add(x)));
+      highlight([...ids]);
+      info.innerHTML = '<h4>nota: ' + t + '</h4><p>' + mols.length +
+        ' molécula(s) compartilhada(s) com essa nota, e os ingredientes que as trazem.</p>';
+    });
+    tagBox.appendChild(b);
+  });
+})();
+</script><script>
+document.querySelectorAll('table.tbl').forEach(t => {
+  t.querySelectorAll('th').forEach((th, i) => {
+    th.title = 'clique para ordenar';
+    th.addEventListener('click', () => {
+      const tb = t.tBodies[0], rows = [...tb.rows], asc = th.dataset.asc !== '1';
+      t.querySelectorAll('th').forEach(h => { h.dataset.asc = ''; h.classList.remove('asc', 'desc'); });
+      th.dataset.asc = asc ? '1' : '0'; th.classList.add(asc ? 'asc' : 'desc');
+      rows.sort((a, b) => {
+        const x = a.cells[i].innerText.trim(), y = b.cells[i].innerText.trim();
+        const nx = parseFloat(x), ny = parseFloat(y);
+        const r = (!isNaN(nx) && !isNaN(ny)) ? nx - ny : x.localeCompare(y, 'pt');
+        return asc ? r : -r;
+      });
+      rows.forEach(r => tb.appendChild(r));
+    });
+  });
+});
+</script>
+</body></html>

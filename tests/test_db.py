@@ -93,3 +93,25 @@ def test_real_db_curated_aliases(real_db):
     r = real_db.resolve("olive_oil")
     assert len(real_db.molecules_of(r.molecules_from)) > 0 and "azeitona" in r.note
     assert "Piper" in real_db.resolve("black_pepper").note
+
+
+def test_real_pepper_genus(real_db):
+    """chili/bell pepper -> Capsicum; black pepper -> Piper; sichuan -> sem dados."""
+    capsicum = {real_db.resolve(n).molecules_from for n in ("chili_pepper", "bell_pepper", "red_pepper", "paprika")}
+    assert {real_db.name(c).lower() for c in capsicum} == {"capsicum"}
+    assert real_db.name(real_db.resolve("black_pepper").molecules_from) == "pepper"
+    assert real_db.resolve("szechwan_pepper").note == "sem dados moleculares"
+
+
+def test_real_portuguese_names(real_db):
+    # redireciona por completo (inclusive o nó de receitas), não só as moléculas
+    assert real_db.resolve("canela").ingredient_id == real_db.resolve("cinnamon").ingredient_id
+    assert real_db.npmi(real_db.resolve("canela").ingredient_id, real_db.resolve("cravo").ingredient_id) > 0.3
+    assert real_db.resolve("Açúcar").ingredient_id == real_db.resolve("acucar").ingredient_id
+    assert real_db.name(real_db.resolve("acucar").ingredient_id) == "sugar"
+    assert real_db.resolve("canela").name == "canela"  # exibição em português
+
+
+def test_real_display_name_in_portuguese(real_db):
+    assert real_db.display_name(real_db.resolve("nutmeg").ingredient_id) == "noz-moscada (nutmeg)"
+    assert real_db.display_name(real_db.resolve("okra").ingredient_id) == "okra"
