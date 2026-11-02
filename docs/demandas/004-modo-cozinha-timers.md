@@ -2,8 +2,8 @@
 
 ## Responsável, branch e dependência
 
-Claude Code, em `claude/cook-mode`, depois da integração da demanda 003. Abrir
-PR e não fazer merge.
+Claude Code, em `claude/cook-mode`, depois da integração das demandas 003 e 005.
+Abrir PR e não fazer merge.
 
 ## Objetivo
 

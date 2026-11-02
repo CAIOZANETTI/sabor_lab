@@ -1,7 +1,8 @@
 # [SaborLab] Implementar perfis, metas e recomendador guiado sem entrada livre
 
-> **Ordem:** executar depois das demandas 002 e 003. Consumir os contratos de
-> catálogo, preparo e textura definidos nelas; não criar taxonomias paralelas.
+> **Ordem:** executar depois das demandas 002, 003 e 005–007. Consumir os
+> contratos de catálogo, estado, evidência, preparo, física, textura e nutrição
+> definidos nelas; não criar taxonomias ou cálculos paralelos.
 
 ## Responsável pela execução
 

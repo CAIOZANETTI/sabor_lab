@@ -2,8 +2,8 @@
 
 ## Responsável, branch e dependência
 
-Claude Code, em `claude/cooking-process-graph`, depois da integração da demanda
-002. Abrir PR e não fazer merge.
+Claude Code, em `claude/cooking-process-graph`, depois da integração das demandas
+002 e 005. Abrir PR e não fazer merge.
 
 ## Problema
 
@@ -76,6 +76,9 @@ RecipeProcess(
     recipe_id, servings, steps, resources, provenance
 )
 ```
+
+`ProcessStep` deve consumir os tipos de estado e evidência definidos na demanda
+005. Não criar um segundo formato de confiança, fonte ou propriedade desconhecida.
 
 ### Fases controladas
 
