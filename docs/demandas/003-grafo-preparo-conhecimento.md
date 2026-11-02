@@ -26,6 +26,7 @@ transformações. O motor deve produzir:
 - temperaturas, durações e pontos de controle;
 - descansos, marinadas e outras etapas passivas;
 - explicação das transformações culinárias relevantes.
+- uma projeção serializável do fluxo para relatório HTML, derivada do mesmo DAG.
 
 ## Princípios de segurança e evidência
 
@@ -115,6 +116,32 @@ Implementar algoritmo determinístico que:
 
 Não usar LLM para ordenar etapas. O grafo e o scheduler devem ser testáveis.
 
+## Projeção para visualização
+
+O domínio deve expor uma projeção de leitura, sem HTML dentro do motor:
+
+```python
+ProcessFlowView(
+    nodes,
+    edges,
+    parallel_groups,
+    critical_path,
+    resource_lanes,
+    planned_total_s,
+    active_total_s,
+    passive_total_s,
+)
+```
+
+Cada nó informa fase, título, tempo planejado/real, estado, recurso, tipo de
+atenção, controles e IDs de evidência. A projeção é calculada do `RecipeProcess`
+e do resultado do scheduler; não manter um segundo fluxo desenhado à mão.
+
+O relatório deve distinguir visualmente sequência obrigatória, bifurcações
+paralelas, caminho crítico, tarefas com folga, descansos, espera por recurso,
+tempos planejados/reais, controles culinários e alertas de segurança. Fornecer
+também uma lista ordenada equivalente para leitores de tela e impressão.
+
 ## Equipamentos iniciais
 
 - forno convencional e com convecção;
@@ -201,6 +228,8 @@ picar chocolate ─────────────────────�
 10. Ceviche não é marcado como termicamente cozido ou automaticamente seguro.
 11. EX01–EX03 têm processos válidos e ingredientes resolvidos no catálogo.
 12. Toda a suíte existente continua passando.
+13. A projeção visual contém os mesmos nós, dependências e caminho crítico do scheduler.
+14. Fluxo planejado e tempos reais permanecem campos diferentes.
 
 ## Fora de escopo
 

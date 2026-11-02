@@ -39,8 +39,21 @@
     .next { display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; margin-top:1rem; }
     .next article { padding:.9rem; background:#faf7ef; border:1px solid var(--line); border-radius:14px; }
     .knowledge { margin-top:1rem; padding:1rem; background:#fff4d4; border-radius:14px; }
+    .recipe-flow { display:grid; grid-template-columns:auto 42px 1.5fr 42px auto 42px auto;
+      gap:.45rem; align-items:center; margin-top:1rem; }
+    .flow-node { min-height:76px; display:flex; flex-direction:column; justify-content:center;
+      padding:.75rem; background:#fff; border:1px solid var(--line); border-radius:13px; }
+    .flow-node strong,.flow-node small { display:block; }
+    .flow-node small { color:var(--muted); }
+    .flow-node.critical { border-color:var(--accent); box-shadow:inset 4px 0 var(--accent); }
+    .flow-parallel { display:grid; gap:.45rem; padding:.55rem; background:#eee7d8; border-radius:15px; }
+    .flow-arrow { color:var(--accent); text-align:center; font-size:1.6rem; }
+    .flow-legend { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:.9rem; color:var(--muted); font-size:.84rem; }
+    .flow-legend i { display:inline-block; width:.8rem; height:.8rem; margin-right:.3rem; border-radius:3px; background:#fff; border:1px solid var(--line); }
+    .flow-legend .critical-key { border-color:var(--accent); background:var(--accent); }
     .prototype { margin-top:1rem; color:var(--muted); font-size:.86rem; }
-    @media(max-width:760px) { .layout { grid-template-columns:1fr; } .lane { grid-template-columns:1fr; } .next { grid-template-columns:1fr; } }
+    @media(max-width:760px) { .layout { grid-template-columns:1fr; } .lane { grid-template-columns:1fr; } .next { grid-template-columns:1fr; }
+      .recipe-flow { grid-template-columns:1fr; } .flow-arrow { transform:rotate(90deg); } }
   </style>
 </head>
 <body>
@@ -74,6 +87,25 @@
         </div>
       </section>
     </div>
+
+    <section class="panel" style="margin-top:1rem">
+      <span class="eyebrow">Fluxo da receita</span><h2>Da preparação ao serviço</h2>
+      <p class="muted">As bifurcações mostram o que pode acontecer ao mesmo tempo. A borda vermelha identifica o caminho que determina a duração total.</p>
+      <div class="recipe-flow" role="img" aria-label="Fluxo: mise en place; depois preaquecer forno, cortar vegetais e preparar creme em paralelo; depois assar, descansar e servir">
+        <div class="flow-node critical"><strong>Mise en place</strong><small>separar · lavar · secar</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-parallel">
+          <div class="flow-node critical"><strong>Preaquecer forno</strong><small>10 min · passivo</small></div>
+          <div class="flow-node"><strong>Cortar vegetais</strong><small>8 min · cozinheiro</small></div>
+          <div class="flow-node"><strong>Preparar creme</strong><small>6 min · liquidificador</small></div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node critical"><strong>Assar e dourar</strong><small>18 min · forno</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node critical"><strong>Descansar e servir</strong><small>3 min · verificar ponto</small></div>
+      </div>
+      <div class="flow-legend"><span><i class="critical-key"></i>caminho crítico</span><span><i></i>tarefa paralela com folga</span></div>
+    </section>
 
     <section class="panel" style="margin-top:1rem">
       <span class="eyebrow">Cronograma paralelo</span><h2>O que ocupa cada recurso</h2>

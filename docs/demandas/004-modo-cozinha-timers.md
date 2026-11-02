@@ -39,6 +39,7 @@ duas telas principais:
 - cartões menores `Em paralelo` e `Depois`;
 - cronograma por faixas: cozinheiro, forno, fogão, bancada/descanso;
 - timers associados às etapas;
+- visão geral do fluxo completo e das dependências;
 - temperatura alvo, faixa e sinal sensorial de conclusão;
 - ações apenas por botões: iniciar, pausar, concluir, +1 min, +5 min, pular;
 - progresso da receita e previsão atualizada de serviço.
@@ -60,6 +61,21 @@ Não incluir chat, prompt ou campo de texto.
 - Nunca iniciar timer de segurança automaticamente antes da confirmação da etapa.
 - Ao atrasar uma etapa, pedir escolha entre `recalcular cronograma` e `manter
   horário de serviço`; ambas sem texto livre.
+
+## Relatório HTML do fluxo
+
+O mesmo artefato estático deve oferecer dois modos:
+
+1. **Visão da receita:** fluxo completo com mise en place, bifurcações paralelas,
+   caminho crítico, descansos, cocção, montagem e serviço.
+2. **Modo cozinha:** destaca `Agora`, `Em paralelo` e `Depois`, com timers e
+   replanejamento.
+
+Ao selecionar uma etapa, mostrar técnica, ingredientes, equipamento, duração,
+temperatura, sinal de conclusão, evidências, incertezas e controles de segurança.
+O HTML precisa funcionar no GitHub Pages, ser responsivo e oferecer uma lista
+linear acessível. O fluxo é gerado da projeção da demanda 003; a interface não
+pode alterar dependências ou inventar tempos.
 
 ## Máquina de estados
 
@@ -113,6 +129,8 @@ saúde para servidor. Incluir botão `Apagar sessão de cozinha`.
 4. Dependências controlam quando uma tarefa fica pronta.
 5. Atraso atualiza previsão e tarefas dependentes.
 6. Duas etapas paralelas mantêm timers independentes.
+7. Diagrama e lista acessível contêm as mesmas etapas e dependências.
+8. Atualização de atraso modifica o fluxo a partir do resultado do scheduler.
 7. Timer passivo continua quando a interface troca de etapa.
 
 ### Navegador/Playwright
