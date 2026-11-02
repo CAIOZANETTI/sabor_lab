@@ -13,3 +13,6 @@ __pycache__/
 
 # cópias CSV opcionais do banco (build_database.py --csv)
 data/processed/*.csv
+
+# USDA FoodData Central bruto (domínio público, re-baixável: scripts/download_nutrition.py)
+data/raw/usda/

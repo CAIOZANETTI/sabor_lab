@@ -313,7 +313,9 @@ background:#fff;border:1px solid {GRID};border-radius:6px;box-shadow:0 2px 8px r
 """
 
 
-def render_html(a: RecipeAnalysis, meta: dict | None = None, out: Path | None = None) -> str:
+def render_html(a: RecipeAnalysis, meta: dict | None = None, out: Path | None = None,
+                extra_html: str = "") -> str:
+    """extra_html: seções adicionais (ex.: nutrição) inseridas logo após os ingredientes."""
     meta = meta or {}
     figs = [heatmap(a, "jaccard", "Química: similaridade molecular (Jaccard)", BLUE_SEQ, ".2f"),
             heatmap(a, "npmi", "Prática: co-ocorrência em receitas (NPMI)", ORANGE_SEQ, ".2f"),
@@ -326,7 +328,8 @@ def render_html(a: RecipeAnalysis, meta: dict | None = None, out: Path | None = 
         if v is not None and str(v).strip() and str(v) != "nan")
     warn = ("<div class='warn'>" + "<br>".join(html.escape(w) for w in a.warnings) + "</div>"
             if a.warnings else "")
-    ing = pd.DataFrame([{"ingrediente": r.query, "no banco": r.name, "id": r.ingredient_id,
+    ing = pd.DataFrame([{"ingrediente": r.query, "no banco": a.db_names.get(r.ingredient_id, r.name),
+                         "id": r.ingredient_id,
                          "moléculas": a.n_molecules[r.ingredient_id], "obs.": r.note}
                         for r in a.items])
     bridges = a.bridges.assign(
@@ -349,9 +352,10 @@ def render_html(a: RecipeAnalysis, meta: dict | None = None, out: Path | None = 
 <title>{html.escape(a.name)} — embasamento científico</title><style>{CSS}</style>
 <script src="{PLOTLY_CDN}"></script><script src="{VIS_CDN}"></script></head><body>
 <h1>{html.escape(a.name)}</h1>
-<p class="muted">Embasamento científico da receita · FlavorDB2 + FlavorGraph</p>
+<p class="muted">Embasamento científico da receita · sabor: FlavorDB2 + FlavorGraph · nutrição: TACO + USDA</p>
 {head}{warn}
-<h2>Ingredientes</h2>{_table(ing)}
+<h2>Sabor: ingredientes no banco molecular</h2>{_table(ing)}
+{extra_html}
 <h2>Por que combina</h2>
 <p class="muted"><b>Química</b> = fração de moléculas de sabor compartilhadas (Jaccard, 0–1).
 <b>Prática</b> = associação do par em &gt;1 milhão de receitas (NPMI, 0–1): mede se aparecem juntos
@@ -373,7 +377,8 @@ juntos com frequência — 0 significa "sem associação especial", não "nunca 
 <h3>Ousadas — química alta, sem associação em receitas (combinações pouco exploradas)</h3>
 {_table(sug.get("ousadas"), fmt)}
 <h2>Tabela de pares</h2>{_table(pairs, {"jaccard": ".3f", "npmi": ".2f"})}
-<p class="muted">Fontes: FlavorDB2 (CC BY-NC-SA 3.0) · FlavorGraph (Apache 2.0). Ver data/SOURCES.md.</p>
+<p class="muted">Fontes: FlavorDB2 (CC BY-NC-SA 3.0) · FlavorGraph (Apache 2.0) · TACO 4ª ed. (NEPA/UNICAMP) ·
+USDA FoodData Central (domínio público) · POF 2008-2009 (IBGE). Ver data/SOURCES.md.</p>
 <script>{NETWORK_JS}</script><script>{SORT_JS}</script>
 </body></html>"""
     if out:
