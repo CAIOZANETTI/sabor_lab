@@ -81,12 +81,12 @@ def build_site(output: Path) -> list[Path]:
     <span class="eyebrow">Sabor molecular + nutrição + cultura</span>
     <h1>SaborLab</h1>
     <p class="intro">Um laboratório para transformar ingredientes em receitas e receitas em escolhas calculadas, combinando sabor, nutrição, porções e contexto cultural.</p>
-    <div class="actions"><a class="button" href="sobre.html">Entenda como funciona</a></div>
+    <div class="actions"><a class="button" href="app.html">Experimentar o mockup</a><a class="button" href="sobre.html">Entenda como funciona</a></div>
     <section class="grid" aria-label="Relatórios disponíveis">
       {''.join(cards)}
     </section>
     <footer>
-      <p>Projeto experimental e não comercial. Consulte as <a href="https://github.com/CAIOZANETTI/science_spice/blob/main/data/SOURCES.md">fontes, licenças e referências</a> ou veja o <a href="https://github.com/CAIOZANETTI/science_spice">código no GitHub</a>.</p>
+      <p>Projeto experimental e não comercial. Consulte as <a href="https://github.com/CAIOZANETTI/sabor_lab/blob/main/data/SOURCES.md">fontes, licenças e referências</a> ou veja o <a href="https://github.com/CAIOZANETTI/sabor_lab">código no GitHub</a>.</p>
     </footer>
   </main>
 </body>
