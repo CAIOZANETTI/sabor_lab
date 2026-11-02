@@ -1,0 +1,396 @@
+{
+  "recipe_id": "EX02",
+  "servings": 2,
+  "cooks": 1,
+  "provenance": "receita de exemplo do projeto (receitas.csv: \"infusão no leite\"); etapas e tempos curados",
+  "notes": "",
+  "resources": [
+    {
+      "resource_id": "burner",
+      "equipment_id": "stovetop_burner",
+      "capacity": 1
+    },
+    {
+      "resource_id": "pot",
+      "equipment_id": "saucepan",
+      "capacity": 1
+    },
+    {
+      "resource_id": "board",
+      "equipment_id": "cutting_board",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bench",
+      "equipment_id": "countertop",
+      "capacity": 1
+    },
+    {
+      "resource_id": "strainer",
+      "equipment_id": "strainer",
+      "capacity": 1
+    }
+  ],
+  "ingredients": [
+    {
+      "ref_id": "recipe:EX02:line:1",
+      "entity_id": "sl:ingredient:tea",
+      "display_name": "chá preto",
+      "legacy_line": 1
+    },
+    {
+      "ref_id": "recipe:EX02:line:2",
+      "entity_id": "sl:ingredient:milk",
+      "display_name": "leite",
+      "legacy_line": 2
+    },
+    {
+      "ref_id": "recipe:EX02:line:3",
+      "entity_id": "sl:ingredient:cinnamon",
+      "display_name": "canela",
+      "legacy_line": 3
+    },
+    {
+      "ref_id": "recipe:EX02:line:4",
+      "entity_id": "sl:ingredient:cardamom",
+      "display_name": "cardamomo",
+      "legacy_line": 4
+    },
+    {
+      "ref_id": "recipe:EX02:line:5",
+      "entity_id": "sl:ingredient:ginger",
+      "display_name": "gengibre",
+      "legacy_line": 5
+    },
+    {
+      "ref_id": "recipe:EX02:line:6",
+      "entity_id": "sl:ingredient:clove",
+      "display_name": "cravo",
+      "legacy_line": 6
+    },
+    {
+      "ref_id": "recipe:EX02:line:7",
+      "entity_id": "sl:ingredient:black_pepper",
+      "display_name": "pimenta-do-reino",
+      "legacy_line": 7
+    },
+    {
+      "ref_id": "recipe:EX02:line:8",
+      "entity_id": "sl:ingredient:sugar",
+      "display_name": "açúcar",
+      "legacy_line": 8
+    }
+  ],
+  "claims": [
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s01:active",
+      "subject_id": "process:EX02:s01",
+      "predicate": "process_duration_s",
+      "value": 3,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 2,
+      "value_max": 5,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s02:active",
+      "subject_id": "process:EX02:s02",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s03:active",
+      "subject_id": "process:EX02:s03",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s04:active",
+      "subject_id": "process:EX02:s04",
+      "predicate": "process_duration_s",
+      "value": 1,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s04:passive",
+      "subject_id": "process:EX02:s04",
+      "predicate": "process_duration_s",
+      "value": 8,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 5,
+      "value_max": 12,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s05:active",
+      "subject_id": "process:EX02:s05",
+      "predicate": "process_duration_s",
+      "value": 1,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s05:passive",
+      "subject_id": "process:EX02:s05",
+      "predicate": "process_duration_s",
+      "value": 4,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 3,
+      "value_max": 5,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX02:s06:active",
+      "subject_id": "process:EX02:s06",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "phase": "mise_en_place",
+      "title": "Separar ingredientes",
+      "instruction": "Separe e meça os ingredientes.",
+      "ingredient_refs": [
+        "recipe:EX02:line:1",
+        "recipe:EX02:line:2",
+        "recipe:EX02:line:3",
+        "recipe:EX02:line:4",
+        "recipe:EX02:line:5",
+        "recipe:EX02:line:6",
+        "recipe:EX02:line:7",
+        "recipe:EX02:line:8"
+      ],
+      "technique_id": "mise_en_place",
+      "cut_id": null,
+      "equipment_refs": [
+        "bench"
+      ],
+      "dependencies": [],
+      "attention": "active",
+      "completion_signal": "ingredientes medidos",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX02:s01:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s02",
+      "phase": "mise_en_place",
+      "title": "Amassar cardamomo e pimenta",
+      "instruction": "Amasse levemente as sementes.",
+      "ingredient_refs": [
+        "recipe:EX02:line:4",
+        "recipe:EX02:line:7"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "crush",
+      "equipment_refs": [
+        "board"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "cascas abertas",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX02:s02:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s03",
+      "phase": "mise_en_place",
+      "title": "Fatiar o gengibre",
+      "instruction": "Fatie o gengibre fino.",
+      "ingredient_refs": [
+        "recipe:EX02:line:5"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "slice",
+      "equipment_refs": [
+        "board"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "fatias finas",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX02:s03:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s04",
+      "phase": "coccao",
+      "title": "Ferver água com especiarias",
+      "instruction": "Aqueça a água com as especiarias em fogo baixo.",
+      "ingredient_refs": [
+        "recipe:EX02:line:3",
+        "recipe:EX02:line:4",
+        "recipe:EX02:line:5",
+        "recipe:EX02:line:6",
+        "recipe:EX02:line:7"
+      ],
+      "technique_id": "simmer_reduce",
+      "cut_id": null,
+      "equipment_refs": [
+        "burner",
+        "pot"
+      ],
+      "dependencies": [
+        "s02",
+        "s03"
+      ],
+      "attention": "check",
+      "completion_signal": "líquido aromático",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX02:s04:active",
+        "passive_duration_s": "EX02:s04:passive"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s05",
+      "phase": "coccao",
+      "title": "Infundir o chá e o leite",
+      "instruction": "Junte o chá e o leite; deixe em infusão sem ferver forte.",
+      "ingredient_refs": [
+        "recipe:EX02:line:1",
+        "recipe:EX02:line:2"
+      ],
+      "technique_id": "steep",
+      "cut_id": null,
+      "equipment_refs": [
+        "burner",
+        "pot"
+      ],
+      "dependencies": [
+        "s04"
+      ],
+      "attention": "check",
+      "completion_signal": "cor e intensidade desejadas",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX02:s05:active",
+        "passive_duration_s": "EX02:s05:passive"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s06",
+      "phase": "finalizacao",
+      "title": "Coar e adoçar",
+      "instruction": "Coe e adoce a gosto.",
+      "ingredient_refs": [
+        "recipe:EX02:line:8"
+      ],
+      "technique_id": "strain",
+      "cut_id": null,
+      "equipment_refs": [
+        "strainer"
+      ],
+      "dependencies": [
+        "s05"
+      ],
+      "attention": "active",
+      "completion_signal": "bebida coada e adoçada",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX02:s06:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    }
+  ]
+}

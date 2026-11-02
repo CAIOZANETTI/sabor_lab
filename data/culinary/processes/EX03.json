@@ -1,0 +1,651 @@
+{
+  "recipe_id": "EX03",
+  "servings": 12,
+  "cooks": 1,
+  "provenance": "receita de exemplo do projeto (receitas.csv: \"forno a 350°F por 12 min, bolinhas de 2 inch\"); demais etapas e tempos curados",
+  "notes": "",
+  "resources": [
+    {
+      "resource_id": "oven",
+      "equipment_id": "oven",
+      "capacity": 1
+    },
+    {
+      "resource_id": "sheet",
+      "equipment_id": "baking_sheet",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bowl_wet",
+      "equipment_id": "mixing_bowl",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bowl_dry",
+      "equipment_id": "mixing_bowl",
+      "capacity": 1
+    },
+    {
+      "resource_id": "mixer",
+      "equipment_id": "mixer",
+      "capacity": 1
+    },
+    {
+      "resource_id": "board",
+      "equipment_id": "cutting_board",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bench",
+      "equipment_id": "countertop",
+      "capacity": 1
+    },
+    {
+      "resource_id": "rack",
+      "equipment_id": "cooling_rack",
+      "capacity": 1
+    }
+  ],
+  "ingredients": [
+    {
+      "ref_id": "recipe:EX03:line:1",
+      "entity_id": "sl:ingredient:wheat_flour",
+      "display_name": "farinha de trigo",
+      "legacy_line": 1
+    },
+    {
+      "ref_id": "recipe:EX03:line:2",
+      "entity_id": "sl:ingredient:butter",
+      "display_name": "manteiga",
+      "legacy_line": 2
+    },
+    {
+      "ref_id": "recipe:EX03:line:3",
+      "entity_id": "sl:form:sugar_brown_mascavo",
+      "display_name": "açúcar mascavo",
+      "legacy_line": 3
+    },
+    {
+      "ref_id": "recipe:EX03:line:4",
+      "entity_id": "sl:ingredient:sugar",
+      "display_name": "açúcar",
+      "legacy_line": 4
+    },
+    {
+      "ref_id": "recipe:EX03:line:5",
+      "entity_id": "sl:ingredient:chicken_egg",
+      "display_name": "ovo",
+      "legacy_line": 5
+    },
+    {
+      "ref_id": "recipe:EX03:line:6",
+      "entity_id": "sl:ingredient:vanilla",
+      "display_name": "baunilha",
+      "legacy_line": 6
+    },
+    {
+      "ref_id": "recipe:EX03:line:7",
+      "entity_id": "sl:ingredient:salt",
+      "display_name": "sal",
+      "legacy_line": 7
+    },
+    {
+      "ref_id": "recipe:EX03:line:8",
+      "entity_id": "sl:ingredient:chocolate",
+      "display_name": "chocolate amargo",
+      "legacy_line": 8
+    }
+  ],
+  "claims": [
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s01:active",
+      "subject_id": "process:EX03:s01",
+      "predicate": "process_duration_s",
+      "value": 5,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 3,
+      "value_max": 8,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s02:passive",
+      "subject_id": "process:EX03:s02",
+      "predicate": "process_duration_s",
+      "value": 30,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 20,
+      "value_max": 60,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s03:active",
+      "subject_id": "process:EX03:s03",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s04:active",
+      "subject_id": "process:EX03:s04",
+      "predicate": "process_duration_s",
+      "value": 5,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 3,
+      "value_max": 8,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s05:active",
+      "subject_id": "process:EX03:s05",
+      "predicate": "process_duration_s",
+      "value": 4,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 3,
+      "value_max": 6,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s06:active",
+      "subject_id": "process:EX03:s06",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s07:active",
+      "subject_id": "process:EX03:s07",
+      "predicate": "process_duration_s",
+      "value": 3,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 2,
+      "value_max": 4,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s08:active",
+      "subject_id": "process:EX03:s08",
+      "predicate": "process_duration_s",
+      "value": 10,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 8,
+      "value_max": 15,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:p01:active",
+      "subject_id": "process:EX03:p01",
+      "predicate": "process_duration_s",
+      "value": 1,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:p01:passive",
+      "subject_id": "process:EX03:p01",
+      "predicate": "process_duration_s",
+      "value": 14,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 10,
+      "value_max": 20,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "moderate",
+      "method": "instrução da receita EX03 (data/experiments/receitas.csv)",
+      "limitations": "valor indicado pela receita; depende do equipamento, da massa e do ponto desejado; não validado neste forno",
+      "claim_id": "EX03:p01:temp",
+      "subject_id": "process:EX03:p01",
+      "predicate": "process_temperature_c",
+      "value": 350,
+      "unit": "°F",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "moderate",
+      "method": "instrução da receita EX03 (data/experiments/receitas.csv)",
+      "limitations": "valor indicado pela receita; depende do equipamento, da massa e do ponto desejado; não validado neste forno",
+      "claim_id": "EX03:s09:passive",
+      "subject_id": "process:EX03:s09",
+      "predicate": "process_duration_s",
+      "value": 12,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "moderate",
+      "method": "instrução da receita EX03 (data/experiments/receitas.csv)",
+      "limitations": "valor indicado pela receita; depende do equipamento, da massa e do ponto desejado; não validado neste forno",
+      "claim_id": "EX03:s09:temp",
+      "subject_id": "process:EX03:s09",
+      "predicate": "process_temperature_c",
+      "value": 350,
+      "unit": "°F",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX03:s10:passive",
+      "subject_id": "process:EX03:s10",
+      "predicate": "process_duration_s",
+      "value": 10,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 5,
+      "value_max": 15,
+      "context": null
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "phase": "mise_en_place",
+      "title": "Separar ingredientes",
+      "instruction": "Separe e meça os ingredientes.",
+      "ingredient_refs": [
+        "recipe:EX03:line:1",
+        "recipe:EX03:line:2",
+        "recipe:EX03:line:3",
+        "recipe:EX03:line:4",
+        "recipe:EX03:line:5",
+        "recipe:EX03:line:6",
+        "recipe:EX03:line:7",
+        "recipe:EX03:line:8"
+      ],
+      "technique_id": "mise_en_place",
+      "cut_id": null,
+      "equipment_refs": [
+        "bench"
+      ],
+      "dependencies": [],
+      "attention": "active",
+      "completion_signal": "ingredientes medidos",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s01:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s02",
+      "phase": "mise_en_place",
+      "title": "Amolecer a manteiga",
+      "instruction": "Deixe a manteiga em temperatura ambiente até amolecer.",
+      "ingredient_refs": [
+        "recipe:EX03:line:2"
+      ],
+      "technique_id": "soften_ambient",
+      "cut_id": null,
+      "equipment_refs": [],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "passive",
+      "completion_signal": "manteiga cede à pressão do dedo",
+      "safety_control_id": null,
+      "claim_ids": {
+        "passive_duration_s": "EX03:s02:passive"
+      },
+      "transformations": [],
+      "notes": "temperatura ambiente desconhecida; tempo varia muito",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s03",
+      "phase": "mise_en_place",
+      "title": "Misturar os secos",
+      "instruction": "Misture farinha e sal.",
+      "ingredient_refs": [
+        "recipe:EX03:line:1",
+        "recipe:EX03:line:7"
+      ],
+      "technique_id": "mix",
+      "cut_id": null,
+      "equipment_refs": [
+        "bowl_dry"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "mistura homogênea",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s03:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s04",
+      "phase": "mise_en_place",
+      "title": "Picar o chocolate",
+      "instruction": "Pique o chocolate grosseiramente.",
+      "ingredient_refs": [
+        "recipe:EX03:line:8"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "rough_chop",
+      "equipment_refs": [
+        "board"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "pedaços irregulares",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s04:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s05",
+      "phase": "montagem",
+      "title": "Bater manteiga e açúcares",
+      "instruction": "Bata a manteiga com os açúcares.",
+      "ingredient_refs": [
+        "recipe:EX03:line:2",
+        "recipe:EX03:line:3",
+        "recipe:EX03:line:4"
+      ],
+      "technique_id": "cream",
+      "cut_id": null,
+      "equipment_refs": [
+        "mixer",
+        "bowl_wet"
+      ],
+      "dependencies": [
+        "s02"
+      ],
+      "attention": "active",
+      "completion_signal": "creme claro e aerado",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s05:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s06",
+      "phase": "montagem",
+      "title": "Adicionar ovos e baunilha",
+      "instruction": "Junte os ovos e a baunilha e bata até incorporar.",
+      "ingredient_refs": [
+        "recipe:EX03:line:5",
+        "recipe:EX03:line:6"
+      ],
+      "technique_id": "cream",
+      "cut_id": null,
+      "equipment_refs": [
+        "mixer",
+        "bowl_wet"
+      ],
+      "dependencies": [
+        "s05"
+      ],
+      "attention": "active",
+      "completion_signal": "mistura lisa",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s06:active"
+      },
+      "transformations": [
+        "emulsification"
+      ],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s07",
+      "phase": "montagem",
+      "title": "Incorporar secos e chocolate",
+      "instruction": "Incorpore os secos e o chocolate sem sovar.",
+      "ingredient_refs": [
+        "recipe:EX03:line:1",
+        "recipe:EX03:line:7",
+        "recipe:EX03:line:8"
+      ],
+      "technique_id": "mix",
+      "cut_id": null,
+      "equipment_refs": [
+        "bowl_wet"
+      ],
+      "dependencies": [
+        "s06",
+        "s03",
+        "s04"
+      ],
+      "attention": "active",
+      "completion_signal": "massa uniforme",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s07:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s08",
+      "phase": "montagem",
+      "title": "Modelar bolinhas",
+      "instruction": "Modele bolinhas de cerca de 5 cm (2 polegadas).",
+      "ingredient_refs": [],
+      "technique_id": "shape",
+      "cut_id": null,
+      "equipment_refs": [
+        "sheet"
+      ],
+      "dependencies": [
+        "s07"
+      ],
+      "attention": "active",
+      "completion_signal": "bolinhas na assadeira",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:s08:active"
+      },
+      "transformations": [],
+      "notes": "2 inch = 5,08 cm (conversão exata)",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "p01",
+      "phase": "preaquecimento",
+      "title": "Preaquecer o forno",
+      "instruction": "Ligue o forno a 350 °F (≈177 °C).",
+      "ingredient_refs": [],
+      "technique_id": "preheat",
+      "cut_id": null,
+      "equipment_refs": [
+        "oven"
+      ],
+      "dependencies": [],
+      "attention": "passive",
+      "completion_signal": "forno na temperatura (termostato/termômetro de forno)",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX03:p01:active",
+        "passive_duration_s": "EX03:p01:passive",
+        "target_temp_c": "EX03:p01:temp"
+      },
+      "transformations": [],
+      "notes": "tempo de preaquecimento depende do forno; potência não é inferida",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s09",
+      "phase": "coccao",
+      "title": "Assar",
+      "instruction": "Asse por cerca de 12 min.",
+      "ingredient_refs": [
+        "recipe:EX03:line:1",
+        "recipe:EX03:line:2",
+        "recipe:EX03:line:3",
+        "recipe:EX03:line:4",
+        "recipe:EX03:line:5",
+        "recipe:EX03:line:6",
+        "recipe:EX03:line:7",
+        "recipe:EX03:line:8"
+      ],
+      "technique_id": "bake",
+      "cut_id": null,
+      "equipment_refs": [
+        "oven",
+        "sheet"
+      ],
+      "dependencies": [
+        "s08",
+        "p01"
+      ],
+      "attention": "check",
+      "completion_signal": "bordas douradas, centro ainda macio",
+      "safety_control_id": null,
+      "claim_ids": {
+        "passive_duration_s": "EX03:s09:passive",
+        "target_temp_c": "EX03:s09:temp"
+      },
+      "transformations": [
+        "maillard_reaction",
+        "caramelization",
+        "starch_gelatinization",
+        "protein_denaturation_heat"
+      ],
+      "notes": "transformações possíveis, não verificadas; temperatura é do forno, não do alimento",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s10",
+      "phase": "descanso",
+      "title": "Esfriar",
+      "instruction": "Deixe esfriar na grade antes de servir.",
+      "ingredient_refs": [],
+      "technique_id": "cool_rest",
+      "cut_id": null,
+      "equipment_refs": [
+        "rack"
+      ],
+      "dependencies": [
+        "s09"
+      ],
+      "attention": "passive",
+      "completion_signal": "firmes ao toque",
+      "safety_control_id": null,
+      "claim_ids": {
+        "passive_duration_s": "EX03:s10:passive"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    }
+  ]
+}
