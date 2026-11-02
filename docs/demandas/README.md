@@ -8,7 +8,7 @@ independentes. Claude não deve fazer merge.
 
 | Ordem | Demanda | Dependência | Resultado |
 |---|---|---|---|
-| 1 | [002 — Catálogo de ingredientes e variedades](002-catalogo-ingredientes-variedades.md) | nenhuma | IDs canônicos, hierarquia e mapeamentos de fonte |
+| 1 | [002 — Catálogo universal de alimentos](002-catalogo-ingredientes-variedades.md) | nenhuma | inventário completo, IDs canônicos, hierarquia e mapeamentos de fonte |
 | 2 | [003 — Grafo de preparo e conhecimento culinário](003-grafo-preparo-conhecimento.md) | 002 | etapas, técnicas, cortes, equipamentos, reações e scheduler |
 | 3 | [004 — Modo cozinha e timers](004-modo-cozinha-timers.md) | 003 | interface operacional, cronograma paralelo e contadores |
 | 4 | [001 — Recomendador guiado](001-recomendador-guiado.md) | 002, 003 e contratos da 004 | integração de pessoas, metas, receitas e interface guiada |

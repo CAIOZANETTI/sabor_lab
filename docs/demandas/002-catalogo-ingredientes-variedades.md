@@ -1,4 +1,4 @@
-# [SaborLab] Catálogo canônico de ingredientes, variedades e formas
+# [SaborLab] Catálogo universal de alimentos, ingredientes, variedades e formas
 
 ## Responsável e branch
 
@@ -7,12 +7,17 @@ Claude Code, em `claude/ingredient-catalog`. Abrir PR e não fazer merge.
 ## Problema
 
 O repositório já contém 8.826 registros nutricionais e 7.588 ingredientes de
-sabor. As buscas atuais encontram centenas de descrições relacionadas a queijo,
-arroz e feijão, mas elas são registros planos de fontes diferentes. O sistema
-não distingue de forma estruturada:
+sabor. Queijo, arroz e feijão são apenas exemplos visíveis de um problema que
+atinge todo o catálogo: as fontes trazem milhares de descrições planas e
+heterogêneas. O mesmo ocorre com milho, trigo, peixes, frutos do mar, carnes,
+aves, frutas, hortaliças, cogumelos, castanhas, sementes, ervas, especiarias,
+óleos, bebidas e alimentos preparados. O sistema não distingue de forma
+estruturada:
 
-- conceito culinário: `arroz`;
-- variedade: `basmati`, `arbório`, `jasmim`, `integral`;
+- conceito culinário: `arroz`, `milho`, `salmão`, `queijo`;
+- variedade, espécie, cultivar ou tipo culinário: `basmati`, `milho-pipoca`,
+  `salmão-do-atlântico`, `parmesão`;
+- parte ou corte: filé, lombo, peito, folha, raiz, fruto, grão;
 - espécie/cultivar quando conhecido;
 - estado: cru, cozido, seco, maturado;
 - forma: grão, farinha, ralado, pasta;
@@ -25,9 +30,21 @@ recomendação, substituição ou contexto cultural.
 
 ## Objetivo
 
-Criar um catálogo canônico, versionado e rastreável que conecte conceitos e
-variedades culinárias às fontes existentes, sem copiar bases externas antes de
-confirmar licença, compatibilidade e utilidade.
+Criar um catálogo canônico, versionado e rastreável para **todos os registros das
+fontes atuais**, conectando conceitos, espécies, variedades, partes, cortes,
+formas e produtos culinários. O catálogo deve aceitar expansão contínua sem
+alterar IDs existentes. Não copiar bases externas antes de confirmar licença,
+compatibilidade e utilidade.
+
+“Cobrir todos” nesta etapa significa:
+
+1. inventariar 100% dos registros atuais;
+2. mapear automaticamente apenas correspondências seguras;
+3. preservar todos os não mapeados em uma fila explícita de curadoria;
+4. medir cobertura por fonte, grupo alimentar, idioma e confiança;
+5. fornecer estrutura para incorporar novos alimentos e fontes no futuro.
+
+Não significa forçar uma classificação incorreta para obter 100% de mapeamento.
 
 ## Pesquisa obrigatória antes da implementação
 
@@ -39,8 +56,11 @@ Produzir `docs/research/ingredient-taxonomy-sources.md` comparando:
 4. **Wikidata**, candidato CC0 para espécie, origem, relações e identificadores;
 5. **Open Food Facts**, apenas como candidato para produtos embalados e suas
    taxonomias, considerando obrigações ODbL e separação de derivados;
-6. fontes agrícolas públicas, como GRIN/FAO ou registros nacionais, somente se
-   agregarem espécie/cultivar útil ao consumidor.
+6. fontes biológicas e agrícolas públicas, como Catalogue of Life, GBIF,
+   GRIN/FAO, listas oficiais de espécies pesqueiras ou registros nacionais,
+   somente se agregarem espécie/cultivar útil e tiverem licença compatível;
+7. fontes específicas por domínio — pescados, cortes de carne, cultivares,
+   queijos e fermentados — apenas após avaliação de licença e autoridade.
 
 Para cada fonte: escopo, licença, versão, atualização, formato, idioma, IDs,
 atribuição, restrições de redistribuição e exemplo de mapeamento. Não raspar
@@ -54,14 +74,19 @@ Definir dataclasses/tipos e tabelas independentes da interface:
 ```python
 IngredientConcept(
     concept_id, canonical_name_pt, canonical_name_en,
-    parent_id, food_group, scientific_taxon_id,
+    entity_type, parent_id, food_group, scientific_taxon_id,
     description, status
 )
 
 IngredientVariant(
     variant_id, concept_id, name_pt, name_en,
-    variety_type, origin_region, attributes,
+    variant_kind, biological_rank, origin_region, attributes,
     default_state, confidence
+)
+
+CulinaryPart(
+    part_id, concept_id, name_pt, anatomical_or_botanical_part,
+    cut_geometry, edible_portion, attributes
 )
 
 IngredientForm(
@@ -81,6 +106,10 @@ IDs internos devem ser estáveis e sem significado posicional, por exemplo:
 sl:ingredient:rice
 sl:variant:rice_basmati
 sl:form:rice_basmati_cooked
+sl:ingredient:atlantic_salmon
+sl:part:atlantic_salmon_fillet
+sl:ingredient:corn
+sl:variant:corn_popcorn
 ```
 
 Não usar índice de linha, nome traduzido ou ID de uma fonte como ID canônico.
@@ -89,6 +118,8 @@ Não usar índice de linha, nome traduzido ou ID de uma fonte como ID canônico.
 
 - `is_a`: parmesão é uma variedade/tipo de queijo;
 - `variant_of`: basmati é variante de arroz;
+- `taxon_of`: uma espécie biológica sustenta um conceito culinário;
+- `part_of`: filé é parte/corte de um peixe; peito é parte de uma ave;
 - `form_of`: arroz cozido é forma de uma variante/conceito;
 - `derived_from`: farinha de arroz deriva de arroz;
 - `dish_contains`: risoto contém arroz, mas não é variedade de arroz;
@@ -97,7 +128,53 @@ Não usar índice de linha, nome traduzido ou ID de uma fonte como ID canônico.
 
 Impedir ciclos e relações semanticamente inválidas.
 
-## Cobertura inicial obrigatória
+## Cobertura obrigatória
+
+### Inventário completo
+
+Criar um ledger que contenha **cada registro** de TACO, USDA, FlavorDB e
+FlavorGraph com um dos estados:
+
+```text
+mapped_reviewed
+mapped_high_confidence
+mapped_low_confidence
+ambiguous
+unmapped
+excluded_with_reason
+```
+
+Cada linha deve manter fonte, ID, descrição original, grupo original, candidatos,
+confiança, regra usada e motivo. O relatório de cobertura deve ser reproduzível
+e falhar se um novo registro desaparecer do inventário.
+
+### Grupos alimentares
+
+O esquema, pipeline e amostra curada devem cobrir todos estes grupos:
+
+- cereais e pseudocereais;
+- leguminosas;
+- tubérculos e raízes;
+- hortaliças, folhas, flores e algas;
+- frutas;
+- cogumelos e outros fungos culinários;
+- castanhas, sementes e derivados;
+- ervas, especiarias, sais e condimentos;
+- óleos e gorduras;
+- leite, laticínios e queijos;
+- ovos;
+- bovinos, suínos, caprinos, ovinos e caça;
+- aves;
+- peixes, moluscos, crustáceos e outros frutos do mar;
+- bebidas e infusões;
+- açúcares e adoçantes;
+- fermentados e conservas;
+- produtos processados;
+- pratos preparados e receitas compostas.
+
+Para a primeira PR, curar um conjunto de referência distribuído, com pelo menos
+200 entidades entre os grupos, sem concentrar a maioria em uma única família.
+Esse conjunto é benchmark do pipeline, não limite do produto.
 
 ### Queijos
 
@@ -122,13 +199,35 @@ Incluir pelo menos 15 entidades: carioca, preto, fradinho, branco, vermelho,
 rajado, jalo, roxo, azuki, mungo, lima e outros presentes nas fontes. Registrar
 espécie separadamente do nome culinário e distinguir cru, cozido e enlatado.
 
+### Milho
+
+Cobrir conceito, espécies quando aplicável, milho-verde, milho seco, milho-pipoca,
+farinha, fubá, canjica/hominy, amido, óleo e formas cozidas. Separar variedade,
+processamento e prato preparado.
+
+### Peixes e frutos do mar
+
+Cobrir exemplos de água doce e salgada, espécie comercial quando conhecida,
+origem selvagem/cultivo apenas quando a fonte informar, partes/cortes e formas
+crua, cozida, defumada, seca e enlatada. Nome comercial ambíguo deve manter
+candidatos, região e confiança; não escolher espécie por suposição.
+
+### Demais grupos
+
+Selecionar casos de referência de frutas, hortaliças, fungos, carnes, aves,
+ovos, sementes, castanhas, ervas, especiarias, óleos, bebidas, fermentados e
+alimentos preparados. Incluir casos difíceis: nomes regionais, homônimos,
+ingredientes compostos, estados cru/cozido e produtos derivados.
+
 ## Arquivos propostos
 
 ```text
 data/catalog/ingredient_concepts.csv
 data/catalog/ingredient_variants.csv
 data/catalog/ingredient_forms.csv
+data/catalog/culinary_parts.csv
 data/catalog/source_mappings.csv
+data/catalog/source_inventory.csv
 data/catalog/SOURCES.md
 flavorlab/catalog.py
 scripts/build_catalog.py
@@ -144,9 +243,11 @@ catalog.get(entity_id)
 catalog.children(entity_id)
 catalog.variants(concept_id)
 catalog.forms(variant_id)
+catalog.parts(concept_id)
 catalog.resolve_source(source, source_id)
 catalog.mappings(entity_id, source=None)
 catalog.search_by_category(category_id)
+catalog.coverage(source=None, food_group=None, status=None)
 ```
 
 Resolução ambígua deve retornar candidatos e confiança, sem escolher o primeiro
@@ -165,11 +266,16 @@ silenciosamente.
    conceito/variante coerente.
 9. Mapeamento automático abaixo do limite de confiança exige revisão.
 10. Toda linha externa possui fonte, versão e licença registradas.
-11. Toda a suíte existente continua passando.
+11. Todos os registros das fontes aparecem no ledger, inclusive não mapeados.
+12. Nomes comerciais ambíguos de pescado não viram espécie sem evidência.
+13. Milho-pipoca não é tratado como prato pronto nem sinônimo universal de milho.
+14. Cortes de carne/peixe são partes, não variedades biológicas.
+15. Relatório de cobertura apresenta contagens por grupo, fonte e status.
+16. Toda a suíte existente continua passando.
 
 ## Fora de escopo
 
-- cobrir todos os alimentos do mundo;
+- revisar manualmente todos os alimentos do mundo em uma única PR;
 - importar produtos de supermercado;
 - sugerir receitas;
 - traduzir automaticamente milhares de nomes;
@@ -180,7 +286,9 @@ silenciosamente.
 
 - [ ] Pesquisa de fontes e licenças revisável.
 - [ ] Esquema canônico independente das fontes.
-- [ ] Cobertura mínima de queijo, arroz e feijão concluída.
+- [ ] 100% dos registros atuais inventariados, sem perdas silenciosas.
+- [ ] Amostra curada distribuída por todos os grandes grupos alimentares.
+- [ ] Queijo, arroz, feijão, milho e pescados exercitam aspectos diferentes do modelo.
 - [ ] Proveniência e confiança presentes em todos os mapeamentos.
 - [ ] API e build documentados e testados.
 - [ ] Sem dados inventados ou scraping incompatível.
