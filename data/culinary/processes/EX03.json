@@ -538,7 +538,7 @@
       "step_id": "s08",
       "phase": "montagem",
       "title": "Modelar bolinhas",
-      "instruction": "Modele bolinhas de cerca de 5 cm (2 polegadas).",
+      "instruction": "Modele bolinhas de cerca de 5 cm.",
       "ingredient_refs": [],
       "technique_id": "shape",
       "cut_id": null,
@@ -555,14 +555,14 @@
         "active_duration_s": "EX03:s08:active"
       },
       "transformations": [],
-      "notes": "2 inch = 5,08 cm (conversão exata)",
+      "notes": "receita original: 2 inch = 5,08 cm (conversão exata)",
       "acceptable_range_c": null
     },
     {
       "step_id": "p01",
       "phase": "preaquecimento",
       "title": "Preaquecer o forno",
-      "instruction": "Ligue o forno a 350 °F (≈177 °C).",
+      "instruction": "Ligue o forno a 177 °C (a receita original indica 350 °F).",
       "ingredient_refs": [],
       "technique_id": "preheat",
       "cut_id": null,
