@@ -1,0 +1,362 @@
+form_id,concept_id,variant_id,part_id,name_pt,name_en,state,physical_form,preparation,hydration,edible_portion,attributes,evidence
+sl:form:rice_brown_raw,sl:ingredient:rice,,,arroz integral cru,"brown rice, raw",raw,grain,whole_grain,dry,,processing=dehulled_not_polished,"""integral"" = só descascado (processamento), nunca cultivar"
+sl:form:rice_brown_cooked,sl:ingredient:rice,,,arroz integral cozido,"brown rice, cooked",cooked,grain,whole_grain;boiled,rehydrated,,processing=dehulled_not_polished,curadoria inicial
+sl:form:rice_white_raw,sl:ingredient:rice,,,arroz branco (polido) cru,"white rice, raw",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_white_cooked,sl:ingredient:rice,,,arroz branco (polido) cozido,"white rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_type_1_raw,sl:ingredient:rice,sl:variant:rice_type_1,,arroz tipo 1 cru,"rice grade 1, raw",raw,grain,polished,dry,,,"TACO separa ""tipo 1"" de ""integral"": beneficiado/polido"
+sl:form:rice_type_1_cooked,sl:ingredient:rice,sl:variant:rice_type_1,,arroz tipo 1 cozido,"rice grade 1, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_type_2_raw,sl:ingredient:rice,sl:variant:rice_type_2,,arroz tipo 2 cru,"rice grade 2, raw",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_type_2_cooked,sl:ingredient:rice,sl:variant:rice_type_2,,arroz tipo 2 cozido,"rice grade 2, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_long_grain_white_raw,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz agulhinha branco cru,"long-grain white rice, raw",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_long_grain_white_cooked,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz agulhinha branco cozido,"long-grain white rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_long_grain_brown_raw,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz agulhinha integral cru,"long-grain brown rice, raw",raw,grain,whole_grain,dry,,,curadoria inicial
+sl:form:rice_long_grain_brown_cooked,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz agulhinha integral cozido,"long-grain brown rice, cooked",cooked,grain,whole_grain;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_long_grain_parboiled_raw,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz parboilizado cru,"parboiled long-grain rice, dry",raw,grain,parboiled;polished,dry,,,"parboilização = processamento hidrotérmico, não cultivar"
+sl:form:rice_long_grain_parboiled_cooked,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz parboilizado cozido,"parboiled long-grain rice, cooked",cooked,grain,parboiled;polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_long_grain_instant_dry,sl:ingredient:rice,sl:variant:rice_long_grain,,arroz instantâneo seco,"instant long-grain rice, dry",processed,grain,precooked;polished,dry,,,curadoria inicial
+sl:form:rice_medium_grain_white_raw,sl:ingredient:rice,sl:variant:rice_medium_grain,,arroz grão médio branco cru,"medium-grain white rice, raw",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_medium_grain_white_cooked,sl:ingredient:rice,sl:variant:rice_medium_grain,,arroz grão médio branco cozido,"medium-grain white rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_medium_grain_brown_raw,sl:ingredient:rice,sl:variant:rice_medium_grain,,arroz grão médio integral cru,"medium-grain brown rice, raw",raw,grain,whole_grain,dry,,,curadoria inicial
+sl:form:rice_short_grain_white_raw,sl:ingredient:rice,sl:variant:rice_short_grain,,arroz grão curto branco cru,"short-grain white rice, raw",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_short_grain_white_cooked,sl:ingredient:rice,sl:variant:rice_short_grain,,arroz grão curto branco cozido,"short-grain white rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_glutinous_raw,sl:ingredient:rice,sl:variant:rice_glutinous,,arroz glutinoso cru,"glutinous rice, uncooked",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_glutinous_cooked,sl:ingredient:rice,sl:variant:rice_glutinous,,arroz glutinoso cozido,"glutinous rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_black_raw,sl:ingredient:rice,sl:variant:rice_black,,arroz negro cru,"black rice, raw",raw,grain,whole_grain,dry,,,curadoria inicial
+sl:form:rice_red_raw,sl:ingredient:rice,sl:variant:rice_red,,arroz vermelho cru,"red rice, raw",raw,grain,whole_grain,dry,,,curadoria inicial
+sl:form:rice_basmati_raw,sl:ingredient:rice,sl:variant:rice_basmati,,arroz basmati cru,"basmati rice, raw",raw,grain,polished,dry,,,curadoria inicial
+sl:form:rice_basmati_cooked,sl:ingredient:rice,sl:variant:rice_basmati,,arroz basmati cozido,"basmati rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:rice_jasmine_cooked,sl:ingredient:rice,sl:variant:rice_jasmine,,arroz jasmim cozido,"jasmine rice, cooked",cooked,grain,polished;boiled,rehydrated,,,curadoria inicial
+sl:form:wild_rice_raw,sl:ingredient:wild_rice,,,arroz-selvagem cru,"wild rice, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:wild_rice_cooked,sl:ingredient:wild_rice,,,arroz-selvagem cozido,"wild rice, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:rice_flour_white,sl:ingredient:rice_flour,,,farinha de arroz branco,white rice flour,processed,flour,polished;milled,dry,,,curadoria inicial
+sl:form:rice_flour_brown,sl:ingredient:rice_flour,,,farinha de arroz integral,brown rice flour,processed,flour,whole_grain;milled,dry,,,curadoria inicial
+sl:form:rice_flour_glutinous,sl:ingredient:rice_flour,,,farinha de arroz glutinoso,glutinous rice flour,processed,flour,milled,dry,,source_variant=glutinous,curadoria inicial
+sl:form:rice_noodles_dry,sl:ingredient:rice_noodles,,,macarrão de arroz seco,"rice noodles, dry",dried,pieces,,dry,,,curadoria inicial
+sl:form:rice_noodles_cooked,sl:ingredient:rice_noodles,,,macarrão de arroz cozido,"rice noodles, cooked",cooked,pieces,boiled,rehydrated,,,curadoria inicial
+sl:form:corn_green_raw,sl:ingredient:corn,,,milho-verde cru,"green (immature) corn, raw",raw,kernel,,fresh,,maturity=immature,"TACO ""Milho, verde"": estágio de colheita, espécie/cultivar não informados"
+sl:form:corn_green_canned,sl:ingredient:corn,,,milho-verde enlatado drenado,"green corn, canned, drained",canned,kernel,,drained,,maturity=immature,curadoria inicial
+sl:form:corn_sweet_yellow_raw,sl:ingredient:corn,sl:variant:corn_sweet,,milho-doce amarelo cru,"sweet yellow corn, raw",raw,kernel,,fresh,,kernel_color=yellow,curadoria inicial
+sl:form:corn_sweet_yellow_cooked,sl:ingredient:corn,sl:variant:corn_sweet,,milho-doce amarelo cozido,"sweet yellow corn, boiled",cooked,kernel,boiled,drained,,kernel_color=yellow,curadoria inicial
+sl:form:corn_sweet_yellow_canned,sl:ingredient:corn,sl:variant:corn_sweet,,milho-doce amarelo enlatado,"sweet yellow corn, canned",canned,kernel,,drained,,kernel_color=yellow,curadoria inicial
+sl:form:corn_sweet_white_raw,sl:ingredient:corn,sl:variant:corn_sweet,,milho-doce branco cru,"sweet white corn, raw",raw,kernel,,fresh,,kernel_color=white,curadoria inicial
+sl:form:corn_sweet_cream_style,sl:ingredient:corn,sl:variant:corn_sweet,,creme de milho-doce enlatado,"sweet corn, cream style",canned,puree,,in_liquid,,,curadoria inicial
+sl:form:corn_grain_yellow,sl:ingredient:corn,sl:variant:corn_dent_yellow,,milho amarelo em grão (seco),"corn grain, yellow",dried,grain,,dry,,,curadoria inicial
+sl:form:corn_grain_white,sl:ingredient:corn,sl:variant:corn_dent_white,,milho branco em grão (seco),"corn grain, white",dried,grain,,dry,,,curadoria inicial
+sl:form:corn_popcorn_popped,sl:ingredient:corn,sl:variant:corn_popcorn,,pipoca estourada,"popcorn, popped",cooked,popped,popped,dry,,,curadoria inicial
+sl:form:corn_popcorn_popped_oil,sl:ingredient:corn,sl:variant:corn_popcorn,,pipoca estourada no óleo,"popcorn, oil-popped",cooked,popped,popped;in_oil,dry,,,curadoria inicial
+sl:form:cornmeal_yellow_degermed,sl:ingredient:cornmeal,,,fubá amarelo degerminado,"cornmeal, degermed, yellow",processed,meal,degermed;milled,dry,,,curadoria inicial
+sl:form:cornmeal_whole_yellow,sl:ingredient:cornmeal,,,fubá integral amarelo,whole-grain yellow cornmeal,processed,meal,whole_grain;milled,dry,,,curadoria inicial
+sl:form:cornmeal_white_degermed,sl:ingredient:cornmeal,,,fubá branco degerminado,"cornmeal, degermed, white",processed,meal,degermed;milled,dry,,,curadoria inicial
+sl:form:wheat_flour_white,sl:ingredient:wheat_flour,,,farinha de trigo refinada,"wheat flour, white",processed,flour,refined;milled,dry,,,curadoria inicial
+sl:form:wheat_flour_whole,sl:ingredient:wheat_flour,,,farinha de trigo integral,whole-wheat flour,processed,flour,whole_grain;milled,dry,,,curadoria inicial
+sl:form:oats_rolled,sl:ingredient:oats,,,aveia em flocos,rolled oats,raw,flakes,rolled,dry,,,curadoria inicial
+sl:form:common_bean_carioca_raw,sl:ingredient:common_bean,sl:variant:common_bean_carioca,,feijão carioca cru,"carioca bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_carioca_cooked,sl:ingredient:common_bean,sl:variant:common_bean_carioca,,feijão carioca cozido,"carioca bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_carioca_dry_matter,sl:ingredient:common_bean,sl:variant:common_bean_carioca,,"feijão carioca cru (base seca, 0% umidade)","carioca bean, dry (0% moisture basis)",raw,grain,,dry,,analytical_basis=dry_matter,USDA Foundation expressa composição em base seca: não comparar diretamente com grão cru comum
+sl:form:common_bean_black_raw,sl:ingredient:common_bean,sl:variant:common_bean_black,,feijão preto cru,"black bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_black_cooked,sl:ingredient:common_bean,sl:variant:common_bean_black,,feijão preto cozido,"black bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_black_canned,sl:ingredient:common_bean,sl:variant:common_bean_black,,feijão preto enlatado,"black bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_black_dry_matter,sl:ingredient:common_bean,sl:variant:common_bean_black,,"feijão preto cru (base seca, 0% umidade)","black bean, dry (0% moisture basis)",raw,grain,,dry,,analytical_basis=dry_matter,USDA Foundation expressa composição em base seca: não comparar diretamente com grão cru comum
+sl:form:common_bean_black_turtle_raw,sl:ingredient:common_bean,sl:variant:common_bean_black_turtle,,feijão black turtle cru,"black turtle bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_black_turtle_cooked,sl:ingredient:common_bean,sl:variant:common_bean_black_turtle,,feijão black turtle cozido,"black turtle bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_black_turtle_canned,sl:ingredient:common_bean,sl:variant:common_bean_black_turtle,,feijão black turtle enlatado,"black turtle bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_rajado_raw,sl:ingredient:common_bean,sl:variant:common_bean_rajado,,feijão rajado cru,"rajado bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_rajado_cooked,sl:ingredient:common_bean,sl:variant:common_bean_rajado,,feijão rajado cozido,"rajado bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_jalo_raw,sl:ingredient:common_bean,sl:variant:common_bean_jalo,,feijão jalo cru,"jalo bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_jalo_cooked,sl:ingredient:common_bean,sl:variant:common_bean_jalo,,feijão jalo cozido,"jalo bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_roxo_raw,sl:ingredient:common_bean,sl:variant:common_bean_roxo,,feijão roxo cru,"roxo bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_roxo_cooked,sl:ingredient:common_bean,sl:variant:common_bean_roxo,,feijão roxo cozido,"roxo bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_rosinha_raw,sl:ingredient:common_bean,sl:variant:common_bean_rosinha,,feijão rosinha cru,"rosinha bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_rosinha_cooked,sl:ingredient:common_bean,sl:variant:common_bean_rosinha,,feijão rosinha cozido,"rosinha bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_pink_raw,sl:ingredient:common_bean,sl:variant:common_bean_pink,,feijão rosa cru,"pink bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_pink_cooked,sl:ingredient:common_bean,sl:variant:common_bean_pink,,feijão rosa cozido,"pink bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_white_raw,sl:ingredient:common_bean,sl:variant:common_bean_white,,feijão branco cru,"white bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_white_cooked,sl:ingredient:common_bean,sl:variant:common_bean_white,,feijão branco cozido,"white bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_white_canned,sl:ingredient:common_bean,sl:variant:common_bean_white,,feijão branco enlatado,"white bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_navy_raw,sl:ingredient:common_bean,sl:variant:common_bean_navy,,feijão navy cru,"navy bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_navy_cooked,sl:ingredient:common_bean,sl:variant:common_bean_navy,,feijão navy cozido,"navy bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_navy_canned,sl:ingredient:common_bean,sl:variant:common_bean_navy,,feijão navy enlatado,"navy bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_great_northern_raw,sl:ingredient:common_bean,sl:variant:common_bean_great_northern,,feijão great northern cru,"great northern bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_great_northern_cooked,sl:ingredient:common_bean,sl:variant:common_bean_great_northern,,feijão great northern cozido,"great northern bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_great_northern_canned,sl:ingredient:common_bean,sl:variant:common_bean_great_northern,,feijão great northern enlatado,"great northern bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_cannellini_raw,sl:ingredient:common_bean,sl:variant:common_bean_cannellini,,feijão cannellini cru,"cannellini bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_cannellini_canned,sl:ingredient:common_bean,sl:variant:common_bean_cannellini,,feijão cannellini enlatado,"cannellini bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_kidney_raw,sl:ingredient:common_bean,sl:variant:common_bean_kidney,,feijão vermelho cru,"red kidney bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_kidney_cooked,sl:ingredient:common_bean,sl:variant:common_bean_kidney,,feijão vermelho cozido,"red kidney bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_kidney_canned,sl:ingredient:common_bean,sl:variant:common_bean_kidney,,feijão vermelho enlatado,"red kidney bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_pinto_raw,sl:ingredient:common_bean,sl:variant:common_bean_pinto,,feijão pinto cru,"pinto bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_pinto_cooked,sl:ingredient:common_bean,sl:variant:common_bean_pinto,,feijão pinto cozido,"pinto bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_pinto_canned,sl:ingredient:common_bean,sl:variant:common_bean_pinto,,feijão pinto enlatado,"pinto bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_pinto_dry_matter,sl:ingredient:common_bean,sl:variant:common_bean_pinto,,"feijão pinto cru (base seca, 0% umidade)","pinto bean, dry (0% moisture basis)",raw,grain,,dry,,analytical_basis=dry_matter,USDA Foundation expressa composição em base seca: não comparar diretamente com grão cru comum
+sl:form:common_bean_cranberry_raw,sl:ingredient:common_bean,sl:variant:common_bean_cranberry,,feijão cranberry cru,"cranberry bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_cranberry_cooked,sl:ingredient:common_bean,sl:variant:common_bean_cranberry,,feijão cranberry cozido,"cranberry bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:common_bean_cranberry_canned,sl:ingredient:common_bean,sl:variant:common_bean_cranberry,,feijão cranberry enlatado,"cranberry bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_yellow_raw,sl:ingredient:common_bean,sl:variant:common_bean_yellow,,feijão amarelo cru,"yellow bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:common_bean_yellow_cooked,sl:ingredient:common_bean,sl:variant:common_bean_yellow,,feijão amarelo cozido,"yellow bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:cowpea_blackeyed_raw,sl:ingredient:cowpea,sl:variant:cowpea_blackeyed,,feijão-fradinho cru,"black-eyed pea, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:cowpea_blackeyed_cooked,sl:ingredient:cowpea,sl:variant:cowpea_blackeyed,,feijão-fradinho cozido,"black-eyed pea, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:lima_bean_large_raw,sl:ingredient:lima_bean,sl:variant:lima_bean_large,,feijão-lima graúdo cru,"large lima bean, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:lima_bean_large_cooked,sl:ingredient:lima_bean,sl:variant:lima_bean_large,,feijão-lima graúdo cozido,"large lima bean, cooked",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:lima_bean_large_canned,sl:ingredient:lima_bean,sl:variant:lima_bean_large,,feijão-lima graúdo enlatado,"large lima bean, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:common_bean_pod_raw,sl:ingredient:common_bean,,sl:part:common_bean_pod,vagem crua,"green beans, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:common_bean_pod_cooked,sl:ingredient:common_bean,,sl:part:common_bean_pod,vagem cozida,"green beans, boiled",cooked,whole,boiled,drained,,,curadoria inicial
+sl:form:common_bean_pod_canned,sl:ingredient:common_bean,,sl:part:common_bean_pod,vagem enlatada,"green beans, canned",canned,pieces,,in_liquid,,,curadoria inicial
+sl:form:cowpea_mature_raw,sl:ingredient:cowpea,,,feijão-caupi cru (grão maduro),"cowpeas, mature seeds, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:adzuki_raw,sl:ingredient:adzuki_bean,,,feijão-azuki cru,"adzuki beans, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:adzuki_cooked,sl:ingredient:adzuki_bean,,,feijão-azuki cozido,"adzuki beans, boiled",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:mung_raw,sl:ingredient:mung_bean,,,feijão-mungo cru,"mung beans, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:mung_cooked,sl:ingredient:mung_bean,,,feijão-mungo cozido,"mung beans, boiled",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:mung_sprouts_raw,sl:ingredient:mung_bean,,,broto de feijão-mungo cru,"mung bean sprouts, raw",raw,sprouts,sprouted,fresh,,,curadoria inicial
+sl:form:black_gram_raw,sl:ingredient:black_gram,,,feijão-urad cru,"mungo beans, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:chickpea_raw,sl:ingredient:chickpea,,,grão-de-bico cru,"chickpeas, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:chickpea_cooked,sl:ingredient:chickpea,,,grão-de-bico cozido,"chickpeas, boiled",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:chickpea_canned,sl:ingredient:chickpea,,,grão-de-bico enlatado,"chickpeas, canned",canned,grain,cooked,in_liquid,,,curadoria inicial
+sl:form:lentil_raw,sl:ingredient:lentil,,,lentilha crua,"lentils, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:lentil_cooked,sl:ingredient:lentil,,,lentilha cozida,"lentils, boiled",cooked,grain,boiled,rehydrated,,,curadoria inicial
+sl:form:lentil_sprouts_raw,sl:ingredient:lentil,,,broto de lentilha cru,"lentil sprouts, raw",raw,sprouts,sprouted,fresh,,,curadoria inicial
+sl:form:lentil_red_raw,sl:ingredient:lentil,sl:variant:lentil_red,,lentilha vermelha crua,"red lentils, raw",raw,grain,dehulled,dry,,,curadoria inicial
+sl:form:pea_green_raw,sl:ingredient:pea,,,ervilha verde crua,"green peas, raw",raw,grain,,fresh,,maturity=immature,curadoria inicial
+sl:form:pea_green_frozen,sl:ingredient:pea,,,ervilha verde congelada,"green peas, frozen",frozen,grain,,fresh,,maturity=immature,curadoria inicial
+sl:form:pea_green_canned,sl:ingredient:pea,,,ervilha enlatada drenada,"green peas, canned, drained",canned,grain,,drained,,maturity=immature,curadoria inicial
+sl:form:pea_split_raw,sl:ingredient:pea,,,ervilha partida seca,"split peas, raw",raw,grain,dehulled;split,dry,,maturity=mature,curadoria inicial
+sl:form:soybean_green_raw,sl:ingredient:soybean,,,soja verde (edamame) crua,"green soybeans (edamame), raw",raw,grain,,fresh,,maturity=immature,curadoria inicial
+sl:form:peanut_raw,sl:ingredient:peanut,,,amendoim cru,"peanuts, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:peanut_roasted_salted,sl:ingredient:peanut,,,amendoim torrado salgado,"peanuts, roasted, salted",toasted,grain,roasted;salted,dry,,,curadoria inicial
+sl:form:lupin_raw,sl:ingredient:lupin,,,tremoço cru,"lupins, raw",raw,grain,,dry,,,curadoria inicial
+sl:form:lupin_brined,sl:ingredient:lupin,,,tremoço em conserva,"lupini beans, brined",canned,grain,cooked;brined,in_liquid,,,curadoria inicial
+sl:form:cow_milk_whole,sl:ingredient:cow_milk,,,leite de vaca integral,whole milk,processed,liquid,pasteurized,not_applicable,,fat=whole,curadoria inicial
+sl:form:cow_milk_skim,sl:ingredient:cow_milk,,,leite de vaca desnatado,skim milk,processed,liquid,pasteurized,not_applicable,,fat=skim,curadoria inicial
+sl:form:cow_milk_reduced_fat,sl:ingredient:cow_milk,,,leite semidesnatado (2%),reduced-fat milk (2%),processed,liquid,pasteurized,not_applicable,,fat=2%,curadoria inicial
+sl:form:cow_milk_lowfat,sl:ingredient:cow_milk,,,leite semidesnatado (1%),lowfat milk (1%),processed,liquid,pasteurized,not_applicable,,fat=1%,curadoria inicial
+sl:form:cow_milk_whole_powder,sl:ingredient:cow_milk,,,leite integral em pó,whole milk powder,dried,powder,spray_dried,dry,,fat=whole,curadoria inicial
+sl:form:cow_milk_skim_powder,sl:ingredient:cow_milk,,,leite desnatado em pó,nonfat dry milk,dried,powder,spray_dried,dry,,fat=skim,curadoria inicial
+sl:form:cow_milk_skim_uht,sl:ingredient:cow_milk,,,leite desnatado UHT,"skim milk, UHT",processed,liquid,uht,not_applicable,,fat=skim,curadoria inicial
+sl:form:butter_salted,sl:ingredient:butter,,,manteiga com sal,salted butter,processed,block,salted,not_applicable,,,curadoria inicial
+sl:form:butter_unsalted,sl:ingredient:butter,,,manteiga sem sal,unsalted butter,processed,block,,not_applicable,,,curadoria inicial
+sl:form:yogurt_plain_whole,sl:ingredient:yogurt,,,iogurte natural integral,plain whole-milk yogurt,fermented,cream,,not_applicable,,fat=whole;flavor=plain,curadoria inicial
+sl:form:yogurt_plain_skim,sl:ingredient:yogurt,,,iogurte natural desnatado,plain nonfat yogurt,fermented,cream,,not_applicable,,fat=skim;flavor=plain,curadoria inicial
+sl:form:yogurt_greek_plain,sl:ingredient:yogurt,,,iogurte grego natural,plain Greek yogurt,fermented,cream,strained,not_applicable,,flavor=plain;style=strained,curadoria inicial
+sl:form:cheese_parmesan_whole,sl:ingredient:cheese,sl:variant:cheese_parmesan,,parmesão em peça,"parmesan, hard (block)",aged,block,aged,not_applicable,,,curadoria inicial
+sl:form:cheese_parmesan_grated,sl:ingredient:cheese,sl:variant:cheese_parmesan,,parmesão ralado,"parmesan, grated",aged,grated,aged;grated,dry,,,curadoria inicial
+sl:form:cheese_parmesan_shredded,sl:ingredient:cheese,sl:variant:cheese_parmesan,,parmesão em lascas/fiado,"parmesan, shredded",aged,shredded,aged;shredded,not_applicable,,,curadoria inicial
+sl:form:cheese_mozzarella_whole_milk,sl:ingredient:cheese,sl:variant:cheese_mozzarella,,muçarela de leite integral,"mozzarella, whole milk",fresh,block,,not_applicable,,fat=whole,curadoria inicial
+sl:form:cheese_mozzarella_low_moisture_part_skim,sl:ingredient:cheese,sl:variant:cheese_mozzarella,,muçarela baixa umidade semidesnatada,"mozzarella, low moisture, part-skim",processed,block,,not_applicable,,moisture=low;fat=part_skim,curadoria inicial
+sl:form:cheese_mozzarella_shredded,sl:ingredient:cheese,sl:variant:cheese_mozzarella,,muçarela ralada,"mozzarella, shredded",processed,shredded,shredded,not_applicable,,,curadoria inicial
+sl:form:cheese_cheddar_sliced,sl:ingredient:cheese,sl:variant:cheese_cheddar,,cheddar fatiado,"cheddar, sliced",aged,sliced,aged;sliced,not_applicable,,,curadoria inicial
+sl:form:cheese_processed_american_singles,sl:ingredient:cheese,sl:variant:cheese_processed,,queijo processado fatiado (singles),processed cheese singles,processed,sliced,processed,not_applicable,,,curadoria inicial
+sl:form:cheese_requeijao_cremoso,sl:ingredient:cheese,sl:variant:cheese_requeijao,,requeijão cremoso,"requeijão, creamy",processed,spread,processed,not_applicable,,,curadoria inicial
+sl:form:cheese_feta_crumbled,sl:ingredient:cheese,sl:variant:cheese_feta,,feta esfarelado,"feta, crumbled",fermented,pieces,brined,not_applicable,,,curadoria inicial
+sl:form:cheese_ricotta_whole_milk,sl:ingredient:cheese,sl:variant:cheese_ricotta,,ricota de leite integral,"ricotta, whole milk",fresh,paste,,not_applicable,,fat=whole,curadoria inicial
+sl:form:cheese_ricotta_part_skim,sl:ingredient:cheese,sl:variant:cheese_ricotta,,ricota semidesnatada,"ricotta, part skim",fresh,paste,,not_applicable,,fat=part_skim,curadoria inicial
+sl:form:cheese_provolone_sliced,sl:ingredient:cheese,sl:variant:cheese_provolone,,provolone fatiado,"provolone, sliced",aged,sliced,sliced,not_applicable,,,curadoria inicial
+sl:form:cheese_goat_hard,sl:ingredient:cheese,sl:variant:cheese_goat_cheese,,queijo de cabra duro,"goat cheese, hard type",aged,block,,not_applicable,,family=hard,curadoria inicial
+sl:form:cheese_goat_semisoft,sl:ingredient:cheese,sl:variant:cheese_goat_cheese,,queijo de cabra semimole,"goat cheese, semisoft type",aged,block,,not_applicable,,family=semi_soft,curadoria inicial
+sl:form:cheese_goat_soft,sl:ingredient:cheese,sl:variant:cheese_goat_cheese,,queijo de cabra mole,"goat cheese, soft type",fresh,paste,,not_applicable,,family=soft,curadoria inicial
+sl:form:cheese_cottage_creamed,sl:ingredient:cheese,sl:variant:cheese_cottage,,cottage cremoso,"cottage cheese, creamed",fresh,pieces,,not_applicable,,,curadoria inicial
+sl:form:cheese_cottage_lowfat,sl:ingredient:cheese,sl:variant:cheese_cottage,,cottage light (1–2%),"cottage cheese, lowfat",fresh,pieces,,not_applicable,,fat=lowfat,curadoria inicial
+sl:form:pao_de_queijo_raw,sl:ingredient:pao_de_queijo,,,pão de queijo cru (massa),"cheese bread dough, raw",raw,pieces,,not_applicable,,,curadoria inicial
+sl:form:pao_de_queijo_baked,sl:ingredient:pao_de_queijo,,,pão de queijo assado,"cheese bread, baked",cooked,pieces,baked,not_applicable,,,curadoria inicial
+sl:form:chicken_egg_whole_raw,sl:ingredient:chicken_egg,,,ovo inteiro cru,"whole egg, raw",raw,whole,,fresh,whole egg without shell,,curadoria inicial
+sl:form:chicken_egg_whole_boiled,sl:ingredient:chicken_egg,,,ovo inteiro cozido,"whole egg, hard-boiled",cooked,whole,boiled,not_applicable,,,curadoria inicial
+sl:form:chicken_egg_whole_fried,sl:ingredient:chicken_egg,,,ovo frito,"whole egg, fried",cooked,whole,fried,not_applicable,,,curadoria inicial
+sl:form:chicken_egg_whole_scrambled,sl:ingredient:chicken_egg,,,ovo mexido,scrambled egg,cooked,pieces,scrambled,not_applicable,,,curadoria inicial
+sl:form:chicken_egg_whole_poached,sl:ingredient:chicken_egg,,,ovo pochê,poached egg,cooked,whole,poached,not_applicable,,,curadoria inicial
+sl:form:chicken_egg_whole_dried,sl:ingredient:chicken_egg,,,ovo inteiro desidratado,"whole egg, dried",dried,powder,dried,dry,,,curadoria inicial
+sl:form:egg_white_raw,sl:ingredient:chicken_egg,,sl:part:egg_white,clara crua,"egg white, raw",raw,liquid,,fresh,,,curadoria inicial
+sl:form:egg_white_boiled,sl:ingredient:chicken_egg,,sl:part:egg_white,clara cozida,"egg white, boiled",cooked,whole,boiled,not_applicable,,,curadoria inicial
+sl:form:egg_yolk_raw,sl:ingredient:chicken_egg,,sl:part:egg_yolk,gema crua,"egg yolk, raw",raw,liquid,,fresh,,,curadoria inicial
+sl:form:egg_yolk_boiled,sl:ingredient:chicken_egg,,sl:part:egg_yolk,gema cozida,"egg yolk, boiled",cooked,whole,boiled,not_applicable,,,curadoria inicial
+sl:form:beef_acem_raw,sl:ingredient:beef,,sl:part:beef_acem,acém sem gordura cru,,raw,pieces,,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_acem_cooked,sl:ingredient:beef,,sl:part:beef_acem,acém sem gordura cozido,,cooked,pieces,boiled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_acem_ground_raw,sl:ingredient:beef,,sl:part:beef_acem,acém moído cru,"ground beef chuck, raw",raw,ground,ground,not_applicable,,,curadoria inicial
+sl:form:beef_acem_ground_cooked,sl:ingredient:beef,,sl:part:beef_acem,acém moído cozido,"ground beef chuck, cooked",cooked,ground,ground;cooked,not_applicable,,,curadoria inicial
+sl:form:beef_picanha_fat_raw,sl:ingredient:beef,,sl:part:beef_picanha,picanha com gordura crua,,raw,pieces,,not_applicable,,fat_trim=with_fat,curadoria inicial
+sl:form:beef_picanha_fat_grilled,sl:ingredient:beef,,sl:part:beef_picanha,picanha com gordura grelhada,,cooked,pieces,grilled,not_applicable,,fat_trim=with_fat,curadoria inicial
+sl:form:beef_picanha_lean_raw,sl:ingredient:beef,,sl:part:beef_picanha,picanha sem gordura crua,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_picanha_lean_grilled,sl:ingredient:beef,,sl:part:beef_picanha,picanha sem gordura grelhada,,cooked,pieces,trimmed;grilled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_file_mignon_raw,sl:ingredient:beef,,sl:part:beef_file_mignon,filé-mignon sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_file_mignon_grilled,sl:ingredient:beef,,sl:part:beef_file_mignon,filé-mignon sem gordura grelhado,,cooked,pieces,trimmed;grilled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_contra_file_fat_raw,sl:ingredient:beef,,sl:part:beef_contra_file,contrafilé com gordura cru,,raw,pieces,,not_applicable,,fat_trim=with_fat,curadoria inicial
+sl:form:beef_contra_file_fat_grilled,sl:ingredient:beef,,sl:part:beef_contra_file,contrafilé com gordura grelhado,,cooked,pieces,grilled,not_applicable,,fat_trim=with_fat,curadoria inicial
+sl:form:beef_contra_file_lean_raw,sl:ingredient:beef,,sl:part:beef_contra_file,contrafilé sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_contra_file_lean_grilled,sl:ingredient:beef,,sl:part:beef_contra_file,contrafilé sem gordura grelhado,,cooked,pieces,trimmed;grilled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_patinho_raw,sl:ingredient:beef,,sl:part:beef_patinho,patinho sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_patinho_grilled,sl:ingredient:beef,,sl:part:beef_patinho,patinho sem gordura grelhado,,cooked,pieces,trimmed;grilled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_alcatra_miolo_raw,sl:ingredient:beef,,sl:part:beef_alcatra_miolo,miolo de alcatra sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_alcatra_miolo_grilled,sl:ingredient:beef,,sl:part:beef_alcatra_miolo,miolo de alcatra sem gordura grelhado,,cooked,pieces,trimmed;grilled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_coxao_mole_raw,sl:ingredient:beef,,sl:part:beef_coxao_mole,coxão mole sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_coxao_mole_cooked,sl:ingredient:beef,,sl:part:beef_coxao_mole,coxão mole sem gordura cozido,,cooked,pieces,trimmed;boiled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_coxao_duro_raw,sl:ingredient:beef,,sl:part:beef_coxao_duro,coxão duro sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_coxao_duro_cooked,sl:ingredient:beef,,sl:part:beef_coxao_duro,coxão duro sem gordura cozido,,cooked,pieces,trimmed;boiled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_lagarto_raw,sl:ingredient:beef,,sl:part:beef_lagarto,lagarto cru,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_lagarto_cooked,sl:ingredient:beef,,sl:part:beef_lagarto,lagarto cozido,,cooked,pieces,boiled,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_maminha_raw,sl:ingredient:beef,,sl:part:beef_maminha,maminha crua,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_maminha_grilled,sl:ingredient:beef,,sl:part:beef_maminha,maminha grelhada,,cooked,pieces,grilled,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_musculo_raw,sl:ingredient:beef,,sl:part:beef_musculo,músculo sem gordura cru,,raw,pieces,trimmed,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_musculo_cooked,sl:ingredient:beef,,sl:part:beef_musculo,músculo sem gordura cozido,,cooked,pieces,trimmed;boiled,not_applicable,,fat_trim=without_fat,curadoria inicial
+sl:form:beef_fraldinha_raw,sl:ingredient:beef,,sl:part:beef_fraldinha,fraldinha com gordura crua,,raw,pieces,,not_applicable,,fat_trim=with_fat,curadoria inicial
+sl:form:beef_fraldinha_cooked,sl:ingredient:beef,,sl:part:beef_fraldinha,fraldinha com gordura cozida,,cooked,pieces,boiled,not_applicable,,fat_trim=with_fat,curadoria inicial
+sl:form:beef_cupim_raw,sl:ingredient:beef,,sl:part:beef_cupim,cupim cru,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_cupim_roasted,sl:ingredient:beef,,sl:part:beef_cupim,cupim assado,,cooked,pieces,roasted,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_costela_raw,sl:ingredient:beef,,sl:part:beef_costela,costela bovina crua,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_costela_roasted,sl:ingredient:beef,,sl:part:beef_costela,costela bovina assada,,cooked,pieces,roasted,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_liver_raw,sl:ingredient:beef,,sl:part:beef_liver,fígado bovino cru,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_liver_grilled,sl:ingredient:beef,,sl:part:beef_liver,fígado bovino grelhado,,cooked,pieces,grilled,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_tongue_raw,sl:ingredient:beef,,sl:part:beef_tongue,língua bovina crua,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_tongue_cooked,sl:ingredient:beef,,sl:part:beef_tongue,língua bovina cozida,,cooked,pieces,boiled,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_tripe_raw,sl:ingredient:beef,,sl:part:beef_tripe,bucho cru,,raw,pieces,,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:beef_tripe_cooked,sl:ingredient:beef,,sl:part:beef_tripe,bucho cozido,,cooked,pieces,boiled,not_applicable,,fat_trim=unspecified,curadoria inicial
+sl:form:chicken_breast_skinless_raw,sl:ingredient:chicken,,sl:part:chicken_breast,peito de frango sem pele cru,"chicken breast, skinless, raw",raw,pieces,,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_breast_skinless_cooked,sl:ingredient:chicken,,sl:part:chicken_breast,peito de frango sem pele cozido,"chicken breast, skinless, boiled",cooked,pieces,boiled,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_breast_skinless_grilled,sl:ingredient:chicken,,sl:part:chicken_breast,peito de frango sem pele grelhado,"chicken breast, skinless, grilled",cooked,pieces,grilled,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_breast_skin_raw,sl:ingredient:chicken,,sl:part:chicken_breast,peito de frango com pele cru,"chicken breast with skin, raw",raw,pieces,,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_breast_skin_roasted,sl:ingredient:chicken,,sl:part:chicken_breast,peito de frango com pele assado,"chicken breast with skin, roasted",cooked,pieces,roasted,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_thigh_skin_raw,sl:ingredient:chicken,,sl:part:chicken_thigh,sobrecoxa com pele crua,"chicken thigh with skin, raw",raw,pieces,,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_thigh_skin_roasted,sl:ingredient:chicken,,sl:part:chicken_thigh,sobrecoxa com pele assada,"chicken thigh with skin, roasted",cooked,pieces,roasted,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_thigh_skinless_raw,sl:ingredient:chicken,,sl:part:chicken_thigh,sobrecoxa sem pele crua,"chicken thigh, skinless, raw",raw,pieces,,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_thigh_skinless_roasted,sl:ingredient:chicken,,sl:part:chicken_thigh,sobrecoxa sem pele assada,"chicken thigh, skinless, roasted",cooked,pieces,roasted,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_drumstick_skin_raw,sl:ingredient:chicken,,sl:part:chicken_drumstick,coxa com pele crua,"chicken drumstick with skin, raw",raw,pieces,,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_drumstick_skin_roasted,sl:ingredient:chicken,,sl:part:chicken_drumstick,coxa com pele assada,"chicken drumstick with skin, roasted",cooked,pieces,roasted,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_drumstick_skinless_raw,sl:ingredient:chicken,,sl:part:chicken_drumstick,coxa sem pele crua,"chicken drumstick, skinless, raw",raw,pieces,,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_drumstick_skinless_cooked,sl:ingredient:chicken,,sl:part:chicken_drumstick,coxa sem pele cozida,"chicken drumstick, skinless, boiled",cooked,pieces,boiled,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_wing_skin_raw,sl:ingredient:chicken,,sl:part:chicken_wing,asa com pele crua,"chicken wing with skin, raw",raw,pieces,,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_whole_skin_raw,sl:ingredient:chicken,,,frango inteiro com pele cru,"whole chicken with skin, raw",raw,whole,,not_applicable,,skin=with,curadoria inicial
+sl:form:chicken_whole_skinless_raw,sl:ingredient:chicken,,,frango inteiro sem pele cru,"whole chicken, skinless, raw",raw,whole,,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_whole_skinless_roasted,sl:ingredient:chicken,,,frango inteiro sem pele assado,"whole chicken, skinless, roasted",cooked,whole,roasted,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_whole_skinless_cooked,sl:ingredient:chicken,,,frango inteiro sem pele cozido,"whole chicken, skinless, boiled",cooked,whole,boiled,not_applicable,,skin=without,curadoria inicial
+sl:form:chicken_caipira_skin_cooked,sl:ingredient:chicken,,,frango caipira inteiro com pele cozido,"free-range chicken with skin, boiled",cooked,whole,boiled,not_applicable,,skin=with;production=caipira,"""caipira"" = sistema de criação (atributo), não variedade biológica"
+sl:form:chicken_caipira_skinless_cooked,sl:ingredient:chicken,,,frango caipira inteiro sem pele cozido,"free-range chicken, skinless, boiled",cooked,whole,boiled,not_applicable,,skin=without;production=caipira,curadoria inicial
+sl:form:salmon_fillet_skin_grilled,sl:ingredient:salmon,,sl:part:salmon_fillet,filé de salmão com pele grelhado,"salmon fillet with skin, grilled",cooked,pieces,grilled,not_applicable,,skin=with,curadoria inicial
+sl:form:salmon_skinless_raw,sl:ingredient:salmon,,,salmão sem pele cru,"salmon, skinless, raw",raw,pieces,,fresh,,skin=without,curadoria inicial
+sl:form:salmon_skinless_grilled,sl:ingredient:salmon,,,salmão sem pele grelhado,"salmon, skinless, grilled",cooked,pieces,grilled,not_applicable,,skin=without,curadoria inicial
+sl:form:atlantic_salmon_wild_raw,sl:ingredient:atlantic_salmon,,,salmão-do-atlântico selvagem cru,"Atlantic salmon, wild, raw",raw,pieces,,fresh,,production=wild,origem selvagem informada pela fonte
+sl:form:atlantic_salmon_wild_cooked,sl:ingredient:atlantic_salmon,,,salmão-do-atlântico selvagem cozido,"Atlantic salmon, wild, cooked",cooked,pieces,dry_heat,not_applicable,,production=wild,curadoria inicial
+sl:form:atlantic_salmon_farmed_raw,sl:ingredient:atlantic_salmon,,,salmão-do-atlântico de cultivo cru,"Atlantic salmon, farmed, raw",raw,pieces,,fresh,,production=farmed,cultivo informado pela fonte
+sl:form:atlantic_salmon_farmed_cooked,sl:ingredient:atlantic_salmon,,,salmão-do-atlântico de cultivo cozido,"Atlantic salmon, farmed, cooked",cooked,pieces,dry_heat,not_applicable,,production=farmed,curadoria inicial
+sl:form:chinook_salmon_raw,sl:ingredient:chinook_salmon,,,salmão-rei cru,"chinook salmon, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:chinook_salmon_smoked,sl:ingredient:chinook_salmon,,,salmão-rei defumado,"chinook salmon, smoked",smoked,sliced,cold_smoked,not_applicable,,,curadoria inicial
+sl:form:chinook_salmon_lox,sl:ingredient:chinook_salmon,,,salmão-rei defumado (lox),"chinook salmon, smoked (lox)",smoked,sliced,cured;smoked,not_applicable,,,curadoria inicial
+sl:form:sockeye_salmon_raw,sl:ingredient:sockeye_salmon,,,salmão-vermelho cru,"sockeye salmon, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:sockeye_salmon_canned,sl:ingredient:sockeye_salmon,,,salmão-vermelho enlatado,"sockeye salmon, canned",canned,pieces,,drained,,,curadoria inicial
+sl:form:pink_salmon_raw,sl:ingredient:pink_salmon,,,salmão-rosa cru,"pink salmon, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:pink_salmon_canned,sl:ingredient:pink_salmon,,,salmão-rosa enlatado,"pink salmon, canned",canned,pieces,,drained,,,curadoria inicial
+sl:form:coho_salmon_wild_raw,sl:ingredient:coho_salmon,,,salmão-prateado selvagem cru,"coho salmon, wild, raw",raw,pieces,,fresh,,production=wild,curadoria inicial
+sl:form:coho_salmon_farmed_raw,sl:ingredient:coho_salmon,,,salmão-prateado de cultivo cru,"coho salmon, farmed, raw",raw,pieces,,fresh,,production=farmed,curadoria inicial
+sl:form:rainbow_trout_farmed_raw,sl:ingredient:rainbow_trout,,,truta-arco-íris de cultivo crua,"rainbow trout, farmed, raw",raw,pieces,,fresh,,production=farmed,curadoria inicial
+sl:form:rainbow_trout_wild_raw,sl:ingredient:rainbow_trout,,,truta-arco-íris selvagem crua,"rainbow trout, wild, raw",raw,pieces,,fresh,,production=wild,curadoria inicial
+sl:form:tuna_fresh_raw,sl:ingredient:tuna,,,atum fresco cru,"tuna, fresh, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:tuna_canned_oil,sl:ingredient:tuna,,,atum em conserva no óleo,"tuna, canned in oil",canned,pieces,in_oil,in_liquid,,,curadoria inicial
+sl:form:tuna_light_canned_water,sl:ingredient:tuna,,,atum light em água,"light tuna, canned in water",canned,pieces,in_water,drained,,species=mixed,curadoria inicial
+sl:form:tuna_light_canned_oil,sl:ingredient:tuna,,,atum light em óleo,"light tuna, canned in oil",canned,pieces,in_oil,drained,,species=mixed,curadoria inicial
+sl:form:albacore_canned_water,sl:ingredient:albacore_tuna,,,atum branco (albacora) em água,"white tuna, canned in water",canned,pieces,in_water,drained,,,curadoria inicial
+sl:form:albacore_canned_oil,sl:ingredient:albacore_tuna,,,atum branco (albacora) em óleo,"white tuna, canned in oil",canned,pieces,in_oil,drained,,,curadoria inicial
+sl:form:atlantic_cod_raw,sl:ingredient:atlantic_cod,,,bacalhau-do-atlântico cru,"Atlantic cod, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:atlantic_cod_dried_salted,sl:ingredient:atlantic_cod,,,bacalhau-do-atlântico salgado seco,"Atlantic cod, dried and salted",dried,pieces,salted;dried,dry,,,curadoria inicial
+sl:form:abadejo_fillet_raw,sl:ingredient:abadejo,,sl:part:abadejo_fillet,filé de abadejo raw,,frozen,pieces,,not_applicable,,purchased=frozen,curadoria inicial
+sl:form:abadejo_fillet_baked,sl:ingredient:abadejo,,sl:part:abadejo_fillet,filé de abadejo baked,,cooked,pieces,baked,not_applicable,,purchased=frozen,curadoria inicial
+sl:form:abadejo_fillet_cooked,sl:ingredient:abadejo,,sl:part:abadejo_fillet,filé de abadejo cooked,,cooked,pieces,boiled,not_applicable,,purchased=frozen,curadoria inicial
+sl:form:abadejo_fillet_grilled,sl:ingredient:abadejo,,sl:part:abadejo_fillet,filé de abadejo grilled,,cooked,pieces,grilled,not_applicable,,purchased=frozen,curadoria inicial
+sl:form:hake_fillet_raw,sl:ingredient:hake,,sl:part:hake_fillet,filé de merluza raw,,raw,pieces,,not_applicable,,,curadoria inicial
+sl:form:hake_fillet_baked,sl:ingredient:hake,,sl:part:hake_fillet,filé de merluza baked,,cooked,pieces,baked,not_applicable,,,curadoria inicial
+sl:form:hake_fillet_fried,sl:ingredient:hake,,sl:part:hake_fillet,filé de merluza fried,,cooked,pieces,fried,not_applicable,,,curadoria inicial
+sl:form:pescada_branca_raw,sl:ingredient:pescada,,,"pescada, branca, crua",,raw,pieces,,not_applicable,,market_variety=branca,curadoria inicial
+sl:form:pescada_branca_fried,sl:ingredient:pescada,,,"pescada, branca, frita",,cooked,pieces,fried,not_applicable,,market_variety=branca,curadoria inicial
+sl:form:pescada_fillet_raw,sl:ingredient:pescada,,sl:part:pescada_fillet,"pescada, filé, cru",,raw,pieces,,not_applicable,,,curadoria inicial
+sl:form:pescada_fillet_fried,sl:ingredient:pescada,,sl:part:pescada_fillet,"pescada, filé, frito",,cooked,pieces,fried,not_applicable,,,curadoria inicial
+sl:form:pescada_fillet_breaded_fried,sl:ingredient:pescada,,sl:part:pescada_fillet,"pescada, filé, com farinha de trigo, frito",,cooked,pieces,breaded;fried,not_applicable,,,curadoria inicial
+sl:form:corvina_freshwater_raw,sl:ingredient:weakfish_corvina,,,"corvina de água doce, crua",,raw,pieces,,not_applicable,,habitat=freshwater,curadoria inicial
+sl:form:corvina_marine_raw,sl:ingredient:weakfish_corvina,,,"corvina do mar, crua",,raw,pieces,,not_applicable,,habitat=marine,curadoria inicial
+sl:form:corvina_large_baked,sl:ingredient:weakfish_corvina,,,"corvina grande, assada",,cooked,pieces,baked,not_applicable,,size=large,curadoria inicial
+sl:form:corvina_large_cooked,sl:ingredient:weakfish_corvina,,,"corvina grande, cozida",,cooked,pieces,boiled,not_applicable,,size=large,curadoria inicial
+sl:form:cacao_steak_raw,sl:ingredient:dogfish_cacao,,sl:part:cacao_steak,posta de cação raw,,raw,pieces,,not_applicable,,,curadoria inicial
+sl:form:cacao_steak_cooked,sl:ingredient:dogfish_cacao,,sl:part:cacao_steak,posta de cação cooked,,cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:cacao_steak_breaded_fried,sl:ingredient:dogfish_cacao,,sl:part:cacao_steak,posta de cação breaded_fried,,cooked,pieces,breaded;fried,not_applicable,,,curadoria inicial
+sl:form:sardine_whole_raw,sl:ingredient:sardine,,,sardinha inteira crua,"sardine, whole, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:sardine_canned_oil,sl:ingredient:sardine,,,sardinha em conserva no óleo,"sardine, canned in oil",canned,whole,in_oil,in_liquid,,,curadoria inicial
+sl:form:sardine_fried,sl:ingredient:sardine,,,sardinha frita,"sardine, fried",cooked,whole,fried,not_applicable,,,curadoria inicial
+sl:form:sardine_baked,sl:ingredient:sardine,,,sardinha assada,"sardine, baked",cooked,whole,baked,not_applicable,,,curadoria inicial
+sl:form:tucunare_fillet_frozen_raw,sl:ingredient:tucunare,,sl:part:tucunare_fillet,filé de tucunaré congelado cru,"peacock bass fillet, frozen, raw",frozen,pieces,,not_applicable,,,curadoria inicial
+sl:form:shrimp_raw,sl:ingredient:shrimp,,,camarão cru,"shrimp, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:shrimp_cooked,sl:ingredient:shrimp,,,camarão cozido,"shrimp, cooked",cooked,whole,boiled,not_applicable,,,curadoria inicial
+sl:form:shrimp_sete_barbas_fried,sl:ingredient:shrimp,sl:variant:shrimp_sete_barbas,,"camarão sete-barbas frito (sem cabeça, com casca)","seabob shrimp, fried",cooked,whole,fried,not_applicable,,head=removed;shell=on,curadoria inicial
+sl:form:orange_pera_raw,sl:ingredient:orange,sl:variant:orange_pera,,laranja-pera crua,"pera orange, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:orange_pera_juice,sl:ingredient:orange,sl:variant:orange_pera,,suco de laranja-pera,pera orange juice,fresh,liquid,squeezed,not_applicable,,,curadoria inicial
+sl:form:orange_baia_raw,sl:ingredient:orange,sl:variant:orange_baia,,laranja-baía crua,"navel orange, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:orange_baia_juice,sl:ingredient:orange,sl:variant:orange_baia,,suco de laranja-baía,navel orange juice,fresh,liquid,squeezed,not_applicable,,,curadoria inicial
+sl:form:orange_valencia_raw,sl:ingredient:orange,sl:variant:orange_valencia,,laranja-valência crua,"valencia orange, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:orange_valencia_juice,sl:ingredient:orange,sl:variant:orange_valencia,,suco de laranja-valência,valencia orange juice,fresh,liquid,squeezed,not_applicable,,,curadoria inicial
+sl:form:orange_lima_raw,sl:ingredient:orange,sl:variant:orange_lima,,laranja-lima crua,"lima orange (acidless), raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:orange_lima_juice,sl:ingredient:orange,sl:variant:orange_lima,,suco de laranja-lima,lima orange (acidless) juice,fresh,liquid,squeezed,not_applicable,,,curadoria inicial
+sl:form:mango_pulp_frozen,sl:ingredient:mango,,,polpa de manga congelada,"mango pulp, frozen",frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:acai_pulp_frozen,sl:ingredient:acai,,,polpa de açaí congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:acai_pulp_guarana,sl:ingredient:acai,,,polpa de açaí com xarope de guaraná,,frozen,puree,pulped,not_applicable,,sweetened=yes,curadoria inicial
+sl:form:acerola_pulp_frozen,sl:ingredient:acerola,,,polpa de acerola congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:passion_fruit_pulp_frozen,sl:ingredient:passion_fruit,,,polpa de maracujá congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:pineapple_pulp_frozen,sl:ingredient:pineapple,,,polpa de abacaxi congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:cashew_apple_pulp_frozen,sl:ingredient:cashew_apple,,,polpa de caju congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:cupuacu_pulp_frozen,sl:ingredient:cupuacu,,,polpa de cupuaçu congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:soursop_pulp_frozen,sl:ingredient:soursop,,,polpa de graviola congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:pitanga_pulp_frozen,sl:ingredient:pitanga,,,polpa de pitanga congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:umbu_pulp_frozen,sl:ingredient:umbu,,,polpa de umbu congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:caja_pulp_frozen,sl:ingredient:caja,,,polpa de cajá congelada,,frozen,puree,pulped,not_applicable,,,curadoria inicial
+sl:form:coconut_meat_raw,sl:ingredient:coconut,,sl:part:coconut_meat,coco (polpa) cru,"coconut meat, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:coconut_green_raw,sl:ingredient:coconut,,sl:part:coconut_meat,coco verde (polpa) cru,"young coconut meat, raw",raw,pieces,,fresh,,maturity=immature,curadoria inicial
+sl:form:tomato_raw,sl:ingredient:tomato,,,tomate cru,"tomato, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:onion_raw,sl:ingredient:onion,,,cebola cru,"onion, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:garlic_raw,sl:ingredient:garlic,,,alho cru,"garlic, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:leek_raw,sl:ingredient:leek,,,alho-poró cru,"leek, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:carrot_raw,sl:ingredient:carrot,,,cenoura cru,"carrot, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:carrot_cooked,sl:ingredient:carrot,,,cenoura cozido,"carrot, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:beet_raw,sl:ingredient:beet,,,beterraba cru,"beet, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:beet_cooked,sl:ingredient:beet,,,beterraba cozido,"beet, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:kale_raw,sl:ingredient:kale,,,couve cru,"kale (collards), raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:kale_sauteed,sl:ingredient:kale,,,couve refogado,"kale (collards), sauteed",cooked,pieces,sauteed,not_applicable,,,curadoria inicial
+sl:form:broccoli_raw,sl:ingredient:broccoli,,,brócolis cru,"broccoli, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:broccoli_cooked,sl:ingredient:broccoli,,,brócolis cozido,"broccoli, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:cauliflower_raw,sl:ingredient:cauliflower,,,couve-flor cru,"cauliflower, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:cauliflower_cooked,sl:ingredient:cauliflower,,,couve-flor cozido,"cauliflower, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:nz_spinach_raw,sl:ingredient:nz_spinach,,,espinafre-da-nova-zelândia cru,"New Zealand spinach, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:nz_spinach_sauteed,sl:ingredient:nz_spinach,,,espinafre-da-nova-zelândia refogado,"New Zealand spinach, sauteed",cooked,pieces,sauteed,not_applicable,,,curadoria inicial
+sl:form:zucchini_raw,sl:ingredient:zucchini,,,abobrinha cru,"zucchini, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:zucchini_cooked,sl:ingredient:zucchini,,,abobrinha cozido,"zucchini, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:zucchini_sauteed,sl:ingredient:zucchini,,,abobrinha refogado,"zucchini, sauteed",cooked,pieces,sauteed,not_applicable,,,curadoria inicial
+sl:form:eggplant_raw,sl:ingredient:eggplant,,,berinjela cru,"eggplant, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:eggplant_cooked,sl:ingredient:eggplant,,,berinjela cozido,"eggplant, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:okra_raw,sl:ingredient:okra,,,quiabo cru,"okra, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:chayote_raw,sl:ingredient:chayote,,,chuchu cru,"chayote, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:chayote_cooked,sl:ingredient:chayote,,,chuchu cozido,"chayote, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:cucumber_raw,sl:ingredient:cucumber,,,pepino cru,"cucumber, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:arugula_raw,sl:ingredient:arugula,,,rúcula cru,"arugula, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:watercress_raw,sl:ingredient:watercress,,,agrião cru,"watercress, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:celery_raw,sl:ingredient:celery,,,aipo cru,"celery, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:radish_raw,sl:ingredient:radish,,,rabanete cru,"radish, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:turnip_raw,sl:ingredient:turnip,,,nabo cru,"turnip, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:jilo_raw,sl:ingredient:jilo,,,jiló cru,"scarlet eggplant (jiló), raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:maxixe_raw,sl:ingredient:maxixe,,,maxixe cru,"West Indian gherkin, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:chard_raw,sl:ingredient:chard,,,acelga cru,"chard, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:mustard_greens_raw,sl:ingredient:mustard_greens,,,mostarda (folha) cru,"mustard greens, raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:taioba_raw,sl:ingredient:taioba,,,taioba cru,"taioba (arrowleaf elephant ear), raw",raw,pieces,,fresh,,,curadoria inicial
+sl:form:tomato_paste,sl:ingredient:tomato,,,extrato de tomate,tomato paste,processed,paste,concentrated,not_applicable,,,curadoria inicial
+sl:form:tomato_puree,sl:ingredient:tomato,,,purê de tomate,tomato puree,processed,puree,cooked;pureed,not_applicable,,,curadoria inicial
+sl:form:potato_raw,sl:ingredient:potato,,,batata raw,"potato, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:potato_cooked,sl:ingredient:potato,,,batata cooked,"potato, cooked",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:potato_fried,sl:ingredient:potato,,,batata fried,"potato, fried",cooked,pieces,fried,not_applicable,,,curadoria inicial
+sl:form:potato_saute,sl:ingredient:potato,,,batata saute,"potato, saute",cooked,pieces,sauteed,not_applicable,,,curadoria inicial
+sl:form:sweet_potato_raw,sl:ingredient:sweet_potato,,,batata-doce crua,"sweet potato, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:sweet_potato_cooked,sl:ingredient:sweet_potato,,,batata-doce cozida,"sweet potato, boiled",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:cassava_raw,sl:ingredient:cassava,,,mandioca crua,"cassava, raw",raw,whole,,fresh,,,curadoria inicial
+sl:form:cassava_cooked,sl:ingredient:cassava,,,mandioca cozida,"cassava, boiled",cooked,pieces,boiled,not_applicable,,,curadoria inicial
+sl:form:cassava_fried,sl:ingredient:cassava,,,mandioca frita,"cassava, fried",cooked,pieces,fried,not_applicable,,,curadoria inicial
+sl:form:cassava_flour_raw,sl:ingredient:cassava_flour,,,farinha de mandioca crua,cassava flour,processed,flour,,dry,,,curadoria inicial
+sl:form:cassava_flour_toasted,sl:ingredient:cassava_flour,,,farinha de mandioca torrada,"cassava flour, toasted",toasted,flour,toasted,dry,,,curadoria inicial
+sl:form:coriander_leaf_dried,sl:ingredient:coriander,,sl:part:coriander_leaf,coentro (folhas desidratadas),"coriander leaf, dried",dried,flakes,dried,dry,,,curadoria inicial
+sl:form:olive_oil_extra_virgin,sl:ingredient:olive_oil,,,azeite extravirgem,extra virgin olive oil,processed,liquid,cold_pressed,not_applicable,,grade=extra_virgin,curadoria inicial
+sl:form:coffee_ground_roasted,sl:ingredient:coffee,,,café torrado e moído,"coffee, roasted, ground",toasted,ground,roasted;ground,dry,,,curadoria inicial
+sl:form:coffee_brewed,sl:ingredient:coffee,,,café coado (infusão),brewed coffee,processed,liquid,brewed,not_applicable,,strength=10%,curadoria inicial
+sl:form:black_tea_brewed,sl:ingredient:tea,,,chá preto (infusão),"black tea, brewed",fermented,liquid,oxidized;brewed,not_applicable,,strength=5%,curadoria inicial
+sl:form:sugar_refined,sl:ingredient:sugar,,,açúcar refinado,refined sugar,processed,powder,refined,dry,,,curadoria inicial
+sl:form:sugar_crystal,sl:ingredient:sugar,,,açúcar cristal,crystal sugar,processed,grain,crystallized,dry,,,curadoria inicial
+sl:form:sugar_brown_mascavo,sl:ingredient:sugar,,,açúcar mascavo,muscovado sugar,processed,powder,unrefined,dry,,,curadoria inicial
+sl:form:pasta_egg_raw,sl:ingredient:pasta,,,macarrão com ovos cru,"egg pasta, raw",raw,pieces,,dry,,,curadoria inicial
+sl:form:lasagna_sheet_fresh_raw,sl:ingredient:pasta,,,massa de lasanha fresca crua,"fresh lasagna sheets, raw",raw,sliced,,fresh,,,curadoria inicial
+sl:form:lasagna_sheet_fresh_cooked,sl:ingredient:pasta,,,massa de lasanha fresca cozida,"fresh lasagna sheets, cooked",cooked,sliced,boiled,rehydrated,,,curadoria inicial
