@@ -35,7 +35,7 @@ def build_site(output: Path) -> list[Path]:
             f'<a class="card" href="reports/{html.escape(report.name)}">'
             f'<span class="tag">Relatório interativo</span>'
             f'<strong>{html.escape(report_title(report))}</strong>'
-            f'<span>Explorar moléculas, combinações e notas de sabor →</span></a>'
+            f'<span>Explorar moléculas, combinações e nutrição →</span></a>'
         )
 
     page = f"""<!doctype html>
@@ -43,7 +43,7 @@ def build_site(output: Path) -> list[Path]:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Experimentos de combinações de sabores em nível molecular.">
+  <meta name="description" content="Experimentos de sabor molecular e nutrição de receitas.">
   <title>Science Spice</title>
   <style>
     :root {{ color-scheme: light; --ink:#18221c; --muted:#56635a; --paper:#f5f2e9;
@@ -71,9 +71,9 @@ def build_site(output: Path) -> list[Path]:
 </head>
 <body>
   <main>
-    <span class="eyebrow">FlavorDB2 + FlavorGraph</span>
+    <span class="eyebrow">FlavorDB2 + FlavorGraph + TACO + USDA</span>
     <h1>Science Spice</h1>
-    <p class="intro">Experimentos sobre as moléculas que aproximam ingredientes e sobre as combinações que aparecem em mais de um milhão de receitas.</p>
+    <p class="intro">Experimentos sobre as moléculas que aproximam ingredientes, as combinações encontradas em mais de um milhão de receitas e a composição nutricional de cada preparo.</p>
     <section class="grid" aria-label="Relatórios disponíveis">
       {''.join(cards)}
     </section>
