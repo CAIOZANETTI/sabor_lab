@@ -2,3 +2,11 @@ nome,base,justificativa
 olive_oil,olive,os voláteis do azeite vêm da azeitona (Olea europaea)
 extra_virgin_olive_oil,olive,os voláteis do azeite vêm da azeitona (Olea europaea)
 black_pepper,pepper,no FlavorDB 'Pepper' é o gênero Piper (pimenta-do-reino)
+chili,capsicum,pimentas são do gênero Capsicum
+cayenne,capsicum,pimenta-caiena é Capsicum annuum
+paprika,capsicum,páprica é Capsicum annuum seco e moído
+smoked_paprika,capsicum,páprica é Capsicum annuum seco e moído
+sweet_paprika,capsicum,páprica é Capsicum annuum seco e moído
+jalapeno,capsicum,jalapeño é Capsicum annuum
+habanero,capsicum,habanero é Capsicum chinense
+pimento,capsicum,pimento é Capsicum annuum

@@ -89,7 +89,7 @@ def tiny_db(tiny_db_path: Path) -> FlavorDB:
     extra = pd.DataFrame([("fg:6", "flavorgraph", "tomato_sauce", "tomato sauce", None, None, 0)],
                          columns=ing.columns)
     pd.concat([ing, extra], ignore_index=True).to_parquet(tiny_db_path / "ingredients.parquet", index=False)
-    return FlavorDB(tiny_db_path, aliases=aliases)
+    return FlavorDB(tiny_db_path, aliases=aliases, dictionary=None)  # isolado do dicionário real
 
 
 @pytest.fixture(scope="session")

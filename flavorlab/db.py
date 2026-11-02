@@ -10,6 +10,7 @@ nome até achar uma correspondência.
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 from functools import cached_property
 from pathlib import Path
@@ -20,6 +21,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
 ALIASES = ROOT / "data" / "ingredient_aliases.csv"
+DICTIONARY = ROOT / "data" / "dicionario_ingredientes.csv"  # nomes em português -> ingrediente de sabor
 
 # Unifica variações de descritores sensoriais (singular/plural, sinônimos).
 DESCRIPTOR_ALIASES = {
@@ -30,12 +32,27 @@ DESCRIPTOR_ALIASES = {
     "smoke": "smoky", "earth": "earthy", "mint": "minty", "wax": "waxy",
     "camphor": "camphoreous", "vanillin": "vanilla", "citric": "citrus",
 }
+# Nomes ambíguos na herança: "pepper" sozinho é Piper (pimenta-do-reino), mas
+# "chili pepper", "bell pepper" etc. são Capsicum, e "sichuan pepper" é Zanthoxylum.
+CAPSICUM_HINTS = {
+    "chili", "chile", "chilies", "chiles", "bell", "jalapeno", "cayenne", "habanero", "chipotle", "ancho",
+    "pasilla", "poblano", "serrano", "banana", "cubanelle", "fresno", "aleppo", "italian", "peppadew",
+    "pepperoncini", "pimento", "piquillo", "scotch", "bonnet", "thai", "mexico", "hot", "sweet", "red",
+    "green", "yellow", "orange", "roasted", "pickled", "paprika",
+}
+NO_DATA_HINTS = {"sansho", "szechwan", "sichuan"}  # Zanthoxylum: gênero sem dados no banco
+
 DESCRIPTOR_DROP = {"odorless", "mild", "none", "characteristic", "slight", "faint"}
 
 
 def norm_name(text: str) -> str:
     text = str(text).lower().replace("_", " ").replace("-", " ")
     return re.sub(r"\s+", " ", text).strip()
+
+
+def alias_key(text: str) -> str:
+    """Chave de apelido: sem acento e normalizada ('Açúcar' == 'acucar')."""
+    return norm_name(unicodedata.normalize("NFKD", str(text)).encode("ascii", "ignore").decode())
 
 
 @dataclass
@@ -51,7 +68,8 @@ class Resolved:
 class FlavorDB:
     """Banco de sabores em memória. Carregue uma vez e reutilize (consultas em ms)."""
 
-    def __init__(self, path: Path = PROCESSED, aliases: Path | None = ALIASES):
+    def __init__(self, path: Path = PROCESSED, aliases: Path | None = ALIASES,
+                 dictionary: Path | None = DICTIONARY):
         self.path = Path(path)
         if not (self.path / "ingredients.parquet").exists():
             raise FileNotFoundError(
@@ -75,10 +93,19 @@ class FlavorDB:
 
         # apelidos curados (editáveis): nome -> ingrediente base, com justificativa
         self.aliases: dict[str, tuple[str, str]] = {}
+        # nomes em português do dicionário: redirecionam por completo para o ingrediente de sabor
+        self.pt_names: dict[str, str] = {}
+        if dictionary and Path(dictionary).exists():
+            d = pd.read_csv(dictionary, dtype=str).fillna("")
+            self.pt_names = {alias_key(n): b for n, b in zip(d["nome"], d["sabor"]) if b}
+            # inverso (inglês -> português), para exibir sugestões em português
+            self._pt_label: dict[str, str] = {}
+            for n, b in zip(d["nome"], d["sabor"]):
+                self._pt_label.setdefault(alias_key(b), n)
         if aliases and Path(aliases).exists():
             al = pd.read_csv(aliases, dtype=str).fillna("")
-            self.aliases = {norm_name(n): (norm_name(b), j)
-                            for n, b, j in zip(al["nome"], al["base"], al["justificativa"])}
+            self.aliases.update({alias_key(n): (norm_name(b), j)
+                                 for n, b, j in zip(al["nome"], al["base"], al["justificativa"])})
 
     # ------------------------------------------------------------------ perfis
     @cached_property
@@ -108,6 +135,12 @@ class FlavorDB:
     def name(self, iid: str) -> str:
         return self._names.get(iid, iid)
 
+    def display_name(self, iid: str) -> str:
+        """'noz-moscada (nutmeg)' quando há nome em português no dicionário."""
+        en = self.name(iid)
+        pt = getattr(self, "_pt_label", {}).get(alias_key(en))
+        return f"{pt} ({en})" if pt else en
+
     def category(self, iid: str):
         return self._category.get(iid)
 
@@ -118,12 +151,17 @@ class FlavorDB:
     def resolve(self, query: str) -> Resolved:
         """Acha o ingrediente pelo id ('fg:1368') ou nome em inglês ('cinnamon')."""
         query = str(query).strip()
+        target = self.pt_names.get(alias_key(query))
+        if target and alias_key(target) != alias_key(query):
+            r = self.resolve(target)
+            # exibe o nome em português digitado; o id/moléculas são do ingrediente de sabor
+            return Resolved(query, r.ingredient_id, query, r.molecules_from, r.note)
         if query in self._names:
             iid = query
         else:
             ids = self._by_name.get(norm_name(query))
             if not ids:
-                alias = self.aliases.get(norm_name(query))
+                alias = self.aliases.get(alias_key(query))
                 if alias:  # nome fora do banco (ex.: em português) -> ingrediente base
                     r = self.resolve(alias[0])
                     return Resolved(query, r.ingredient_id, r.name, r.molecules_from, r.note)
@@ -136,21 +174,29 @@ class FlavorDB:
             return Resolved(query, iid, self.name(iid), iid)
 
         # apelido curado (data/ingredient_aliases.csv) tem prioridade sobre a heurística
-        alias = self.aliases.get(norm_name(self.name(iid)))
+        alias = self.aliases.get(alias_key(self.name(iid)))
         if alias:
             for cand in self._by_name.get(alias[0], []):
                 if cand in self.profiles:
-                    note = f"moléculas de '{self.name(cand)}'" + (f" — {alias[1]}" if alias[1] else "")
+                    # apelidos do dicionário (sem justificativa) não geram aviso
+                    note = f"moléculas de '{self.name(cand)}' — {alias[1]}" if alias[1] else ""
                     return Resolved(query, iid, self.name(iid), cand, note=note)
 
         # herança: tira palavras do início ("ground cinnamon" -> "cinnamon")
         words = norm_name(self.name(iid)).split()
         for k in range(1, len(words)):
             base = " ".join(words[k:])
+            if base == "pepper":  # ambíguo: decide o gênero botânico pelo resto do nome
+                if NO_DATA_HINTS & set(words):
+                    break
+                if CAPSICUM_HINTS & set(words):
+                    base = "capsicum"
             for cand in self._by_name.get(base, []):
                 if cand in self.profiles:
-                    return Resolved(query, iid, self.name(iid), cand,
-                                    note=f"moléculas herdadas de '{self.name(cand)}'")
+                    note = f"moléculas herdadas de '{self.name(cand)}'"
+                    if base == "capsicum":
+                        note += " (gênero Capsicum: pimentas e pimentões)"
+                    return Resolved(query, iid, self.name(iid), cand, note=note)
         return Resolved(query, iid, self.name(iid), iid, note="sem dados moleculares")
 
     def search(self, text: str, limit: int = 20) -> pd.DataFrame:

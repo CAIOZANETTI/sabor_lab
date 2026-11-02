@@ -1,50 +1,63 @@
 # science_spice
 
-Banco de dados experimental de **sabores em nível molecular**: ingredientes,
-as moléculas que eles contêm e os descritores sensoriais dessas moléculas.
-O objetivo é encontrar relações entre sabores para elaborar e testar novos
-pratos.
+Banco de dados experimental de **sabor e nutrição** dos alimentos, para
+elaborar e testar receitas com embasamento científico.
 
-A ideia central (hipótese do *food pairing*, Ahn et al. 2011): ingredientes
-que **compartilham moléculas aromáticas** tendem a combinar. Somamos a isso o
-que **cozinheiros de verdade combinam** em mais de 1 milhão de receitas
-(FlavorGraph).
+- **Sabor, em nível molecular:** que moléculas aromáticas cada ingrediente tem
+  e quais ingredientes compartilham moléculas. É a hipótese do *food pairing*
+  (Ahn et al. 2011): ingredientes que compartilham moléculas tendem a combinar.
+  Somamos a isso o que cozinheiros de fato combinam em mais de 1 milhão de
+  receitas (FlavorGraph).
+- **Nutrição:** energia, proteínas, carboidratos, açúcares, gorduras, fibra,
+  sódio, vitaminas e minerais de cada ingrediente (TACO e USDA), somados para a
+  receita inteira e por porção, com %VD da ANVISA.
+- **Tudo em português e no sistema métrico:** você escreve "2 colheres de sopa
+  de azeite" ou "1 cup flour" e o sistema converte para gramas. Unidades
+  imperiais (cup, tbsp, oz, lb, °F, inch) são sempre convertidas.
 
 ## Estrutura
 
 ```
 data/
-  raw/
-    flavordb/entities.jsonl.gz   FlavorDB2 bruto (1 JSON por ingrediente)
-    flavorgraph/*.csv            FlavorGraph bruto (nós e arestas do grafo)
-  processed/                     tabelas unificadas em Parquet (geradas pelo build)
-  experiments/                   seus testes de receitas (modelo)
+  raw/                           dados brutos (USDA fica fora do git: re-baixável)
+    flavordb/entities.jsonl.gz   FlavorDB2 (1 JSON por ingrediente)
+    flavorgraph/*.csv            FlavorGraph (nós e arestas do grafo)
+    taco/*.csv                   TACO 4ª ed. + medidas caseiras POF/IBGE
+  processed/                     tabelas de sabor em Parquet
+    nutrition/                   tabelas de nutrição em Parquet
+  dicionario_ingredientes.csv    nomes em português -> sabor + nutrição (82 itens)
+  ingredient_aliases.csv         apelidos curados com justificativa
+  experiments/                   suas receitas
   SOURCES.md                     fontes, licenças e citações
-flavorlab/                       pacote Python (análise + relatório)
-  db.py                          carrega o banco, resolve nomes, perfis moleculares
+flavorlab/                       pacote Python
+  db.py                          banco de sabores: nomes, perfis moleculares
   analysis.py                    química (Jaccard), prática (NPMI), sugestões
-  report.py                      relatório HTML interativo (vis-network + plotly)
-scripts/
-  download_flavordb.py           baixa o FlavorDB2 (lento, retomável)
-  download_flavorgraph.py        baixa o FlavorGraph
-  build_database.py              monta data/processed/
-  recipe_report.py               gera reports/<receita>.html
+  nutrition.py                   banco nutricional, conversão de unidades, cálculo
+  units.py                       unidades métricas/imperiais, °F->°C, polegadas->cm
+  report.py, nutrition_report.py relatório HTML interativo (vis-network + plotly)
+scripts/                         download, build e relatório
 reports/                         relatórios gerados
 tests/                           testes automatizados (pytest)
 ```
 
-## Reconstruir do zero
+## Instalação e reconstrução
 
 ```bash
+pip install -r requirements.txt          # pandas, numpy, pyarrow, plotly
+
+# sabor
 python scripts/download_flavorgraph.py
 python scripts/download_flavordb.py      # ~2 h, 1 requisição/s, retomável
 python scripts/build_database.py
+
+# nutrição
+python scripts/download_nutrition.py     # USDA (~10 MB) + TACO/POF
+python scripts/build_nutrition.py
 ```
 
-Requer `pip install -r requirements.txt` (pandas, numpy, pyarrow, plotly).
-
-Testes: `pip install -r requirements-dev.txt && pytest` (usam um banco sintético
-com respostas conhecidas + verificações de integridade no banco real).
+Testes: `pip install -r requirements-dev.txt && pytest`. A maioria usa bancos
+sintéticos com respostas conhecidas; há também verificações no banco real,
+como "1 cup de farinha = 125 g" e "nenhuma unidade imperial sobrando".
 
 ## Publicação na web
 
@@ -64,97 +77,131 @@ No GitHub, selecione **Settings → Pages → Source: GitHub Actions** uma únic
 Depois disso, a publicação é automática e também pode ser iniciada manualmente
 na aba **Actions**.
 
-## Tabelas em `data/processed/`
+## Suas receitas (`data/experiments/`)
 
-Formato **Parquet**: ~4× menor e ~3× mais rápido de ler que CSV, e preserva os
-tipos (ids PubChem continuam inteiros). Para abrir no Excel, gere cópias CSV com
-`python scripts/build_database.py --csv`. Leitura no pandas:
-`pd.read_parquet("data/processed/molecules.parquet")`.
+`receitas.csv`, com uma receita por linha:
+
+| coluna | exemplo |
+|---|---|
+| `recipe_id` | R001 |
+| `nome`, `data`, `tecnica` | "forno a 350°F" vira "forno a 177 °C" no relatório |
+| `porcoes` | 4 (divide os nutrientes) |
+| `nota_geral`, **`por_que_gostei`**, `observacoes` | texto livre |
+
+`receita_ingredientes.csv`, com um ingrediente por linha:
+
+| coluna | exemplo | observação |
+|---|---|---|
+| `ingrediente` | canela | **em português**, resolvido pelo dicionário |
+| `quantidade` | 2, 1/2, 2 1/4, 0,5 | aceita frações e vírgula |
+| `unidade` | g, kg, ml, l, xícara, colher de sopa, colher de chá, unidade, dente, fatia, folha, pitada, cup, tbsp, tsp, oz, lb, fl oz | |
+| `gramas` | 3 | opcional: vale sobre quantidade+unidade (ex.: "1 pau de canela") |
+| `preparo`, `momento`, `observacoes` | tostado, início | texto livre |
+| `nome_no_banco` | black_pepper | opcional: força o ingrediente de sabor |
+| `alimento` | taco:157, usda:170457 | opcional: força o alimento nutricional |
+
+Gerar os relatórios:
+
+```bash
+python scripts/recipe_report.py                     # todas as receitas
+python scripts/recipe_report.py --recipe R001       # uma receita
+python scripts/recipe_report.py --search-food "queijo minas"   # achar alimento (nutrição)
+python scripts/recipe_report.py --search pepper     # achar ingrediente (sabor, inglês)
+```
+
+EX01 (molho de tomate), EX02 (chai) e EX03 (cookies americanos, em unidades
+imperiais) são exemplos e podem ser apagados.
+
+## O relatório (`reports/<recipe_id>.html`)
+
+**Nutrição**
+- Destaques por porção: kcal, proteínas, carboidratos, açúcares, gorduras,
+  fibra e sódio.
+- Tabela por ingrediente com a **conversão usada para chegar aos gramas**, por
+  exemplo "45 ml × densidade 0,91 g/ml" ou "medida caseira IBGE: dente = 4,4 g".
+- Energia por ingrediente e origem da energia (proteína/carboidrato/gordura).
+- **%VD** por porção (ANVISA, IN 75/2020, dieta de 2.000 kcal).
+
+**Sabor**
+- **Rede de sabor interativa:** ingredientes ligados pelas moléculas que
+  compartilham e pelos pares associados em receitas. Dá para arrastar, dar zoom,
+  clicar para destacar as conexões, buscar e filtrar por **nota de sabor**
+  (woody, citrus, spicy…).
+- **Química × prática:**
+  - *Jaccard*: moléculas em comum sobre o total, de 0 a 1.
+  - *NPMI*: associação acima do acaso em receitas, de 0 a 1.
+- **Perfil sensorial**, **moléculas-ponte** e sugestões **clássicas, químicas e
+  ousadas** do que acrescentar.
+
+Todas as tabelas são ordenáveis com um clique no cabeçalho.
+
+## Como cada ingrediente é resolvido
+
+1. **Dicionário** (`data/dicionario_ingredientes.csv`): nome em português →
+   ingrediente de sabor + alimento nutricional (TACO de preferência) +
+   complemento USDA (preenche o que a TACO não mede, como açúcares) + nome nas
+   medidas caseiras do IBGE. Acentos e maiúsculas são ignorados.
+2. Fora do dicionário: busca automática na TACO/USDA, com aviso "confira".
+3. **Sabor sem moléculas próprias** herda de um ingrediente base, sempre com aviso:
+   - apelidos curados com justificativa (`olive_oil → olive`);
+   - heurística (`ground_cinnamon → cinnamon`), que respeita o gênero botânico.
+     "chili/bell pepper" vão para *Capsicum*, "black pepper" para *Piper*, e
+     "sichuan pepper" fica sem dados em vez de herdar algo errado.
+
+**Conversão para gramas:**
+- massa (g, kg, oz, lb) converte direto;
+- volume (ml, xícara, cup, tbsp…) é multiplicado pela **densidade do próprio
+  alimento**, derivada das porções do USDA (azeite 0,91 g/ml, farinha 0,53 g/ml);
+  sem densidade, usa a medida caseira do IBGE; em último caso, 1 g/ml, com aviso;
+- unidade/dente/fatia/folha usam as medidas do IBGE ou as porções do USDA.
+
+As medidas brasileiras usam xícara = 240 ml, colher de sopa = 15 ml e colher de
+chá = 5 ml. As americanas usam as definições exatas: cup = 236,6 ml,
+tbsp = 14,8 ml, tsp = 4,9 ml, oz = 28,35 g, lb = 453,6 g.
+
+## Tabelas
+
+**Sabor** (`data/processed/`)
 
 | Arquivo | Uma linha por | Colunas principais |
 |---|---|---|
-| `ingredients.parquet` | ingrediente | `ingredient_id`, `source`, `name`, `category`, `scientific_name`, `n_molecules` |
-| `molecules.parquet` | molécula | `pubchem_id`, `name`, `smiles`, `molecular_weight`, `xlogp`, `flavor_profile`, `odor`, `taste`, `functional_groups` |
-| `ingredient_molecules.parquet` | ingrediente × molécula | `ingredient_id`, `pubchem_id`, `source` |
-| `molecule_descriptors.parquet` | molécula × descritor | `pubchem_id`, `descriptor` (ex.: *woody*, *sweet*, *pungent*), `origin` |
-| `ingredient_pairs.parquet` | par de ingredientes | `ingredient_a`, `ingredient_b`, `npmi_score` (co-ocorrência em receitas, −1 a 1) |
-| `ingredient_crosswalk.parquet` | ingrediente nas duas fontes | `fdb_id`, `fg_id`, `matched_name` |
+| `ingredients.parquet` | ingrediente | `ingredient_id` (`fdb:`/`fg:`), `name`, `category`, `scientific_name`, `n_molecules` |
+| `molecules.parquet` | molécula | `pubchem_id`, `name`, `smiles`, `molecular_weight`, `xlogp`, `flavor_profile`, `functional_groups` |
+| `ingredient_molecules.parquet` | ingrediente × molécula | `ingredient_id`, `pubchem_id` |
+| `molecule_descriptors.parquet` | molécula × descritor | `pubchem_id`, `descriptor` (woody, sweet…) |
+| `ingredient_pairs.parquet` | par de ingredientes | `ingredient_a`, `ingredient_b`, `npmi_score` |
 
-**Chaves de ligação**
+**Nutrição** (`data/processed/nutrition/`), por 100 g e em unidades métricas
 
-- `ingredient_id`: `fdb:<id>` (FlavorDB) ou `fg:<id>` (FlavorGraph).
-- `pubchem_id`: identificador PubChem da molécula, **comum às duas fontes** —
-  é por ele que o banco se conecta (e que se pode buscar mais dados no PubChem).
-
-Algumas colunas úteis para engenharia de sabor:
-
-- `xlogp` — lipofilicidade: valores altos indicam molécula solúvel em
-  **gordura** (aroma que "abre" quando a especiaria é frita no óleo).
-- `molecular_weight` — moléculas leves tendem a ser mais **voláteis**
-  (perdem-se com cozimento longo; adicionar no fim).
-- `functional_groups` — família química (terpeno, fenol, aldeído, pirazina...).
-
-## Embasamento científico de uma receita
-
-```bash
-python scripts/recipe_report.py                     # todas as receitas de data/experiments/
-python scripts/recipe_report.py --recipe EX02       # uma receita
-python scripts/recipe_report.py --ingredients "tomato,basil,garlic" --name "teste"
-python scripts/recipe_report.py --search pepper     # achar o nome certo no banco
-```
-
-O relatório (`reports/<recipe_id>.html`, abre em qualquer navegador) mostra:
-
-- **Rede de sabor interativa** — ingredientes ligados pelas moléculas que
-  compartilham e pelos pares associados em receitas. Arraste os nós, dê zoom,
-  **clique** num nó para destacar as conexões e ver os detalhes (aroma, peso
-  molecular, xlogP, link PubChem), **busque** por nome e clique nas **notas de
-  sabor** (woody, citrus, spicy…) para acender as moléculas com aquela nota.
-- **Química × Prática** — dois mapas de calor por par de ingredientes:
-  - *Química*: Jaccard = moléculas em comum / moléculas no total (0–1).
-  - *Prática*: NPMI do FlavorGraph — associação **acima do acaso** em >1 milhão
-    de receitas. Ingredientes onipresentes (alho, cebola) têm NPMI baixo mesmo
-    aparecendo juntos sempre; 0 = "sem associação especial".
-- **Perfil sensorial** — quais notas (doce, amadeirado, picante…) cada ingrediente traz.
-- **Moléculas-ponte** — presentes em 2+ ingredientes, priorizando as mais
-  específicas (raras no banco), que dão a "assinatura" da combinação.
-- **O que acrescentar** — sugestões *clássicas* (prática), *químicas* e
-  *ousadas* (química alta, sem associação em receitas: território a explorar).
-- Todas as tabelas são **ordenáveis** (clique no cabeçalho).
-
-Desempenho: carregar o banco leva ~0,3 s; cada análise de receita, ~30 ms.
-
-Ingredientes sem moléculas próprias herdam as de um ingrediente base, e o
-relatório sempre avisa quando isso acontece:
-
-1. **Apelidos curados** em `data/ingredient_aliases.csv` (`nome,base,justificativa`)
-   — ex.: `olive_oil → olive` (os voláteis do azeite vêm da azeitona). Também
-   serve para nomes em português: acrescente `canela,cinnamon,` e use "canela"
-   direto nas receitas.
-2. **Heurística**: tira palavras do início do nome até achar um ingrediente com
-   moléculas (`ground_cinnamon → cinnamon`).
+| Arquivo | Uma linha por | Colunas principais |
+|---|---|---|
+| `foods.parquet` | alimento (8.826) | `food_id` (`taco:`/`usda:`), `nome`, `fonte`, `categoria`, `densidade_g_ml` |
+| `nutrients.parquet` | nutriente | `nutrient_key` (ex.: `acucares_g`), `nome` (português), `unidade` |
+| `food_nutrients.parquet` | alimento × nutriente | `food_id`, `nutrient_key`, `valor`, `traco` |
+| `portions.parquet` | porção USDA | `food_id`, `medida_pt` ("1 xícara EUA (236,6 ml) = 125 g"), `gramas`, `ml` |
+| `household.parquet` | medida caseira IBGE | `alimento`, `medida` (COLHER DE SOPA, UNIDADE…), `gramas` |
 
 Uso em Python/notebook:
 
 ```python
 from flavorlab import FlavorDB, analyze_recipe
-db = FlavorDB()
-a = analyze_recipe(db, ["cinnamon", "clove", "orange"])
-a.pairs; a.bridges; a.profile; a.suggestions["ousadas"]
+from flavorlab.nutrition import NutritionDB
+
+a = analyze_recipe(FlavorDB(), ["canela", "cravo", "laranja"])
+a.pairs; a.bridges; a.suggestions["ousadas"]
+
+n = NutritionDB()
+r = n.recipe([{"nome": "farinha de trigo", "quantidade": "2 1/4", "unidade": "cup"},
+              {"nome": "manteiga", "quantidade": 1, "unidade": "cup"}], portions=12)
+r.total; r.per_portion; r.vd
 ```
 
-## Seus experimentos (`data/experiments/`)
+## Licença
 
-Registre aqui as receitas que você fez e gostou (EX01 e EX02 são exemplos — pode apagar):
-
-- `receitas.csv` — uma receita por linha: data, nome, técnica, nota 1–5,
-  **por que gostei**, observações.
-- `receita_ingredientes.csv` — ingredientes de cada receita: nome em português
-  (`ingrediente`), **nome no banco em inglês** (`nome_no_banco`, ex.: `black_pepper`
-  — use `--search` para achar), quantidade, preparo (cru/tostado/moído/frito no
-  óleo) e momento de adição.
-
-## Fontes
-
-Ver [`data/SOURCES.md`](data/SOURCES.md). FlavorDB é **CC BY-NC-SA 3.0**
-(não comercial); FlavorGraph é **Apache 2.0**.
+- **Código:** MIT (ver [`LICENSE`](LICENSE)).
+- **Dados:** cada fonte mantém a sua licença (ver [`data/SOURCES.md`](data/SOURCES.md)):
+  - os dados de **sabor** derivados do FlavorDB são **CC BY-NC-SA 3.0** (uso
+    não comercial, com atribuição);
+  - USDA é domínio público;
+  - TACO e IBGE exigem citação da fonte;
+  - FlavorGraph é Apache 2.0.
