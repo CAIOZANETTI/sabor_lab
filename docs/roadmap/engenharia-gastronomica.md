@@ -17,6 +17,11 @@ As capacidades atuais de Jaccard, NPMI, moléculas-ponte, resolução de
 ingredientes, nutrição TACO/USDA e relatórios permanecem compatíveis. As novas
 camadas devem compor esses motores, não substituí-los.
 
+O catálogo canônico e o módulo de temperatura de serviço já fazem parte da
+`main`. O catálogo fornece identidade, formas e mapeamentos rastreáveis; o módulo
+térmico separa medições, cálculo, preferência observada e segurança. As próximas
+entregas devem consumir esses contratos existentes.
+
 ## Separação arquitetural
 
 ```text

@@ -4,6 +4,19 @@ Estas especificações são o contrato de trabalho entre o gerente técnico (Cod
 e o executor (Claude Code). Cada demanda deve resultar em uma branch e um PR
 independentes. Claude não deve fazer merge.
 
+## Estado de execução
+
+- **Concluída:** 002 — catálogo universal, incorporada pelo
+  [PR #5](https://github.com/CAIOZANETTI/sabor_lab/pull/5) no commit `cece85c`.
+  O catálogo inventaria 16.414 registros e mantém a fila explícita de curadoria.
+- **Concluída em paralelo:** módulo de temperatura de serviço e percepção,
+  incorporado pelo [PR #6](https://github.com/CAIOZANETTI/sabor_lab/pull/6).
+- **Próxima demanda para Claude Code:** 005 — estados e evidências.
+
+As demandas seguintes devem reutilizar `flavorlab.catalog`, `flavorlab.thermal`,
+`flavorlab.temporal_sensory` e `flavorlab.food_safety`; não criar modelos
+paralelos para identidade, temperatura, preferência ou segurança.
+
 ## Ordem de execução
 
 | Ordem | Demanda | Dependência | Resultado |
