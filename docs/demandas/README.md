@@ -52,3 +52,5 @@ no PR que o introduz, sem criar um segundo modelo incompatível.
 
 A visão consolidada está em
 [`docs/roadmap/engenharia-gastronomica.md`](../roadmap/engenharia-gastronomica.md).
+O fluxo de branches, papéis, gates e mensagens de handoff está em
+[`docs/demandas/PLANO-IMPLEMENTACAO.md`](PLANO-IMPLEMENTACAO.md).
