@@ -1,0 +1,308 @@
+{
+  "recipe_id": "CEVICHE_DEMO",
+  "servings": 2,
+  "cooks": 1,
+  "provenance": "caso de demonstração de segurança (demanda 003); não é receita do usuário",
+  "notes": "O ácido desnatura proteínas e deixa o peixe opaco, mas NÃO equivale à cocção térmica nem garante segurança: salmoura e marinada podem reduzir mas não eliminam parasitas (FDA, Fish and Fishery Products Hazards and Controls Guidance, cap. 5). Para consumo cru/marinado, o FDA Food Code 2026 §3-402.11 prevê congelamento prévio (ex.: −20 °C por 7 dias) — controle fora do cronograma desta receita.",
+  "resources": [
+    {
+      "resource_id": "board",
+      "equipment_id": "cutting_board",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bowl",
+      "equipment_id": "mixing_bowl",
+      "capacity": 1
+    },
+    {
+      "resource_id": "fridge",
+      "equipment_id": "refrigerator",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bench",
+      "equipment_id": "countertop",
+      "capacity": 1
+    }
+  ],
+  "ingredients": [
+    {
+      "ref_id": "recipe:CEVICHE_DEMO:line:1",
+      "entity_id": "sl:ingredient:fish",
+      "display_name": "peixe branco (espécie não informada)",
+      "legacy_line": 1
+    },
+    {
+      "ref_id": "recipe:CEVICHE_DEMO:line:2",
+      "entity_id": "sl:ingredient:tahiti_lime",
+      "display_name": "limão-tahiti",
+      "legacy_line": 2
+    },
+    {
+      "ref_id": "recipe:CEVICHE_DEMO:line:3",
+      "entity_id": "sl:ingredient:onion",
+      "display_name": "cebola",
+      "legacy_line": 3
+    },
+    {
+      "ref_id": "recipe:CEVICHE_DEMO:line:4",
+      "entity_id": "sl:part:coriander_leaf",
+      "display_name": "coentro (folhas)",
+      "legacy_line": 4
+    },
+    {
+      "ref_id": "recipe:CEVICHE_DEMO:line:5",
+      "entity_id": "sl:ingredient:salt",
+      "display_name": "sal",
+      "legacy_line": 5
+    }
+  ],
+  "claims": [
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "CEVICHE_DEMO:s01:active",
+      "subject_id": "process:CEVICHE_DEMO:s01",
+      "predicate": "process_duration_s",
+      "value": 3,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 2,
+      "value_max": 5,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "CEVICHE_DEMO:s02:active",
+      "subject_id": "process:CEVICHE_DEMO:s02",
+      "predicate": "process_duration_s",
+      "value": 6,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 4,
+      "value_max": 10,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "CEVICHE_DEMO:s03:active",
+      "subject_id": "process:CEVICHE_DEMO:s03",
+      "predicate": "process_duration_s",
+      "value": 4,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 3,
+      "value_max": 6,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "CEVICHE_DEMO:s04:active",
+      "subject_id": "process:CEVICHE_DEMO:s04",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "CEVICHE_DEMO:s04:passive",
+      "subject_id": "process:CEVICHE_DEMO:s04",
+      "predicate": "process_duration_s",
+      "value": 15,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 10,
+      "value_max": 30,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "CEVICHE_DEMO:s05:active",
+      "subject_id": "process:CEVICHE_DEMO:s05",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "phase": "mise_en_place",
+      "title": "Separar ingredientes",
+      "instruction": "Separe os ingredientes; o peixe deve vir de fonte que aplicou o controle de parasitas por congelamento.",
+      "ingredient_refs": [
+        "recipe:CEVICHE_DEMO:line:1",
+        "recipe:CEVICHE_DEMO:line:2",
+        "recipe:CEVICHE_DEMO:line:3",
+        "recipe:CEVICHE_DEMO:line:4",
+        "recipe:CEVICHE_DEMO:line:5"
+      ],
+      "technique_id": "mise_en_place",
+      "cut_id": null,
+      "equipment_refs": [
+        "bench"
+      ],
+      "dependencies": [],
+      "attention": "active",
+      "completion_signal": "ingredientes separados",
+      "safety_control_id": "fda_parasite_freeze_20c_7d",
+      "claim_ids": {
+        "active_duration_s": "CEVICHE_DEMO:s01:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s02",
+      "phase": "mise_en_place",
+      "title": "Cortar o peixe em cubos",
+      "instruction": "Corte o peixe em cubos médios.",
+      "ingredient_refs": [
+        "recipe:CEVICHE_DEMO:line:1"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "dice_medium",
+      "equipment_refs": [
+        "board"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "cubos uniformes",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "CEVICHE_DEMO:s02:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s03",
+      "phase": "mise_en_place",
+      "title": "Fatiar a cebola e picar o coentro",
+      "instruction": "Fatie a cebola fina; pique o coentro.",
+      "ingredient_refs": [
+        "recipe:CEVICHE_DEMO:line:3",
+        "recipe:CEVICHE_DEMO:line:4"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "slice",
+      "equipment_refs": [
+        "board"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "cebola fatiada e coentro picado",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "CEVICHE_DEMO:s03:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s04",
+      "phase": "descanso",
+      "title": "Marinar no limão",
+      "instruction": "Cubra o peixe com o suco de limão e o sal; leve à geladeira.",
+      "ingredient_refs": [
+        "recipe:CEVICHE_DEMO:line:1",
+        "recipe:CEVICHE_DEMO:line:2",
+        "recipe:CEVICHE_DEMO:line:5"
+      ],
+      "technique_id": "acid_marinate",
+      "cut_id": null,
+      "equipment_refs": [
+        "bowl",
+        "fridge"
+      ],
+      "dependencies": [
+        "s02"
+      ],
+      "attention": "passive",
+      "completion_signal": "superfície opaca (aparência; não indica segurança)",
+      "safety_control_id": "fda_acid_not_parasite_control",
+      "claim_ids": {
+        "active_duration_s": "CEVICHE_DEMO:s04:active",
+        "passive_duration_s": "CEVICHE_DEMO:s04:passive"
+      },
+      "transformations": [
+        "acid_denaturation"
+      ],
+      "notes": "desnaturação ácida; o peixe NÃO fica termicamente cozido",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s05",
+      "phase": "servico",
+      "title": "Montar e servir",
+      "instruction": "Junte cebola e coentro e sirva imediatamente.",
+      "ingredient_refs": [
+        "recipe:CEVICHE_DEMO:line:3",
+        "recipe:CEVICHE_DEMO:line:4"
+      ],
+      "technique_id": "finish_plate",
+      "cut_id": null,
+      "equipment_refs": [
+        "bench"
+      ],
+      "dependencies": [
+        "s04",
+        "s03"
+      ],
+      "attention": "active",
+      "completion_signal": "servido frio",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "CEVICHE_DEMO:s05:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "recipe_id": "EX01",
+  "servings": 4,
+  "cooks": 1,
+  "provenance": "receita de exemplo do projeto (receitas.csv: \"refogado + redução\"); etapas e tempos curados",
+  "notes": "",
+  "resources": [
+    {
+      "resource_id": "burner",
+      "equipment_id": "stovetop_burner",
+      "capacity": 1
+    },
+    {
+      "resource_id": "pan",
+      "equipment_id": "saucepan",
+      "capacity": 1
+    },
+    {
+      "resource_id": "board",
+      "equipment_id": "cutting_board",
+      "capacity": 1
+    },
+    {
+      "resource_id": "grater",
+      "equipment_id": "grater",
+      "capacity": 1
+    },
+    {
+      "resource_id": "bench",
+      "equipment_id": "countertop",
+      "capacity": 1
+    }
+  ],
+  "ingredients": [
+    {
+      "ref_id": "recipe:EX01:line:1",
+      "entity_id": "sl:ingredient:tomato",
+      "display_name": "tomate",
+      "legacy_line": 1
+    },
+    {
+      "ref_id": "recipe:EX01:line:2",
+      "entity_id": "sl:ingredient:basil",
+      "display_name": "manjericão",
+      "legacy_line": 2
+    },
+    {
+      "ref_id": "recipe:EX01:line:3",
+      "entity_id": "sl:ingredient:garlic",
+      "display_name": "alho",
+      "legacy_line": 3
+    },
+    {
+      "ref_id": "recipe:EX01:line:4",
+      "entity_id": "sl:ingredient:olive_oil",
+      "display_name": "azeite",
+      "legacy_line": 4
+    },
+    {
+      "ref_id": "recipe:EX01:line:5",
+      "entity_id": "sl:form:cheese_parmesan_grated",
+      "display_name": "queijo parmesão",
+      "legacy_line": 5
+    }
+  ],
+  "claims": [
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s01:active",
+      "subject_id": "process:EX01:s01",
+      "predicate": "process_duration_s",
+      "value": 3,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 2,
+      "value_max": 5,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s02:active",
+      "subject_id": "process:EX01:s02",
+      "predicate": "process_duration_s",
+      "value": 3,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 2,
+      "value_max": 5,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s03:active",
+      "subject_id": "process:EX01:s03",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 4,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s04:active",
+      "subject_id": "process:EX01:s04",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s05:active",
+      "subject_id": "process:EX01:s05",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": null,
+      "value_max": null,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s05:passive",
+      "subject_id": "process:EX01:s05",
+      "predicate": "process_duration_s",
+      "value": 30,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 20,
+      "value_max": 45,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s06:active",
+      "subject_id": "process:EX01:s06",
+      "predicate": "process_duration_s",
+      "value": 1,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 2,
+      "context": null
+    },
+    {
+      "evidence_type": "culinary_heuristic",
+      "confidence": "low",
+      "method": "estimativa de planejamento do curador (sem fonte)",
+      "limitations": "estimativa para ordenar etapas; a etapa termina pelo sinal de conclusão, não pelo relógio",
+      "claim_id": "EX01:s07:active",
+      "subject_id": "process:EX01:s07",
+      "predicate": "process_duration_s",
+      "value": 2,
+      "unit": "min",
+      "source_id": null,
+      "observed_at": null,
+      "uncertainty": null,
+      "value_min": 1,
+      "value_max": 3,
+      "context": null
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "phase": "mise_en_place",
+      "title": "Separar ingredientes",
+      "instruction": "Separe e meça os ingredientes.",
+      "ingredient_refs": [
+        "recipe:EX01:line:1",
+        "recipe:EX01:line:2",
+        "recipe:EX01:line:3",
+        "recipe:EX01:line:4",
+        "recipe:EX01:line:5"
+      ],
+      "technique_id": "mise_en_place",
+      "cut_id": null,
+      "equipment_refs": [
+        "bench"
+      ],
+      "dependencies": [],
+      "attention": "active",
+      "completion_signal": "ingredientes medidos na bancada",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s01:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s02",
+      "phase": "mise_en_place",
+      "title": "Picar o alho",
+      "instruction": "Pique o alho finamente.",
+      "ingredient_refs": [
+        "recipe:EX01:line:3"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "mince",
+      "equipment_refs": [
+        "board"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "alho em pedaços pequenos e uniformes",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s02:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s03",
+      "phase": "mise_en_place",
+      "title": "Ralar o parmesão",
+      "instruction": "Rale o queijo.",
+      "ingredient_refs": [
+        "recipe:EX01:line:5"
+      ],
+      "technique_id": "knife_cut",
+      "cut_id": "grate",
+      "equipment_refs": [
+        "grater"
+      ],
+      "dependencies": [
+        "s01"
+      ],
+      "attention": "active",
+      "completion_signal": "queijo ralado",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s03:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s04",
+      "phase": "coccao",
+      "title": "Refogar o alho",
+      "instruction": "Aqueça o azeite e refogue o alho sem queimar.",
+      "ingredient_refs": [
+        "recipe:EX01:line:3",
+        "recipe:EX01:line:4"
+      ],
+      "technique_id": "saute",
+      "cut_id": null,
+      "equipment_refs": [
+        "burner",
+        "pan"
+      ],
+      "dependencies": [
+        "s02"
+      ],
+      "attention": "active",
+      "completion_signal": "alho perfumado, sem escurecer",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s04:active"
+      },
+      "transformations": [
+        "maillard_reaction"
+      ],
+      "notes": "Maillard é possível, não garantida; alho escurecido amarga",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s05",
+      "phase": "coccao",
+      "title": "Cozinhar e reduzir o tomate",
+      "instruction": "Junte o tomate e cozinhe em fogo baixo até reduzir.",
+      "ingredient_refs": [
+        "recipe:EX01:line:1"
+      ],
+      "technique_id": "simmer_reduce",
+      "cut_id": null,
+      "equipment_refs": [
+        "burner",
+        "pan"
+      ],
+      "dependencies": [
+        "s04"
+      ],
+      "attention": "check",
+      "completion_signal": "molho reduzido à consistência desejada",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s05:active",
+        "passive_duration_s": "EX01:s05:passive"
+      },
+      "transformations": [
+        "evaporation_reduction"
+      ],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s06",
+      "phase": "finalizacao",
+      "title": "Finalizar com manjericão",
+      "instruction": "Desligue e acrescente o manjericão.",
+      "ingredient_refs": [
+        "recipe:EX01:line:2"
+      ],
+      "technique_id": "finish_plate",
+      "cut_id": null,
+      "equipment_refs": [
+        "pan"
+      ],
+      "dependencies": [
+        "s05"
+      ],
+      "attention": "active",
+      "completion_signal": "manjericão incorporado",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s06:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    },
+    {
+      "step_id": "s07",
+      "phase": "servico",
+      "title": "Servir com parmesão",
+      "instruction": "Sirva com o parmesão ralado.",
+      "ingredient_refs": [
+        "recipe:EX01:line:5"
+      ],
+      "technique_id": "finish_plate",
+      "cut_id": null,
+      "equipment_refs": [
+        "bench"
+      ],
+      "dependencies": [
+        "s06",
+        "s03"
+      ],
+      "attention": "active",
+      "completion_signal": "pratos servidos",
+      "safety_control_id": null,
+      "claim_ids": {
+        "active_duration_s": "EX01:s07:active"
+      },
+      "transformations": [],
+      "notes": "",
+      "acceptable_range_c": null
+    }
+  ]
+}
