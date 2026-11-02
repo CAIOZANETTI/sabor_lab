@@ -21,6 +21,14 @@ licença de cada fonte:
 - Para um produto comercial, seria preciso retirar o FlavorDB ou obter licença
   dos autores.
 
+## Catálogo canônico de alimentos
+
+`data/catalog/` organiza os registros das fontes acima em conceitos, variedades,
+partes e formas com proveniência e confiança. Detalhes de licença por arquivo em
+`data/catalog/SOURCES.md`; pesquisa de fontes candidatas (FoodOn, Wikidata, Open
+Food Facts, COL, GRIN, ASFIS...) em `docs/research/ingredient-taxonomy-sources.md`.
+Nenhuma base nova foi importada.
+
 ## Decisões de tratamento (nutrição)
 
 - Valores por **100 g de parte comestível**, em unidades **métricas** (g, mg, µg, kcal, kJ).
