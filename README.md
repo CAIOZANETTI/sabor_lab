@@ -34,12 +34,16 @@ data/
     nutrition/                   tabelas de nutrição em Parquet
   dicionario_ingredientes.csv    nomes em português -> sabor + nutrição (82 itens)
   ingredient_aliases.csv         apelidos curados com justificativa
+  catalog/                       catálogo canônico de alimentos (conceitos, variedades,
+                                 partes, formas, táxons, mapeamentos) + inventário das fontes
   experiments/                   suas receitas
   SOURCES.md                     fontes, licenças e citações
 flavorlab/                       pacote Python
   db.py                          banco de sabores: nomes, perfis moleculares
   analysis.py                    química (Jaccard), prática (NPMI), sugestões
   nutrition.py                   banco nutricional, conversão de unidades, cálculo
+  catalog.py                     catálogo canônico: tipos, validação e API de consulta
+  catalog_mapping.py             inventário das fontes e mapeamento lexical conservador
   thermal.py                     ajuste térmico e previsão de temperatura-alvo
   temporal_sensory.py            degustações vinculadas à temperatura e ao tempo
   food_safety.py                 checagens independentes de manutenção/exposição
@@ -196,6 +200,35 @@ Todas as tabelas são ordenáveis com um clique no cabeçalho.
 As medidas brasileiras usam xícara = 240 ml, colher de sopa = 15 ml e colher de
 chá = 5 ml. As americanas usam as definições exatas: cup = 236,6 ml,
 tbsp = 14,8 ml, tsp = 4,9 ml, oz = 28,35 g, lb = 453,6 g.
+
+## Catálogo canônico de alimentos (`data/catalog/`)
+
+Camada que organiza **todos** os registros das fontes (TACO, USDA, FlavorDB e
+FlavorGraph) em entidades com IDs estáveis (`sl:ingredient:rice`,
+`sl:variant:rice_basmati`, `sl:part:atlantic_salmon_fillet`,
+`sl:form:common_bean_black_raw`), separando conceito, variedade/tipo, parte/corte,
+forma (estado, forma física, preparo) e produto/prato. Fontes, licenças e
+decisões: `data/catalog/SOURCES.md` e `docs/research/ingredient-taxonomy-sources.md`.
+
+```bash
+python scripts/build_catalog.py           # valida e regenera o inventário + reports/catalog_coverage.md
+python scripts/build_catalog.py --check   # falha se o inventário versionado estiver desatualizado
+```
+
+```python
+from flavorlab.catalog import Catalog
+cat = Catalog.load()
+cat.variants("sl:ingredient:rice")             # basmati, jasmim, arbório, tipo 1...
+cat.forms("sl:variant:common_bean_black")      # cru, cozido, enlatado, base seca
+cat.resolve_source("taco", "568")              # Feijão, preto, cru -> forma canônica + confiança
+cat.resolve_source("flavorgraph", "7043")      # "yam": ambíguo, devolve candidatos
+cat.coverage(source="usda")                    # contagem por grupo e status
+```
+
+O inventário (`source_inventory.csv`) tem uma linha por registro de fonte, com
+status `mapped_reviewed`, `mapped_high_confidence`, `mapped_low_confidence`,
+`ambiguous`, `unmapped` ou `excluded_with_reason`. Mapeamentos abaixo de 0,85 de
+confiança exigem revisão; registros não mapeados ficam na fila de curadoria.
 
 ## Tabelas
 

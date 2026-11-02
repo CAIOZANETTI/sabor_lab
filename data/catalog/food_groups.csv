@@ -1,0 +1,20 @@
+group_id,name_pt,name_en,scope_note,sort_order
+sl:group:cereals,cereais e pseudocereais,cereals and pseudocereals,"grãos de gramíneas e pseudocereais; farinhas, massas e pães de base cereal",01
+sl:group:legumes,leguminosas,legumes and pulses,"feijões, lentilhas, grão-de-bico, ervilha, soja e amendoim; derivados como tofu",02
+sl:group:tubers_roots,tubérculos e raízes,roots and tubers,"raízes e tubérculos amiláceos (batata, mandioca, cará, inhame, mandioquinha) e derivados; cenoura/beterraba ficam em hortaliças",03
+sl:group:vegetables,"hortaliças, folhas, flores e algas","vegetables, leaves, flowers and seaweeds","hortaliças-fruto, folhosas, bulbos, flores comestíveis e algas",04
+sl:group:fruits,frutas,fruits,"frutas frescas, polpas e derivados diretos (sucos ficam em bebidas)",05
+sl:group:fungi,cogumelos e outros fungos culinários,mushrooms and culinary fungi,cogumelos e leveduras de uso culinário,06
+sl:group:nuts_seeds,"castanhas, sementes e derivados","nuts, seeds and derivatives","castanhas, sementes oleaginosas e pastas (tahine)",07
+sl:group:herbs_spices_condiments,"ervas, especiarias, sais e condimentos","herbs, spices, salts and condiments","ervas aromáticas, especiarias, sal, molhos e condimentos",08
+sl:group:fats_oils,óleos e gorduras,fats and oils,"óleos vegetais, gorduras animais (exceto manteiga, que é laticínio), margarinas",09
+sl:group:dairy,"leite, laticínios e queijos","milk, dairy and cheese","leites, cremes, manteiga, iogurtes e queijos",10
+sl:group:eggs,ovos,eggs,"ovos de aves, inteiros e partes (clara, gema)",11
+sl:group:meat,"bovinos, suínos, caprinos, ovinos e caça","beef, pork, goat, lamb and game","carnes de mamíferos, cortes, miúdos e embutidos/curados",12
+sl:group:poultry,aves,poultry,"frango, peru, pato, ganso, codorna e cortes",13
+sl:group:seafood,"peixes, moluscos, crustáceos e outros frutos do mar","fish, mollusks, crustaceans and other seafood","pescados e produtos de pescado",14
+sl:group:beverages,bebidas e infusões,beverages and infusions,"café, chá, infusões, sucos, bebidas alcoólicas e não alcoólicas",15
+sl:group:sugars_sweeteners,açúcares e adoçantes,sugars and sweeteners,"açúcares, xaropes, mel, adoçantes e confeitos à base de açúcar (convenção do catálogo)",16
+sl:group:fermented_preserved,fermentados e conservas,fermented and preserved foods,"produtos cuja identidade é dada pela fermentação/conserva (vinagre, shoyu, missô, chucrute, azeitona de mesa); laticínios, bebidas e carnes fermentadas ficam no grupo da matéria-prima",17
+sl:group:processed_products,produtos processados,processed products,"industrializados multi-ingrediente sem base dominante (biscoitos, cereais matinais, misturas em pó)",18
+sl:group:prepared_dishes,pratos preparados e receitas compostas,prepared dishes and composite recipes,pratos e receitas com vários ingredientes; nunca variedades de um ingrediente,19

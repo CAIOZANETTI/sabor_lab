@@ -1,0 +1,1602 @@
+entity_id,source,source_id,mapping_type,confidence,evidence,reviewed_by,reviewed_at,curated_by,curated_at
+sl:ingredient:bread,flavordb,2,exact,0.90,flavordb:2 'Bread',,,claude-code,2026-11-02
+sl:ingredient:beer,flavordb,9,exact,0.90,flavordb:9 'Beer',,,claude-code,2026-11-02
+sl:ingredient:wine,flavordb,32,exact,0.90,flavordb:32 'Wine',,,claude-code,2026-11-02
+sl:ingredient:coffee,flavordb,46,exact,0.90,flavordb:46 'Coffee',,,claude-code,2026-11-02
+sl:ingredient:barley,flavordb,51,exact,0.90,flavordb:51 'Barley',,,claude-code,2026-11-02
+sl:ingredient:oats,flavordb,54,exact,0.90,flavordb:54 'Oats',,,claude-code,2026-11-02
+sl:ingredient:rice,flavordb,55,exact,0.90,flavordb:55 'Rice',,,claude-code,2026-11-02
+sl:ingredient:corn,flavordb,56,exact,0.90,flavordb:56 'Corn',,,claude-code,2026-11-02
+sl:ingredient:corn_oil,flavordb,57,exact,0.90,flavordb:57 'Corn Oil',,,claude-code,2026-11-02
+sl:form:corn_popcorn_popped,flavordb,58,close,0.75,flavordb:58 'Popcorn' — perfil volátil compatível com pipoca estourada; confirmar se a fonte se refere ao grão,,,claude-code,2026-11-02
+sl:variant:corn_sweet,flavordb,59,exact,0.90,flavordb:59 'Sweetcorn',,,claude-code,2026-11-02
+sl:ingredient:butter,flavordb,60,exact,0.90,flavordb:60 'Butter',,,claude-code,2026-11-02
+sl:ingredient:cheese,flavordb,62,exact,0.90,flavordb:62 'Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_blue,flavordb,63,exact,0.90,flavordb:63 'Blue Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_camembert,flavordb,64,exact,0.90,flavordb:64 'Camembert Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_cheddar,flavordb,65,exact,0.90,flavordb:65 'Cheddar Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_comte,flavordb,66,exact,0.90,flavordb:66 'Comte Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_cottage,flavordb,67,exact,0.90,flavordb:67 'Cottage Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_cream_cheese,flavordb,68,exact,0.90,flavordb:68 'Cream Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_domiati,flavordb,69,exact,0.90,flavordb:69 'Domiati Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_emmental,flavordb,70,exact,0.90,flavordb:70 'Emmental Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_feta,flavordb,71,exact,0.90,flavordb:71 'Feta Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_goat_cheese,flavordb,72,exact,0.90,flavordb:72 'Goat Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_gruyere,flavordb,73,exact,0.90,flavordb:73 'Gruyere Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_limburger,flavordb,74,exact,0.90,flavordb:74 'Limburger Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_mozzarella,flavordb,75,exact,0.90,flavordb:75 'Mozzarella Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_muenster,flavordb,76,close,0.70,"flavordb:76 'Munster Cheese' — FlavorDB ""munster"": pode ser o munster francês (AOP), distinto do muenster dos EUA",,,claude-code,2026-11-02
+sl:variant:cheese_parmesan,flavordb,78,exact,0.90,flavordb:78 'Parmesan Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_provolone,flavordb,79,exact,0.90,flavordb:79 'Provolone Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_romano,flavordb,80,exact,0.90,flavordb:80 'Romano Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_roquefort,flavordb,81,exact,0.90,flavordb:81 'Roquefort Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_sheep_cheese,flavordb,83,exact,0.90,flavordb:83 'Sheep Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_swiss,flavordb,84,exact,0.90,flavordb:84 'Swiss Cheese',,,claude-code,2026-11-02
+sl:variant:cheese_tilsit,flavordb,85,exact,0.90,flavordb:85 'Tilsit Cheese',,,claude-code,2026-11-02
+sl:ingredient:milk,flavordb,88,close,0.85,flavordb:88 'Milk' — FlavorDB informa bovino; perfil de leite de vaca,,,claude-code,2026-11-02
+sl:ingredient:yogurt,flavordb,94,exact,0.90,flavordb:94 'Yogurt',,,claude-code,2026-11-02
+sl:ingredient:chamomile,flavordb,102,exact,0.90,flavordb:102 'Chamomile',,,claude-code,2026-11-02
+sl:ingredient:lemongrass,flavordb,113,exact,0.90,flavordb:113 'Lemon Grass',,,claude-code,2026-11-02
+sl:ingredient:clam,flavordb,134,exact,0.90,flavordb:134 'Clam',,,claude-code,2026-11-02
+sl:ingredient:crab,flavordb,135,exact,0.90,flavordb:135 'Crab',,,claude-code,2026-11-02
+sl:ingredient:kelp,flavordb,137,exact,0.90,flavordb:137 'Kelp',,,claude-code,2026-11-02
+sl:ingredient:lobster,flavordb,139,exact,0.90,flavordb:139 'Lobster',,,claude-code,2026-11-02
+sl:ingredient:oyster,flavordb,141,exact,0.90,flavordb:141 'Oyster',,,claude-code,2026-11-02
+sl:ingredient:shrimp,flavordb,142,close,0.80,flavordb:142 'Prawn',,,claude-code,2026-11-02
+sl:ingredient:scallop,flavordb,143,exact,0.90,flavordb:143 'Scallop',,,claude-code,2026-11-02
+sl:ingredient:shrimp,flavordb,145,exact,0.90,flavordb:145 'Shrimp',,,claude-code,2026-11-02
+sl:ingredient:squid,flavordb,147,exact,0.90,flavordb:147 'Squid',,,claude-code,2026-11-02
+sl:ingredient:skipjack_tuna,flavordb,148,close,0.80,flavordb:148 'Bonito' — FlavorDB indica skipjack,,,claude-code,2026-11-02
+sl:ingredient:caviar,flavordb,149,exact,0.90,flavordb:149 'Caviar',,,claude-code,2026-11-02
+sl:ingredient:cod,flavordb,150,close,0.85,flavordb:150 'Codfish',,,claude-code,2026-11-02
+sl:ingredient:fish,flavordb,151,exact,0.90,flavordb:151 'Fish',,,claude-code,2026-11-02
+sl:ingredient:salmon,flavordb,156,exact,0.90,flavordb:156 'Salmon',,,claude-code,2026-11-02
+sl:ingredient:artichoke,flavordb,157,exact,0.90,flavordb:157 'Artichoke',,,claude-code,2026-11-02
+sl:ingredient:apple,flavordb,162,exact,0.90,flavordb:162 'Apple',,,claude-code,2026-11-02
+sl:ingredient:apple_sauce,flavordb,163,exact,0.90,flavordb:163 'Apple Sauce',,,claude-code,2026-11-02
+sl:ingredient:avocado,flavordb,165,exact,0.90,flavordb:165 'Avocado',,,claude-code,2026-11-02
+sl:ingredient:banana,flavordb,167,exact,0.90,flavordb:167 'Banana',,,claude-code,2026-11-02
+sl:ingredient:cashew_apple,flavordb,170,exact,0.90,flavordb:170 'Cashew Apple',,,claude-code,2026-11-02
+sl:ingredient:coconut,flavordb,172,exact,0.90,flavordb:172 'Coconut',,,claude-code,2026-11-02
+sl:ingredient:fig,flavordb,181,exact,0.90,flavordb:181 'Fig',,,claude-code,2026-11-02
+sl:ingredient:grape,flavordb,182,exact,0.90,flavordb:182 'Grape',,,claude-code,2026-11-02
+sl:ingredient:guava,flavordb,183,exact,0.90,flavordb:183 'Guava',,,claude-code,2026-11-02
+sl:ingredient:jackfruit,flavordb,185,exact,0.90,flavordb:185 'Jackfruit',,,claude-code,2026-11-02
+sl:ingredient:kiwi,flavordb,186,exact,0.90,flavordb:186 'Kiwifruit',,,claude-code,2026-11-02
+sl:ingredient:loquat,flavordb,188,exact,0.90,flavordb:188 'Loquat',,,claude-code,2026-11-02
+sl:ingredient:mango,flavordb,190,exact,0.90,flavordb:190 'Mango',,,claude-code,2026-11-02
+sl:ingredient:melon,flavordb,191,exact,0.90,flavordb:191 'Melon',,,claude-code,2026-11-02
+sl:ingredient:orange,flavordb,194,exact,0.90,flavordb:194 'Orange',,,claude-code,2026-11-02
+sl:ingredient:bitter_orange,flavordb,195,exact,0.90,flavordb:195 'Bitter Orange',,,claude-code,2026-11-02
+sl:ingredient:papaya,flavordb,196,exact,0.90,flavordb:196 'Papaya',,,claude-code,2026-11-02
+sl:ingredient:passion_fruit,flavordb,198,exact,0.90,flavordb:198 'Passionfruit',,,claude-code,2026-11-02
+sl:ingredient:peach,flavordb,201,exact,0.90,flavordb:201 'Peach',,,claude-code,2026-11-02
+sl:ingredient:pear,flavordb,202,exact,0.90,flavordb:202 'Pear',,,claude-code,2026-11-02
+sl:variant:pear_williams,flavordb,203,exact,0.90,flavordb:203 'Bartlett Pear',,,claude-code,2026-11-02
+sl:ingredient:pineapple,flavordb,206,exact,0.90,flavordb:206 'Pineapple',,,claude-code,2026-11-02
+sl:ingredient:plum,flavordb,207,exact,0.90,flavordb:207 'Plum',,,claude-code,2026-11-02
+sl:ingredient:pumpkin,flavordb,209,exact,0.90,flavordb:209 'Pumpkin',,,claude-code,2026-11-02
+sl:ingredient:raisin,flavordb,212,exact,0.90,flavordb:212 'Raisin',,,claude-code,2026-11-02
+sl:ingredient:soursop,flavordb,215,exact,0.90,flavordb:215 'Soursop',,,claude-code,2026-11-02
+sl:ingredient:starfruit,flavordb,217,exact,0.90,flavordb:217 'Starfruit',,,claude-code,2026-11-02
+sl:ingredient:tamarind,flavordb,218,exact,0.90,flavordb:218 'Tamarind',,,claude-code,2026-11-02
+sl:ingredient:strawberry,flavordb,234,exact,0.90,flavordb:234 'Strawberry',,,claude-code,2026-11-02
+sl:ingredient:fruit_jam,flavordb,235,broad,0.85,flavordb:235 'Strawberry Jam',,,claude-code,2026-11-02
+sl:ingredient:lemon,flavordb,240,exact,0.90,flavordb:240 'Lemon',,,claude-code,2026-11-02
+sl:ingredient:lime,flavordb,241,close,0.80,flavordb:241 'Lime',,,claude-code,2026-11-02
+sl:ingredient:tangerine,flavordb,242,close,0.85,flavordb:242 'Mandarin Orange',,,claude-code,2026-11-02
+sl:ingredient:tangerine,flavordb,244,exact,0.90,flavordb:244 'Tangerine',,,claude-code,2026-11-02
+sl:ingredient:vanilla,flavordb,245,exact,0.90,flavordb:245 'Vanilla',,,claude-code,2026-11-02
+sl:ingredient:button_mushroom,flavordb,246,close,0.60,"flavordb:246 'Mushroom' — FlavorDB ""mushroom"" genérico — espécie não garantida",,,claude-code,2026-11-02
+sl:ingredient:truffle,flavordb,247,exact,0.90,flavordb:247 'Truffle',,,claude-code,2026-11-02
+sl:ingredient:basil,flavordb,250,exact,0.90,flavordb:250 'Basil',,,claude-code,2026-11-02
+sl:ingredient:buckwheat,flavordb,251,exact,0.90,flavordb:251 'Buckwheat',,,claude-code,2026-11-02
+sl:ingredient:chervil,flavordb,253,exact,0.90,flavordb:253 'Chervil',,,claude-code,2026-11-02
+sl:ingredient:coriander,flavordb,254,close,0.80,flavordb:254 'Coriander' — FlavorDB agrega folha e semente,,,claude-code,2026-11-02
+sl:ingredient:dill,flavordb,256,exact,0.90,flavordb:256 'Dill',,,claude-code,2026-11-02
+sl:ingredient:fennel,flavordb,257,exact,0.90,flavordb:257 'Fennel',,,claude-code,2026-11-02
+sl:ingredient:fenugreek,flavordb,258,exact,0.90,flavordb:258 'Fenugreek',,,claude-code,2026-11-02
+sl:ingredient:garlic,flavordb,259,exact,0.90,flavordb:259 'Garlic',,,claude-code,2026-11-02
+sl:ingredient:mint,flavordb,262,exact,0.90,flavordb:262 'Mint',,,claude-code,2026-11-02
+sl:ingredient:rosemary,flavordb,264,exact,0.90,flavordb:264 'Rosemary',,,claude-code,2026-11-02
+sl:ingredient:sage,flavordb,265,exact,0.90,flavordb:265 'Sage',,,claude-code,2026-11-02
+sl:ingredient:mint,flavordb,266,broad,0.90,flavordb:266 'Spearmint',,,claude-code,2026-11-02
+sl:ingredient:tarragon,flavordb,268,exact,0.90,flavordb:268 'Tarragon',,,claude-code,2026-11-02
+sl:ingredient:thyme,flavordb,269,exact,0.90,flavordb:269 'Thyme',,,claude-code,2026-11-02
+sl:ingredient:beef,flavordb,270,exact,0.90,flavordb:270 'Beef',,,claude-code,2026-11-02
+sl:ingredient:chicken,flavordb,272,exact,0.90,flavordb:272 'Chicken',,,claude-code,2026-11-02
+sl:ingredient:ham,flavordb,274,exact,0.90,flavordb:274 'Ham',,,claude-code,2026-11-02
+sl:ingredient:lamb,flavordb,275,exact,0.90,flavordb:275 'Lamb',,,claude-code,2026-11-02
+sl:ingredient:pork,flavordb,278,exact,0.90,flavordb:278 'Pork',,,claude-code,2026-11-02
+sl:ingredient:turkey,flavordb,280,exact,0.90,flavordb:280 'Turkey',,,claude-code,2026-11-02
+sl:ingredient:almond,flavordb,281,exact,0.90,flavordb:281 'Almond',,,claude-code,2026-11-02
+sl:ingredient:brazil_nut,flavordb,282,exact,0.90,flavordb:282 'Brazil Nut',,,claude-code,2026-11-02
+sl:ingredient:cocoa,flavordb,283,close,0.80,flavordb:283 'Cocoa',,,claude-code,2026-11-02
+sl:ingredient:bean,flavordb,284,close,0.90,flavordb:284 'Beans',,,claude-code,2026-11-02
+sl:ingredient:lima_bean,flavordb,285,exact,0.90,flavordb:285 'Lima Beans',,,claude-code,2026-11-02
+sl:variant:common_bean_kidney,flavordb,286,exact,0.90,flavordb:286 'Kidney Beans',,,claude-code,2026-11-02
+sl:ingredient:peanut,flavordb,287,exact,0.90,flavordb:287 'Peanut',,,claude-code,2026-11-02
+sl:ingredient:pea,flavordb,288,exact,0.90,flavordb:288 'Peas',,,claude-code,2026-11-02
+sl:ingredient:soybean,flavordb,289,exact,0.90,flavordb:289 'Soybean',,,claude-code,2026-11-02
+sl:ingredient:soybean_oil,flavordb,290,exact,0.90,flavordb:290 'Soybean Oil',,,claude-code,2026-11-02
+sl:ingredient:soy_sauce,flavordb,291,exact,0.90,flavordb:291 'Soybean Sauce',,,claude-code,2026-11-02
+sl:ingredient:hazelnut,flavordb,292,exact,0.90,flavordb:292 'Filbert',,,claude-code,2026-11-02
+sl:ingredient:hazelnut,flavordb,293,exact,0.90,flavordb:293 'Hazelnut',,,claude-code,2026-11-02
+sl:ingredient:macadamia,flavordb,294,exact,0.90,flavordb:294 'Macadamia Nut',,,claude-code,2026-11-02
+sl:ingredient:pecan,flavordb,296,exact,0.90,flavordb:296 'Pecans',,,claude-code,2026-11-02
+sl:ingredient:walnut,flavordb,297,exact,0.90,flavordb:297 'Walnut',,,claude-code,2026-11-02
+sl:ingredient:sesame,flavordb,299,exact,0.90,flavordb:299 'Sesame',,,claude-code,2026-11-02
+sl:ingredient:bay_leaf,flavordb,305,exact,0.90,flavordb:305 'Laurel',,,claude-code,2026-11-02
+sl:ingredient:olive,flavordb,307,exact,0.90,flavordb:307 'Olive',,,claude-code,2026-11-02
+sl:ingredient:tea,flavordb,310,exact,0.90,flavordb:310 'Tea',,,claude-code,2026-11-02
+sl:ingredient:tea,flavordb,311,related,0.50,flavordb:311 'Fermented Tea' — chá fermentado (pu-erh/kombucha?) — revisar,,,claude-code,2026-11-02
+sl:ingredient:watercress,flavordb,313,exact,0.90,flavordb:313 'Watercress',,,claude-code,2026-11-02
+sl:ingredient:honey,flavordb,315,exact,0.90,flavordb:315 'Honey',,,claude-code,2026-11-02
+sl:ingredient:pasta,flavordb,316,close,0.80,flavordb:316 'Macaroni',,,claude-code,2026-11-02
+sl:ingredient:peanut_oil,flavordb,319,exact,0.90,flavordb:319 'Peanut Oil',,,claude-code,2026-11-02
+sl:ingredient:rye,flavordb,320,exact,0.90,flavordb:320 'Rye',,,claude-code,2026-11-02
+sl:ingredient:vinegar,flavordb,322,exact,0.90,flavordb:322 'Vinegar',,,claude-code,2026-11-02
+sl:ingredient:anise,flavordb,323,exact,0.90,flavordb:323 'Anise',,,claude-code,2026-11-02
+sl:ingredient:star_anise,flavordb,325,exact,0.90,flavordb:325 'Star Anise',,,claude-code,2026-11-02
+sl:ingredient:caraway,flavordb,326,exact,0.90,flavordb:326 'Caraway',,,claude-code,2026-11-02
+sl:ingredient:cardamom,flavordb,327,exact,0.90,flavordb:327 'Cardamom',,,claude-code,2026-11-02
+sl:ingredient:cassia,flavordb,328,exact,0.90,flavordb:328 'Cassia',,,claude-code,2026-11-02
+sl:ingredient:celery,flavordb,329,exact,0.90,flavordb:329 'Celery',,,claude-code,2026-11-02
+sl:ingredient:cinnamon,flavordb,330,exact,0.90,flavordb:330 'Cinnamon',,,claude-code,2026-11-02
+sl:ingredient:clove,flavordb,331,exact,0.90,flavordb:331 'Clove',,,claude-code,2026-11-02
+sl:ingredient:cumin,flavordb,332,exact,0.90,flavordb:332 'Cumin',,,claude-code,2026-11-02
+sl:ingredient:ginger,flavordb,333,exact,0.90,flavordb:333 'Ginger',,,claude-code,2026-11-02
+sl:ingredient:marjoram,flavordb,335,exact,0.90,flavordb:335 'Marjoram',,,claude-code,2026-11-02
+sl:ingredient:nutmeg,flavordb,336,exact,0.90,flavordb:336 'Nutmeg',,,claude-code,2026-11-02
+sl:ingredient:oregano,flavordb,337,exact,0.90,flavordb:337 'Oregano',,,claude-code,2026-11-02
+sl:ingredient:parsley,flavordb,338,exact,0.90,flavordb:338 'Parsley',,,claude-code,2026-11-02
+sl:ingredient:black_pepper,flavordb,339,close,0.80,"flavordb:339 'Pepper' — FlavorDB ""Pepper"" = gênero Piper (aliases existentes do projeto)",,,claude-code,2026-11-02
+sl:ingredient:saffron,flavordb,340,exact,0.90,flavordb:340 'Saffron',,,claude-code,2026-11-02
+sl:ingredient:turmeric,flavordb,341,exact,0.90,flavordb:341 'Turmeric',,,claude-code,2026-11-02
+sl:part:common_bean_pod,flavordb,342,exact,0.90,flavordb:342 'Green Beans',,,claude-code,2026-11-02
+sl:ingredient:leek,flavordb,345,exact,0.90,flavordb:345 'Leek',,,claude-code,2026-11-02
+sl:ingredient:lettuce,flavordb,346,exact,0.90,flavordb:346 'Lettuce',,,claude-code,2026-11-02
+sl:ingredient:okra,flavordb,347,exact,0.90,flavordb:347 'Okra',,,claude-code,2026-11-02
+sl:ingredient:onion,flavordb,348,exact,0.90,flavordb:348 'Onion',,,claude-code,2026-11-02
+sl:ingredient:broccoli,flavordb,351,exact,0.90,flavordb:351 'Broccoli',,,claude-code,2026-11-02
+sl:ingredient:cabbage,flavordb,353,exact,0.90,flavordb:353 'Cabbage',,,claude-code,2026-11-02
+sl:ingredient:cauliflower,flavordb,354,exact,0.90,flavordb:354 'Cauliflower',,,claude-code,2026-11-02
+sl:ingredient:radish,flavordb,357,exact,0.90,flavordb:357 'Radish',,,claude-code,2026-11-02
+sl:ingredient:turnip,flavordb,358,exact,0.90,flavordb:358 'Turnip',,,claude-code,2026-11-02
+sl:ingredient:bell_pepper,flavordb,362,close,0.70,"flavordb:362 'Capsicum' — FlavorDB ""capsicum"" (C. annuum) cobre pimentões e pimentas",,,claude-code,2026-11-02
+sl:ingredient:tomato,flavordb,364,exact,0.90,flavordb:364 'Tomato',,,claude-code,2026-11-02
+sl:ingredient:chayote,flavordb,365,exact,0.90,flavordb:365 'Chayote',,,claude-code,2026-11-02
+sl:ingredient:cucumber,flavordb,366,exact,0.90,flavordb:366 'Cucumber',,,claude-code,2026-11-02
+sl:ingredient:beet,flavordb,367,exact,0.90,flavordb:367 'Beetroot',,,claude-code,2026-11-02
+sl:ingredient:carrot,flavordb,368,exact,0.90,flavordb:368 'Carrot',,,claude-code,2026-11-02
+sl:ingredient:sweet_potato,flavordb,370,exact,0.90,flavordb:370 'Sweet Potato',,,claude-code,2026-11-02
+sl:ingredient:asparagus,flavordb,371,exact,0.90,flavordb:371 'Asparagus',,,claude-code,2026-11-02
+sl:ingredient:cassava,flavordb,372,exact,0.90,flavordb:372 'Cassava',,,claude-code,2026-11-02
+sl:ingredient:potato,flavordb,373,exact,0.90,flavordb:373 'Potato',,,claude-code,2026-11-02
+sl:ingredient:allspice,flavordb,375,exact,0.90,flavordb:375 'Allspice',,,claude-code,2026-11-02
+sl:ingredient:canola_oil,flavordb,380,exact,0.90,flavordb:380 'Canola Oil',,,claude-code,2026-11-02
+sl:ingredient:chard,flavordb,382,exact,0.90,flavordb:382 'Chard',,,claude-code,2026-11-02
+sl:variant:vinegar_apple,flavordb,383,exact,0.90,flavordb:383 'Apple Cider Vinegar',,,claude-code,2026-11-02
+sl:ingredient:eggplant,flavordb,387,exact,0.90,flavordb:387 'Eggplant',,,claude-code,2026-11-02
+sl:ingredient:flaxseed,flavordb,388,exact,0.90,flavordb:388 'Flaxseed',,,claude-code,2026-11-02
+sl:ingredient:pomegranate,flavordb,394,exact,0.90,flavordb:394 'Pomegranate',,,claude-code,2026-11-02
+sl:ingredient:poppy_seed,flavordb,395,exact,0.90,flavordb:395 'Poppy Seed',,,claude-code,2026-11-02
+sl:ingredient:spinach,flavordb,396,exact,0.90,flavordb:396 'Spinach',,,claude-code,2026-11-02
+sl:ingredient:black_pepper,flavordb,399,close,0.85,flavordb:399 'White Pepper' — pimenta-branca = mesma baga sem pericarpo,,,claude-code,2026-11-02
+sl:ingredient:cluster_bean,flavordb,401,exact,0.90,flavordb:401 'Cluster Bean',,,claude-code,2026-11-02
+sl:ingredient:pigeon_pea,flavordb,403,exact,0.90,flavordb:403 'Pigeon Pea',,,claude-code,2026-11-02
+sl:variant:rice_basmati,flavordb,404,exact,0.90,flavordb:404 'Basmati Rice',,,claude-code,2026-11-02
+sl:variant:cheese_ricotta,flavordb,405,exact,0.90,flavordb:405 'Ricotta Cheese',,,claude-code,2026-11-02
+sl:ingredient:cashew_nut,flavordb,411,exact,0.90,flavordb:411 'Cashew nut',,,claude-code,2026-11-02
+sl:ingredient:capers,flavordb,414,exact,0.90,flavordb:414 'Capers',,,claude-code,2026-11-02
+sl:ingredient:chestnut,flavordb,416,exact,0.90,flavordb:416 'Chestnut',,,claude-code,2026-11-02
+sl:ingredient:chickpea,flavordb,417,exact,0.90,flavordb:417 'Chickpea',,,claude-code,2026-11-02
+sl:ingredient:lentil,flavordb,429,exact,0.90,flavordb:429 'Lentils',,,claude-code,2026-11-02
+sl:ingredient:lupin,flavordb,432,exact,0.90,flavordb:432 'Lupine',,,claude-code,2026-11-02
+sl:ingredient:runner_bean,flavordb,438,exact,0.90,flavordb:438 'Scarlet bean',,,claude-code,2026-11-02
+sl:ingredient:pistachio,flavordb,439,exact,0.90,flavordb:439 'Pistachio',,,claude-code,2026-11-02
+sl:ingredient:wheat,flavordb,452,exact,0.90,flavordb:452 'Wheat',,,claude-code,2026-11-02
+sl:ingredient:adzuki_bean,flavordb,455,exact,0.90,flavordb:455 'Adzuki bean',,,claude-code,2026-11-02
+sl:ingredient:mung_bean,flavordb,457,exact,0.90,flavordb:457 'Mung bean',,,claude-code,2026-11-02
+sl:ingredient:runner_bean,flavordb,458,related,0.40,"flavordb:458 'Climbing bean' — FlavorDB classifica como Vigna; ""climbing bean"" é hábito de crescimento, não espécie — não mapear sem revisão",,,claude-code,2026-11-02
+sl:variant:rice_red,flavordb,470,exact,0.90,flavordb:470 'Red rice',,,claude-code,2026-11-02
+sl:ingredient:wild_rice,flavordb,471,broad,0.85,flavordb:471 'Annual wild rice' — Zizania aquatica/palustris anual,,,claude-code,2026-11-02
+sl:ingredient:acerola,flavordb,491,exact,0.90,flavordb:491 'Acerola',,,claude-code,2026-11-02
+sl:ingredient:atlantic_pollock,flavordb,503,exact,0.90,flavordb:503 'Atlantic pollock',,,claude-code,2026-11-02
+sl:ingredient:striped_bass,flavordb,506,exact,0.90,flavordb:506 'Striped bass',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,509,broad,0.85,flavordb:509 'Beluga whale' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:bison,flavordb,510,exact,0.90,flavordb:510 'Bison',,,claude-code,2026-11-02
+sl:ingredient:bluefin_tuna,flavordb,513,broad,0.80,flavordb:513 'Northern bluefin tuna',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,516,broad,0.85,flavordb:516 'Bowhead whale' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:breadfruit,flavordb,517,exact,0.90,flavordb:517 'Breadfruit',,,claude-code,2026-11-02
+sl:ingredient:channel_catfish,flavordb,532,exact,0.90,flavordb:532 'Channel catfish',,,claude-code,2026-11-02
+sl:ingredient:chia,flavordb,533,exact,0.90,flavordb:533 'Chia',,,claude-code,2026-11-02
+sl:ingredient:common_octopus,flavordb,538,exact,0.90,flavordb:538 'Common octopus',,,claude-code,2026-11-02
+sl:ingredient:corn_salad,flavordb,539,exact,0.90,flavordb:539 'Corn salad',,,claude-code,2026-11-02
+sl:variant:cowpea_catjang,flavordb,541,exact,0.90,flavordb:541 'Catjang pea',,,claude-code,2026-11-02
+sl:ingredient:cuttlefish,flavordb,545,exact,0.90,flavordb:545 'Cuttlefish' — FlavorDB classifica como Fish; é molusco,,,claude-code,2026-11-02
+sl:ingredient:duck,flavordb,551,close,0.70,flavordb:551 'Mallard duck' — pato-real selvagem; pato doméstico descende dele,,,claude-code,2026-11-02
+sl:ingredient:european_anchovy,flavordb,556,exact,0.90,flavordb:556 'European anchovy',,,claude-code,2026-11-02
+sl:ingredient:goose,flavordb,562,close,0.70,flavordb:562 'Greylag goose' — ganso-bravo; ganso doméstico descende dele,,,claude-code,2026-11-02
+sl:ingredient:haddock,flavordb,566,exact,0.90,flavordb:566 'Haddock',,,claude-code,2026-11-02
+sl:ingredient:hyacinth_bean,flavordb,569,exact,0.90,flavordb:569 'Hyacinth bean',,,claude-code,2026-11-02
+sl:ingredient:irish_moss,flavordb,570,exact,0.90,flavordb:570 'Irish moss' — FlavorDB classifica como Seafood; aqui é alga (hortaliça),,,claude-code,2026-11-02
+sl:ingredient:moth_bean,flavordb,590,exact,0.90,flavordb:590 'Moth bean',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,602,broad,0.85,flavordb:602 'Spotted seal' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:pitanga,flavordb,611,exact,0.90,flavordb:611 'Pitanga',,,claude-code,2026-11-02
+sl:ingredient:quinoa,flavordb,616,exact,0.90,flavordb:616 'Quinoa',,,claude-code,2026-11-02
+sl:ingredient:rainbow_trout,flavordb,620,exact,0.90,flavordb:620 'Rainbow trout',,,claude-code,2026-11-02
+sl:ingredient:hibiscus,flavordb,623,close,0.80,flavordb:623 'Roselle',,,claude-code,2026-11-02
+sl:ingredient:pink_salmon,flavordb,626,exact,0.90,flavordb:626 'Pink salmon',,,claude-code,2026-11-02
+sl:ingredient:chum_salmon,flavordb,627,exact,0.90,flavordb:627 'Chum salmon',,,claude-code,2026-11-02
+sl:ingredient:coho_salmon,flavordb,628,exact,0.90,flavordb:628 'Coho salmon',,,claude-code,2026-11-02
+sl:ingredient:sockeye_salmon,flavordb,629,exact,0.90,flavordb:629 'Sockeye salmon',,,claude-code,2026-11-02
+sl:ingredient:chinook_salmon,flavordb,630,exact,0.90,flavordb:630 'Chinook salmon',,,claude-code,2026-11-02
+sl:ingredient:atlantic_salmon,flavordb,631,exact,0.90,flavordb:631 'Atlantic salmon',,,claude-code,2026-11-02
+sl:ingredient:sardine,flavordb,635,broad,0.80,flavordb:635 'Pacific sardine',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,638,broad,0.85,flavordb:638 'Steller sea lion' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,639,broad,0.85,flavordb:639 'Bearded seal' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,640,broad,0.85,flavordb:640 'Ringed seal' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:dogfish_cacao,flavordb,644,close,0.60,flavordb:644 'Shark' — tubarão genérico; cação é subconjunto comercial — revisar,,,claude-code,2026-11-02
+sl:ingredient:taro,flavordb,657,exact,0.90,flavordb:657 'Taro',,,claude-code,2026-11-02
+sl:ingredient:alaska_pollock,flavordb,664,exact,0.90,flavordb:664 'Alaska pollock',,,claude-code,2026-11-02
+sl:ingredient:whiting,flavordb,669,close,0.70,flavordb:669 'Whiting',,,claude-code,2026-11-02
+sl:ingredient:wild_rice,flavordb,670,exact,0.90,flavordb:670 'Wild rice',,,claude-code,2026-11-02
+sl:ingredient:winged_bean,flavordb,672,exact,0.90,flavordb:672 'Winged bean',,,claude-code,2026-11-02
+sl:ingredient:yellowfin_tuna,flavordb,676,exact,0.90,flavordb:676 'Yellowfin tuna',,,claude-code,2026-11-02
+sl:ingredient:pollock,flavordb,678,exact,0.90,flavordb:678 'Pollock',,,claude-code,2026-11-02
+sl:ingredient:albacore_tuna,flavordb,679,exact,0.90,flavordb:679 'Albacore tuna',,,claude-code,2026-11-02
+sl:variant:cowpea_blackeyed,flavordb,685,exact,0.90,flavordb:685 'Black-eyed pea',,,claude-code,2026-11-02
+sl:ingredient:venison,flavordb,686,broad,0.85,flavordb:686 'Deer',,,claude-code,2026-11-02
+sl:ingredient:rabbit,flavordb,690,exact,0.90,flavordb:690 'Rabbit',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,695,broad,0.85,flavordb:695 'Walrus' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:variant:cowpea_yardlong,flavordb,698,exact,0.90,flavordb:698 'Yardlong bean',,,claude-code,2026-11-02
+sl:ingredient:quail,flavordb,700,exact,0.90,flavordb:700 'Quail',,,claude-code,2026-11-02
+sl:ingredient:wood_ear,flavordb,703,exact,0.90,flavordb:703 'Jew's ear',,,claude-code,2026-11-02
+sl:ingredient:shiitake,flavordb,704,exact,0.90,flavordb:704 'Shiitake',,,claude-code,2026-11-02
+sl:ingredient:nori,flavordb,705,exact,0.90,flavordb:705 'Purple laver' — FlavorDB classifica como Seafood; aqui é alga (hortaliça),,,claude-code,2026-11-02
+sl:ingredient:wakame,flavordb,706,exact,0.90,flavordb:706 'Wakame' — FlavorDB classifica como Seafood; aqui é alga (hortaliça),,,claude-code,2026-11-02
+sl:ingredient:anchovy,flavordb,720,close,0.85,flavordb:720 'Anchovy',,,claude-code,2026-11-02
+sl:ingredient:dogfish_cacao,flavordb,727,broad,0.70,flavordb:727 'Spiny dogfish',,,claude-code,2026-11-02
+sl:ingredient:oil_palm_fruit,flavordb,740,exact,0.90,flavordb:740 'Oil palm',,,claude-code,2026-11-02
+sl:ingredient:persimmon,flavordb,742,exact,0.90,flavordb:742 'Persimmon',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,748,broad,0.85,flavordb:748 'True seal' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:seaweeds,flavordb,749,broad,0.70,flavordb:749 'Red algae',,,claude-code,2026-11-02
+sl:ingredient:kombu,flavordb,750,exact,0.90,flavordb:750 'Kombu' — FlavorDB classifica como Seafood; aqui é alga (hortaliça),,,claude-code,2026-11-02
+sl:ingredient:catfish,flavordb,753,exact,0.90,flavordb:753 'Catfish',,,claude-code,2026-11-02
+sl:ingredient:tuna,flavordb,755,close,0.70,flavordb:755 'Common Tuna',,,claude-code,2026-11-02
+sl:ingredient:marine_mammal_meat,flavordb,756,broad,0.85,flavordb:756 'Cetacea' — mamífero marinho classificado como peixe/fruto do mar pela fonte,,,claude-code,2026-11-02
+sl:ingredient:pizza,flavordb,769,exact,0.90,flavordb:769 'Pizza',,,claude-code,2026-11-02
+sl:ingredient:salt,flavordb,778,exact,0.90,flavordb:778 'Salt',,,claude-code,2026-11-02
+sl:ingredient:sugar,flavordb,781,exact,0.90,flavordb:781 'Sugar',,,claude-code,2026-11-02
+sl:ingredient:sweetener,flavordb,785,exact,0.90,flavordb:785 'Sugar substitute',,,claude-code,2026-11-02
+sl:ingredient:gelatin,flavordb,793,exact,0.90,flavordb:793 'Gelatin',,,claude-code,2026-11-02
+sl:ingredient:water,flavordb,794,exact,0.90,flavordb:794 'Water',,,claude-code,2026-11-02
+sl:ingredient:cocoa_butter,flavordb,814,exact,0.90,flavordb:814 'Cocoa butter',,,claude-code,2026-11-02
+sl:ingredient:cocoa_powder,flavordb,815,exact,0.90,flavordb:815 'Cocoa powder',,,claude-code,2026-11-02
+sl:ingredient:chocolate,flavordb,817,exact,0.90,flavordb:817 'Chocolate',,,claude-code,2026-11-02
+sl:ingredient:miso,flavordb,822,exact,0.90,flavordb:822 'Miso',,,claude-code,2026-11-02
+sl:ingredient:tofu,flavordb,823,exact,0.90,flavordb:823 'Tofu',,,claude-code,2026-11-02
+sl:ingredient:fish_roe,flavordb,825,exact,0.90,flavordb:825 'Roe',,,claude-code,2026-11-02
+sl:ingredient:mac_and_cheese,flavordb,883,exact,0.90,flavordb:883 'Macaroni and cheese',,,claude-code,2026-11-02
+sl:ingredient:shortening,flavordb,905,exact,0.90,flavordb:905 'Shortening',,,claude-code,2026-11-02
+sl:ingredient:molasses,flavordb,908,exact,0.90,flavordb:908 'Molasses',,,claude-code,2026-11-02
+sl:ingredient:cornbread,flavordb,931,exact,0.90,flavordb:931 'Cornbread',,,claude-code,2026-11-02
+sl:ingredient:corn_grits,flavordb,932,exact,0.90,flavordb:932 'Corn grits',,,claude-code,2026-11-02
+sl:ingredient:margarine,flavordb,961,exact,0.90,flavordb:961 'Margarine',,,claude-code,2026-11-02
+sl:ingredient:adzuki_bean,flavorgraph,57,exact,0.90,flavorgraph:57 'adzuki_bean',,,claude-code,2026-11-02
+sl:ingredient:wheat_flour,flavorgraph,82,exact,0.90,flavorgraph:82 'all_purpose_flour',,,claude-code,2026-11-02
+sl:ingredient:allspice,flavorgraph,86,exact,0.90,flavorgraph:86 'allspice',,,claude-code,2026-11-02
+sl:ingredient:almond,flavorgraph,88,exact,0.90,flavorgraph:88 'almond',,,claude-code,2026-11-02
+sl:ingredient:almond_milk,flavorgraph,103,exact,0.90,flavorgraph:103 'almond_milk',,,claude-code,2026-11-02
+sl:ingredient:amaranth,flavorgraph,114,close,0.70,flavorgraph:114 'amaranth' — pode indicar folhas de amaranto; confirmar,,,claude-code,2026-11-02
+sl:variant:cheese_processed,flavorgraph,126,exact,0.90,flavorgraph:126 'american_cheese',,,claude-code,2026-11-02
+sl:ingredient:anchovy,flavorgraph,135,exact,0.90,flavorgraph:135 'anchovy',,,claude-code,2026-11-02
+sl:ingredient:apple,flavorgraph,158,exact,0.90,flavorgraph:158 'apple',,,claude-code,2026-11-02
+sl:variant:vinegar_apple,flavorgraph,163,exact,0.90,flavorgraph:163 'apple_cider_vinegar',,,claude-code,2026-11-02
+sl:variant:rice_arborio,flavorgraph,191,exact,0.90,flavorgraph:191 'arborio_rice',,,claude-code,2026-11-02
+sl:ingredient:arugula,flavorgraph,202,exact,0.90,flavorgraph:202 'arugula',,,claude-code,2026-11-02
+sl:variant:cheese_asiago,flavorgraph,207,exact,0.90,flavorgraph:207 'asiago_cheese',,,claude-code,2026-11-02
+sl:ingredient:asparagus,flavorgraph,213,exact,0.90,flavorgraph:213 'asparagus',,,claude-code,2026-11-02
+sl:ingredient:avocado,flavorgraph,223,exact,0.90,flavorgraph:223 'avocado',,,claude-code,2026-11-02
+sl:ingredient:bacon,flavorgraph,267,exact,0.90,flavorgraph:267 'bacon',,,claude-code,2026-11-02
+sl:ingredient:baking_powder,flavorgraph,292,exact,0.90,flavorgraph:292 'baking_powder',,,claude-code,2026-11-02
+sl:variant:vinegar_balsamic,flavorgraph,299,exact,0.90,flavorgraph:299 'balsamic_vinegar',,,claude-code,2026-11-02
+sl:ingredient:banana,flavorgraph,302,exact,0.90,flavorgraph:302 'banana',,,claude-code,2026-11-02
+sl:ingredient:basil,flavorgraph,328,exact,0.90,flavorgraph:328 'basil',,,claude-code,2026-11-02
+sl:variant:rice_basmati,flavorgraph,336,exact,0.90,flavorgraph:336 'basmati_rice',,,claude-code,2026-11-02
+sl:ingredient:bay_leaf,flavorgraph,341,exact,0.90,flavorgraph:341 'bay_leaf',,,claude-code,2026-11-02
+sl:ingredient:beef,flavorgraph,361,exact,0.90,flavorgraph:361 'beef',,,claude-code,2026-11-02
+sl:ingredient:beer,flavorgraph,423,exact,0.90,flavorgraph:423 'beer',,,claude-code,2026-11-02
+sl:ingredient:beet,flavorgraph,425,exact,0.90,flavorgraph:425 'beet',,,claude-code,2026-11-02
+sl:ingredient:bell_pepper,flavorgraph,433,exact,0.90,flavorgraph:433 'bell_pepper',,,claude-code,2026-11-02
+sl:variant:common_bean_black,flavorgraph,470,exact,0.90,flavorgraph:470 'black_bean',,,claude-code,2026-11-02
+sl:variant:cowpea_blackeyed,flavorgraph,485,exact,0.90,flavorgraph:485 'black_eyed_pea',,,claude-code,2026-11-02
+sl:ingredient:black_pepper,flavorgraph,499,exact,0.90,flavorgraph:499 'black_pepper',,,claude-code,2026-11-02
+sl:variant:rice_black,flavorgraph,505,exact,0.90,flavorgraph:505 'black_rice',,,claude-code,2026-11-02
+sl:variant:cheese_blue,flavorgraph,537,exact,0.90,flavorgraph:537 'blue_cheese',,,claude-code,2026-11-02
+sl:ingredient:brazil_nut,flavorgraph,667,exact,0.90,flavorgraph:667 'brazil_nut',,,claude-code,2026-11-02
+sl:variant:cheese_brie,flavorgraph,699,exact,0.90,flavorgraph:699 'brie_cheese',,,claude-code,2026-11-02
+sl:ingredient:broccoli,flavorgraph,709,exact,0.90,flavorgraph:709 'broccoli',,,claude-code,2026-11-02
+sl:form:rice_brown_raw,flavorgraph,739,close,0.85,flavorgraph:739 'brown_rice' — estado não informado na receita,,,claude-code,2026-11-02
+sl:form:rice_flour_brown,flavorgraph,740,exact,0.90,flavorgraph:740 'brown_rice_flour',,,claude-code,2026-11-02
+sl:ingredient:rice_vinegar,flavorgraph,743,broad,0.85,flavorgraph:743 'brown_rice_vinegar',,,claude-code,2026-11-02
+sl:form:sugar_brown_mascavo,flavorgraph,747,close,0.70,flavorgraph:747 'brown_sugar' — brown sugar dos EUA nem sempre é mascavo,,,claude-code,2026-11-02
+sl:ingredient:bulgur,flavorgraph,770,exact,0.90,flavorgraph:770 'bulgur',,,claude-code,2026-11-02
+sl:ingredient:butter,flavorgraph,781,exact,0.90,flavorgraph:781 'butter',,,claude-code,2026-11-02
+sl:ingredient:buttermilk,flavorgraph,805,exact,0.90,flavorgraph:805 'buttermilk',,,claude-code,2026-11-02
+sl:ingredient:cabbage,flavorgraph,823,exact,0.90,flavorgraph:823 'cabbage',,,claude-code,2026-11-02
+sl:variant:rice_calrose,flavorgraph,850,exact,0.90,flavorgraph:850 'calrose_rice',,,claude-code,2026-11-02
+sl:variant:cheese_camembert,flavorgraph,854,exact,0.90,flavorgraph:854 'camembert_cheese',,,claude-code,2026-11-02
+sl:variant:common_bean_cannellini,flavorgraph,956,exact,0.90,flavorgraph:956 'cannellini_bean',,,claude-code,2026-11-02
+sl:ingredient:canola_oil,flavorgraph,960,exact,0.90,flavorgraph:960 'canola_oil',,,claude-code,2026-11-02
+sl:variant:rice_carnaroli,flavorgraph,998,exact,0.90,flavorgraph:998 'carnaroli_rice',,,claude-code,2026-11-02
+sl:ingredient:carrot,flavorgraph,1005,exact,0.90,flavorgraph:1005 'carrot',,,claude-code,2026-11-02
+sl:ingredient:cashew_nut,flavorgraph,1011,exact,0.90,flavorgraph:1011 'cashew',,,claude-code,2026-11-02
+sl:ingredient:cauliflower,flavorgraph,1027,exact,0.90,flavorgraph:1027 'cauliflower',,,claude-code,2026-11-02
+sl:ingredient:cayenne,flavorgraph,1035,exact,0.90,flavorgraph:1035 'cayenne',,,claude-code,2026-11-02
+sl:ingredient:celery,flavorgraph,1041,exact,0.90,flavorgraph:1041 'celery',,,claude-code,2026-11-02
+sl:variant:cheese_cheddar,flavorgraph,1083,exact,0.90,flavorgraph:1083 'cheddar_cheese',,,claude-code,2026-11-02
+sl:ingredient:chestnut,flavorgraph,1129,exact,0.90,flavorgraph:1129 'chestnut',,,claude-code,2026-11-02
+sl:ingredient:chia,flavorgraph,1136,exact,0.90,flavorgraph:1136 'chia_seed',,,claude-code,2026-11-02
+sl:ingredient:chicken,flavorgraph,1138,exact,0.90,flavorgraph:1138 'chicken',,,claude-code,2026-11-02
+sl:part:chicken_breast,flavorgraph,1148,exact,0.90,flavorgraph:1148 'chicken_breast',,,claude-code,2026-11-02
+sl:part:chicken_drumstick,flavorgraph,1160,exact,0.90,flavorgraph:1160 'chicken_drumstick',,,claude-code,2026-11-02
+sl:part:chicken_liver,flavorgraph,1176,exact,0.90,flavorgraph:1176 'chicken_liver',,,claude-code,2026-11-02
+sl:part:chicken_thigh,flavorgraph,1200,exact,0.90,flavorgraph:1200 'chicken_thigh',,,claude-code,2026-11-02
+sl:part:chicken_wing,flavorgraph,1202,exact,0.90,flavorgraph:1202 'chicken_wing',,,claude-code,2026-11-02
+sl:ingredient:chickpea,flavorgraph,1204,exact,0.90,flavorgraph:1204 'chickpea',,,claude-code,2026-11-02
+sl:ingredient:chives,flavorgraph,1263,exact,0.90,flavorgraph:1263 'chive',,,claude-code,2026-11-02
+sl:part:coriander_leaf,flavorgraph,1363,exact,0.90,flavorgraph:1363 'cilantro',,,claude-code,2026-11-02
+sl:ingredient:cinnamon,flavorgraph,1368,exact,0.90,flavorgraph:1368 'cinnamon',,,claude-code,2026-11-02
+sl:ingredient:clam,flavorgraph,1395,exact,0.90,flavorgraph:1395 'clam',,,claude-code,2026-11-02
+sl:ingredient:clove,flavorgraph,1411,exact,0.90,flavorgraph:1411 'clove',,,claude-code,2026-11-02
+sl:ingredient:cocoa_powder,flavorgraph,1429,exact,0.90,flavorgraph:1429 'cocoa_powder',,,claude-code,2026-11-02
+sl:ingredient:coconut,flavorgraph,1430,exact,0.90,flavorgraph:1430 'coconut',,,claude-code,2026-11-02
+sl:ingredient:coconut_milk,flavorgraph,1444,exact,0.90,flavorgraph:1444 'coconut_milk',,,claude-code,2026-11-02
+sl:ingredient:coconut_oil,flavorgraph,1446,exact,0.90,flavorgraph:1446 'coconut_oil',,,claude-code,2026-11-02
+sl:part:coconut_water,flavorgraph,1453,exact,0.90,flavorgraph:1453 'coconut_water',,,claude-code,2026-11-02
+sl:ingredient:cod,flavorgraph,1455,exact,0.90,flavorgraph:1455 'cod',,,claude-code,2026-11-02
+sl:ingredient:coffee,flavorgraph,1458,exact,0.90,flavorgraph:1458 'coffee',,,claude-code,2026-11-02
+sl:variant:cheese_colby,flavorgraph,1474,exact,0.90,flavorgraph:1474 'colby_cheese',,,claude-code,2026-11-02
+sl:form:rice_basmati_cooked,flavorgraph,1516,exact,0.90,flavorgraph:1516 'cooked_basmati_rice',,,claude-code,2026-11-02
+sl:form:rice_brown_cooked,flavorgraph,1522,exact,0.90,flavorgraph:1522 'cooked_brown_rice',,,claude-code,2026-11-02
+sl:form:rice_jasmine_cooked,flavorgraph,1537,exact,0.90,flavorgraph:1537 'cooked_jasmine_rice',,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_cooked,flavorgraph,1544,close,0.85,flavorgraph:1544 'cooked_long_grain_rice',,,claude-code,2026-11-02
+sl:form:rice_white_cooked,flavorgraph,1567,exact,0.90,flavorgraph:1567 'cooked_white_rice',,,claude-code,2026-11-02
+sl:form:wild_rice_cooked,flavorgraph,1568,exact,0.90,flavorgraph:1568 'cooked_wild_rice',,,claude-code,2026-11-02
+sl:part:coriander_seed,flavorgraph,1592,exact,0.90,flavorgraph:1592 'coriander_seed',,,claude-code,2026-11-02
+sl:ingredient:corn,flavorgraph,1595,exact,0.90,flavorgraph:1595 'corn',,,claude-code,2026-11-02
+sl:ingredient:corn_oil,flavorgraph,1608,exact,0.90,flavorgraph:1608 'corn_oil',,,claude-code,2026-11-02
+sl:ingredient:cornbread,flavorgraph,1615,exact,0.90,flavorgraph:1615 'cornbread',,,claude-code,2026-11-02
+sl:ingredient:corned_beef,flavorgraph,1618,exact,0.90,flavorgraph:1618 'corned_beef',,,claude-code,2026-11-02
+sl:ingredient:cornmeal,flavorgraph,1623,exact,0.90,flavorgraph:1623 'cornmeal',,,claude-code,2026-11-02
+sl:ingredient:corn_starch,flavorgraph,1625,exact,0.90,flavorgraph:1625 'cornstarch',,,claude-code,2026-11-02
+sl:variant:cheese_cotija,flavorgraph,1630,exact,0.90,flavorgraph:1630 'cotija_cheese',,,claude-code,2026-11-02
+sl:variant:cheese_cottage,flavorgraph,1631,exact,0.90,flavorgraph:1631 'cottage_cheese',,,claude-code,2026-11-02
+sl:ingredient:crab,flavorgraph,1645,exact,0.90,flavorgraph:1645 'crab',,,claude-code,2026-11-02
+sl:variant:common_bean_cranberry,flavorgraph,1666,exact,0.90,flavorgraph:1666 'cranberry_bean',,,claude-code,2026-11-02
+sl:variant:cheese_cream_cheese,flavorgraph,1682,exact,0.90,flavorgraph:1682 'cream_cheese',,,claude-code,2026-11-02
+sl:variant:mushroom_cremini,flavorgraph,1724,exact,0.90,flavorgraph:1724 'cremini_mushroom',,,claude-code,2026-11-02
+sl:ingredient:cucumber,flavorgraph,1768,exact,0.90,flavorgraph:1768 'cucumber',,,claude-code,2026-11-02
+sl:ingredient:cumin,flavorgraph,1773,exact,0.90,flavorgraph:1773 'cumin',,,claude-code,2026-11-02
+sl:ingredient:prepared_mustard,flavorgraph,1892,broad,0.90,flavorgraph:1892 'dijon_mustard',,,claude-code,2026-11-02
+sl:ingredient:dill,flavorgraph,1895,exact,0.90,flavorgraph:1895 'dill',,,claude-code,2026-11-02
+sl:ingredient:pickles,flavorgraph,1897,broad,0.90,flavorgraph:1897 'dill_pickle',,,claude-code,2026-11-02
+sl:form:cheese_parmesan_grated,flavorgraph,2127,close,0.75,"flavorgraph:2127 'dry_parmesan_cheese' — nos EUA ""dry parmesan"" costuma ser o ralado seco",,,claude-code,2026-11-02
+sl:ingredient:duck,flavorgraph,2155,exact,0.90,flavorgraph:2155 'duck',,,claude-code,2026-11-02
+sl:variant:cheese_edam,flavorgraph,2183,exact,0.90,flavorgraph:2183 'edam_cheese',,,claude-code,2026-11-02
+sl:ingredient:edamame,flavorgraph,2184,exact,0.90,flavorgraph:2184 'edamame',,,claude-code,2026-11-02
+sl:ingredient:chicken_egg,flavorgraph,2188,close,0.85,flavorgraph:2188 'egg',,,claude-code,2026-11-02
+sl:part:egg_white,flavorgraph,2196,exact,0.90,flavorgraph:2196 'egg_white',,,claude-code,2026-11-02
+sl:part:egg_yolk,flavorgraph,2198,exact,0.90,flavorgraph:2198 'egg_yolk',,,claude-code,2026-11-02
+sl:ingredient:eggplant,flavorgraph,2200,exact,0.90,flavorgraph:2200 'eggplant',,,claude-code,2026-11-02
+sl:ingredient:enoki,flavorgraph,2221,exact,0.90,flavorgraph:2221 'enoki_mushroom',,,claude-code,2026-11-02
+sl:ingredient:evaporated_milk,flavorgraph,2239,exact,0.90,flavorgraph:2239 'evaporated_milk',,,claude-code,2026-11-02
+sl:form:olive_oil_extra_virgin,flavorgraph,2253,exact,0.90,flavorgraph:2253 'extra_virgin_olive_oil',,,claude-code,2026-11-02
+sl:ingredient:fava_bean,flavorgraph,2309,exact,0.90,flavorgraph:2309 'fava_bean',,,claude-code,2026-11-02
+sl:variant:cheese_feta,flavorgraph,2320,exact,0.90,flavorgraph:2320 'feta_cheese',,,claude-code,2026-11-02
+sl:ingredient:fig,flavorgraph,2331,exact,0.90,flavorgraph:2331 'fig',,,claude-code,2026-11-02
+sl:ingredient:fish,flavorgraph,2364,close,0.80,flavorgraph:2364 'fish',,,claude-code,2026-11-02
+sl:ingredient:fish_sauce,flavorgraph,2372,exact,0.90,flavorgraph:2372 'fish_sauce',,,claude-code,2026-11-02
+sl:variant:cheese_fontina,flavorgraph,2405,exact,0.90,flavorgraph:2405 'fontina_cheese',,,claude-code,2026-11-02
+sl:ingredient:fried_rice,flavorgraph,2610,exact,0.90,flavorgraph:2610 'fried_rice',,,claude-code,2026-11-02
+sl:ingredient:garlic,flavorgraph,2793,exact,0.90,flavorgraph:2793 'garlic',,,claude-code,2026-11-02
+sl:ingredient:ghee,flavorgraph,2832,exact,0.90,flavorgraph:2832 'ghee',,,claude-code,2026-11-02
+sl:ingredient:ginger,flavorgraph,2837,exact,0.90,flavorgraph:2837 'ginger',,,claude-code,2026-11-02
+sl:variant:rice_glutinous,flavorgraph,2883,exact,0.90,flavorgraph:2883 'glutinous_rice',,,claude-code,2026-11-02
+sl:form:rice_flour_glutinous,flavorgraph,2884,exact,0.90,flavorgraph:2884 'glutinous_rice_flour',,,claude-code,2026-11-02
+sl:variant:cheese_goat_cheese,flavorgraph,2890,exact,0.90,flavorgraph:2890 'goat_cheese',,,claude-code,2026-11-02
+sl:ingredient:goat_meat,flavorgraph,2891,exact,0.90,flavorgraph:2891 'goat_meat',,,claude-code,2026-11-02
+sl:variant:cheese_gouda,flavorgraph,2916,exact,0.90,flavorgraph:2916 'gouda_cheese',,,claude-code,2026-11-02
+sl:ingredient:grape,flavorgraph,2947,exact,0.90,flavorgraph:2947 'grape',,,claude-code,2026-11-02
+sl:variant:common_bean_great_northern,flavorgraph,2969,exact,0.90,flavorgraph:2969 'great_northern_bean',,,claude-code,2026-11-02
+sl:form:yogurt_greek_plain,flavorgraph,2975,close,0.80,flavorgraph:2975 'greek_yogurt',,,claude-code,2026-11-02
+sl:part:common_bean_pod,flavorgraph,2980,exact,0.90,flavorgraph:2980 'green_bean',,,claude-code,2026-11-02
+sl:variant:bell_pepper_green,flavorgraph,2981,exact,0.90,flavorgraph:2981 'green_bell_pepper',,,claude-code,2026-11-02
+sl:ingredient:welsh_onion,flavorgraph,3016,exact,0.90,flavorgraph:3016 'green_onion',,,claude-code,2026-11-02
+sl:ingredient:cinnamon,flavorgraph,3071,broad,0.90,flavorgraph:3071 'ground_cinnamon',,,claude-code,2026-11-02
+sl:variant:cheese_gruyere,flavorgraph,3128,exact,0.90,flavorgraph:3128 'gruyere_cheese',,,claude-code,2026-11-02
+sl:ingredient:ham,flavorgraph,3161,exact,0.90,flavorgraph:3161 'ham',,,claude-code,2026-11-02
+sl:ingredient:hazelnut,flavorgraph,3201,exact,0.90,flavorgraph:3201 'hazelnut',,,claude-code,2026-11-02
+sl:ingredient:cream,flavorgraph,3224,broad,0.90,flavorgraph:3224 'heavy_cream',,,claude-code,2026-11-02
+sl:ingredient:hominy,flavorgraph,3287,exact,0.90,flavorgraph:3287 'hominy',,,claude-code,2026-11-02
+sl:ingredient:honey,flavorgraph,3290,exact,0.90,flavorgraph:3290 'honey',,,claude-code,2026-11-02
+sl:ingredient:hummus,flavorgraph,3370,exact,0.90,flavorgraph:3370 'hummus',,,claude-code,2026-11-02
+sl:variant:rice_jasmine,flavorgraph,3512,exact,0.90,flavorgraph:3512 'jasmine_rice',,,claude-code,2026-11-02
+sl:ingredient:kefir,flavorgraph,3560,exact,0.90,flavorgraph:3560 'kefir',,,claude-code,2026-11-02
+sl:ingredient:ketchup,flavorgraph,3565,exact,0.90,flavorgraph:3565 'ketchup',,,claude-code,2026-11-02
+sl:variant:common_bean_kidney,flavorgraph,3572,exact,0.90,flavorgraph:3572 'kidney_bean',,,claude-code,2026-11-02
+sl:ingredient:kiwi,flavorgraph,3587,exact,0.90,flavorgraph:3587 'kiwi',,,claude-code,2026-11-02
+sl:variant:salt_kosher,flavorgraph,3605,exact,0.90,flavorgraph:3605 'kosher_salt',,,claude-code,2026-11-02
+sl:ingredient:lamb,flavorgraph,3636,exact,0.90,flavorgraph:3636 'lamb',,,claude-code,2026-11-02
+sl:ingredient:lard,flavorgraph,3658,exact,0.90,flavorgraph:3658 'lard',,,claude-code,2026-11-02
+sl:ingredient:leek,flavorgraph,3717,exact,0.90,flavorgraph:3717 'leek',,,claude-code,2026-11-02
+sl:ingredient:lemon,flavorgraph,3720,exact,0.90,flavorgraph:3720 'lemon',,,claude-code,2026-11-02
+sl:ingredient:lemongrass,flavorgraph,3775,exact,0.90,flavorgraph:3775 'lemongrass',,,claude-code,2026-11-02
+sl:ingredient:lentil,flavorgraph,3781,exact,0.90,flavorgraph:3781 'lentil',,,claude-code,2026-11-02
+sl:ingredient:lettuce,flavorgraph,3782,exact,0.90,flavorgraph:3782 'lettuce',,,claude-code,2026-11-02
+sl:ingredient:corn_syrup,flavorgraph,3802,broad,0.85,flavorgraph:3802 'light_corn_syrup',,,claude-code,2026-11-02
+sl:ingredient:lima_bean,flavorgraph,3839,exact,0.90,flavorgraph:3839 'lima_bean',,,claude-code,2026-11-02
+sl:ingredient:lime,flavorgraph,3840,close,0.80,flavorgraph:3840 'lime',,,claude-code,2026-11-02
+sl:ingredient:lobster,flavorgraph,3899,exact,0.90,flavorgraph:3899 'lobster',,,claude-code,2026-11-02
+sl:form:rice_long_grain_brown_raw,flavorgraph,3913,close,0.85,flavorgraph:3913 'long_grain_brown_rice',,,claude-code,2026-11-02
+sl:variant:rice_long_grain,flavorgraph,3914,exact,0.90,flavorgraph:3914 'long_grain_rice',,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_raw,flavorgraph,3915,close,0.85,flavorgraph:3915 'long_grain_white_rice',,,claude-code,2026-11-02
+sl:ingredient:macadamia,flavorgraph,4013,exact,0.90,flavorgraph:4013 'macadamia_nut',,,claude-code,2026-11-02
+sl:ingredient:mango,flavorgraph,4052,exact,0.90,flavorgraph:4052 'mango',,,claude-code,2026-11-02
+sl:ingredient:maple_syrup,flavorgraph,4071,exact,0.90,flavorgraph:4071 'maple_syrup',,,claude-code,2026-11-02
+sl:ingredient:margarine,flavorgraph,4076,exact,0.90,flavorgraph:4076 'margarine',,,claude-code,2026-11-02
+sl:ingredient:marjoram,flavorgraph,4084,exact,0.90,flavorgraph:4084 'marjoram',,,claude-code,2026-11-02
+sl:ingredient:masa_harina,flavorgraph,4098,exact,0.90,flavorgraph:4098 'masa_harina',,,claude-code,2026-11-02
+sl:variant:cheese_mascarpone,flavorgraph,4101,close,0.85,flavorgraph:4101 'mascarpone',,,claude-code,2026-11-02
+sl:variant:cheese_mascarpone,flavorgraph,4102,exact,0.90,flavorgraph:4102 'mascarpone_cheese',,,claude-code,2026-11-02
+sl:ingredient:mayonnaise,flavorgraph,4116,exact,0.90,flavorgraph:4116 'mayonnaise',,,claude-code,2026-11-02
+sl:ingredient:milk,flavorgraph,4204,exact,0.90,flavorgraph:4204 'milk',,,claude-code,2026-11-02
+sl:ingredient:mint,flavorgraph,4243,exact,0.90,flavorgraph:4243 'mint',,,claude-code,2026-11-02
+sl:ingredient:miso,flavorgraph,4264,exact,0.90,flavorgraph:4264 'miso',,,claude-code,2026-11-02
+sl:variant:rice_glutinous,flavorgraph,4290,close,0.85,flavorgraph:4290 'mochi_rice',,,claude-code,2026-11-02
+sl:ingredient:molasses,flavorgraph,4292,exact,0.90,flavorgraph:4292 'molasses',,,claude-code,2026-11-02
+sl:variant:cheese_monterey_jack,flavorgraph,4297,exact,0.90,flavorgraph:4297 'monterey_jack_cheese',,,claude-code,2026-11-02
+sl:ingredient:morel,flavorgraph,4301,exact,0.90,flavorgraph:4301 'morel',,,claude-code,2026-11-02
+sl:variant:cheese_mozzarella,flavorgraph,4309,exact,0.90,flavorgraph:4309 'mozzarella_cheese',,,claude-code,2026-11-02
+sl:variant:cheese_muenster,flavorgraph,4316,exact,0.90,flavorgraph:4316 'muenster_cheese',,,claude-code,2026-11-02
+sl:ingredient:mung_bean,flavorgraph,4324,exact,0.90,flavorgraph:4324 'mung_bean',,,claude-code,2026-11-02
+sl:ingredient:fungi,flavorgraph,4330,broad,0.70,"flavorgraph:4330 'mushroom' — em receitas ""mushroom"" costuma ser champignon, mas não é garantido",,,claude-code,2026-11-02
+sl:ingredient:mussel,flavorgraph,4342,exact,0.90,flavorgraph:4342 'mussel',,,claude-code,2026-11-02
+sl:variant:common_bean_navy,flavorgraph,4369,exact,0.90,flavorgraph:4369 'navy_bean',,,claude-code,2026-11-02
+sl:ingredient:nutmeg,flavorgraph,4438,exact,0.90,flavorgraph:4438 'nutmeg',,,claude-code,2026-11-02
+sl:ingredient:octopus,flavorgraph,4451,exact,0.90,flavorgraph:4451 'octopus',,,claude-code,2026-11-02
+sl:ingredient:okra,flavorgraph,4460,exact,0.90,flavorgraph:4460 'okra',,,claude-code,2026-11-02
+sl:ingredient:olive,flavorgraph,4469,exact,0.90,flavorgraph:4469 'olive',,,claude-code,2026-11-02
+sl:ingredient:olive_oil,flavorgraph,4472,exact,0.90,flavorgraph:4472 'olive_oil',,,claude-code,2026-11-02
+sl:ingredient:onion,flavorgraph,4478,exact,0.90,flavorgraph:4478 'onion',,,claude-code,2026-11-02
+sl:ingredient:orange,flavorgraph,4494,exact,0.90,flavorgraph:4494 'orange',,,claude-code,2026-11-02
+sl:ingredient:orange_juice,flavorgraph,4516,exact,0.90,flavorgraph:4516 'orange_juice',,,claude-code,2026-11-02
+sl:ingredient:oregano,flavorgraph,4545,exact,0.90,flavorgraph:4545 'oregano',,,claude-code,2026-11-02
+sl:ingredient:oyster,flavorgraph,4572,exact,0.90,flavorgraph:4572 'oyster',,,claude-code,2026-11-02
+sl:ingredient:oyster_mushroom,flavorgraph,4575,exact,0.90,flavorgraph:4575 'oyster_mushroom',,,claude-code,2026-11-02
+sl:ingredient:palm_oil,flavorgraph,4581,exact,0.90,flavorgraph:4581 'palm_oil',,,claude-code,2026-11-02
+sl:ingredient:papaya,flavorgraph,4600,exact,0.90,flavorgraph:4600 'papaya',,,claude-code,2026-11-02
+sl:ingredient:paprika,flavorgraph,4608,exact,0.90,flavorgraph:4608 'paprika',,,claude-code,2026-11-02
+sl:form:rice_long_grain_parboiled_raw,flavorgraph,4611,close,0.85,flavorgraph:4611 'parboiled_rice',,,claude-code,2026-11-02
+sl:variant:cheese_parmesan,flavorgraph,4615,exact,0.90,flavorgraph:4615 'parmesan_cheese',,,claude-code,2026-11-02
+sl:part:cheese_rind,flavorgraph,4616,close,0.80,flavorgraph:4616 'parmesan_rind',,,claude-code,2026-11-02
+sl:ingredient:parsley,flavorgraph,4620,exact,0.90,flavorgraph:4620 'parsley',,,claude-code,2026-11-02
+sl:ingredient:pea,flavorgraph,4659,exact,0.90,flavorgraph:4659 'pea',,,claude-code,2026-11-02
+sl:ingredient:peach,flavorgraph,4663,exact,0.90,flavorgraph:4663 'peach',,,claude-code,2026-11-02
+sl:ingredient:peanut,flavorgraph,4687,exact,0.90,flavorgraph:4687 'peanut',,,claude-code,2026-11-02
+sl:ingredient:peanut_butter,flavorgraph,4689,exact,0.90,flavorgraph:4689 'peanut_butter',,,claude-code,2026-11-02
+sl:ingredient:peanut_oil,flavorgraph,4699,exact,0.90,flavorgraph:4699 'peanut_oil',,,claude-code,2026-11-02
+sl:ingredient:pear,flavorgraph,4701,exact,0.90,flavorgraph:4701 'pear',,,claude-code,2026-11-02
+sl:ingredient:pecan,flavorgraph,4716,exact,0.90,flavorgraph:4716 'pecan',,,claude-code,2026-11-02
+sl:variant:cheese_romano,flavorgraph,4723,exact,0.90,flavorgraph:4723 'pecorino_romano_cheese',,,claude-code,2026-11-02
+sl:ingredient:pine_nut,flavorgraph,4845,exact,0.90,flavorgraph:4845 'pine_nut',,,claude-code,2026-11-02
+sl:ingredient:pineapple,flavorgraph,4846,exact,0.90,flavorgraph:4846 'pineapple',,,claude-code,2026-11-02
+sl:variant:common_bean_pinto,flavorgraph,4878,exact,0.90,flavorgraph:4878 'pinto_bean',,,claude-code,2026-11-02
+sl:ingredient:pistachio,flavorgraph,4885,exact,0.90,flavorgraph:4885 'pistachio',,,claude-code,2026-11-02
+sl:form:yogurt_plain_whole,flavorgraph,4920,close,0.80,flavorgraph:4920 'plain_yogurt',,,claude-code,2026-11-02
+sl:ingredient:plum,flavorgraph,4928,exact,0.90,flavorgraph:4928 'plum',,,claude-code,2026-11-02
+sl:ingredient:polenta,flavorgraph,4942,close,0.75,flavorgraph:4942 'polenta' — em receitas pode indicar o fubá ou o prato,,,claude-code,2026-11-02
+sl:ingredient:pomegranate,flavorgraph,4948,exact,0.90,flavorgraph:4948 'pomegranate',,,claude-code,2026-11-02
+sl:form:corn_popcorn_popped,flavorgraph,4958,close,0.75,flavorgraph:4958 'popcorn' — em receitas: pipoca estourada,,,claude-code,2026-11-02
+sl:ingredient:poppy_seed,flavorgraph,4961,exact,0.90,flavorgraph:4961 'poppy_seed',,,claude-code,2026-11-02
+sl:ingredient:porcini,flavorgraph,4965,exact,0.90,flavorgraph:4965 'porcini_mushroom',,,claude-code,2026-11-02
+sl:ingredient:pork,flavorgraph,4966,exact,0.90,flavorgraph:4966 'pork',,,claude-code,2026-11-02
+sl:ingredient:potato,flavorgraph,5027,exact,0.90,flavorgraph:5027 'potato',,,claude-code,2026-11-02
+sl:ingredient:potato_chips,flavorgraph,5030,exact,0.90,flavorgraph:5030 'potato_chip',,,claude-code,2026-11-02
+sl:variant:cheese_provolone,flavorgraph,5108,exact,0.90,flavorgraph:5108 'provolone_cheese',,,claude-code,2026-11-02
+sl:variant:rice_glutinous,flavorgraph,5117,related,0.40,flavorgraph:5117 'pudding_rice' — arroz para pudim (grão curto); não é o prato,,,claude-code,2026-11-02
+sl:ingredient:pumpkin,flavorgraph,5125,exact,0.90,flavorgraph:5125 'pumpkin',,,claude-code,2026-11-02
+sl:ingredient:pumpkin_seed,flavorgraph,5133,exact,0.90,flavorgraph:5133 'pumpkin_seed',,,claude-code,2026-11-02
+sl:ingredient:quail_egg,flavorgraph,5150,exact,0.90,flavorgraph:5150 'quail_egg',,,claude-code,2026-11-02
+sl:variant:cheese_queso_fresco,flavorgraph,5156,exact,0.90,flavorgraph:5156 'queso_fresco',,,claude-code,2026-11-02
+sl:ingredient:quinoa,flavorgraph,5173,exact,0.90,flavorgraph:5173 'quinoa',,,claude-code,2026-11-02
+sl:ingredient:rabbit,flavorgraph,5176,exact,0.90,flavorgraph:5176 'rabbit',,,claude-code,2026-11-02
+sl:ingredient:radish,flavorgraph,5183,exact,0.90,flavorgraph:5183 'radish',,,claude-code,2026-11-02
+sl:ingredient:raisin,flavorgraph,5190,exact,0.90,flavorgraph:5190 'raisin',,,claude-code,2026-11-02
+sl:variant:bell_pepper_red,flavorgraph,5267,exact,0.90,flavorgraph:5267 'red_bell_pepper',,,claude-code,2026-11-02
+sl:variant:common_bean_kidney,flavorgraph,5303,exact,0.90,flavorgraph:5303 'red_kidney_bean',,,claude-code,2026-11-02
+sl:variant:lentil_red,flavorgraph,5306,exact,0.90,flavorgraph:5306 'red_lentil',,,claude-code,2026-11-02
+sl:variant:rice_red,flavorgraph,5330,close,0.80,flavorgraph:5330 'red_rice' — nome em receitas pode indicar outros tipos,,,claude-code,2026-11-02
+sl:variant:wine_red,flavorgraph,5345,exact,0.90,flavorgraph:5345 'red_wine',,,claude-code,2026-11-02
+sl:variant:vinegar_wine_red,flavorgraph,5348,exact,0.90,flavorgraph:5348 'red_wine_vinegar',,,claude-code,2026-11-02
+sl:ingredient:rice,flavorgraph,5431,exact,0.90,flavorgraph:5431 'rice',,,claude-code,2026-11-02
+sl:ingredient:rice_bran_oil,flavorgraph,5434,exact,0.90,flavorgraph:5434 'rice_bran_oil',,,claude-code,2026-11-02
+sl:ingredient:rice_flour,flavorgraph,5439,exact,0.90,flavorgraph:5439 'rice_flour',,,claude-code,2026-11-02
+sl:ingredient:rice_milk,flavorgraph,5441,exact,0.90,flavorgraph:5441 'rice_milk',,,claude-code,2026-11-02
+sl:variant:cheese_ricotta,flavorgraph,5454,exact,0.90,flavorgraph:5454 'ricotta_cheese',,,claude-code,2026-11-02
+sl:form:oats_rolled,flavorgraph,5508,exact,0.90,flavorgraph:5508 'rolled_oat',,,claude-code,2026-11-02
+sl:variant:cheese_romano,flavorgraph,5519,exact,0.90,flavorgraph:5519 'romano_cheese',,,claude-code,2026-11-02
+sl:variant:cheese_roquefort,flavorgraph,5526,exact,0.90,flavorgraph:5526 'roquefort_cheese',,,claude-code,2026-11-02
+sl:ingredient:rosemary,flavorgraph,5535,exact,0.90,flavorgraph:5535 'rosemary',,,claude-code,2026-11-02
+sl:ingredient:saffron,flavorgraph,5579,exact,0.90,flavorgraph:5579 'saffron',,,claude-code,2026-11-02
+sl:ingredient:sage,flavorgraph,5582,exact,0.90,flavorgraph:5582 'sage',,,claude-code,2026-11-02
+sl:ingredient:salami,flavorgraph,5597,exact,0.90,flavorgraph:5597 'salami',,,claude-code,2026-11-02
+sl:ingredient:salmon,flavorgraph,5598,exact,0.90,flavorgraph:5598 'salmon',,,claude-code,2026-11-02
+sl:part:salmon_fillet,flavorgraph,5600,exact,0.90,flavorgraph:5600 'salmon_fillet',,,claude-code,2026-11-02
+sl:ingredient:salt,flavorgraph,5608,exact,0.90,flavorgraph:5608 'salt',,,claude-code,2026-11-02
+sl:ingredient:sardine,flavorgraph,5647,exact,0.90,flavorgraph:5647 'sardine',,,claude-code,2026-11-02
+sl:ingredient:sauerkraut,flavorgraph,5652,exact,0.90,flavorgraph:5652 'sauerkraut',,,claude-code,2026-11-02
+sl:ingredient:welsh_onion,flavorgraph,5666,exact,0.90,flavorgraph:5666 'scallion',,,claude-code,2026-11-02
+sl:ingredient:scallop,flavorgraph,5668,exact,0.90,flavorgraph:5668 'scallop',,,claude-code,2026-11-02
+sl:variant:salt_sea,flavorgraph,5682,exact,0.90,flavorgraph:5682 'sea_salt',,,claude-code,2026-11-02
+sl:ingredient:sesame_oil,flavorgraph,5747,exact,0.90,flavorgraph:5747 'sesame_oil',,,claude-code,2026-11-02
+sl:ingredient:sesame,flavorgraph,5750,exact,0.90,flavorgraph:5750 'sesame_seed',,,claude-code,2026-11-02
+sl:ingredient:shiitake,flavorgraph,5777,exact,0.90,flavorgraph:5777 'shiitake_mushroom',,,claude-code,2026-11-02
+sl:ingredient:shrimp,flavorgraph,5809,exact,0.90,flavorgraph:5809 'shrimp',,,claude-code,2026-11-02
+sl:form:cow_milk_skim,flavorgraph,5833,close,0.85,flavorgraph:5833 'skim_milk',,,claude-code,2026-11-02
+sl:ingredient:smoked_salmon,flavorgraph,5905,exact,0.90,flavorgraph:5905 'smoked_salmon',,,claude-code,2026-11-02
+sl:part:pea_pod,flavorgraph,5925,close,0.85,flavorgraph:5925 'snow_pea',,,claude-code,2026-11-02
+sl:ingredient:sour_cream,flavorgraph,5968,exact,0.90,flavorgraph:5968 'sour_cream',,,claude-code,2026-11-02
+sl:ingredient:soy_sauce,flavorgraph,5997,exact,0.90,flavorgraph:5997 'soy_sauce',,,claude-code,2026-11-02
+sl:ingredient:soy_beverage,flavorgraph,6007,exact,0.90,flavorgraph:6007 'soymilk',,,claude-code,2026-11-02
+sl:ingredient:spinach,flavorgraph,6051,exact,0.90,flavorgraph:6051 'spinach',,,claude-code,2026-11-02
+sl:ingredient:star_anise,flavorgraph,6091,exact,0.90,flavorgraph:6091 'star_anise',,,claude-code,2026-11-02
+sl:ingredient:strawberry,flavorgraph,6131,exact,0.90,flavorgraph:6131 'strawberry',,,claude-code,2026-11-02
+sl:ingredient:sugar,flavorgraph,6172,exact,0.90,flavorgraph:6172 'sugar',,,claude-code,2026-11-02
+sl:ingredient:sunflower_oil,flavorgraph,6220,exact,0.90,flavorgraph:6220 'sunflower_oil',,,claude-code,2026-11-02
+sl:ingredient:sunflower_seed,flavorgraph,6221,exact,0.90,flavorgraph:6221 'sunflower_seed',,,claude-code,2026-11-02
+sl:ingredient:sweet_potato,flavorgraph,6266,exact,0.90,flavorgraph:6266 'sweet_potato',,,claude-code,2026-11-02
+sl:ingredient:condensed_milk,flavorgraph,6291,exact,0.90,flavorgraph:6291 'sweetened_condensed_milk',,,claude-code,2026-11-02
+sl:ingredient:chard,flavorgraph,6297,exact,0.90,flavorgraph:6297 'swiss_chard',,,claude-code,2026-11-02
+sl:variant:cheese_swiss,flavorgraph,6299,exact,0.90,flavorgraph:6299 'swiss_cheese',,,claude-code,2026-11-02
+sl:ingredient:tahini,flavorgraph,6322,exact,0.90,flavorgraph:6322 'tahini',,,claude-code,2026-11-02
+sl:ingredient:cassava_starch,flavorgraph,6346,close,0.85,flavorgraph:6346 'tapioca_starch',,,claude-code,2026-11-02
+sl:ingredient:taro,flavorgraph,6348,exact,0.90,flavorgraph:6348 'taro_root',,,claude-code,2026-11-02
+sl:ingredient:tarragon,flavorgraph,6349,exact,0.90,flavorgraph:6349 'tarragon',,,claude-code,2026-11-02
+sl:ingredient:tempeh,flavorgraph,6373,exact,0.90,flavorgraph:6373 'tempeh',,,claude-code,2026-11-02
+sl:ingredient:thyme,flavorgraph,6409,exact,0.90,flavorgraph:6409 'thyme',,,claude-code,2026-11-02
+sl:ingredient:tofu,flavorgraph,6434,exact,0.90,flavorgraph:6434 'tofu',,,claude-code,2026-11-02
+sl:ingredient:tomato,flavorgraph,6441,exact,0.90,flavorgraph:6441 'tomato',,,claude-code,2026-11-02
+sl:ingredient:tomato_sauce,flavorgraph,6453,exact,0.90,flavorgraph:6453 'tomato_sauce',,,claude-code,2026-11-02
+sl:ingredient:trout,flavorgraph,6488,exact,0.90,flavorgraph:6488 'trout',,,claude-code,2026-11-02
+sl:ingredient:truffle,flavorgraph,6490,exact,0.90,flavorgraph:6490 'truffle',,,claude-code,2026-11-02
+sl:ingredient:tuna,flavorgraph,6497,exact,0.90,flavorgraph:6497 'tuna',,,claude-code,2026-11-02
+sl:ingredient:turkey,flavorgraph,6508,exact,0.90,flavorgraph:6508 'turkey',,,claude-code,2026-11-02
+sl:ingredient:turmeric,flavorgraph,6545,exact,0.90,flavorgraph:6545 'turmeric',,,claude-code,2026-11-02
+sl:ingredient:turnip,flavorgraph,6547,exact,0.90,flavorgraph:6547 'turnip',,,claude-code,2026-11-02
+sl:form:butter_unsalted,flavorgraph,6574,exact,0.90,flavorgraph:6574 'unsalted_butter',,,claude-code,2026-11-02
+sl:ingredient:vanilla,flavorgraph,6631,exact,0.90,flavorgraph:6631 'vanilla',,,claude-code,2026-11-02
+sl:ingredient:veal,flavorgraph,6670,exact,0.90,flavorgraph:6670 'veal',,,claude-code,2026-11-02
+sl:ingredient:vegetable_oils,flavorgraph,6711,close,0.70,flavorgraph:6711 'vegetable_oil',,,claude-code,2026-11-02
+sl:ingredient:venison,flavorgraph,6739,exact,0.90,flavorgraph:6739 'venison',,,claude-code,2026-11-02
+sl:ingredient:vinegar,flavorgraph,6756,exact,0.90,flavorgraph:6756 'vinegar',,,claude-code,2026-11-02
+sl:ingredient:walnut,flavorgraph,6775,exact,0.90,flavorgraph:6775 'walnut',,,claude-code,2026-11-02
+sl:ingredient:water,flavorgraph,6787,exact,0.90,flavorgraph:6787 'water',,,claude-code,2026-11-02
+sl:ingredient:watercress,flavorgraph,6791,exact,0.90,flavorgraph:6791 'watercress',,,claude-code,2026-11-02
+sl:ingredient:watermelon,flavorgraph,6793,exact,0.90,flavorgraph:6793 'watermelon',,,claude-code,2026-11-02
+sl:variant:common_bean_white,flavorgraph,6837,exact,0.90,flavorgraph:6837 'white_bean',,,claude-code,2026-11-02
+sl:variant:wine_white,flavorgraph,6918,exact,0.90,flavorgraph:6918 'white_wine',,,claude-code,2026-11-02
+sl:form:cow_milk_whole,flavorgraph,6956,close,0.85,flavorgraph:6956 'whole_milk',,,claude-code,2026-11-02
+sl:form:wheat_flour_whole,flavorgraph,6988,exact,0.90,flavorgraph:6988 'whole_wheat_flour',,,claude-code,2026-11-02
+sl:ingredient:yeast,flavorgraph,7045,exact,0.90,flavorgraph:7045 'yeast',,,claude-code,2026-11-02
+sl:ingredient:yogurt,flavorgraph,7087,exact,0.90,flavorgraph:7087 'yogurt',,,claude-code,2026-11-02
+sl:ingredient:zucchini,flavorgraph,7101,exact,0.90,flavorgraph:7101 'zucchini',,,claude-code,2026-11-02
+sl:form:rice_brown_cooked,taco,1,exact,0.90,"taco:1 'Arroz, integral, cozido'",,,claude-code,2026-11-02
+sl:form:rice_brown_raw,taco,2,exact,0.90,"taco:2 'Arroz, integral, cru'",,,claude-code,2026-11-02
+sl:form:rice_type_1_cooked,taco,3,exact,0.90,"taco:3 'Arroz, tipo 1, cozido'",,,claude-code,2026-11-02
+sl:form:rice_type_1_raw,taco,4,exact,0.90,"taco:4 'Arroz, tipo 1, cru'",,,claude-code,2026-11-02
+sl:form:rice_type_2_cooked,taco,5,exact,0.90,"taco:5 'Arroz, tipo 2, cozido'",,,claude-code,2026-11-02
+sl:form:rice_type_2_raw,taco,6,exact,0.90,"taco:6 'Arroz, tipo 2, cru'",,,claude-code,2026-11-02
+sl:form:oats_rolled,taco,7,exact,0.90,"taco:7 'Aveia, flocos, crua'",,,claude-code,2026-11-02
+sl:ingredient:biscuit,taco,8,broad,0.90,"taco:8 'Biscoito, doce, maisena'",,,claude-code,2026-11-02
+sl:ingredient:biscuit,taco,9,broad,0.90,"taco:9 'Biscoito, doce, recheado com chocolate'",,,claude-code,2026-11-02
+sl:ingredient:biscuit,taco,10,broad,0.90,"taco:10 'Biscoito, doce, recheado com morango'",,,claude-code,2026-11-02
+sl:ingredient:biscuit,taco,11,broad,0.90,"taco:11 'Biscoito, doce, wafer, recheado de chocolate'",,,claude-code,2026-11-02
+sl:ingredient:biscuit,taco,12,broad,0.90,"taco:12 'Biscoito, doce, wafer, recheado de morango'",,,claude-code,2026-11-02
+sl:ingredient:cracker,taco,13,broad,0.90,"taco:13 'Biscoito, salgado, cream cracker'",,,claude-code,2026-11-02
+sl:ingredient:cake_mix,taco,14,exact,0.90,"taco:14 'Bolo, mistura para'",,,claude-code,2026-11-02
+sl:ingredient:cake_aipim,taco,15,exact,0.90,"taco:15 'Bolo, pronto, aipim'",,,claude-code,2026-11-02
+sl:ingredient:cake,taco,16,broad,0.90,"taco:16 'Bolo, pronto, chocolate'",,,claude-code,2026-11-02
+sl:ingredient:cake,taco,17,broad,0.90,"taco:17 'Bolo, pronto, coco'",,,claude-code,2026-11-02
+sl:ingredient:cake,taco,18,broad,0.90,"taco:18 'Bolo, pronto, milho'",,,claude-code,2026-11-02
+sl:ingredient:canjica_kernels,taco,19,exact,0.90,"taco:19 'Canjica, branca, crua'",,,claude-code,2026-11-02
+sl:ingredient:canjica_dish,taco,20,exact,0.90,"taco:20 'Canjica, com leite integral'",,,claude-code,2026-11-02
+sl:ingredient:corn_flakes,taco,21,broad,0.90,"taco:21 'Cereais, milho, flocos, com sal'",,,claude-code,2026-11-02
+sl:ingredient:corn_flakes,taco,22,broad,0.90,"taco:22 'Cereais, milho, flocos, sem sal'",,,claude-code,2026-11-02
+sl:ingredient:baby_cereal,taco,23,broad,0.90,"taco:23 'Cereais, mingau, milho, infantil'",,,claude-code,2026-11-02
+sl:ingredient:cereal_blend_mix,taco,24,exact,0.90,"taco:24 'Cereais, mistura para vitamina, trigo, cevada e aveia'",,,claude-code,2026-11-02
+sl:ingredient:corn_flakes,taco,25,broad,0.90,"taco:25 'Cereal matinal, milho'",,,claude-code,2026-11-02
+sl:ingredient:corn_flakes,taco,26,broad,0.90,"taco:26 'Cereal matinal, milho, açúcar'",,,claude-code,2026-11-02
+sl:ingredient:cream_of_rice,taco,27,exact,0.90,"taco:27 'Creme de arroz, pó'",,,claude-code,2026-11-02
+sl:ingredient:cream_of_corn_powder,taco,28,exact,0.90,"taco:28 'Creme de milho, pó'",,,claude-code,2026-11-02
+sl:ingredient:curau,taco,29,exact,0.90,"taco:29 'Curau, milho verde'",,,claude-code,2026-11-02
+sl:ingredient:curau,taco,30,broad,0.85,"taco:30 'Curau, milho verde, mistura para' — mistura em pó para curau",,,claude-code,2026-11-02
+sl:form:rice_flour_white,taco,31,close,0.85,"taco:31 'Farinha, de arroz, enriquecida' — enriquecida (fortificação)",,,claude-code,2026-11-02
+sl:ingredient:rye_flour,taco,32,broad,0.90,"taco:32 'Farinha, de centeio, integral'",,,claude-code,2026-11-02
+sl:ingredient:corn_flour_flakes,taco,33,exact,0.85,"taco:33 'Farinha, de milho, amarela'",,,claude-code,2026-11-02
+sl:ingredient:breadcrumbs,taco,34,exact,0.90,"taco:34 'Farinha, de rosca'",,,claude-code,2026-11-02
+sl:form:wheat_flour_white,taco,35,close,0.85,"taco:35 'Farinha, de trigo'",,,claude-code,2026-11-02
+sl:ingredient:baby_cereal,taco,36,broad,0.90,"taco:36 'Farinha, láctea, de cereais'",,,claude-code,2026-11-02
+sl:form:lasagna_sheet_fresh_cooked,taco,37,exact,0.90,"taco:37 'Lasanha, massa fresca, cozida'",,,claude-code,2026-11-02
+sl:form:lasagna_sheet_fresh_raw,taco,38,exact,0.90,"taco:38 'Lasanha, massa fresca, crua'",,,claude-code,2026-11-02
+sl:ingredient:instant_noodles,taco,39,exact,0.90,"taco:39 'Macarrão, instantâneo'",,,claude-code,2026-11-02
+sl:ingredient:pasta,taco,40,broad,0.90,"taco:40 'Macarrão, trigo, cru'",,,claude-code,2026-11-02
+sl:form:pasta_egg_raw,taco,41,exact,0.90,"taco:41 'Macarrão, trigo, cru, com ovos'",,,claude-code,2026-11-02
+sl:ingredient:corn_starch,taco,42,exact,0.90,"taco:42 'Milho, amido, cru'",,,claude-code,2026-11-02
+sl:ingredient:cornmeal,taco,43,exact,0.90,"taco:43 'Milho, fubá, cru'",,,claude-code,2026-11-02
+sl:form:corn_green_raw,taco,44,exact,0.90,"taco:44 'Milho, verde, cru'",,,claude-code,2026-11-02
+sl:form:corn_green_canned,taco,45,exact,0.90,"taco:45 'Milho, verde, enlatado, drenado'",,,claude-code,2026-11-02
+sl:ingredient:porridge_mix,taco,46,exact,0.90,"taco:46 'Mingau tradicional, pó'",,,claude-code,2026-11-02
+sl:ingredient:pamonha,taco,47,broad,0.85,"taco:47 'Pamonha, barra para cozimento, pré-cozida'",,,claude-code,2026-11-02
+sl:ingredient:bread,taco,48,broad,0.85,"taco:48 'Pão, aveia, forma'",,,claude-code,2026-11-02
+sl:ingredient:bread,taco,49,broad,0.85,"taco:49 'Pão, de soja'",,,claude-code,2026-11-02
+sl:ingredient:bread,taco,50,broad,0.85,"taco:50 'Pão, glúten, forma'",,,claude-code,2026-11-02
+sl:ingredient:bread,taco,51,broad,0.85,"taco:51 'Pão, milho, forma'",,,claude-code,2026-11-02
+sl:ingredient:bread,taco,52,broad,0.85,"taco:52 'Pão, trigo, forma, integral'",,,claude-code,2026-11-02
+sl:ingredient:french_roll_br,taco,53,exact,0.90,"taco:53 'Pão, trigo, francês'",,,claude-code,2026-11-02
+sl:ingredient:bread,taco,54,broad,0.85,"taco:54 'Pão, trigo, sovado'",,,claude-code,2026-11-02
+sl:ingredient:pastel,taco,55,broad,0.90,"taco:55 'Pastel, de carne, cru'",,,claude-code,2026-11-02
+sl:ingredient:pastel,taco,56,broad,0.90,"taco:56 'Pastel, de carne, frito'",,,claude-code,2026-11-02
+sl:ingredient:pastel,taco,57,broad,0.90,"taco:57 'Pastel, de queijo, cru'",,,claude-code,2026-11-02
+sl:ingredient:pastel,taco,58,broad,0.90,"taco:58 'Pastel, de queijo, frito'",,,claude-code,2026-11-02
+sl:ingredient:pastel_dough,taco,59,broad,0.90,"taco:59 'Pastel, massa, crua'",,,claude-code,2026-11-02
+sl:ingredient:pastel_dough,taco,60,broad,0.90,"taco:60 'Pastel, massa, frita'",,,claude-code,2026-11-02
+sl:form:corn_popcorn_popped_oil,taco,61,exact,0.90,"taco:61 'Pipoca, com óleo de soja, sem sal'",,,claude-code,2026-11-02
+sl:ingredient:polenta,taco,62,broad,0.85,"taco:62 'Polenta, pré-cozida'",,,claude-code,2026-11-02
+sl:ingredient:toast,taco,63,exact,0.90,"taco:63 'Torrada, pão francês'",,,claude-code,2026-11-02
+sl:variant:pumpkin_cabotia,taco,64,broad,0.90,"taco:64 'Abóbora, cabotian, cozida'",,,claude-code,2026-11-02
+sl:variant:pumpkin_cabotia,taco,65,exact,0.90,"taco:65 'Abóbora, cabotian, crua'",,,claude-code,2026-11-02
+sl:variant:pumpkin_menina,taco,66,exact,0.90,"taco:66 'Abóbora, menina brasileira, crua'",,,claude-code,2026-11-02
+sl:variant:pumpkin_moranga,taco,67,exact,0.90,"taco:67 'Abóbora, moranga, crua'",,,claude-code,2026-11-02
+sl:variant:pumpkin_moranga,taco,68,broad,0.90,"taco:68 'Abóbora, moranga, refogada'",,,claude-code,2026-11-02
+sl:variant:pumpkin_pescoco,taco,69,exact,0.90,"taco:69 'Abóbora, pescoço, crua'",,,claude-code,2026-11-02
+sl:form:zucchini_cooked,taco,70,exact,0.90,"taco:70 'Abobrinha, italiana, cozida'",,,claude-code,2026-11-02
+sl:form:zucchini_raw,taco,71,exact,0.90,"taco:71 'Abobrinha, italiana, crua'",,,claude-code,2026-11-02
+sl:form:zucchini_sauteed,taco,72,exact,0.90,"taco:72 'Abobrinha, italiana, refogada'",,,claude-code,2026-11-02
+sl:variant:zucchini_paulista,taco,73,exact,0.90,"taco:73 'Abobrinha, paulista, crua'",,,claude-code,2026-11-02
+sl:form:chard_raw,taco,74,exact,0.90,"taco:74 'Acelga, crua'",,,claude-code,2026-11-02
+sl:form:watercress_raw,taco,75,exact,0.90,"taco:75 'Agrião, cru'",,,claude-code,2026-11-02
+sl:form:celery_raw,taco,76,exact,0.90,"taco:76 'Aipo, cru'",,,claude-code,2026-11-02
+sl:variant:lettuce_americana,taco,77,exact,0.90,"taco:77 'Alface, americana, crua'",,,claude-code,2026-11-02
+sl:variant:lettuce_crespa,taco,78,exact,0.90,"taco:78 'Alface, crespa, crua'",,,claude-code,2026-11-02
+sl:variant:lettuce_lisa,taco,79,exact,0.90,"taco:79 'Alface, lisa, crua'",,,claude-code,2026-11-02
+sl:variant:lettuce_roxa,taco,80,exact,0.90,"taco:80 'Alface, roxa, crua'",,,claude-code,2026-11-02
+sl:ingredient:alfavaca,taco,81,broad,0.85,"taco:81 'Alfavaca, crua'",,,claude-code,2026-11-02
+sl:form:garlic_raw,taco,82,exact,0.90,"taco:82 'Alho, cru'",,,claude-code,2026-11-02
+sl:form:leek_raw,taco,83,exact,0.90,"taco:83 'Alho-poró, cru'",,,claude-code,2026-11-02
+sl:ingredient:almeirao,taco,84,broad,0.85,"taco:84 'Almeirão, cru'",,,claude-code,2026-11-02
+sl:ingredient:almeirao,taco,85,broad,0.90,"taco:85 'Almeirão, refogado'",,,claude-code,2026-11-02
+sl:ingredient:mandioquinha,taco,86,broad,0.90,"taco:86 'Batata, baroa, cozida'",,,claude-code,2026-11-02
+sl:ingredient:mandioquinha,taco,87,broad,0.90,"taco:87 'Batata, baroa, crua'",,,claude-code,2026-11-02
+sl:form:sweet_potato_cooked,taco,88,exact,0.90,"taco:88 'Batata, doce, cozida'",,,claude-code,2026-11-02
+sl:form:sweet_potato_raw,taco,89,exact,0.90,"taco:89 'Batata, doce, crua'",,,claude-code,2026-11-02
+sl:ingredient:potato_chips,taco,90,exact,0.90,"taco:90 'Batata, frita, tipo chips, industrializada'",,,claude-code,2026-11-02
+sl:form:potato_cooked,taco,91,exact,0.90,"taco:91 'Batata, inglesa, cozida'",,,claude-code,2026-11-02
+sl:form:potato_raw,taco,92,exact,0.90,"taco:92 'Batata, inglesa, crua'",,,claude-code,2026-11-02
+sl:form:potato_fried,taco,93,exact,0.90,"taco:93 'Batata, inglesa, frita'",,,claude-code,2026-11-02
+sl:form:potato_saute,taco,94,exact,0.90,"taco:94 'Batata, inglesa, sauté'",,,claude-code,2026-11-02
+sl:form:eggplant_cooked,taco,95,exact,0.90,"taco:95 'Berinjela, cozida'",,,claude-code,2026-11-02
+sl:form:eggplant_raw,taco,96,exact,0.90,"taco:96 'Berinjela, crua'",,,claude-code,2026-11-02
+sl:form:beet_cooked,taco,97,exact,0.90,"taco:97 'Beterraba, cozida'",,,claude-code,2026-11-02
+sl:form:beet_raw,taco,98,exact,0.90,"taco:98 'Beterraba, crua'",,,claude-code,2026-11-02
+sl:ingredient:polvilho_biscuit,taco,99,exact,0.90,"taco:99 'Biscoito, polvilho doce'",,,claude-code,2026-11-02
+sl:form:broccoli_cooked,taco,100,exact,0.90,"taco:100 'Brócolis, cozido'",,,claude-code,2026-11-02
+sl:form:broccoli_raw,taco,101,exact,0.90,"taco:101 'Brócolis, cru'",,,claude-code,2026-11-02
+sl:ingredient:yam,taco,102,broad,0.85,"taco:102 'Cará, cozido'",,,claude-code,2026-11-02
+sl:ingredient:yam,taco,103,broad,0.85,"taco:103 'Cará, cru'",,,claude-code,2026-11-02
+sl:ingredient:caruru,taco,104,broad,0.85,"taco:104 'Caruru, cru'",,,claude-code,2026-11-02
+sl:ingredient:catalonha,taco,105,broad,0.85,"taco:105 'Catalonha, crua'",,,claude-code,2026-11-02
+sl:ingredient:catalonha,taco,106,broad,0.90,"taco:106 'Catalonha, refogada'",,,claude-code,2026-11-02
+sl:form:onion_raw,taco,107,exact,0.90,"taco:107 'Cebola, crua'",,,claude-code,2026-11-02
+sl:ingredient:welsh_onion,taco,108,broad,0.80,"taco:108 'Cebolinha, crua' — TACO não informa espécie; cebolinha brasileira = A. fistulosum (provável)",,,claude-code,2026-11-02
+sl:form:carrot_cooked,taco,109,exact,0.90,"taco:109 'Cenoura, cozida'",,,claude-code,2026-11-02
+sl:form:carrot_raw,taco,110,exact,0.90,"taco:110 'Cenoura, crua'",,,claude-code,2026-11-02
+sl:ingredient:chicoria,taco,111,broad,0.85,"taco:111 'Chicória, crua'",,,claude-code,2026-11-02
+sl:form:chayote_cooked,taco,112,exact,0.90,"taco:112 'Chuchu, cozido'",,,claude-code,2026-11-02
+sl:form:chayote_raw,taco,113,exact,0.90,"taco:113 'Chuchu, cru'",,,claude-code,2026-11-02
+sl:form:coriander_leaf_dried,taco,114,exact,0.90,"taco:114 'Coentro, folhas desidratadas'",,,claude-code,2026-11-02
+sl:form:kale_raw,taco,115,exact,0.90,"taco:115 'Couve, manteiga, crua'",,,claude-code,2026-11-02
+sl:form:kale_sauteed,taco,116,exact,0.90,"taco:116 'Couve, manteiga, refogada '",,,claude-code,2026-11-02
+sl:form:cauliflower_raw,taco,117,exact,0.90,"taco:117 'Couve-flor, crua'",,,claude-code,2026-11-02
+sl:form:cauliflower_cooked,taco,118,exact,0.90,"taco:118 'Couve-flor, cozida'",,,claude-code,2026-11-02
+sl:form:nz_spinach_raw,taco,119,exact,0.90,"taco:119 'Espinafre, Nova Zelândia, cru'",,,claude-code,2026-11-02
+sl:form:nz_spinach_sauteed,taco,120,exact,0.90,"taco:120 'Espinafre, Nova Zelândia, refogado'",,,claude-code,2026-11-02
+sl:form:cassava_flour_raw,taco,121,exact,0.90,"taco:121 'Farinha, de mandioca, crua'",,,claude-code,2026-11-02
+sl:form:cassava_flour_toasted,taco,122,exact,0.90,"taco:122 'Farinha, de mandioca, torrada'",,,claude-code,2026-11-02
+sl:ingredient:puba_flour,taco,123,exact,0.90,"taco:123 'Farinha, de puba'",,,claude-code,2026-11-02
+sl:ingredient:cassava_starch,taco,124,exact,0.90,"taco:124 'Fécula, de mandioca'",,,claude-code,2026-11-02
+sl:form:mung_sprouts_raw,taco,125,close,0.60,"taco:125 'Feijão, broto, cru' — TACO não informa a espécie; broto de feijão no Brasil costuma ser Vigna radiata — revisar",,,claude-code,2026-11-02
+sl:ingredient:inhame,taco,126,broad,0.85,"taco:126 'Inhame, cru' — espécie não informada",,,claude-code,2026-11-02
+sl:form:jilo_raw,taco,127,exact,0.90,"taco:127 'Jiló, cru'",,,claude-code,2026-11-02
+sl:ingredient:jurubeba,taco,128,exact,0.85,"taco:128 'Jurubeba, crua'",,,claude-code,2026-11-02
+sl:form:cassava_cooked,taco,129,exact,0.90,"taco:129 'Mandioca, cozida'",,,claude-code,2026-11-02
+sl:form:cassava_raw,taco,130,exact,0.90,"taco:130 'Mandioca, crua'",,,claude-code,2026-11-02
+sl:ingredient:farofa,taco,131,exact,0.90,"taco:131 'Mandioca, farofa, temperada'",,,claude-code,2026-11-02
+sl:form:cassava_fried,taco,132,exact,0.90,"taco:132 'Mandioca, frita'",,,claude-code,2026-11-02
+sl:ingredient:basil,taco,133,broad,0.90,"taco:133 'Manjericão, cru'",,,claude-code,2026-11-02
+sl:form:maxixe_raw,taco,134,exact,0.90,"taco:134 'Maxixe, cru'",,,claude-code,2026-11-02
+sl:form:mustard_greens_raw,taco,135,exact,0.90,"taco:135 'Mostarda, folha, crua'",,,claude-code,2026-11-02
+sl:ingredient:gnocchi,taco,136,exact,0.90,"taco:136 'Nhoque, batata, cozido'",,,claude-code,2026-11-02
+sl:form:turnip_raw,taco,137,exact,0.90,"taco:137 'Nabo, cru'",,,claude-code,2026-11-02
+sl:ingredient:palmito_jucara,taco,138,broad,0.90,"taco:138 'Palmito, juçara, em conserva'",,,claude-code,2026-11-02
+sl:ingredient:palmito_pupunha,taco,139,broad,0.90,"taco:139 'Palmito, pupunha, em conserva'",,,claude-code,2026-11-02
+sl:form:pao_de_queijo_baked,taco,140,exact,0.90,"taco:140 'Pão, de queijo, assado'",,,claude-code,2026-11-02
+sl:form:pao_de_queijo_raw,taco,141,exact,0.90,"taco:141 'Pão, de queijo, cru'",,,claude-code,2026-11-02
+sl:form:cucumber_raw,taco,142,exact,0.90,"taco:142 'Pepino, cru'",,,claude-code,2026-11-02
+sl:variant:bell_pepper_yellow,taco,143,exact,0.90,"taco:143 'Pimentão, amarelo, cru'",,,claude-code,2026-11-02
+sl:variant:bell_pepper_green,taco,144,exact,0.90,"taco:144 'Pimentão, verde, cru'",,,claude-code,2026-11-02
+sl:variant:bell_pepper_red,taco,145,exact,0.90,"taco:145 'Pimentão, vermelho, cru'",,,claude-code,2026-11-02
+sl:variant:polvilho_doce,taco,146,exact,0.90,"taco:146 'Polvilho, doce'",,,claude-code,2026-11-02
+sl:form:okra_raw,taco,147,exact,0.90,"taco:147 'Quiabo, cru'",,,claude-code,2026-11-02
+sl:form:radish_raw,taco,148,exact,0.90,"taco:148 'Rabanete, cru'",,,claude-code,2026-11-02
+sl:variant:cabbage_white,taco,149,exact,0.90,"taco:149 'Repolho, branco, cru'",,,claude-code,2026-11-02
+sl:variant:cabbage_red,taco,150,exact,0.90,"taco:150 'Repolho, roxo, cru'",,,claude-code,2026-11-02
+sl:variant:cabbage_red,taco,151,broad,0.90,"taco:151 'Repolho, roxo, refogado'",,,claude-code,2026-11-02
+sl:form:arugula_raw,taco,152,exact,0.90,"taco:152 'Rúcula, crua'",,,claude-code,2026-11-02
+sl:ingredient:parsley,taco,153,broad,0.90,"taco:153 'Salsa, crua'",,,claude-code,2026-11-02
+sl:ingredient:mixed_vegetables_canned,taco,154,exact,0.90,"taco:154 'Seleta de legumes, enlatada'",,,claude-code,2026-11-02
+sl:ingredient:serralha,taco,155,broad,0.85,"taco:155 'Serralha, crua'",,,claude-code,2026-11-02
+sl:form:taioba_raw,taco,156,exact,0.90,"taco:156 'Taioba, crua'",,,claude-code,2026-11-02
+sl:form:tomato_raw,taco,157,exact,0.90,"taco:157 'Tomate, com semente, cru'",,,claude-code,2026-11-02
+sl:form:tomato_paste,taco,158,exact,0.90,"taco:158 'Tomate, extrato'",,,claude-code,2026-11-02
+sl:ingredient:tomato_sauce,taco,159,broad,0.90,"taco:159 'Tomate, molho industrializado'",,,claude-code,2026-11-02
+sl:form:tomato_puree,taco,160,exact,0.90,"taco:160 'Tomate, purê'",,,claude-code,2026-11-02
+sl:ingredient:tomato_salad,taco,161,exact,0.90,"taco:161 'Tomate, salada'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_raw,taco,162,exact,0.90,"taco:162 'Vagem, crua'",,,claude-code,2026-11-02
+sl:ingredient:avocado,taco,163,exact,0.90,"taco:163 'Abacate, cru'",,,claude-code,2026-11-02
+sl:ingredient:pineapple,taco,164,exact,0.90,"taco:164 'Abacaxi, cru'",,,claude-code,2026-11-02
+sl:form:pineapple_pulp_frozen,taco,165,exact,0.90,"taco:165 'Abacaxi, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:abiu,taco,166,exact,0.90,"taco:166 'Abiu, cru'",,,claude-code,2026-11-02
+sl:form:acai_pulp_guarana,taco,167,exact,0.90,"taco:167 'Açaí, polpa, com xarope de guaraná e glucose'",,,claude-code,2026-11-02
+sl:form:acai_pulp_frozen,taco,168,exact,0.90,"taco:168 'Açaí, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:acerola,taco,169,exact,0.90,"taco:169 'Acerola, crua'",,,claude-code,2026-11-02
+sl:form:acerola_pulp_frozen,taco,170,exact,0.90,"taco:170 'Acerola, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:plum,taco,172,exact,0.90,"taco:172 'Ameixa, crua'",,,claude-code,2026-11-02
+sl:ingredient:atemoya,taco,174,exact,0.90,"taco:174 'Atemóia, crua'",,,claude-code,2026-11-02
+sl:variant:banana_da_terra,taco,175,exact,0.90,"taco:175 'Banana, da terra, crua'",,,claude-code,2026-11-02
+sl:ingredient:banana_doce,taco,176,exact,0.90,"taco:176 'Banana, doce em barra'",,,claude-code,2026-11-02
+sl:variant:banana_figo,taco,177,exact,0.90,"taco:177 'Banana, figo, crua'",,,claude-code,2026-11-02
+sl:variant:banana_maca,taco,178,exact,0.90,"taco:178 'Banana, maçã, crua'",,,claude-code,2026-11-02
+sl:variant:banana_nanica,taco,179,exact,0.90,"taco:179 'Banana, nanica, crua'",,,claude-code,2026-11-02
+sl:variant:banana_ouro,taco,180,exact,0.90,"taco:180 'Banana, ouro, crua'",,,claude-code,2026-11-02
+sl:variant:banana_pacova,taco,181,exact,0.90,"taco:181 'Banana, pacova, crua'",,,claude-code,2026-11-02
+sl:variant:banana_prata,taco,182,exact,0.90,"taco:182 'Banana, prata, crua'",,,claude-code,2026-11-02
+sl:ingredient:cocoa,taco,183,broad,0.90,"taco:183 'Cacau, cru'",,,claude-code,2026-11-02
+sl:ingredient:caja_manga,taco,184,exact,0.90,"taco:184 'Cajá-Manga, cru'",,,claude-code,2026-11-02
+sl:form:caja_pulp_frozen,taco,185,exact,0.90,"taco:185 'Cajá, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:cashew_apple,taco,186,exact,0.90,"taco:186 'Caju, cru'",,,claude-code,2026-11-02
+sl:form:cashew_apple_pulp_frozen,taco,187,exact,0.90,"taco:187 'Caju, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:persimmon,taco,189,broad,0.90,"taco:189 'Caqui, chocolate, cru'",,,claude-code,2026-11-02
+sl:ingredient:starfruit,taco,190,exact,0.90,"taco:190 'Carambola, crua'",,,claude-code,2026-11-02
+sl:ingredient:ciriguela,taco,191,exact,0.90,"taco:191 'Ciriguela, crua'",,,claude-code,2026-11-02
+sl:ingredient:cupuacu,taco,192,exact,0.90,"taco:192 'Cupuaçu, cru'",,,claude-code,2026-11-02
+sl:form:cupuacu_pulp_frozen,taco,193,exact,0.90,"taco:193 'Cupuaçu, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:fig,taco,194,exact,0.90,"taco:194 'Figo, cru'",,,claude-code,2026-11-02
+sl:ingredient:breadfruit,taco,196,exact,0.90,"taco:196 'Fruta-pão, crua'",,,claude-code,2026-11-02
+sl:variant:guava_white,taco,197,exact,0.90,"taco:197 'Goiaba, branca, com casca, crua'",,,claude-code,2026-11-02
+sl:ingredient:goiabada,taco,198,exact,0.90,"taco:198 'Goiaba, doce em pasta'",,,claude-code,2026-11-02
+sl:ingredient:goiabada,taco,199,broad,0.85,"taco:199 'Goiaba, doce, cascão'",,,claude-code,2026-11-02
+sl:variant:guava_red,taco,200,exact,0.90,"taco:200 'Goiaba, vermelha, com casca, crua'",,,claude-code,2026-11-02
+sl:ingredient:soursop,taco,201,exact,0.90,"taco:201 'Graviola, crua'",,,claude-code,2026-11-02
+sl:form:soursop_pulp_frozen,taco,202,exact,0.90,"taco:202 'Graviola, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:jabuticaba,taco,203,exact,0.90,"taco:203 'Jabuticaba, crua'",,,claude-code,2026-11-02
+sl:ingredient:jackfruit,taco,204,exact,0.90,"taco:204 'Jaca, crua'",,,claude-code,2026-11-02
+sl:ingredient:jambo,taco,205,exact,0.90,"taco:205 'Jambo, cru'",,,claude-code,2026-11-02
+sl:ingredient:jamelao,taco,206,exact,0.90,"taco:206 'Jamelão, cru'",,,claude-code,2026-11-02
+sl:ingredient:kiwi,taco,207,exact,0.90,"taco:207 'Kiwi, cru'",,,claude-code,2026-11-02
+sl:form:orange_baia_raw,taco,208,exact,0.90,"taco:208 'Laranja, baía, crua'",,,claude-code,2026-11-02
+sl:form:orange_baia_juice,taco,209,exact,0.90,"taco:209 'Laranja, baía, suco'",,,claude-code,2026-11-02
+sl:ingredient:bitter_orange,taco,210,exact,0.80,"taco:210 'Laranja, da terra, crua' — laranja-da-terra = laranja-amarga (confirmar)",,,claude-code,2026-11-02
+sl:ingredient:bitter_orange,taco,211,related,0.60,"taco:211 'Laranja, da terra, suco' — suco",,,claude-code,2026-11-02
+sl:form:orange_lima_raw,taco,212,exact,0.90,"taco:212 'Laranja, lima, crua'",,,claude-code,2026-11-02
+sl:form:orange_lima_juice,taco,213,exact,0.90,"taco:213 'Laranja, lima, suco'",,,claude-code,2026-11-02
+sl:form:orange_pera_raw,taco,214,exact,0.90,"taco:214 'Laranja, pêra, crua'",,,claude-code,2026-11-02
+sl:form:orange_pera_juice,taco,215,exact,0.90,"taco:215 'Laranja, pêra, suco'",,,claude-code,2026-11-02
+sl:form:orange_valencia_raw,taco,216,exact,0.90,"taco:216 'Laranja, valência, crua'",,,claude-code,2026-11-02
+sl:form:orange_valencia_juice,taco,217,exact,0.90,"taco:217 'Laranja, valência, suco'",,,claude-code,2026-11-02
+sl:ingredient:rangpur,taco,218,related,0.60,"taco:218 'Limão, cravo, suco' — suco",,,claude-code,2026-11-02
+sl:ingredient:key_lime,taco,219,related,0.60,"taco:219 'Limão, galego, suco' — suco",,,claude-code,2026-11-02
+sl:ingredient:tahiti_lime,taco,220,exact,0.90,"taco:220 'Limão, tahiti, cru'",,,claude-code,2026-11-02
+sl:ingredient:apple,taco,221,broad,0.80,"taco:221 'Maçã, Argentina, com casca, crua' — ""Argentina"" = procedência comercial, cultivar não informada",,,claude-code,2026-11-02
+sl:variant:apple_fuji,taco,222,broad,0.90,"taco:222 'Maçã, Fuji, com casca, crua'",,,claude-code,2026-11-02
+sl:ingredient:macauba,taco,223,exact,0.90,"taco:223 'Macaúba, crua'",,,claude-code,2026-11-02
+sl:variant:papaya_formosa,taco,225,exact,0.90,"taco:225 'Mamão, Formosa, cru'",,,claude-code,2026-11-02
+sl:variant:papaya_solo,taco,226,exact,0.90,"taco:226 'Mamão, Papaia, cru'",,,claude-code,2026-11-02
+sl:variant:mango_haden,taco,228,exact,0.90,"taco:228 'Manga, Haden, crua'",,,claude-code,2026-11-02
+sl:variant:mango_palmer,taco,229,exact,0.90,"taco:229 'Manga, Palmer, crua'",,,claude-code,2026-11-02
+sl:form:mango_pulp_frozen,taco,230,exact,0.90,"taco:230 'Manga, polpa, congelada'",,,claude-code,2026-11-02
+sl:variant:mango_tommy_atkins,taco,231,exact,0.90,"taco:231 'Manga, Tommy Atkins, crua'",,,claude-code,2026-11-02
+sl:ingredient:passion_fruit,taco,232,exact,0.90,"taco:232 'Maracujá, cru'",,,claude-code,2026-11-02
+sl:form:passion_fruit_pulp_frozen,taco,233,exact,0.90,"taco:233 'Maracujá, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:watermelon,taco,235,exact,0.90,"taco:235 'Melancia, crua'",,,claude-code,2026-11-02
+sl:ingredient:melon,taco,236,exact,0.90,"taco:236 'Melão, cru'",,,claude-code,2026-11-02
+sl:variant:tangerine_murcote,taco,237,exact,0.90,"taco:237 'Mexerica, Murcote, crua'",,,claude-code,2026-11-02
+sl:variant:tangerine_rio,taco,238,exact,0.90,"taco:238 'Mexerica, Rio, crua'",,,claude-code,2026-11-02
+sl:ingredient:strawberry,taco,239,exact,0.90,"taco:239 'Morango, cru'",,,claude-code,2026-11-02
+sl:ingredient:loquat,taco,240,exact,0.90,"taco:240 'Nêspera, crua'",,,claude-code,2026-11-02
+sl:ingredient:pequi,taco,241,exact,0.90,"taco:241 'Pequi, cru'",,,claude-code,2026-11-02
+sl:variant:pear_park,taco,242,exact,0.90,"taco:242 'Pêra, Park, crua'",,,claude-code,2026-11-02
+sl:variant:pear_williams,taco,243,exact,0.90,"taco:243 'Pêra, Williams, crua'",,,claude-code,2026-11-02
+sl:ingredient:peach,taco,244,broad,0.90,"taco:244 'Pêssego, Aurora, cru'",,,claude-code,2026-11-02
+sl:ingredient:sugar_apple,taco,246,exact,0.90,"taco:246 'Pinha, crua'",,,claude-code,2026-11-02
+sl:ingredient:pitanga,taco,247,exact,0.90,"taco:247 'Pitanga, crua'",,,claude-code,2026-11-02
+sl:form:pitanga_pulp_frozen,taco,248,exact,0.90,"taco:248 'Pitanga, polpa, congelada'",,,claude-code,2026-11-02
+sl:ingredient:pomegranate,taco,249,exact,0.90,"taco:249 'Romã, crua'",,,claude-code,2026-11-02
+sl:ingredient:tamarind,taco,250,exact,0.90,"taco:250 'Tamarindo, cru'",,,claude-code,2026-11-02
+sl:variant:tangerine_ponkan,taco,251,exact,0.90,"taco:251 'Tangerina, Poncã, crua'",,,claude-code,2026-11-02
+sl:variant:tangerine_ponkan,taco,252,related,0.60,"taco:252 'Tangerina, Poncã, suco' — suco",,,claude-code,2026-11-02
+sl:ingredient:tucuma,taco,253,exact,0.90,"taco:253 'Tucumã, cru'",,,claude-code,2026-11-02
+sl:ingredient:umbu,taco,254,exact,0.90,"taco:254 'Umbu, cru'",,,claude-code,2026-11-02
+sl:form:umbu_pulp_frozen,taco,255,exact,0.90,"taco:255 'Umbu, polpa, congelada'",,,claude-code,2026-11-02
+sl:variant:grape_italia,taco,256,exact,0.90,"taco:256 'Uva, Itália, crua'",,,claude-code,2026-11-02
+sl:variant:grape_rubi,taco,257,exact,0.90,"taco:257 'Uva, Rubi, crua'",,,claude-code,2026-11-02
+sl:ingredient:grape_juice,taco,258,broad,0.90,"taco:258 'Uva, suco concentrado, envasado'",,,claude-code,2026-11-02
+sl:ingredient:palm_oil,taco,259,exact,0.90,"taco:259 'Azeite, de dendê'",,,claude-code,2026-11-02
+sl:form:olive_oil_extra_virgin,taco,260,exact,0.90,"taco:260 'Azeite, de oliva, extra virgem'",,,claude-code,2026-11-02
+sl:form:butter_salted,taco,261,exact,0.90,"taco:261 'Manteiga, com sal'",,,claude-code,2026-11-02
+sl:form:butter_unsalted,taco,262,exact,0.90,"taco:262 'Manteiga, sem sal'",,,claude-code,2026-11-02
+sl:ingredient:margarine,taco,263,broad,0.90,"taco:263 'Margarina, com óleo hidrogenado, com sal (65% de lipídeos)'",,,claude-code,2026-11-02
+sl:ingredient:margarine,taco,264,broad,0.90,"taco:264 'Margarina, com óleo hidrogenado, sem sal (80% de lipídeos)'",,,claude-code,2026-11-02
+sl:ingredient:margarine,taco,265,broad,0.90,"taco:265 'Margarina, com óleo interesterificado, com sal (65%de lipídeos)'",,,claude-code,2026-11-02
+sl:ingredient:margarine,taco,266,broad,0.90,"taco:266 'Margarina, com óleo interesterificado, sem sal (65% de lipídeos)'",,,claude-code,2026-11-02
+sl:ingredient:babassu_oil,taco,267,exact,0.90,"taco:267 'Óleo, de babaçu'",,,claude-code,2026-11-02
+sl:ingredient:canola_oil,taco,268,exact,0.90,"taco:268 'Óleo, de canola'",,,claude-code,2026-11-02
+sl:ingredient:sunflower_oil,taco,269,exact,0.90,"taco:269 'Óleo, de girassol'",,,claude-code,2026-11-02
+sl:ingredient:corn_oil,taco,270,exact,0.90,"taco:270 'Óleo, de milho'",,,claude-code,2026-11-02
+sl:ingredient:pequi_oil,taco,271,exact,0.90,"taco:271 'Óleo, de pequi'",,,claude-code,2026-11-02
+sl:ingredient:soybean_oil,taco,272,exact,0.90,"taco:272 'Óleo, de soja'",,,claude-code,2026-11-02
+sl:form:abadejo_fillet_baked,taco,273,exact,0.90,"taco:273 'Abadejo, filé, congelado, assado'",,,claude-code,2026-11-02
+sl:form:abadejo_fillet_cooked,taco,274,exact,0.90,"taco:274 'Abadejo, filé, congelado,cozido'",,,claude-code,2026-11-02
+sl:form:abadejo_fillet_raw,taco,275,exact,0.90,"taco:275 'Abadejo, filé, congelado, cru'",,,claude-code,2026-11-02
+sl:form:abadejo_fillet_grilled,taco,276,exact,0.90,"taco:276 'Abadejo, filé, congelado, grelhado'",,,claude-code,2026-11-02
+sl:form:tuna_canned_oil,taco,277,exact,0.90,"taco:277 'Atum, conserva em óleo'",,,claude-code,2026-11-02
+sl:form:tuna_fresh_raw,taco,278,exact,0.90,"taco:278 'Atum, fresco, cru'",,,claude-code,2026-11-02
+sl:ingredient:bacalhau,taco,279,exact,0.85,"taco:279 'Bacalhau, salgado, cru' — espécie não informada",,,claude-code,2026-11-02
+sl:ingredient:bacalhau,taco,280,broad,0.85,"taco:280 'Bacalhau, salgado, refogado'",,,claude-code,2026-11-02
+sl:form:cacao_steak_breaded_fried,taco,281,exact,0.90,"taco:281 'Cação, posta, com farinha de trigo, frita'",,,claude-code,2026-11-02
+sl:form:cacao_steak_cooked,taco,282,exact,0.90,"taco:282 'Cação, posta, cozida'",,,claude-code,2026-11-02
+sl:form:cacao_steak_raw,taco,283,exact,0.90,"taco:283 'Cação, posta, crua'",,,claude-code,2026-11-02
+sl:form:shrimp_cooked,taco,284,broad,0.85,"taco:284 'Camarão, Rio Grande, grande, cozido'",,,claude-code,2026-11-02
+sl:form:shrimp_raw,taco,285,broad,0.85,"taco:285 'Camarão, Rio Grande, grande, cru' — ""Rio Grande, grande"": procedência/tamanho; espécie não informada",,,claude-code,2026-11-02
+sl:form:shrimp_sete_barbas_fried,taco,286,exact,0.90,"taco:286 'Camarão, Sete Barbas, sem cabeça, com casca, frito'",,,claude-code,2026-11-02
+sl:ingredient:crab,taco,287,broad,0.85,"taco:287 'Caranguejo, cozido'",,,claude-code,2026-11-02
+sl:ingredient:curimbata,taco,288,broad,0.90,"taco:288 'Corimba, cru' — Portaria MPA 532/2025: ""Curimba, Curimbatá, Curimatã"" = Prochilodus spp.",,,claude-code,2026-11-02
+sl:ingredient:curimbata,taco,289,broad,0.90,"taco:289 'Corimbatá, assado' — Portaria MPA 532/2025: ""Curimba, Curimbatá, Curimatã"" = Prochilodus spp.",,,claude-code,2026-11-02
+sl:ingredient:curimbata,taco,290,broad,0.90,"taco:290 'Corimbatá, cozido' — Portaria MPA 532/2025: ""Curimba, Curimbatá, Curimatã"" = Prochilodus spp.",,,claude-code,2026-11-02
+sl:form:corvina_freshwater_raw,taco,291,exact,0.90,"taco:291 'Corvina de água doce, crua'",,,claude-code,2026-11-02
+sl:form:corvina_marine_raw,taco,292,exact,0.90,"taco:292 'Corvina do mar, crua'",,,claude-code,2026-11-02
+sl:form:corvina_large_baked,taco,293,exact,0.90,"taco:293 'Corvina grande, assada'",,,claude-code,2026-11-02
+sl:form:corvina_large_cooked,taco,294,exact,0.90,"taco:294 'Corvina grande, cozida'",,,claude-code,2026-11-02
+sl:ingredient:dourada_freshwater,taco,295,broad,0.85,"taco:295 'Dourada de água doce, fresca'",,,claude-code,2026-11-02
+sl:ingredient:lambari,taco,296,broad,0.90,"taco:296 'Lambari, congelado, cru'",,,claude-code,2026-11-02
+sl:ingredient:lambari,taco,297,broad,0.90,"taco:297 'Lambari, congelado, frito'",,,claude-code,2026-11-02
+sl:ingredient:lambari,taco,298,broad,0.90,"taco:298 'Lambari, fresco, cru'",,,claude-code,2026-11-02
+sl:ingredient:manjuba,taco,299,broad,0.90,"taco:299 'Manjuba, com farinha de trigo, frita'",,,claude-code,2026-11-02
+sl:ingredient:manjuba,taco,300,broad,0.90,"taco:300 'Manjuba, frita'",,,claude-code,2026-11-02
+sl:form:hake_fillet_baked,taco,301,exact,0.90,"taco:301 'Merluza, filé, assado'",,,claude-code,2026-11-02
+sl:form:hake_fillet_raw,taco,302,exact,0.90,"taco:302 'Merluza, filé, cru'",,,claude-code,2026-11-02
+sl:form:hake_fillet_fried,taco,303,exact,0.90,"taco:303 'Merluza, filé, frito'",,,claude-code,2026-11-02
+sl:form:pescada_branca_raw,taco,304,exact,0.90,"taco:304 'Pescada, branca, crua'",,,claude-code,2026-11-02
+sl:form:pescada_branca_fried,taco,305,exact,0.90,"taco:305 'Pescada, branca, frita'",,,claude-code,2026-11-02
+sl:form:pescada_fillet_breaded_fried,taco,306,exact,0.90,"taco:306 'Pescada, filé, com farinha de trigo, frito'",,,claude-code,2026-11-02
+sl:form:pescada_fillet_raw,taco,307,exact,0.90,"taco:307 'Pescada, filé, cru'",,,claude-code,2026-11-02
+sl:form:pescada_fillet_fried,taco,308,exact,0.90,"taco:308 'Pescada, filé, frito'",,,claude-code,2026-11-02
+sl:part:pescada_fillet,taco,309,related,0.50,"taco:309 'Pescada, filé, molho escabeche' — preparação com molho (prato)",,,claude-code,2026-11-02
+sl:ingredient:pescada,taco,310,broad,0.80,"taco:310 'Pescadinha, crua' — pescadinha = pescadas pequenas; espécie não informada",,,claude-code,2026-11-02
+sl:ingredient:pintado,taco,311,broad,0.90,"taco:311 'Pintado, assado'",,,claude-code,2026-11-02
+sl:ingredient:pintado,taco,312,broad,0.90,"taco:312 'Pintado, cru'",,,claude-code,2026-11-02
+sl:ingredient:pintado,taco,313,broad,0.90,"taco:313 'Pintado, grelhado'",,,claude-code,2026-11-02
+sl:ingredient:porquinho,taco,314,broad,0.85,"taco:314 'Porquinho, cru' — Portaria MPA 532/2025: peixe-porco",,,claude-code,2026-11-02
+sl:form:salmon_fillet_skin_grilled,taco,315,exact,0.90,"taco:315 'Salmão, filé, com pele, fresco,  grelhado'",,,claude-code,2026-11-02
+sl:form:salmon_skinless_raw,taco,316,exact,0.85,"taco:316 'Salmão, sem pele, fresco, cru' — TACO não informa espécie: fica no nome comercial",,,claude-code,2026-11-02
+sl:form:salmon_skinless_grilled,taco,317,exact,0.90,"taco:317 'Salmão, sem pele, fresco, grelhado'",,,claude-code,2026-11-02
+sl:form:sardine_baked,taco,318,exact,0.90,"taco:318 'Sardinha, assada'",,,claude-code,2026-11-02
+sl:form:sardine_canned_oil,taco,319,exact,0.90,"taco:319 'Sardinha, conserva em óleo'",,,claude-code,2026-11-02
+sl:form:sardine_fried,taco,320,exact,0.90,"taco:320 'Sardinha, frita'",,,claude-code,2026-11-02
+sl:form:sardine_whole_raw,taco,321,exact,0.90,"taco:321 'Sardinha, inteira, crua'",,,claude-code,2026-11-02
+sl:form:tucunare_fillet_frozen_raw,taco,322,exact,0.90,"taco:322 'Tucunaré, filé, congelado, cru'",,,claude-code,2026-11-02
+sl:ingredient:apresuntado,taco,323,exact,0.90,taco:323 'Apresuntado',,,claude-code,2026-11-02
+sl:ingredient:bouillon,taco,324,broad,0.90,"taco:324 'Caldo de carne, tablete'",,,claude-code,2026-11-02
+sl:ingredient:bouillon,taco,325,broad,0.90,"taco:325 'Caldo de galinha, tablete'",,,claude-code,2026-11-02
+sl:form:beef_acem_ground_cooked,taco,326,exact,0.90,"taco:326 'Carne, bovina, acém, moído, cozido'",,,claude-code,2026-11-02
+sl:form:beef_acem_ground_raw,taco,327,exact,0.90,"taco:327 'Carne, bovina, acém, moído, cru'",,,claude-code,2026-11-02
+sl:form:beef_acem_cooked,taco,328,exact,0.90,"taco:328 'Carne, bovina, acém, sem gordura, cozido'",,,claude-code,2026-11-02
+sl:form:beef_acem_raw,taco,329,exact,0.90,"taco:329 'Carne, bovina, acém, sem gordura, cru'",,,claude-code,2026-11-02
+sl:ingredient:meatball,taco,330,broad,0.90,"taco:330 'Carne, bovina, almôndegas, cruas'",,,claude-code,2026-11-02
+sl:ingredient:meatball,taco,331,broad,0.90,"taco:331 'Carne, bovina, almôndegas, fritas'",,,claude-code,2026-11-02
+sl:form:beef_tripe_cooked,taco,332,exact,0.90,"taco:332 'Carne, bovina, bucho, cozido'",,,claude-code,2026-11-02
+sl:form:beef_tripe_raw,taco,333,exact,0.90,"taco:333 'Carne, bovina, bucho, cru'",,,claude-code,2026-11-02
+sl:part:beef_capa_contra_file,taco,334,broad,0.90,"taco:334 'Carne, bovina, capa de contra-filé, com gordura, crua'",,,claude-code,2026-11-02
+sl:part:beef_capa_contra_file,taco,335,broad,0.90,"taco:335 'Carne, bovina, capa de contra-filé, com gordura, grelhada'",,,claude-code,2026-11-02
+sl:part:beef_capa_contra_file,taco,336,broad,0.90,"taco:336 'Carne, bovina, capa de contra-filé, sem gordura, crua'",,,claude-code,2026-11-02
+sl:part:beef_capa_contra_file,taco,337,broad,0.90,"taco:337 'Carne, bovina, capa de contra-filé, sem gordura, grelhada'",,,claude-code,2026-11-02
+sl:ingredient:charque,taco,338,broad,0.90,"taco:338 'Carne, bovina, charque, cozido'",,,claude-code,2026-11-02
+sl:ingredient:charque,taco,339,broad,0.90,"taco:339 'Carne, bovina, charque, cru'",,,claude-code,2026-11-02
+sl:part:beef_contra_file,taco,340,related,0.50,"taco:340 'Carne, bovina, contra-filé, à milanesa' — preparo empanado (prato)",,,claude-code,2026-11-02
+sl:part:beef_contra_file_costela,taco,341,broad,0.90,"taco:341 'Carne, bovina, contra-filé de costela, cru'",,,claude-code,2026-11-02
+sl:part:beef_contra_file_costela,taco,342,broad,0.90,"taco:342 'Carne, bovina, contra-filé de costela, grelhado'",,,claude-code,2026-11-02
+sl:form:beef_contra_file_fat_raw,taco,343,exact,0.90,"taco:343 'Carne, bovina, contra-filé, com gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_contra_file_fat_grilled,taco,344,exact,0.90,"taco:344 'Carne, bovina, contra-filé, com gordura, grelhado'",,,claude-code,2026-11-02
+sl:form:beef_contra_file_lean_raw,taco,345,exact,0.90,"taco:345 'Carne, bovina, contra-filé, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_contra_file_lean_grilled,taco,346,exact,0.90,"taco:346 'Carne, bovina, contra-filé, sem gordura, grelhado'",,,claude-code,2026-11-02
+sl:form:beef_costela_roasted,taco,347,exact,0.90,"taco:347 'Carne, bovina, costela, assada'",,,claude-code,2026-11-02
+sl:form:beef_costela_raw,taco,348,exact,0.90,"taco:348 'Carne, bovina, costela, crua'",,,claude-code,2026-11-02
+sl:form:beef_coxao_duro_cooked,taco,349,exact,0.90,"taco:349 'Carne, bovina, coxão duro, sem gordura, cozido'",,,claude-code,2026-11-02
+sl:form:beef_coxao_duro_raw,taco,350,exact,0.90,"taco:350 'Carne, bovina, coxão duro, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_coxao_mole_cooked,taco,351,exact,0.90,"taco:351 'Carne, bovina, coxão mole, sem gordura, cozido'",,,claude-code,2026-11-02
+sl:form:beef_coxao_mole_raw,taco,352,exact,0.90,"taco:352 'Carne, bovina, coxão mole, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_cupim_roasted,taco,353,exact,0.90,"taco:353 'Carne, bovina, cupim, assado'",,,claude-code,2026-11-02
+sl:form:beef_cupim_raw,taco,354,exact,0.90,"taco:354 'Carne, bovina, cupim, cru'",,,claude-code,2026-11-02
+sl:form:beef_liver_raw,taco,355,exact,0.90,"taco:355 'Carne, bovina, fígado, cru'",,,claude-code,2026-11-02
+sl:form:beef_liver_grilled,taco,356,exact,0.90,"taco:356 'Carne, bovina, fígado, grelhado'",,,claude-code,2026-11-02
+sl:form:beef_file_mignon_raw,taco,357,exact,0.90,"taco:357 'Carne, bovina, filé mingnon, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_file_mignon_grilled,taco,358,exact,0.90,"taco:358 'Carne, bovina, filé mingnon, sem gordura, grelhado'",,,claude-code,2026-11-02
+sl:part:beef_flanco,taco,359,broad,0.90,"taco:359 'Carne, bovina, flanco, sem gordura, cozido'",,,claude-code,2026-11-02
+sl:part:beef_flanco,taco,360,broad,0.90,"taco:360 'Carne, bovina, flanco, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_fraldinha_cooked,taco,361,exact,0.90,"taco:361 'Carne, bovina, fraldinha, com gordura, cozida'",,,claude-code,2026-11-02
+sl:form:beef_fraldinha_raw,taco,362,exact,0.90,"taco:362 'Carne, bovina, fraldinha, com gordura, crua'",,,claude-code,2026-11-02
+sl:form:beef_lagarto_cooked,taco,363,exact,0.90,"taco:363 'Carne, bovina, lagarto, cozido'",,,claude-code,2026-11-02
+sl:form:beef_lagarto_raw,taco,364,exact,0.90,"taco:364 'Carne, bovina, lagarto, cru'",,,claude-code,2026-11-02
+sl:form:beef_tongue_cooked,taco,365,exact,0.90,"taco:365 'Carne, bovina, língua, cozida'",,,claude-code,2026-11-02
+sl:form:beef_tongue_raw,taco,366,exact,0.90,"taco:366 'Carne, bovina, língua, crua'",,,claude-code,2026-11-02
+sl:form:beef_maminha_raw,taco,367,exact,0.90,"taco:367 'Carne, bovina, maminha, crua'",,,claude-code,2026-11-02
+sl:form:beef_maminha_grilled,taco,368,exact,0.90,"taco:368 'Carne, bovina, maminha, grelhada'",,,claude-code,2026-11-02
+sl:form:beef_alcatra_miolo_raw,taco,369,exact,0.90,"taco:369 'Carne, bovina, miolo de alcatra, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_alcatra_miolo_grilled,taco,370,exact,0.90,"taco:370 'Carne, bovina, miolo de alcatra, sem gordura, grelhado'",,,claude-code,2026-11-02
+sl:form:beef_musculo_cooked,taco,371,exact,0.90,"taco:371 'Carne, bovina, músculo, sem gordura, cozido'",,,claude-code,2026-11-02
+sl:form:beef_musculo_raw,taco,372,exact,0.90,"taco:372 'Carne, bovina, músculo, sem gordura, cru'",,,claude-code,2026-11-02
+sl:part:beef_paleta,taco,373,broad,0.90,"taco:373 'Carne, bovina, paleta, com gordura, crua'",,,claude-code,2026-11-02
+sl:part:beef_paleta,taco,374,broad,0.90,"taco:374 'Carne, bovina, paleta, sem gordura, cozida'",,,claude-code,2026-11-02
+sl:part:beef_paleta,taco,375,broad,0.90,"taco:375 'Carne, bovina, paleta, sem gordura, crua'",,,claude-code,2026-11-02
+sl:form:beef_patinho_raw,taco,376,exact,0.90,"taco:376 'Carne, bovina, patinho, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_patinho_grilled,taco,377,exact,0.90,"taco:377 'Carne, bovina, patinho, sem gordura, grelhado'",,,claude-code,2026-11-02
+sl:part:beef_peito,taco,378,broad,0.90,"taco:378 'Carne, bovina, peito, sem gordura, cozido'",,,claude-code,2026-11-02
+sl:part:beef_peito,taco,379,broad,0.90,"taco:379 'Carne, bovina, peito, sem gordura, cru'",,,claude-code,2026-11-02
+sl:form:beef_picanha_fat_raw,taco,380,exact,0.90,"taco:380 'Carne, bovina, picanha, com gordura, crua'",,,claude-code,2026-11-02
+sl:form:beef_picanha_fat_grilled,taco,381,exact,0.90,"taco:381 'Carne, bovina, picanha, com gordura, grelhada'",,,claude-code,2026-11-02
+sl:form:beef_picanha_lean_raw,taco,382,exact,0.90,"taco:382 'Carne, bovina, picanha, sem gordura, crua'",,,claude-code,2026-11-02
+sl:form:beef_picanha_lean_grilled,taco,383,exact,0.90,"taco:383 'Carne, bovina, picanha, sem gordura, grelhada'",,,claude-code,2026-11-02
+sl:ingredient:carne_seca,taco,384,broad,0.90,"taco:384 'Carne, bovina, seca, cozida'",,,claude-code,2026-11-02
+sl:ingredient:carne_seca,taco,385,broad,0.90,"taco:385 'Carne, bovina, seca, crua'",,,claude-code,2026-11-02
+sl:ingredient:coxinha,taco,386,exact,0.90,"taco:386 'Coxinha de frango, frita'",,,claude-code,2026-11-02
+sl:ingredient:croquete_carne,taco,387,broad,0.90,"taco:387 'Croquete, de carne, cru'",,,claude-code,2026-11-02
+sl:ingredient:croquete_carne,taco,388,broad,0.90,"taco:388 'Croquete, de carne, frito'",,,claude-code,2026-11-02
+sl:ingredient:empada_frango,taco,389,broad,0.90,"taco:389 'Empada de frango, pré-cozida, assada'",,,claude-code,2026-11-02
+sl:ingredient:empada_frango,taco,390,exact,0.90,"taco:390 'Empada, de frango, pré-cozida'",,,claude-code,2026-11-02
+sl:form:chicken_wing_skin_raw,taco,391,exact,0.90,"taco:391 'Frango, asa, com pele, crua'",,,claude-code,2026-11-02
+sl:form:chicken_caipira_skin_cooked,taco,392,exact,0.90,"taco:392 'Frango, caipira, inteiro, com pele, cozido'",,,claude-code,2026-11-02
+sl:form:chicken_caipira_skinless_cooked,taco,393,exact,0.90,"taco:393 'Frango, caipira, inteiro, sem pele, cozido'",,,claude-code,2026-11-02
+sl:part:chicken_heart,taco,394,broad,0.90,"taco:394 'Frango, coração, cru'",,,claude-code,2026-11-02
+sl:part:chicken_heart,taco,395,broad,0.90,"taco:395 'Frango, coração, grelhado'",,,claude-code,2026-11-02
+sl:form:chicken_drumstick_skin_roasted,taco,396,exact,0.90,"taco:396 'Frango, coxa, com pele, assada'",,,claude-code,2026-11-02
+sl:form:chicken_drumstick_skin_raw,taco,397,exact,0.90,"taco:397 'Frango, coxa, com pele, crua'",,,claude-code,2026-11-02
+sl:form:chicken_drumstick_skinless_cooked,taco,398,exact,0.90,"taco:398 'Frango, coxa, sem pele, cozida'",,,claude-code,2026-11-02
+sl:form:chicken_drumstick_skinless_raw,taco,399,exact,0.90,"taco:399 'Frango, coxa, sem pele, crua'",,,claude-code,2026-11-02
+sl:part:chicken_liver,taco,400,broad,0.90,"taco:400 'Frango, fígado, cru'",,,claude-code,2026-11-02
+sl:part:chicken_breast,taco,401,related,0.50,"taco:401 'Frango, filé, à milanesa' — filé empanado (preparo composto)",,,claude-code,2026-11-02
+sl:form:chicken_whole_skin_raw,taco,402,exact,0.90,"taco:402 'Frango, inteiro, com pele, cru'",,,claude-code,2026-11-02
+sl:form:chicken_whole_skinless_roasted,taco,403,exact,0.90,"taco:403 'Frango, inteiro, sem pele, assado'",,,claude-code,2026-11-02
+sl:form:chicken_whole_skinless_cooked,taco,404,exact,0.90,"taco:404 'Frango, inteiro, sem pele, cozido'",,,claude-code,2026-11-02
+sl:form:chicken_whole_skinless_raw,taco,405,exact,0.90,"taco:405 'Frango, inteiro, sem pele, cru'",,,claude-code,2026-11-02
+sl:form:chicken_breast_skin_roasted,taco,406,exact,0.90,"taco:406 'Frango, peito, com pele, assado'",,,claude-code,2026-11-02
+sl:form:chicken_breast_skin_raw,taco,407,exact,0.90,"taco:407 'Frango, peito, com pele, cru'",,,claude-code,2026-11-02
+sl:form:chicken_breast_skinless_cooked,taco,408,exact,0.90,"taco:408 'Frango, peito, sem pele, cozido'",,,claude-code,2026-11-02
+sl:form:chicken_breast_skinless_raw,taco,409,exact,0.90,"taco:409 'Frango, peito, sem pele, cru'",,,claude-code,2026-11-02
+sl:form:chicken_breast_skinless_grilled,taco,410,exact,0.90,"taco:410 'Frango, peito, sem pele, grelhado'",,,claude-code,2026-11-02
+sl:form:chicken_thigh_skin_roasted,taco,411,exact,0.90,"taco:411 'Frango, sobrecoxa, com pele, assada'",,,claude-code,2026-11-02
+sl:form:chicken_thigh_skin_raw,taco,412,exact,0.90,"taco:412 'Frango, sobrecoxa, com pele, crua'",,,claude-code,2026-11-02
+sl:form:chicken_thigh_skinless_roasted,taco,413,exact,0.90,"taco:413 'Frango, sobrecoxa, sem pele, assada'",,,claude-code,2026-11-02
+sl:form:chicken_thigh_skinless_raw,taco,414,exact,0.90,"taco:414 'Frango, sobrecoxa, sem pele, crua'",,,claude-code,2026-11-02
+sl:ingredient:hamburger_patty,taco,415,broad,0.90,"taco:415 'Hambúrguer, bovino, cru'",,,claude-code,2026-11-02
+sl:ingredient:hamburger_patty,taco,416,broad,0.90,"taco:416 'Hambúrguer, bovino, frito'",,,claude-code,2026-11-02
+sl:ingredient:hamburger_patty,taco,417,broad,0.90,"taco:417 'Hambúrguer, bovino, grelhado'",,,claude-code,2026-11-02
+sl:ingredient:chicken_sausage,taco,418,broad,0.90,"taco:418 'Lingüiça, frango, crua'",,,claude-code,2026-11-02
+sl:ingredient:chicken_sausage,taco,419,broad,0.90,"taco:419 'Lingüiça, frango, frita'",,,claude-code,2026-11-02
+sl:ingredient:chicken_sausage,taco,420,broad,0.90,"taco:420 'Lingüiça, frango, grelhada'",,,claude-code,2026-11-02
+sl:ingredient:pork_sausage,taco,421,broad,0.90,"taco:421 'Lingüiça, porco, crua'",,,claude-code,2026-11-02
+sl:ingredient:pork_sausage,taco,422,broad,0.90,"taco:422 'Lingüiça, porco, frita'",,,claude-code,2026-11-02
+sl:ingredient:pork_sausage,taco,423,broad,0.90,"taco:423 'Lingüiça, porco, grelhada'",,,claude-code,2026-11-02
+sl:ingredient:mortadella,taco,424,exact,0.90,taco:424 'Mortadela',,,claude-code,2026-11-02
+sl:ingredient:turkey,taco,425,broad,0.90,"taco:425 'Peru, congelado, assado'",,,claude-code,2026-11-02
+sl:ingredient:turkey,taco,426,broad,0.90,"taco:426 'Peru, congelado, cru'",,,claude-code,2026-11-02
+sl:part:pork_chop,taco,427,broad,0.90,"taco:427 'Porco, bisteca, crua'",,,claude-code,2026-11-02
+sl:part:pork_chop,taco,428,broad,0.90,"taco:428 'Porco, bisteca, frita'",,,claude-code,2026-11-02
+sl:part:pork_chop,taco,429,broad,0.90,"taco:429 'Porco, bisteca, grelhada'",,,claude-code,2026-11-02
+sl:part:pork_ribs,taco,430,broad,0.90,"taco:430 'Porco, costela, assada'",,,claude-code,2026-11-02
+sl:part:pork_ribs,taco,431,broad,0.90,"taco:431 'Porco, costela, crua'",,,claude-code,2026-11-02
+sl:part:pork_loin,taco,432,broad,0.90,"taco:432 'Porco, lombo, assado'",,,claude-code,2026-11-02
+sl:part:pork_loin,taco,433,broad,0.90,"taco:433 'Porco, lombo, cru'",,,claude-code,2026-11-02
+sl:part:pork_ear,taco,434,broad,0.90,"taco:434 'Porco, orelha, salgada, crua'",,,claude-code,2026-11-02
+sl:part:pork_leg,taco,435,broad,0.90,"taco:435 'Porco, pernil, assado'",,,claude-code,2026-11-02
+sl:part:pork_leg,taco,436,broad,0.90,"taco:436 'Porco, pernil, cru'",,,claude-code,2026-11-02
+sl:part:pork_tail,taco,437,broad,0.90,"taco:437 'Porco, rabo, salgado, cru'",,,claude-code,2026-11-02
+sl:ingredient:ham,taco,438,broad,0.90,"taco:438 'Presunto, com capa de gordura'",,,claude-code,2026-11-02
+sl:ingredient:ham,taco,439,broad,0.90,"taco:439 'Presunto, sem capa de gordura'",,,claude-code,2026-11-02
+sl:ingredient:quibe,taco,440,broad,0.90,"taco:440 'Quibe, assado'",,,claude-code,2026-11-02
+sl:ingredient:quibe,taco,441,broad,0.90,"taco:441 'Quibe, cru'",,,claude-code,2026-11-02
+sl:ingredient:quibe,taco,442,broad,0.90,"taco:442 'Quibe, frito'",,,claude-code,2026-11-02
+sl:ingredient:salami,taco,443,exact,0.90,taco:443 'Salame',,,claude-code,2026-11-02
+sl:ingredient:toucinho,taco,444,broad,0.90,"taco:444 'Toucinho, cru'",,,claude-code,2026-11-02
+sl:ingredient:toucinho,taco,445,broad,0.90,"taco:445 'Toucinho, frito'",,,claude-code,2026-11-02
+sl:ingredient:dairy_drink,taco,446,broad,0.85,"taco:446 'Bebida láctea, pêssego' — sabor pêssego",,,claude-code,2026-11-02
+sl:ingredient:cream,taco,447,broad,0.85,taco:447 'Creme de Leite' — teor de gordura não informado,,,claude-code,2026-11-02
+sl:form:yogurt_plain_whole,taco,448,exact,0.90,"taco:448 'Iogurte, natural'",,,claude-code,2026-11-02
+sl:form:yogurt_plain_skim,taco,449,exact,0.90,"taco:449 'Iogurte, natural, desnatado'",,,claude-code,2026-11-02
+sl:ingredient:condensed_milk,taco,453,exact,0.90,"taco:453 'Leite, condensado'",,,claude-code,2026-11-02
+sl:ingredient:goat_milk,taco,454,exact,0.90,"taco:454 'Leite, de cabra'",,,claude-code,2026-11-02
+sl:ingredient:chocolate_milk,taco,455,exact,0.90,"taco:455 'Leite, de vaca, achocolatado'",,,claude-code,2026-11-02
+sl:form:cow_milk_skim_powder,taco,456,exact,0.90,"taco:456 'Leite, de vaca, desnatado, pó'",,,claude-code,2026-11-02
+sl:form:cow_milk_skim_uht,taco,457,exact,0.90,"taco:457 'Leite, de vaca, desnatado, UHT'",,,claude-code,2026-11-02
+sl:form:cow_milk_whole,taco,458,exact,0.90,"taco:458 'Leite, de vaca, integral'",,,claude-code,2026-11-02
+sl:form:cow_milk_whole_powder,taco,459,exact,0.90,"taco:459 'Leite, de vaca, integral, pó'",,,claude-code,2026-11-02
+sl:ingredient:fermented_milk,taco,460,exact,0.90,"taco:460 'Leite, fermentado'",,,claude-code,2026-11-02
+sl:variant:cheese_minas_frescal,taco,461,exact,0.90,"taco:461 'Queijo, minas, frescal'",,,claude-code,2026-11-02
+sl:variant:cheese_minas_meia_cura,taco,462,exact,0.90,"taco:462 'Queijo, minas, meia cura'",,,claude-code,2026-11-02
+sl:variant:cheese_mozzarella,taco,463,exact,0.90,"taco:463 'Queijo, mozarela'",,,claude-code,2026-11-02
+sl:variant:cheese_parmesan,taco,464,exact,0.85,"taco:464 'Queijo, parmesão' — TACO não indica se ralado ou em peça",,,claude-code,2026-11-02
+sl:variant:cheese_processed,taco,465,close,0.85,"taco:465 'Queijo, pasteurizado'",,,claude-code,2026-11-02
+sl:variant:cheese_petit_suisse,taco,466,broad,0.90,"taco:466 'Queijo, petit suisse, morango' — sabor morango",,,claude-code,2026-11-02
+sl:variant:cheese_prato,taco,467,exact,0.90,"taco:467 'Queijo, prato'",,,claude-code,2026-11-02
+sl:form:cheese_requeijao_cremoso,taco,468,exact,0.90,"taco:468 'Queijo, requeijão, cremoso'",,,claude-code,2026-11-02
+sl:variant:cheese_ricotta,taco,469,exact,0.90,"taco:469 'Queijo, ricota'",,,claude-code,2026-11-02
+sl:ingredient:isotonic_drink,taco,470,broad,0.90,"taco:470 'Bebida isotônica, sabores variados'",,,claude-code,2026-11-02
+sl:form:coffee_brewed,taco,471,exact,0.90,"taco:471 'Café, infusão 10%'",,,claude-code,2026-11-02
+sl:ingredient:cachaca,taco,472,close,0.85,"taco:472 'Cana, aguardente 1' — aguardente de cana (cachaça é denominação específica)",,,claude-code,2026-11-02
+sl:ingredient:sugarcane_juice,taco,473,exact,0.90,"taco:473 'Cana, caldo de'",,,claude-code,2026-11-02
+sl:ingredient:beer,taco,474,broad,0.90,"taco:474 'Cerveja, pilsen 2'",,,claude-code,2026-11-02
+sl:ingredient:fennel_infusion,taco,475,exact,0.90,"taco:475 'Chá, erva-doce, infusão 5%'",,,claude-code,2026-11-02
+sl:ingredient:mate,taco,476,broad,0.90,"taco:476 'Chá, mate, infusão 5%'",,,claude-code,2026-11-02
+sl:form:black_tea_brewed,taco,477,exact,0.90,"taco:477 'Chá, preto, infusão 5%'",,,claude-code,2026-11-02
+sl:part:coconut_water,taco,478,exact,0.90,"taco:478 'Coco, água de'",,,claude-code,2026-11-02
+sl:variant:soft_drink_tonic,taco,479,exact,0.90,"taco:479 'Refrigerante, tipo água tônica'",,,claude-code,2026-11-02
+sl:variant:soft_drink_cola,taco,480,exact,0.90,"taco:480 'Refrigerante, tipo cola'",,,claude-code,2026-11-02
+sl:variant:soft_drink_guarana,taco,481,exact,0.90,"taco:481 'Refrigerante, tipo guaraná'",,,claude-code,2026-11-02
+sl:variant:soft_drink_orange,taco,482,exact,0.90,"taco:482 'Refrigerante, tipo laranja'",,,claude-code,2026-11-02
+sl:variant:soft_drink_lemon,taco,483,exact,0.90,"taco:483 'Refrigerante, tipo limão'",,,claude-code,2026-11-02
+sl:ingredient:cheese_omelet,taco,484,exact,0.90,"taco:484 'Omelete, de queijo'",,,claude-code,2026-11-02
+sl:ingredient:quail_egg,taco,485,broad,0.90,"taco:485 'Ovo, de codorna, inteiro, cru'",,,claude-code,2026-11-02
+sl:form:egg_white_boiled,taco,486,exact,0.90,"taco:486 'Ovo, de galinha, clara, cozida/10minutos'",,,claude-code,2026-11-02
+sl:form:egg_yolk_boiled,taco,487,exact,0.90,"taco:487 'Ovo, de galinha, gema, cozida/10minutos'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_boiled,taco,488,exact,0.90,"taco:488 'Ovo, de galinha, inteiro, cozido/10minutos'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_raw,taco,489,exact,0.90,"taco:489 'Ovo, de galinha, inteiro, cru'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_fried,taco,490,exact,0.90,"taco:490 'Ovo, de galinha, inteiro, frito'",,,claude-code,2026-11-02
+sl:ingredient:chocolate_drink_powder,taco,491,exact,0.90,"taco:491 'Achocolatado, pó'",,,claude-code,2026-11-02
+sl:form:sugar_crystal,taco,492,exact,0.90,"taco:492 'Açúcar, cristal'",,,claude-code,2026-11-02
+sl:form:sugar_brown_mascavo,taco,493,exact,0.90,"taco:493 'Açúcar, mascavo'",,,claude-code,2026-11-02
+sl:form:sugar_refined,taco,494,exact,0.90,"taco:494 'Açúcar, refinado'",,,claude-code,2026-11-02
+sl:variant:chocolate_milk_type,taco,495,exact,0.90,"taco:495 'Chocolate, ao leite'",,,claude-code,2026-11-02
+sl:variant:chocolate_milk_type,taco,496,broad,0.90,"taco:496 'Chocolate, ao leite, com castanha do Pará'",,,claude-code,2026-11-02
+sl:variant:chocolate_milk_type,taco,497,broad,0.90,"taco:497 'Chocolate, ao leite, dietético'",,,claude-code,2026-11-02
+sl:variant:chocolate_semisweet,taco,498,exact,0.90,"taco:498 'Chocolate, meio amargo'",,,claude-code,2026-11-02
+sl:ingredient:cocada,taco,499,exact,0.90,taco:499 'Cocada branca',,,claude-code,2026-11-02
+sl:ingredient:doce_abobora,taco,500,exact,0.90,"taco:500 'Doce, de abóbora, cremoso'",,,claude-code,2026-11-02
+sl:ingredient:doce_de_leite,taco,501,exact,0.90,"taco:501 'Doce, de leite, cremoso'",,,claude-code,2026-11-02
+sl:ingredient:mocoto_jelly,taco,502,exact,0.90,"taco:502 'Geléia, mocotó, natural'",,,claude-code,2026-11-02
+sl:ingredient:corn_syrup,taco,503,close,0.85,taco:503 'Glicose de milho',,,claude-code,2026-11-02
+sl:ingredient:maria_mole,taco,504,exact,0.90,taco:504 'Maria mole',,,claude-code,2026-11-02
+sl:ingredient:maria_mole,taco,505,broad,0.90,"taco:505 'Maria mole, coco queimado'",,,claude-code,2026-11-02
+sl:ingredient:marmelada,taco,506,exact,0.90,taco:506 'Marmelada',,,claude-code,2026-11-02
+sl:ingredient:honey,taco,507,exact,0.90,"taco:507 'Mel, de abelha'",,,claude-code,2026-11-02
+sl:ingredient:melado,taco,508,exact,0.90,taco:508 'Melado',,,claude-code,2026-11-02
+sl:ingredient:quindim,taco,509,exact,0.90,taco:509 'Quindim',,,claude-code,2026-11-02
+sl:ingredient:rapadura,taco,510,exact,0.90,taco:510 'Rapadura',,,claude-code,2026-11-02
+sl:form:coffee_ground_roasted,taco,511,exact,0.90,"taco:511 'Café, pó, torrado'",,,claude-code,2026-11-02
+sl:ingredient:cappuccino_mix,taco,512,exact,0.90,"taco:512 'Capuccino, pó'",,,claude-code,2026-11-02
+sl:ingredient:baking_powder,taco,513,exact,0.90,"taco:513 'Fermento em pó, químico'",,,claude-code,2026-11-02
+sl:ingredient:yeast,taco,514,broad,0.90,"taco:514 'Fermento, biológico, levedura, tablete'",,,claude-code,2026-11-02
+sl:ingredient:gelatin,taco,515,broad,0.90,"taco:515 'Gelatina, sabores variados, pó'",,,claude-code,2026-11-02
+sl:variant:salt_low_sodium,taco,516,exact,0.90,"taco:516 'Sal, dietético'",,,claude-code,2026-11-02
+sl:variant:salt_coarse,taco,517,exact,0.90,"taco:517 'Sal, grosso'",,,claude-code,2026-11-02
+sl:ingredient:soy_sauce,taco,518,exact,0.90,taco:518 'Shoyu',,,claude-code,2026-11-02
+sl:ingredient:salt_seasoning,taco,519,exact,0.90,taco:519 'Tempero a base de sal',,,claude-code,2026-11-02
+sl:variant:olive_table_black,taco,520,exact,0.90,"taco:520 'Azeitona, preta, conserva'",,,claude-code,2026-11-02
+sl:variant:olive_table_green,taco,521,exact,0.90,"taco:521 'Azeitona, verde, conserva'",,,claude-code,2026-11-02
+sl:ingredient:whipped_topping,taco,522,exact,0.90,"taco:522 'Chantilly, spray, com gordura vegetal'",,,claude-code,2026-11-02
+sl:ingredient:coconut_milk,taco,523,exact,0.90,"taco:523 'Leite, de coco'",,,claude-code,2026-11-02
+sl:ingredient:mayonnaise,taco,524,exact,0.90,"taco:524 'Maionese, tradicional com ovos'",,,claude-code,2026-11-02
+sl:ingredient:acaraje,taco,525,exact,0.90,taco:525 'Acarajé',,,claude-code,2026-11-02
+sl:ingredient:arroz_carreteiro,taco,526,exact,0.90,taco:526 'Arroz carreteiro',,,claude-code,2026-11-02
+sl:ingredient:baiao_de_dois,taco,527,exact,0.90,"taco:527 'Baião de dois, arroz e feijão-de-corda'",,,claude-code,2026-11-02
+sl:ingredient:barreado,taco,528,exact,0.90,taco:528 'Barreado',,,claude-code,2026-11-02
+sl:ingredient:bife_a_cavalo,taco,529,broad,0.90,"taco:529 'Bife à cavalo, com contra filé'",,,claude-code,2026-11-02
+sl:ingredient:rice_fritter,taco,530,exact,0.90,taco:530 'Bolinho de arroz',,,claude-code,2026-11-02
+sl:ingredient:camarao_baiana,taco,531,exact,0.90,taco:531 'Camarão à baiana',,,claude-code,2026-11-02
+sl:ingredient:cabbage_roll,taco,532,exact,0.90,"taco:532 'Charuto, de repolho'",,,claude-code,2026-11-02
+sl:ingredient:cuscuz_milho,taco,533,exact,0.90,"taco:533 'Cuscuz, de milho, cozido com sal'",,,claude-code,2026-11-02
+sl:ingredient:cuscuz_paulista,taco,534,exact,0.90,"taco:534 'Cuscuz, paulista'",,,claude-code,2026-11-02
+sl:ingredient:cuxa,taco,535,exact,0.90,"taco:535 'Cuxá, molho'",,,claude-code,2026-11-02
+sl:ingredient:dobradinha,taco,536,exact,0.90,taco:536 'Dobradinha',,,claude-code,2026-11-02
+sl:ingredient:strogonoff_carne,taco,537,exact,0.90,taco:537 'Estrogonofe de carne',,,claude-code,2026-11-02
+sl:ingredient:strogonoff_frango,taco,538,exact,0.90,taco:538 'Estrogonofe de frango',,,claude-code,2026-11-02
+sl:ingredient:feijao_tropeiro,taco,539,exact,0.90,taco:539 'Feijão tropeiro mineiro',,,claude-code,2026-11-02
+sl:ingredient:feijoada,taco,540,exact,0.90,taco:540 'Feijoada',,,claude-code,2026-11-02
+sl:ingredient:frango_acafrao,taco,541,exact,0.90,"taco:541 'Frango, com açafrão'",,,claude-code,2026-11-02
+sl:ingredient:pasta_bolognese,taco,542,exact,0.90,"taco:542 'Macarrão, molho bolognesa'",,,claude-code,2026-11-02
+sl:ingredient:manicoba,taco,543,exact,0.90,taco:543 'Maniçoba',,,claude-code,2026-11-02
+sl:ingredient:quibebe,taco,544,exact,0.90,taco:544 'Quibebe',,,claude-code,2026-11-02
+sl:ingredient:vegetable_salad_mayo,taco,545,exact,0.90,"taco:545 'Salada, de legumes, com maionese'",,,claude-code,2026-11-02
+sl:ingredient:vegetable_salad_steamed,taco,546,exact,0.90,"taco:546 'Salada, de legumes, cozida no vapor'",,,claude-code,2026-11-02
+sl:ingredient:salpicao,taco,547,exact,0.90,"taco:547 'Salpicão, de frango'",,,claude-code,2026-11-02
+sl:ingredient:sarapatel,taco,548,exact,0.90,taco:548 'Sarapatel',,,claude-code,2026-11-02
+sl:ingredient:tabbouleh,taco,549,exact,0.90,taco:549 'Tabule',,,claude-code,2026-11-02
+sl:ingredient:tacaca,taco,550,exact,0.90,taco:550 'Tacacá',,,claude-code,2026-11-02
+sl:ingredient:tapioca_crepe,taco,551,broad,0.90,"taco:551 'Tapioca, com manteiga'",,,claude-code,2026-11-02
+sl:ingredient:tucupi,taco,552,broad,0.90,"taco:552 'Tucupi, com pimenta-de-cheiro'",,,claude-code,2026-11-02
+sl:ingredient:vaca_atolada,taco,553,exact,0.90,taco:553 'Vaca atolada',,,claude-code,2026-11-02
+sl:ingredient:vatapa,taco,554,exact,0.90,taco:554 'Vatapá',,,claude-code,2026-11-02
+sl:ingredient:virado_paulista,taco,555,exact,0.90,taco:555 'Virado à paulista',,,claude-code,2026-11-02
+sl:ingredient:yakisoba,taco,556,exact,0.90,taco:556 'Yakisoba',,,claude-code,2026-11-02
+sl:form:peanut_raw,taco,557,exact,0.90,"taco:557 'Amendoim, grão, cru'",,,claude-code,2026-11-02
+sl:form:peanut_roasted_salted,taco,558,exact,0.90,"taco:558 'Amendoim, torrado, salgado'",,,claude-code,2026-11-02
+sl:part:pea_pod,taco,559,close,0.80,"taco:559 'Ervilha, em vagem' — TACO não detalha se é ervilha-torta",,,claude-code,2026-11-02
+sl:form:pea_green_canned,taco,560,exact,0.90,"taco:560 'Ervilha, enlatada, drenada'",,,claude-code,2026-11-02
+sl:form:common_bean_carioca_cooked,taco,561,exact,0.90,"taco:561 'Feijão, carioca, cozido'",,,claude-code,2026-11-02
+sl:form:common_bean_carioca_raw,taco,562,exact,0.90,"taco:562 'Feijão, carioca, cru'",,,claude-code,2026-11-02
+sl:form:cowpea_blackeyed_cooked,taco,563,exact,0.90,"taco:563 'Feijão, fradinho, cozido'",,,claude-code,2026-11-02
+sl:form:cowpea_blackeyed_raw,taco,564,exact,0.90,"taco:564 'Feijão, fradinho, cru'",,,claude-code,2026-11-02
+sl:form:common_bean_jalo_cooked,taco,565,exact,0.90,"taco:565 'Feijão, jalo, cozido'",,,claude-code,2026-11-02
+sl:form:common_bean_jalo_raw,taco,566,exact,0.90,"taco:566 'Feijão, jalo, cru'",,,claude-code,2026-11-02
+sl:form:common_bean_black_cooked,taco,567,exact,0.90,"taco:567 'Feijão, preto, cozido'",,,claude-code,2026-11-02
+sl:form:common_bean_black_raw,taco,568,exact,0.90,"taco:568 'Feijão, preto, cru'",,,claude-code,2026-11-02
+sl:form:common_bean_rajado_cooked,taco,569,exact,0.90,"taco:569 'Feijão, rajado, cozido'",,,claude-code,2026-11-02
+sl:form:common_bean_rajado_raw,taco,570,exact,0.90,"taco:570 'Feijão, rajado, cru'",,,claude-code,2026-11-02
+sl:form:common_bean_rosinha_cooked,taco,571,exact,0.90,"taco:571 'Feijão, rosinha, cozido'",,,claude-code,2026-11-02
+sl:form:common_bean_rosinha_raw,taco,572,exact,0.90,"taco:572 'Feijão, rosinha, cru'",,,claude-code,2026-11-02
+sl:form:common_bean_roxo_cooked,taco,573,exact,0.90,"taco:573 'Feijão, roxo, cozido'",,,claude-code,2026-11-02
+sl:form:common_bean_roxo_raw,taco,574,exact,0.90,"taco:574 'Feijão, roxo, cru'",,,claude-code,2026-11-02
+sl:form:chickpea_raw,taco,575,exact,0.90,"taco:575 'Grão-de-bico, cru'",,,claude-code,2026-11-02
+sl:ingredient:pigeon_pea,taco,576,broad,0.90,"taco:576 'Guandu, cru'",,,claude-code,2026-11-02
+sl:form:lentil_cooked,taco,577,exact,0.90,"taco:577 'Lentilha, cozida'",,,claude-code,2026-11-02
+sl:form:lentil_raw,taco,578,exact,0.90,"taco:578 'Lentilha, crua'",,,claude-code,2026-11-02
+sl:ingredient:pacoca,taco,579,exact,0.90,"taco:579 'Paçoca, amendoim'",,,claude-code,2026-11-02
+sl:ingredient:pe_de_moleque,taco,580,exact,0.90,"taco:580 'Pé-de-moleque, amendoim'",,,claude-code,2026-11-02
+sl:ingredient:soy_flour,taco,581,exact,0.90,"taco:581 'Soja, farinha'",,,claude-code,2026-11-02
+sl:ingredient:soy_beverage,taco,582,exact,0.90,"taco:582 'Soja, extrato solúvel, natural, fluido'",,,claude-code,2026-11-02
+sl:ingredient:soy_beverage,taco,583,broad,0.85,"taco:583 'Soja, extrato solúvel, pó' — em pó",,,claude-code,2026-11-02
+sl:ingredient:tofu,taco,584,exact,0.90,"taco:584 'Soja, queijo (tofu)'",,,claude-code,2026-11-02
+sl:form:lupin_raw,taco,585,exact,0.90,"taco:585 'Tremoço, cru'",,,claude-code,2026-11-02
+sl:form:lupin_brined,taco,586,exact,0.90,"taco:586 'Tremoço, em conserva'",,,claude-code,2026-11-02
+sl:ingredient:almond,taco,587,broad,0.90,"taco:587 'Amêndoa, torrada, salgada'",,,claude-code,2026-11-02
+sl:ingredient:cashew_nut,taco,588,broad,0.90,"taco:588 'Castanha-de-caju, torrada, salgada'",,,claude-code,2026-11-02
+sl:ingredient:brazil_nut,taco,589,exact,0.90,"taco:589 'Castanha-do-Brasil, crua'",,,claude-code,2026-11-02
+sl:form:coconut_meat_raw,taco,590,exact,0.90,"taco:590 'Coco, cru'",,,claude-code,2026-11-02
+sl:form:coconut_green_raw,taco,591,exact,0.90,"taco:591 'Coco,  verde, cru'",,,claude-code,2026-11-02
+sl:ingredient:babassu,taco,592,related,0.60,"taco:592 'Farinha, de mesocarpo de babaçu, crua' — farinha do mesocarpo",,,claude-code,2026-11-02
+sl:ingredient:sesame,taco,593,exact,0.90,"taco:593 'Gergelim, semente'",,,claude-code,2026-11-02
+sl:ingredient:flaxseed,taco,594,exact,0.90,"taco:594 'Linhaça, semente'",,,claude-code,2026-11-02
+sl:ingredient:pinhao,taco,595,exact,0.90,"taco:595 'Pinhão, cozido'",,,claude-code,2026-11-02
+sl:ingredient:pupunha_fruit,taco,596,broad,0.90,"taco:596 'Pupunha, cozida'",,,claude-code,2026-11-02
+sl:ingredient:walnut,taco,597,exact,0.90,"taco:597 'Noz, crua'",,,claude-code,2026-11-02
+sl:ingredient:lemon,usda,167746,broad,0.90,"usda:167746 'Lemons, raw, without peel'",,,claude-code,2026-11-02
+sl:ingredient:strawberry,usda,167762,exact,0.90,"usda:167762 'Strawberries, raw'",,,claude-code,2026-11-02
+sl:ingredient:tamarind,usda,167763,exact,0.90,"usda:167763 'Tamarinds, raw'",,,claude-code,2026-11-02
+sl:ingredient:watermelon,usda,167765,exact,0.90,"usda:167765 'Watermelon, raw'",,,claude-code,2026-11-02
+sl:variant:pear_williams,usda,167776,broad,0.90,"usda:167776 'Pears, raw, bartlett (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:variant:apple_fuji,usda,167793,broad,0.90,"usda:167793 'Apples, raw, fuji, with skin (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:ingredient:kiwi,usda,168153,broad,0.90,"usda:168153 'Kiwifruit, green, raw'",,,claude-code,2026-11-02
+sl:ingredient:tahiti_lime,usda,168155,close,0.75,"usda:168155 'Limes, raw' — USDA ""Limes"" não especifica; tahiti é a lima mais comum nos EUA",,,claude-code,2026-11-02
+sl:variant:apple_red_delicious,usda,168201,broad,0.90,"usda:168201 'Apples, raw, red delicious, with skin (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:variant:apple_golden_delicious,usda,168202,broad,0.90,"usda:168202 'Apples, raw, golden delicious, with skin'",,,claude-code,2026-11-02
+sl:variant:apple_granny_smith,usda,168203,broad,0.90,"usda:168203 'Apples, raw, granny smith, with skin (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:variant:apple_gala,usda,168204,broad,0.90,"usda:168204 'Apples, raw, gala, with skin (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:variant:banana_plantain,usda,168215,broad,0.90,"usda:168215 'Plantains, green, raw'",,,claude-code,2026-11-02
+sl:part:cowpea_leaf,usda,168406,broad,0.90,"usda:168406 'Cowpeas, leafy tips, cooked, boiled, drained, without salt'",,,claude-code,2026-11-02
+sl:form:lentil_sprouts_raw,usda,168427,exact,0.90,"usda:168427 'Lentils, sprouted, raw'",,,claude-code,2026-11-02
+sl:form:corn_sweet_white_raw,usda,168538,exact,0.90,"usda:168538 'Corn, sweet, white, raw'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_raw,usda,168877,broad,0.90,"usda:168877 'Rice, white, long-grain, regular, raw, enriched' — enriquecido/não enriquecido distingue produtos",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_cooked,usda,168878,broad,0.90,"usda:168878 'Rice, white, long-grain, regular, enriched, cooked'",,,claude-code,2026-11-02
+sl:form:rice_medium_grain_white_raw,usda,168879,broad,0.90,"usda:168879 'Rice, white, medium-grain, raw, enriched'",,,claude-code,2026-11-02
+sl:form:rice_medium_grain_white_cooked,usda,168880,broad,0.90,"usda:168880 'Rice, white, medium-grain, enriched, cooked'",,,claude-code,2026-11-02
+sl:form:rice_short_grain_white_raw,usda,168881,broad,0.90,"usda:168881 'Rice, white, short-grain, enriched, uncooked'",,,claude-code,2026-11-02
+sl:form:rice_short_grain_white_cooked,usda,168882,broad,0.90,"usda:168882 'Rice, white, short-grain, enriched, cooked'",,,claude-code,2026-11-02
+sl:form:rice_glutinous_raw,usda,168883,exact,0.90,"usda:168883 'Rice, white, glutinous, unenriched, uncooked'",,,claude-code,2026-11-02
+sl:form:wild_rice_cooked,usda,168897,exact,0.90,"usda:168897 'Wild rice, cooked'",,,claude-code,2026-11-02
+sl:form:rice_flour_brown,usda,168898,exact,0.90,"usda:168898 'Rice flour, brown'",,,claude-code,2026-11-02
+sl:form:rice_noodles_cooked,usda,168914,exact,0.90,"usda:168914 'Rice noodles, cooked'",,,claude-code,2026-11-02
+sl:form:corn_grain_white,usda,168920,exact,0.90,"usda:168920 'Corn grain, white'",,,claude-code,2026-11-02
+sl:variant:corn_blue,usda,168921,related,0.60,"usda:168921 'Corn flour, whole-grain, blue (harina de maiz morado)' — farinha integral de milho azul",,,claude-code,2026-11-02
+sl:form:cornmeal_white_degermed,usda,168922,broad,0.90,"usda:168922 'Cornmeal, degermed, enriched, white'",,,claude-code,2026-11-02
+sl:form:cornmeal_yellow_degermed,usda,168929,broad,0.90,"usda:168929 'Cornmeal, degermed, unenriched, yellow'",,,claude-code,2026-11-02
+sl:form:rice_medium_grain_white_cooked,usda,168930,broad,0.90,"usda:168930 'Rice, white, medium-grain, cooked, unenriched'",,,claude-code,2026-11-02
+sl:form:rice_short_grain_white_raw,usda,168931,broad,0.90,"usda:168931 'Rice, white, short-grain, raw, unenriched'",,,claude-code,2026-11-02
+sl:form:rice_short_grain_white_cooked,usda,168932,broad,0.90,"usda:168932 'Rice, white, short-grain, cooked, unenriched'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_cooked,usda,168935,broad,0.90,"usda:168935 'Rice, white, long-grain, regular, cooked, unenriched, with salt'",,,claude-code,2026-11-02
+sl:ingredient:orange,usda,169097,broad,0.90,"usda:169097 'Oranges, raw, all commercial varieties' — all commercial varieties",,,claude-code,2026-11-02
+sl:ingredient:orange_juice,usda,169098,exact,0.90,"usda:169098 'Orange juice, raw (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:ingredient:tangerine,usda,169105,broad,0.90,"usda:169105 'Tangerines, (mandarin oranges), raw'",,,claude-code,2026-11-02
+sl:ingredient:pear,usda,169118,exact,0.90,"usda:169118 'Pears, raw'",,,claude-code,2026-11-02
+sl:ingredient:pineapple,usda,169124,broad,0.90,"usda:169124 'Pineapple, raw, all varieties'",,,claude-code,2026-11-02
+sl:variant:banana_plantain,usda,169130,broad,0.90,"usda:169130 'Plantains, yellow, raw'",,,claude-code,2026-11-02
+sl:ingredient:pomegranate,usda,169134,exact,0.90,"usda:169134 'Pomegranates, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_cooked,usda,169141,broad,0.90,"usda:169141 'Beans, snap, green, cooked, boiled, drained, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_canned,usda,169142,broad,0.90,"usda:169142 'Beans, snap, green, canned, regular pack, solids and liquids'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_canned,usda,169143,broad,0.90,"usda:169143 'Beans, snap, green, canned, regular pack, drained solids'",,,claude-code,2026-11-02
+sl:form:corn_sweet_yellow_canned,usda,169214,broad,0.90,"usda:169214 'Corn, sweet, yellow, canned, whole kernel, drained solids'",,,claude-code,2026-11-02
+sl:form:corn_sweet_cream_style,usda,169215,broad,0.90,"usda:169215 'Corn, sweet, yellow, canned, cream style, regular pack'",,,claude-code,2026-11-02
+sl:variant:cowpea_yardlong,usda,169222,broad,0.90,"usda:169222 'Yardlong bean, raw'",,,claude-code,2026-11-02
+sl:variant:cowpea_yardlong,usda,169223,broad,0.90,"usda:169223 'Yardlong bean, cooked, boiled, drained, without salt'",,,claude-code,2026-11-02
+sl:part:cowpea_leaf,usda,169224,broad,0.90,"usda:169224 'Cowpeas, leafy tips, raw'",,,claude-code,2026-11-02
+sl:ingredient:garlic,usda,169230,exact,0.90,"usda:169230 'Garlic, raw'",,,claude-code,2026-11-02
+sl:ingredient:ginger,usda,169231,broad,0.85,"usda:169231 'Ginger root, raw'",,,claude-code,2026-11-02
+sl:variant:mushroom_white,usda,169251,close,0.85,"usda:169251 'Mushrooms, white, raw' — USDA ""Mushrooms, white, raw""",,,claude-code,2026-11-02
+sl:form:soybean_green_raw,usda,169282,exact,0.90,"usda:169282 'Soybeans, green, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_cooked,usda,169321,broad,0.90,"usda:169321 'Beans, snap, green, cooked, boiled, drained, with salt'",,,claude-code,2026-11-02
+sl:ingredient:cocoa_powder,usda,169593,broad,0.90,"usda:169593 'Cocoa, dry powder, unsweetened'",,,claude-code,2026-11-02
+sl:ingredient:honey,usda,169640,exact,0.90,usda:169640 'Honey',,,claude-code,2026-11-02
+sl:form:sugar_refined,usda,169655,close,0.85,"usda:169655 'Sugars, granulated'",,,claude-code,2026-11-02
+sl:ingredient:corn_flour,usda,169695,broad,0.85,"usda:169695 'Corn flour, yellow, degermed, unenriched'",,,claude-code,2026-11-02
+sl:ingredient:masa_harina,usda,169696,broad,0.90,"usda:169696 'Corn flour, masa, unenriched, white'",,,claude-code,2026-11-02
+sl:form:cornmeal_whole_yellow,usda,169697,exact,0.90,"usda:169697 'Cornmeal, whole-grain, yellow'",,,claude-code,2026-11-02
+sl:ingredient:corn_starch,usda,169698,exact,0.90,usda:169698 'Cornstarch',,,claude-code,2026-11-02
+sl:ingredient:hominy,usda,169701,broad,0.90,"usda:169701 'Hominy, canned, white'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_brown_raw,usda,169703,exact,0.90,"usda:169703 'Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_brown_cooked,usda,169704,exact,0.90,"usda:169704 'Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:form:rice_medium_grain_brown_raw,usda,169706,exact,0.90,"usda:169706 'Rice, brown, medium-grain, raw (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_parboiled_raw,usda,169707,broad,0.90,"usda:169707 'Rice, white, long-grain, parboiled, enriched, dry'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_parboiled_cooked,usda,169708,broad,0.90,"usda:169708 'Rice, white, long-grain, parboiled, enriched, cooked'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_instant_dry,usda,169709,exact,0.90,"usda:169709 'Rice, white, long-grain, precooked or instant, enriched, dry'",,,claude-code,2026-11-02
+sl:form:rice_glutinous_cooked,usda,169711,exact,0.90,"usda:169711 'Rice, white, glutinous, unenriched, cooked'",,,claude-code,2026-11-02
+sl:ingredient:rice_bran,usda,169713,close,0.90,"usda:169713 'Rice bran, crude' — crude",,,claude-code,2026-11-02
+sl:form:rice_flour_white,usda,169714,close,0.90,"usda:169714 'Rice flour, white, unenriched'",,,claude-code,2026-11-02
+sl:form:wild_rice_raw,usda,169726,exact,0.90,"usda:169726 'Wild rice, raw'",,,claude-code,2026-11-02
+sl:form:rice_noodles_dry,usda,169742,exact,0.90,"usda:169742 'Rice noodles, dry'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_cooked,usda,169753,broad,0.90,"usda:169753 'Rice, white, long-grain, regular, cooked, enriched, with salt'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_raw,usda,169756,broad,0.90,"usda:169756 'Rice, white, long-grain, regular, raw, unenriched' — enriquecido/não enriquecido distingue produtos",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_cooked,usda,169757,broad,0.90,"usda:169757 'Rice, white, long-grain, regular, unenriched, cooked without salt'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_parboiled_raw,usda,169758,broad,0.90,"usda:169758 'Rice, white, long-grain, parboiled, unenriched, dry'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_parboiled_cooked,usda,169759,broad,0.90,"usda:169759 'Rice, white, long-grain, parboiled, unenriched, cooked'",,,claude-code,2026-11-02
+sl:form:rice_medium_grain_white_raw,usda,169760,broad,0.90,"usda:169760 'Rice, white, medium-grain, raw, unenriched'",,,claude-code,2026-11-02
+sl:ingredient:mango,usda,169910,exact,0.90,"usda:169910 'Mangos, raw'",,,claude-code,2026-11-02
+sl:variant:orange_valencia,usda,169916,broad,0.90,"usda:169916 'Oranges, raw, California, valencias'",,,claude-code,2026-11-02
+sl:variant:orange_baia,usda,169917,broad,0.90,"usda:169917 'Oranges, raw, navels (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:ingredient:papaya,usda,169926,exact,0.90,"usda:169926 'Papayas, raw'",,,claude-code,2026-11-02
+sl:ingredient:peach,usda,169928,broad,0.90,"usda:169928 'Peaches, yellow, raw'",,,claude-code,2026-11-02
+sl:ingredient:plum,usda,169949,exact,0.90,"usda:169949 'Plums, raw'",,,claude-code,2026-11-02
+sl:form:mung_sprouts_raw,usda,169957,exact,0.90,"usda:169957 'Mung beans, mature seeds, sprouted, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_raw,usda,169961,exact,0.90,"usda:169961 'Beans, snap, green, raw'",,,claude-code,2026-11-02
+sl:part:coriander_leaf,usda,169997,broad,0.90,"usda:169997 'Coriander (cilantro) leaves, raw'",,,claude-code,2026-11-02
+sl:form:corn_sweet_yellow_raw,usda,169998,exact,0.90,"usda:169998 'Corn, sweet, yellow, raw'",,,claude-code,2026-11-02
+sl:form:corn_sweet_yellow_cooked,usda,169999,exact,0.90,"usda:169999 'Corn, sweet, yellow, cooked, boiled, drained, without salt'",,,claude-code,2026-11-02
+sl:ingredient:onion,usda,170000,exact,0.90,"usda:170000 'Onions, raw'",,,claude-code,2026-11-02
+sl:part:pea_pod,usda,170010,broad,0.90,"usda:170010 'Peas, edible-podded, raw'",,,claude-code,2026-11-02
+sl:form:pea_green_canned,usda,170013,broad,0.90,"usda:170013 'Peas, green (includes baby and lesuer types), canned, drained solids, unprepared'",,,claude-code,2026-11-02
+sl:form:pea_green_frozen,usda,170016,broad,0.90,"usda:170016 'Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:form:potato_raw,usda,170026,broad,0.85,"usda:170026 'Potatoes, flesh and skin, raw' — com casca",,,claude-code,2026-11-02
+sl:ingredient:chili_pepper,usda,170106,broad,0.80,"usda:170106 'Peppers, hot chili, red, raw'",,,claude-code,2026-11-02
+sl:ingredient:sesame,usda,170150,broad,0.90,"usda:170150 'Seeds, sesame seeds, whole, dried'",,,claude-code,2026-11-02
+sl:ingredient:cashew_nut,usda,170162,broad,0.90,"usda:170162 'Nuts, cashew nuts, raw'",,,claude-code,2026-11-02
+sl:ingredient:walnut,usda,170187,broad,0.90,"usda:170187 'Nuts, walnuts, english'",,,claude-code,2026-11-02
+sl:variant:chocolate_semisweet,usda,170273,close,0.75,"usda:170273 'Chocolate, dark, 70-85% cacao solids'",,,claude-code,2026-11-02
+sl:form:corn_grain_yellow,usda,170288,exact,0.90,"usda:170288 'Corn grain, yellow'",,,claude-code,2026-11-02
+sl:ingredient:fava_bean,usda,170377,broad,0.90,"usda:170377 'Broadbeans, immature seeds, raw'",,,claude-code,2026-11-02
+sl:ingredient:carrot,usda,170393,exact,0.90,"usda:170393 'Carrots, raw'",,,claude-code,2026-11-02
+sl:ingredient:parsley,usda,170416,broad,0.90,"usda:170416 'Parsley, fresh'",,,claude-code,2026-11-02
+sl:form:pea_green_raw,usda,170419,exact,0.90,"usda:170419 'Peas, green, raw'",,,claude-code,2026-11-02
+sl:ingredient:tomato,usda,170457,broad,0.90,"usda:170457 'Tomatoes, red, ripe, raw, year round average'",,,claude-code,2026-11-02
+sl:ingredient:almond,usda,170567,broad,0.90,"usda:170567 'Nuts, almonds'",,,claude-code,2026-11-02
+sl:variant:cheese_fontina,usda,170843,exact,0.90,"usda:170843 'Cheese, fontina'",,,claude-code,2026-11-02
+sl:variant:cheese_monterey_jack,usda,170844,exact,0.90,"usda:170844 'Cheese, monterey'",,,claude-code,2026-11-02
+sl:form:cheese_mozzarella_whole_milk,usda,170845,exact,0.90,"usda:170845 'Cheese, mozzarella, whole milk'",,,claude-code,2026-11-02
+sl:form:cheese_parmesan_whole,usda,170848,exact,0.90,"usda:170848 'Cheese, parmesan, hard'",,,claude-code,2026-11-02
+sl:variant:cheese_port_salut,usda,170849,exact,0.90,"usda:170849 'Cheese, port de salut'",,,claude-code,2026-11-02
+sl:variant:cheese_provolone,usda,170850,exact,0.90,"usda:170850 'Cheese, provolone'",,,claude-code,2026-11-02
+sl:form:cheese_ricotta_whole_milk,usda,170851,exact,0.90,"usda:170851 'Cheese, ricotta, whole milk'",,,claude-code,2026-11-02
+sl:variant:cheese_tilsit,usda,170852,exact,0.90,"usda:170852 'Cheese, tilsit'",,,claude-code,2026-11-02
+sl:variant:cheese_processed,usda,170853,broad,0.85,"usda:170853 'Cheese, pasteurized process, American, fortified with vitamin D' — American fortificado com vitamina D",,,claude-code,2026-11-02
+sl:ingredient:cream,usda,170859,broad,0.90,"usda:170859 'Cream, fluid, heavy whipping'",,,claude-code,2026-11-02
+sl:form:cow_milk_lowfat,usda,170872,broad,0.90,"usda:170872 'Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D'",,,claude-code,2026-11-02
+sl:ingredient:buttermilk,usda,170874,broad,0.90,"usda:170874 'Milk, buttermilk, fluid, cultured, lowfat'",,,claude-code,2026-11-02
+sl:form:cow_milk_whole_powder,usda,170876,broad,0.90,"usda:170876 'Milk, dry, whole, with added vitamin D'",,,claude-code,2026-11-02
+sl:ingredient:sheep_milk,usda,170882,exact,0.90,"usda:170882 'Milk, sheep, fluid'",,,claude-code,2026-11-02
+sl:form:yogurt_plain_skim,usda,170887,close,0.85,"usda:170887 'Yogurt, plain, skim milk'",,,claude-code,2026-11-02
+sl:form:yogurt_greek_plain,usda,170894,broad,0.90,"usda:170894 'Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:variant:cheese_cotija,usda,170898,exact,0.90,"usda:170898 'Cheese, mexican, queso cotija'",,,claude-code,2026-11-02
+sl:form:cheese_cheddar_sliced,usda,170899,broad,0.90,"usda:170899 'Cheese, cheddar, sharp, sliced'",,,claude-code,2026-11-02
+sl:form:cheese_mozzarella_shredded,usda,170900,broad,0.90,"usda:170900 'Cheese, mozzarella, low moisture, part-skim, shredded'",,,claude-code,2026-11-02
+sl:ingredient:kefir,usda,170904,broad,0.90,"usda:170904 'Kefir, lowfat, plain, LIFEWAY'",,,claude-code,2026-11-02
+sl:ingredient:bay_leaf,usda,170917,broad,0.90,"usda:170917 'Spices, bay leaf'",,,claude-code,2026-11-02
+sl:ingredient:cardamom,usda,170919,broad,0.85,"usda:170919 'Spices, cardamom'",,,claude-code,2026-11-02
+sl:part:coriander_seed,usda,170922,broad,0.90,"usda:170922 'Spices, coriander seed'",,,claude-code,2026-11-02
+sl:ingredient:cumin,usda,170923,broad,0.85,"usda:170923 'Spices, cumin seed'",,,claude-code,2026-11-02
+sl:ingredient:mustard_seed,usda,170929,broad,0.85,"usda:170929 'Spices, mustard seed, ground'",,,claude-code,2026-11-02
+sl:ingredient:black_pepper,usda,170931,broad,0.85,"usda:170931 'Spices, pepper, black'",,,claude-code,2026-11-02
+sl:ingredient:cayenne,usda,170932,broad,0.85,"usda:170932 'Spices, pepper, red or cayenne'",,,claude-code,2026-11-02
+sl:ingredient:saffron,usda,170934,broad,0.85,"usda:170934 'Spices, saffron'",,,claude-code,2026-11-02
+sl:form:chicken_breast_skinless_raw,usda,171077,broad,0.90,"usda:171077 'Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw'",,,claude-code,2026-11-02
+sl:variant:cheese_gjetost,usda,171240,exact,0.90,"usda:171240 'Cheese, gjetost'",,,claude-code,2026-11-02
+sl:variant:cheese_gouda,usda,171241,exact,0.90,"usda:171241 'Cheese, gouda'",,,claude-code,2026-11-02
+sl:variant:cheese_gruyere,usda,171242,exact,0.90,"usda:171242 'Cheese, gruyere'",,,claude-code,2026-11-02
+sl:variant:cheese_limburger,usda,171243,exact,0.90,"usda:171243 'Cheese, limburger'",,,claude-code,2026-11-02
+sl:form:cheese_mozzarella_low_moisture_part_skim,usda,171244,exact,0.90,"usda:171244 'Cheese, mozzarella, low moisture, part-skim'",,,claude-code,2026-11-02
+sl:variant:cheese_muenster,usda,171245,exact,0.90,"usda:171245 'Cheese, muenster'",,,claude-code,2026-11-02
+sl:variant:cheese_neufchatel,usda,171246,exact,0.90,"usda:171246 'Cheese, neufchatel'",,,claude-code,2026-11-02
+sl:form:cheese_parmesan_grated,usda,171247,broad,0.90,"usda:171247 'Cheese, parmesan, grated'",,,claude-code,2026-11-02
+sl:form:cheese_ricotta_part_skim,usda,171248,exact,0.90,"usda:171248 'Cheese, ricotta, part skim milk'",,,claude-code,2026-11-02
+sl:variant:cheese_romano,usda,171249,exact,0.90,"usda:171249 'Cheese, romano'",,,claude-code,2026-11-02
+sl:variant:cheese_roquefort,usda,171250,exact,0.90,"usda:171250 'Cheese, roquefort'",,,claude-code,2026-11-02
+sl:variant:cheese_swiss,usda,171251,exact,0.90,"usda:171251 'Cheese, swiss'",,,claude-code,2026-11-02
+sl:ingredient:sour_cream,usda,171257,exact,0.90,"usda:171257 'Cream, sour, cultured'",,,claude-code,2026-11-02
+sl:form:cow_milk_whole,usda,171265,broad,0.90,"usda:171265 'Milk, whole, 3.25% milkfat, with added vitamin D'",,,claude-code,2026-11-02
+sl:form:cow_milk_reduced_fat,usda,171267,broad,0.90,"usda:171267 'Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D'",,,claude-code,2026-11-02
+sl:form:cow_milk_skim,usda,171269,broad,0.90,"usda:171269 'Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)'",,,claude-code,2026-11-02
+sl:ingredient:condensed_milk,usda,171275,exact,0.90,"usda:171275 'Milk, canned, condensed, sweetened'",,,claude-code,2026-11-02
+sl:ingredient:goat_milk,usda,171278,broad,0.90,"usda:171278 'Milk, goat, fluid, with added vitamin D'",,,claude-code,2026-11-02
+sl:form:yogurt_plain_whole,usda,171284,exact,0.90,"usda:171284 'Yogurt, plain, whole milk'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_raw,usda,171287,exact,0.90,"usda:171287 'Egg, whole, raw, fresh'",,,claude-code,2026-11-02
+sl:ingredient:anise,usda,171316,broad,0.85,"usda:171316 'Spices, anise seed'",,,claude-code,2026-11-02
+sl:ingredient:cinnamon,usda,171320,broad,0.85,"usda:171320 'Spices, cinnamon, ground'",,,claude-code,2026-11-02
+sl:ingredient:clove,usda,171321,broad,0.85,"usda:171321 'Spices, cloves, ground'",,,claude-code,2026-11-02
+sl:ingredient:fennel,usda,171323,broad,0.85,"usda:171323 'Spices, fennel seed'",,,claude-code,2026-11-02
+sl:ingredient:nutmeg,usda,171326,broad,0.85,"usda:171326 'Spices, nutmeg, ground'",,,claude-code,2026-11-02
+sl:ingredient:oregano,usda,171328,broad,0.90,"usda:171328 'Spices, oregano, dried'",,,claude-code,2026-11-02
+sl:ingredient:paprika,usda,171329,broad,0.85,"usda:171329 'Spices, paprika'",,,claude-code,2026-11-02
+sl:ingredient:soybean_oil,usda,171411,broad,0.90,"usda:171411 'Oil, soybean, salad or cooking'",,,claude-code,2026-11-02
+sl:ingredient:olive_oil,usda,171413,broad,0.90,"usda:171413 'Oil, olive, salad or cooking'",,,claude-code,2026-11-02
+sl:ingredient:acerola,usda,171686,exact,0.90,"usda:171686 'Acerola, (west indian cherry), raw'",,,claude-code,2026-11-02
+sl:ingredient:apple,usda,171688,broad,0.90,"usda:171688 'Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:ingredient:avocado,usda,171705,broad,0.90,"usda:171705 'Avocados, raw, all commercial varieties'",,,claude-code,2026-11-02
+sl:form:coffee_brewed,usda,171890,broad,0.90,"usda:171890 'Beverages, coffee, brewed, prepared with tap water'",,,claude-code,2026-11-02
+sl:ingredient:striped_bass,usda,171948,broad,0.90,"usda:171948 'Fish, bass, striped, raw'",,,claude-code,2026-11-02
+sl:form:atlantic_cod_raw,usda,171955,broad,0.90,"usda:171955 'Fish, cod, Atlantic, raw'",,,claude-code,2026-11-02
+sl:form:chinook_salmon_lox,usda,171985,exact,0.90,"usda:171985 'Fish, salmon, chinook, smoked, (lox), regular'",,,claude-code,2026-11-02
+sl:form:tuna_light_canned_water,usda,171986,broad,0.90,"usda:171986 'Fish, tuna, light, canned in water, without salt, drained solids'",,,claude-code,2026-11-02
+sl:form:albacore_canned_oil,usda,171987,close,0.80,"usda:171987 'Fish, tuna, white, canned in oil, without salt, drained solids' — nos EUA ""white tuna"" enlatado é reservado à albacora (regra de rotulagem FDA) — confirmar",,,claude-code,2026-11-02
+sl:form:albacore_canned_water,usda,171988,close,0.80,"usda:171988 'Fish, tuna, white, canned in water, without salt, drained solids' — nos EUA ""white tuna"" enlatado é reservado à albacora (regra de rotulagem FDA) — confirmar",,,claude-code,2026-11-02
+sl:form:atlantic_salmon_wild_cooked,usda,171998,exact,0.90,"usda:171998 'Fish, salmon, Atlantic, wild, cooked, dry heat'",,,claude-code,2026-11-02
+sl:variant:cheese_blue,usda,172175,exact,0.90,"usda:172175 'Cheese, blue'",,,claude-code,2026-11-02
+sl:variant:cheese_brick,usda,172176,exact,0.90,"usda:172176 'Cheese, brick'",,,claude-code,2026-11-02
+sl:variant:cheese_brie,usda,172177,exact,0.90,"usda:172177 'Cheese, brie'",,,claude-code,2026-11-02
+sl:variant:cheese_camembert,usda,172178,exact,0.90,"usda:172178 'Cheese, camembert'",,,claude-code,2026-11-02
+sl:form:cheese_cottage_creamed,usda,172179,broad,0.90,"usda:172179 'Cheese, cottage, creamed, large or small curd'",,,claude-code,2026-11-02
+sl:form:cheese_cottage_lowfat,usda,172182,broad,0.90,"usda:172182 'Cheese, cottage, lowfat, 2% milkfat'",,,claude-code,2026-11-02
+sl:form:egg_white_raw,usda,172183,exact,0.90,"usda:172183 'Egg, white, raw, fresh'",,,claude-code,2026-11-02
+sl:form:egg_yolk_raw,usda,172184,exact,0.90,"usda:172184 'Egg, yolk, raw, fresh'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_poached,usda,172186,exact,0.90,"usda:172186 'Egg, whole, cooked, poached'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_scrambled,usda,172187,exact,0.90,"usda:172187 'Egg, whole, cooked, scrambled'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_dried,usda,172188,exact,0.90,"usda:172188 'Egg, whole, dried'",,,claude-code,2026-11-02
+sl:ingredient:duck_egg,usda,172189,broad,0.90,"usda:172189 'Egg, duck, whole, fresh, raw'",,,claude-code,2026-11-02
+sl:ingredient:goose_egg,usda,172190,broad,0.90,"usda:172190 'Egg, goose, whole, fresh, raw'",,,claude-code,2026-11-02
+sl:ingredient:quail_egg,usda,172191,broad,0.90,"usda:172191 'Egg, quail, whole, fresh, raw'",,,claude-code,2026-11-02
+sl:form:cheese_goat_hard,usda,172197,exact,0.90,"usda:172197 'Cheese, goat, hard type'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_anejo,usda,172201,exact,0.90,"usda:172201 'Cheese, mexican, queso anejo'",,,claude-code,2026-11-02
+sl:form:cow_milk_whole,usda,172217,broad,0.90,"usda:172217 'Milk, whole, 3.25% milkfat, without added vitamin A and vitamin D'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_seco,usda,172222,exact,0.90,"usda:172222 'Cheese, dry white, queso seco'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_fresco,usda,172223,exact,0.90,"usda:172223 'Cheese, fresh, queso fresco'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_blanco,usda,172224,exact,0.90,"usda:172224 'Cheese, white, queso blanco'",,,claude-code,2026-11-02
+sl:ingredient:turmeric,usda,172231,broad,0.85,"usda:172231 'Spices, turmeric, ground'",,,claude-code,2026-11-02
+sl:ingredient:basil,usda,172232,broad,0.90,"usda:172232 'Basil, fresh'",,,claude-code,2026-11-02
+sl:form:lentil_raw,usda,172420,exact,0.90,"usda:172420 'Lentils, raw'",,,claude-code,2026-11-02
+sl:form:lentil_cooked,usda,172421,broad,0.90,"usda:172421 'Lentils, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:variant:lima_bean_baby,usda,172422,broad,0.90,"usda:172422 'Lima beans, thin seeded (baby), mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:lupin_raw,usda,172423,exact,0.90,"usda:172423 'Lupins, mature seeds, raw'",,,claude-code,2026-11-02
+sl:ingredient:black_gram,usda,172427,broad,0.90,"usda:172427 'Mungo beans, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:pea_split_raw,usda,172428,exact,0.90,"usda:172428 'Peas, green, split, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:peanut_raw,usda,172430,close,0.90,"usda:172430 'Peanuts, all types, raw' — all types",,,claude-code,2026-11-02
+sl:ingredient:pigeon_pea,usda,172436,broad,0.90,"usda:172436 'Pigeon peas (red gram), mature seeds, raw'",,,claude-code,2026-11-02
+sl:ingredient:fig,usda,173021,exact,0.90,"usda:173021 'Figs, raw'",,,claude-code,2026-11-02
+sl:variant:wine_red,usda,173190,broad,0.90,"usda:173190 'Alcoholic beverage, wine, table, red'",,,claude-code,2026-11-02
+sl:form:black_tea_brewed,usda,173227,broad,0.90,"usda:173227 'Beverages, tea, black, brewed, prepared with tap water'",,,claude-code,2026-11-02
+sl:form:butter_salted,usda,173410,exact,0.90,"usda:173410 'Butter, salted'",,,claude-code,2026-11-02
+sl:ingredient:ghee,usda,173412,close,0.85,"usda:173412 'Butter oil, anhydrous' — butter oil anidro",,,claude-code,2026-11-02
+sl:variant:cheese_cheddar,usda,173414,exact,0.90,"usda:173414 'Cheese, cheddar (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:variant:cheese_cheshire,usda,173415,exact,0.90,"usda:173415 'Cheese, cheshire'",,,claude-code,2026-11-02
+sl:variant:cheese_colby,usda,173416,exact,0.90,"usda:173416 'Cheese, colby'",,,claude-code,2026-11-02
+sl:form:cheese_cottage_lowfat,usda,173417,broad,0.90,"usda:173417 'Cheese, cottage, lowfat, 1% milkfat'",,,claude-code,2026-11-02
+sl:variant:cheese_cream_cheese,usda,173418,exact,0.90,"usda:173418 'Cheese, cream'",,,claude-code,2026-11-02
+sl:variant:cheese_edam,usda,173419,exact,0.90,"usda:173419 'Cheese, edam'",,,claude-code,2026-11-02
+sl:variant:cheese_feta,usda,173420,exact,0.90,"usda:173420 'Cheese, feta'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_fried,usda,173423,exact,0.90,"usda:173423 'Egg, whole, cooked, fried'",,,claude-code,2026-11-02
+sl:form:chicken_egg_whole_boiled,usda,173424,exact,0.90,"usda:173424 'Egg, whole, cooked, hard-boiled'",,,claude-code,2026-11-02
+sl:form:cheese_parmesan_shredded,usda,173431,exact,0.90,"usda:173431 'Cheese, parmesan, shredded'",,,claude-code,2026-11-02
+sl:form:cheese_goat_semisoft,usda,173433,exact,0.90,"usda:173433 'Cheese, goat, semisoft type'",,,claude-code,2026-11-02
+sl:form:cheese_goat_soft,usda,173435,exact,0.90,"usda:173435 'Cheese, goat, soft type'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_asadero,usda,173437,exact,0.90,"usda:173437 'Cheese, mexican, queso asadero'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_chihuahua,usda,173438,exact,0.90,"usda:173438 'Cheese, mexican, queso chihuahua'",,,claude-code,2026-11-02
+sl:ingredient:salt,usda,173468,broad,0.90,"usda:173468 'Salt, table'",,,claude-code,2026-11-02
+sl:variant:vinegar_apple,usda,173469,close,0.80,"usda:173469 'Vinegar, cider'",,,claude-code,2026-11-02
+sl:ingredient:thyme,usda,173470,broad,0.90,"usda:173470 'Thyme, fresh'",,,claude-code,2026-11-02
+sl:ingredient:vanilla,usda,173471,broad,0.85,usda:173471 'Vanilla extract',,,claude-code,2026-11-02
+sl:ingredient:rosemary,usda,173473,broad,0.90,"usda:173473 'Rosemary, fresh'",,,claude-code,2026-11-02
+sl:ingredient:mint,usda,173474,broad,0.90,"usda:173474 'Peppermint, fresh'",,,claude-code,2026-11-02
+sl:form:atlantic_salmon_wild_raw,usda,173686,exact,0.90,"usda:173686 'Fish, salmon, Atlantic, wild, raw'",,,claude-code,2026-11-02
+sl:form:chinook_salmon_smoked,usda,173687,exact,0.90,"usda:173687 'Fish, salmon, chinook, smoked'",,,claude-code,2026-11-02
+sl:form:chinook_salmon_raw,usda,173688,exact,0.90,"usda:173688 'Fish, salmon, chinook, raw'",,,claude-code,2026-11-02
+sl:ingredient:chum_salmon,usda,173689,broad,0.90,"usda:173689 'Fish, salmon, chum, raw'",,,claude-code,2026-11-02
+sl:form:sockeye_salmon_raw,usda,173691,broad,0.90,"usda:173691 'Fish, salmon, sockeye, raw'",,,claude-code,2026-11-02
+sl:form:sockeye_salmon_canned,usda,173693,broad,0.90,"usda:173693 'Fish, salmon, sockeye, canned, drained solids'",,,claude-code,2026-11-02
+sl:ingredient:sea_bass,usda,173694,broad,0.90,"usda:173694 'Fish, sea bass, mixed species, cooked, dry heat' — ""mixed species""",,,claude-code,2026-11-02
+sl:ingredient:snapper,usda,173698,broad,0.90,"usda:173698 'Fish, snapper, mixed species, raw' — ""mixed species""",,,claude-code,2026-11-02
+sl:ingredient:snapper,usda,173699,broad,0.90,"usda:173699 'Fish, snapper, mixed species, cooked, dry heat' — ""mixed species""",,,claude-code,2026-11-02
+sl:ingredient:bluefin_tuna,usda,173706,broad,0.90,"usda:173706 'Fish, tuna, fresh, bluefin, raw'",,,claude-code,2026-11-02
+sl:form:tuna_light_canned_oil,usda,173708,broad,0.90,"usda:173708 'Fish, tuna, light, canned in oil, drained solids'",,,claude-code,2026-11-02
+sl:form:tuna_light_canned_water,usda,173709,broad,0.90,"usda:173709 'Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:ingredient:whiting,usda,173713,broad,0.90,"usda:173713 'Fish, whiting, mixed species, raw'",,,claude-code,2026-11-02
+sl:form:coho_salmon_farmed_raw,usda,173715,exact,0.90,"usda:173715 'Fish, salmon, coho, farmed, raw'",,,claude-code,2026-11-02
+sl:form:rainbow_trout_farmed_raw,usda,173717,exact,0.90,"usda:173717 'Fish, trout, rainbow, farmed, raw'",,,claude-code,2026-11-02
+sl:form:pink_salmon_canned,usda,173724,broad,0.90,"usda:173724 'Fish, Salmon, pink, canned, drained solids, without skin and bones'",,,claude-code,2026-11-02
+sl:ingredient:alaska_pollock,usda,173725,broad,0.90,"usda:173725 'Fish, pollock, Alaska, raw'",,,claude-code,2026-11-02
+sl:form:adzuki_raw,usda,173727,exact,0.90,"usda:173727 'Beans, adzuki, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:adzuki_cooked,usda,173728,broad,0.90,"usda:173728 'Beans, adzuki, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:ingredient:baked_beans,usda,173731,broad,0.90,"usda:173731 'Beans, baked, home prepared'",,,claude-code,2026-11-02
+sl:form:common_bean_black_raw,usda,173734,exact,0.90,"usda:173734 'Beans, black, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_black_cooked,usda,173735,exact,0.90,"usda:173735 'Beans, black, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_cranberry_cooked,usda,173736,exact,0.90,"usda:173736 'Beans, cranberry (roman), mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_cranberry_canned,usda,173737,exact,0.90,"usda:173737 'Beans, cranberry (roman), mature seeds, canned'",,,claude-code,2026-11-02
+sl:variant:common_bean_french,usda,173738,broad,0.90,"usda:173738 'Beans, french, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:common_bean_french,usda,173739,broad,0.90,"usda:173739 'Beans, french, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_california_red,usda,173742,broad,0.90,"usda:173742 'Beans, kidney, california red, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_california_red,usda,173743,broad,0.90,"usda:173743 'Beans, kidney, california red, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_kidney_raw,usda,173744,exact,0.90,"usda:173744 'Beans, kidney, red, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_navy_raw,usda,173745,exact,0.90,"usda:173745 'Beans, navy, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_navy_cooked,usda,173746,exact,0.90,"usda:173746 'Beans, navy, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_navy_canned,usda,173747,exact,0.90,"usda:173747 'Beans, navy, mature seeds, canned'",,,claude-code,2026-11-02
+sl:form:common_bean_pink_raw,usda,173748,exact,0.90,"usda:173748 'Beans, pink, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:common_bean_small_white,usda,173749,broad,0.90,"usda:173749 'Beans, small white, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:common_bean_small_white,usda,173750,broad,0.90,"usda:173750 'Beans, small white, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_yellow_raw,usda,173751,exact,0.90,"usda:173751 'Beans, yellow, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_yellow_cooked,usda,173752,exact,0.90,"usda:173752 'Beans, yellow, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:ingredient:fava_bean,usda,173753,broad,0.90,"usda:173753 'Broadbeans (fava beans), mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:chickpea_raw,usda,173756,broad,0.90,"usda:173756 'Chickpeas (garbanzo beans, bengal gram), mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:chickpea_cooked,usda,173757,broad,0.90,"usda:173757 'Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:cowpea_mature_raw,usda,173758,broad,0.90,"usda:173758 'Cowpeas, common (blackeyes, crowder, southern), mature seeds, raw' — inclui fradinho, crowder e southern: mais amplo que fradinho",,,claude-code,2026-11-02
+sl:form:adzuki_cooked,usda,173789,broad,0.90,"usda:173789 'Beans, adzuki, mature seed, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_great_northern_cooked,usda,173790,broad,0.90,"usda:173790 'Beans, great northern, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_navy_cooked,usda,173794,broad,0.90,"usda:173794 'Beans, navy, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_pink_cooked,usda,173795,broad,0.90,"usda:173795 'Beans, pink, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_cooked,usda,173796,broad,0.90,"usda:173796 'Beans, pinto, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:chickpea_cooked,usda,173799,broad,0.90,"usda:173799 'Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:chickpea_canned,usda,173800,broad,0.90,"usda:173800 'Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained solids'",,,claude-code,2026-11-02
+sl:ingredient:banana,usda,173944,exact,0.90,"usda:173944 'Bananas, raw'",,,claude-code,2026-11-02
+sl:ingredient:european_anchovy,usda,174182,broad,0.90,"usda:174182 'Fish, anchovy, european, raw'",,,claude-code,2026-11-02
+sl:ingredient:european_anchovy,usda,174183,broad,0.90,"usda:174183 'Fish, anchovy, european, canned in oil, drained solids'",,,claude-code,2026-11-02
+sl:ingredient:channel_catfish,usda,174186,broad,0.90,"usda:174186 'Fish, catfish, channel, wild, raw'",,,claude-code,2026-11-02
+sl:form:atlantic_cod_dried_salted,usda,174190,exact,0.90,"usda:174190 'Fish, cod, Atlantic, dried and salted'",,,claude-code,2026-11-02
+sl:ingredient:pacific_cod,usda,174191,broad,0.90,"usda:174191 'Fish, cod, Pacific, raw (may have been previously frozen)'",,,claude-code,2026-11-02
+sl:form:shrimp_raw,usda,174210,broad,0.90,"usda:174210 'Crustaceans, shrimp, mixed species, raw (may contain additives to retain moisture)'",,,claude-code,2026-11-02
+sl:ingredient:blue_mussel,usda,174216,broad,0.90,"usda:174216 'Mollusks, mussel, blue, raw'",,,claude-code,2026-11-02
+sl:ingredient:blue_mussel,usda,174217,broad,0.90,"usda:174217 'Mollusks, mussel, blue, cooked, moist heat'",,,claude-code,2026-11-02
+sl:ingredient:common_octopus,usda,174218,broad,0.90,"usda:174218 'Mollusks, octopus, common, raw'",,,claude-code,2026-11-02
+sl:ingredient:squid,usda,174223,broad,0.90,"usda:174223 'Mollusks, squid, mixed species, raw' — ""mixed species""",,,claude-code,2026-11-02
+sl:form:tuna_light_canned_oil,usda,174227,broad,0.90,"usda:174227 'Fish, tuna, light, canned in oil, without salt, drained solids'",,,claude-code,2026-11-02
+sl:ingredient:common_octopus,usda,174249,broad,0.90,"usda:174249 'Mollusks, octopus, common, cooked, moist heat'",,,claude-code,2026-11-02
+sl:form:lima_bean_large_raw,usda,174252,exact,0.90,"usda:174252 'Lima beans, large, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:lima_bean_large_cooked,usda,174253,exact,0.90,"usda:174253 'Lima beans, large, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:lima_bean_large_canned,usda,174254,exact,0.90,"usda:174254 'Lima beans, large, mature seeds, canned'",,,claude-code,2026-11-02
+sl:variant:lima_bean_baby,usda,174255,broad,0.90,"usda:174255 'Lima beans, thin seeded (baby), mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:mung_raw,usda,174256,exact,0.90,"usda:174256 'Mung beans, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:mung_cooked,usda,174257,broad,0.90,"usda:174257 'Mung beans, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:black_gram_raw,usda,174259,exact,0.90,"usda:174259 'Mungo beans, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:cowpea_yardlong,usda,174281,broad,0.90,"usda:174281 'Yardlong beans, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:cowpea_yardlong,usda,174282,broad,0.90,"usda:174282 'Yardlong beans, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:lentil_red_raw,usda,174284,exact,0.90,"usda:174284 'Lentils, pink or red, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_kidney_canned,usda,174285,broad,0.90,"usda:174285 'Beans, kidney, red, mature seeds, canned, drained solids'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_canned,usda,174286,broad,0.90,"usda:174286 'Beans, pinto, canned, drained solids'",,,claude-code,2026-11-02
+sl:ingredient:chickpea_flour,usda,174288,exact,0.90,usda:174288 'Chickpea flour (besan)',,,claude-code,2026-11-02
+sl:ingredient:atlantic_pollock,usda,175129,broad,0.90,"usda:175129 'Fish, pollock, Atlantic, raw'",,,claude-code,2026-11-02
+sl:form:coho_salmon_wild_raw,usda,175136,exact,0.90,"usda:175136 'Fish, salmon, coho, wild, raw'",,,claude-code,2026-11-02
+sl:form:pink_salmon_raw,usda,175138,exact,0.90,"usda:175138 'Fish, salmon, pink, raw'",,,claude-code,2026-11-02
+sl:form:sardine_canned_oil,usda,175139,broad,0.80,"usda:175139 'Fish, sardine, Atlantic, canned in oil, drained solids with bone' — ""Atlantic"": espécie exata não informada",,,claude-code,2026-11-02
+sl:ingredient:sea_bass,usda,175142,broad,0.90,"usda:175142 'Fish, sea bass, mixed species, raw' — ""mixed species""",,,claude-code,2026-11-02
+sl:ingredient:trout,usda,175153,broad,0.90,"usda:175153 'Fish, trout, mixed species, raw' — ""mixed species""",,,claude-code,2026-11-02
+sl:form:rainbow_trout_wild_raw,usda,175154,exact,0.90,"usda:175154 'Fish, trout, rainbow, wild, raw'",,,claude-code,2026-11-02
+sl:ingredient:skipjack_tuna,usda,175156,broad,0.90,"usda:175156 'Fish, tuna, fresh, skipjack, raw'",,,claude-code,2026-11-02
+sl:form:albacore_canned_oil,usda,175157,close,0.80,"usda:175157 'Fish, tuna, white, canned in oil, drained solids' — nos EUA ""white tuna"" enlatado é reservado à albacora (regra de rotulagem FDA) — confirmar",,,claude-code,2026-11-02
+sl:form:albacore_canned_water,usda,175158,close,0.80,"usda:175158 'Fish, tuna, white, canned in water, drained solids' — nos EUA ""white tuna"" enlatado é reservado à albacora (regra de rotulagem FDA) — confirmar",,,claude-code,2026-11-02
+sl:ingredient:yellowfin_tuna,usda,175159,broad,0.90,"usda:175159 'Fish, tuna, fresh, yellowfin, raw'",,,claude-code,2026-11-02
+sl:ingredient:tuna_salad,usda,175160,exact,0.90,"usda:175160 'Fish, tuna salad'",,,claude-code,2026-11-02
+sl:ingredient:whiting,usda,175161,broad,0.90,"usda:175161 'Fish, whiting, mixed species, cooked, dry heat'",,,claude-code,2026-11-02
+sl:ingredient:channel_catfish,usda,175165,broad,0.90,"usda:175165 'Fish, catfish, channel, farmed, raw'",,,claude-code,2026-11-02
+sl:form:atlantic_salmon_farmed_raw,usda,175167,exact,0.90,"usda:175167 'Fish, salmon, Atlantic, farmed, raw'",,,claude-code,2026-11-02
+sl:form:atlantic_salmon_farmed_cooked,usda,175168,exact,0.90,"usda:175168 'Fish, salmon, Atlantic, farmed, cooked, dry heat'",,,claude-code,2026-11-02
+sl:form:pink_salmon_canned,usda,175175,broad,0.90,"usda:175175 'Fish, salmon, pink, canned, drained solids'",,,claude-code,2026-11-02
+sl:ingredient:tilapia,usda,175176,broad,0.90,"usda:175176 'Fish, tilapia, raw'",,,claude-code,2026-11-02
+sl:form:shrimp_raw,usda,175179,broad,0.90,"usda:175179 'Crustaceans, shrimp, raw'",,,claude-code,2026-11-02
+sl:form:shrimp_cooked,usda,175180,broad,0.90,"usda:175180 'Crustaceans, shrimp, cooked'",,,claude-code,2026-11-02
+sl:ingredient:baked_beans,usda,175182,broad,0.90,"usda:175182 'Beans, baked, canned, plain or vegetarian'",,,claude-code,2026-11-02
+sl:form:common_bean_black_turtle_raw,usda,175186,exact,0.90,"usda:175186 'Beans, black turtle, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_black_turtle_cooked,usda,175187,exact,0.90,"usda:175187 'Beans, black turtle, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_black_turtle_canned,usda,175188,exact,0.90,"usda:175188 'Beans, black turtle, mature seeds, canned'",,,claude-code,2026-11-02
+sl:form:common_bean_cranberry_raw,usda,175189,exact,0.90,"usda:175189 'Beans, cranberry (roman), mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_great_northern_raw,usda,175190,exact,0.90,"usda:175190 'Beans, great northern, mature seeds, raw (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:form:common_bean_great_northern_cooked,usda,175191,exact,0.90,"usda:175191 'Beans, great northern, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_great_northern_canned,usda,175192,exact,0.90,"usda:175192 'Beans, great northern, mature seeds, canned'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney,usda,175193,close,0.85,"usda:175193 'Beans, kidney, all types, mature seeds, raw' — ""all types"": classe genérica",,,claude-code,2026-11-02
+sl:form:common_bean_kidney_cooked,usda,175194,exact,0.90,"usda:175194 'Beans, kidney, red, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_kidney_canned,usda,175195,exact,0.90,"usda:175195 'Beans, kidney, red, mature seeds, canned, solids and liquids'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_royal_red,usda,175196,broad,0.90,"usda:175196 'Beans, kidney, royal red, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_royal_red,usda,175197,broad,0.90,"usda:175197 'Beans, kidney, royal red, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_pink_cooked,usda,175198,exact,0.90,"usda:175198 'Beans, pink, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_raw,usda,175199,exact,0.90,"usda:175199 'Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_cooked,usda,175200,exact,0.90,"usda:175200 'Beans, pinto, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_canned,usda,175201,exact,0.90,"usda:175201 'Beans, pinto, mature seeds, canned, solids and liquids'",,,claude-code,2026-11-02
+sl:form:common_bean_white_raw,usda,175202,exact,0.90,"usda:175202 'Beans, white, mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:common_bean_white_cooked,usda,175203,exact,0.90,"usda:175203 'Beans, white, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_white_canned,usda,175204,exact,0.90,"usda:175204 'Beans, white, mature seeds, canned'",,,claude-code,2026-11-02
+sl:ingredient:fava_bean,usda,175205,broad,0.90,"usda:175205 'Broadbeans (fava beans), mature seeds, raw'",,,claude-code,2026-11-02
+sl:form:chickpea_canned,usda,175206,broad,0.90,"usda:175206 'Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, solids and liquids'",,,claude-code,2026-11-02
+sl:variant:cowpea_catjang,usda,175208,broad,0.90,"usda:175208 'Cowpeas, catjang, mature seeds, raw'",,,claude-code,2026-11-02
+sl:variant:cowpea_catjang,usda,175209,broad,0.90,"usda:175209 'Cowpeas, catjang, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:ingredient:hyacinth_bean,usda,175210,broad,0.90,"usda:175210 'Hyacinth beans, mature seeds, raw'",,,claude-code,2026-11-02
+sl:ingredient:hyacinth_bean,usda,175211,broad,0.90,"usda:175211 'Hyacinth beans, mature seeds, cooked, boiled, without salt'",,,claude-code,2026-11-02
+sl:form:common_bean_black_cooked,usda,175237,broad,0.90,"usda:175237 'Beans, black, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_black_canned,usda,175238,broad,0.90,"usda:175238 'Beans, black, mature seeds, canned, low sodium'",,,claude-code,2026-11-02
+sl:form:common_bean_black_turtle_cooked,usda,175239,broad,0.90,"usda:175239 'Beans, black turtle, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_kidney_cooked,usda,175242,broad,0.90,"usda:175242 'Beans, kidney, red, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:common_bean_white_cooked,usda,175249,broad,0.90,"usda:175249 'Beans, white, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:lentil_cooked,usda,175254,broad,0.90,"usda:175254 'Lentils, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:mung_cooked,usda,175255,broad,0.90,"usda:175255 'Mung beans, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:ingredient:black_gram,usda,175256,broad,0.90,"usda:175256 'Mungo beans, mature seeds, cooked, boiled, with salt'",,,claude-code,2026-11-02
+sl:form:cheese_ricotta_whole_milk,usda,323444,exact,0.90,"usda:323444 'Cheese, ricotta, whole milk'",,,claude-code,2026-11-02
+sl:form:cheese_parmesan_grated,usda,325036,broad,0.90,"usda:325036 'Cheese, parmesan, grated'",,,claude-code,2026-11-02
+sl:variant:cheese_swiss,usda,326135,exact,0.90,"usda:326135 'Cheese, swiss'",,,claude-code,2026-11-02
+sl:variant:cheese_cheddar,usda,328637,exact,0.90,"usda:328637 'Cheese, cheddar'",,,claude-code,2026-11-02
+sl:form:cheese_cottage_lowfat,usda,328841,broad,0.90,"usda:328841 'Cheese, cottage, lowfat, 2% milkfat'",,,claude-code,2026-11-02
+sl:form:cheese_mozzarella_low_moisture_part_skim,usda,329370,exact,0.90,"usda:329370 'Cheese, mozzarella, low moisture, part-skim'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_seco,usda,329830,exact,0.90,"usda:329830 'Cheese, dry white, queso seco'",,,claude-code,2026-11-02
+sl:ingredient:pollock,usda,333476,broad,0.90,"usda:333476 'Fish, pollock, raw' — espécie não informada",,,claude-code,2026-11-02
+sl:form:tuna_light_canned_water,usda,334194,broad,0.90,"usda:334194 'Fish, tuna, light, canned in water, drained solids'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_dark_red,usda,335245,broad,0.90,"usda:335245 'Beans, Dry, Dark Red Kidney (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_light_red,usda,335422,broad,0.90,"usda:335422 'Beans, Dry, Light Red Kidney (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_brown,usda,335425,broad,0.90,"usda:335425 'Beans, Dry, Brown (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_flor_de_mayo,usda,335428,broad,0.90,"usda:335428 'Beans, Dry, Flor de Mayo (0% moisture)'",,,claude-code,2026-11-02
+sl:form:common_bean_carioca_dry_matter,usda,335433,exact,0.90,"usda:335433 'Beans, Dry, Carioca (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_tan,usda,335442,broad,0.90,"usda:335442 'Beans, Dry, Tan (0% moisture)'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_dry_matter,usda,335695,exact,0.90,"usda:335695 'Beans, Dry, Pinto (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_small_red,usda,335774,broad,0.90,"usda:335774 'Beans, Dry, Small Red (0% moisture)'",,,claude-code,2026-11-02
+sl:form:common_bean_black_dry_matter,usda,335912,exact,0.90,"usda:335912 'Beans, Dry, Black (0% moisture)'",,,claude-code,2026-11-02
+sl:ingredient:common_bean,usda,335930,broad,0.70,"usda:335930 'Beans, Dry, Red (0% moisture)' — ""Beans, Dry, Red"": cor sem classe comercial definida",,,claude-code,2026-11-02
+sl:variant:cheese_queso_seco,usda,746765,exact,0.90,"usda:746765 'Cheese, dry white, queso seco'",,,claude-code,2026-11-02
+sl:form:cheese_ricotta_whole_milk,usda,746766,exact,0.90,"usda:746766 'Cheese, ricotta, whole milk'",,,claude-code,2026-11-02
+sl:variant:cheese_swiss,usda,746767,exact,0.90,"usda:746767 'Cheese, swiss'",,,claude-code,2026-11-02
+sl:variant:common_bean_flor_de_mayo,usda,747432,broad,0.90,"usda:747432 'Beans, Dry, Flor de Mayo (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_brown,usda,747433,broad,0.90,"usda:747433 'Beans, Dry, Brown (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_tan,usda,747434,broad,0.90,"usda:747434 'Beans, Dry, Tan (0% moisture)'",,,claude-code,2026-11-02
+sl:form:common_bean_carioca_dry_matter,usda,747436,exact,0.90,"usda:747436 'Beans, Dry, Carioca (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_light_red,usda,747438,broad,0.90,"usda:747438 'Beans, Dry, Light Red Kidney (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_dark_red,usda,747440,broad,0.90,"usda:747440 'Beans, Dry, Dark Red Kidney (0% moisture)'",,,claude-code,2026-11-02
+sl:variant:common_bean_small_red,usda,747443,broad,0.90,"usda:747443 'Beans, Dry, Small Red (0% moisture)'",,,claude-code,2026-11-02
+sl:form:common_bean_black_dry_matter,usda,747444,exact,0.90,"usda:747444 'Beans, Dry, Black (0% moisture)'",,,claude-code,2026-11-02
+sl:form:common_bean_pinto_dry_matter,usda,747445,exact,0.90,"usda:747445 'Beans, Dry, Pinto (0% moisture)'",,,claude-code,2026-11-02
+sl:form:rice_flour_white,usda,790214,close,0.90,"usda:790214 'Flour, rice, white, unenriched'",,,claude-code,2026-11-02
+sl:form:rice_flour_brown,usda,1104812,exact,0.90,"usda:1104812 'Flour, rice, brown'",,,claude-code,2026-11-02
+sl:form:rice_flour_glutinous,usda,1104867,exact,0.90,"usda:1104867 'Flour, rice, glutinous'",,,claude-code,2026-11-02
+sl:form:cheese_parmesan_grated,usda,2259795,broad,0.90,"usda:2259795 'Cheese, parmesan, grated, refrigerated'",,,claude-code,2026-11-02
+sl:form:cheese_feta_crumbled,usda,2259796,broad,0.90,"usda:2259796 'Cheese, feta, whole milk, crumbled'",,,claude-code,2026-11-02
+sl:form:common_bean_pod_raw,usda,2346400,exact,0.90,"usda:2346400 'Beans, snap, green, raw'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_brown_raw,usda,2512380,exact,0.90,"usda:2512380 'Rice, brown, long grain, unenriched, raw'",,,claude-code,2026-11-02
+sl:form:rice_long_grain_white_raw,usda,2512381,broad,0.90,"usda:2512381 'Rice, white, long grain, unenriched, raw' — enriquecido/não enriquecido distingue produtos",,,claude-code,2026-11-02
+sl:form:common_bean_cannellini_raw,usda,2644281,exact,0.90,"usda:2644281 'Beans, cannellini, dry'",,,claude-code,2026-11-02
+sl:form:chickpea_raw,usda,2644282,broad,0.90,"usda:2644282 'Chickpeas, (garbanzo beans, bengal gram), dry'",,,claude-code,2026-11-02
+sl:form:lentil_raw,usda,2644283,exact,0.90,"usda:2644283 'Lentils, dry'",,,claude-code,2026-11-02
+sl:form:common_bean_black_canned,usda,2644285,broad,0.90,"usda:2644285 'Beans, black, canned, sodium added, drained and rinsed'",,,claude-code,2026-11-02
+sl:form:common_bean_navy_canned,usda,2644286,broad,0.90,"usda:2644286 'Beans, navy, canned, sodium added, drained and rinsed'",,,claude-code,2026-11-02
+sl:form:common_bean_cannellini_canned,usda,2644287,broad,0.90,"usda:2644287 'Beans, cannellini, canned, sodium added, drained and rinsed'",,,claude-code,2026-11-02
+sl:form:chickpea_canned,usda,2644288,broad,0.90,"usda:2644288 'Chickpeas (garbanzo beans, bengal gram), canned, sodium added, drained and rinsed'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_dark_red,usda,2644289,broad,0.90,"usda:2644289 'Beans, kidney, dark red, canned, sodium added, sugar added, drained and rinsed'",,,claude-code,2026-11-02
+sl:variant:common_bean_kidney_light_red,usda,2644290,broad,0.90,"usda:2644290 'Beans, kidney, light red, canned, sodium added, sugar added, drained and rinsed'",,,claude-code,2026-11-02
+sl:variant:cheese_monterey_jack,usda,2647438,exact,0.90,"usda:2647438 'Cheese, monterey jack, solid'",,,claude-code,2026-11-02
+sl:form:cheese_processed_american_singles,usda,2647439,broad,0.90,"usda:2647439 'Cheese, pasteurized process cheese food or product, American, singles'",,,claude-code,2026-11-02
+sl:form:cheese_provolone_sliced,usda,2647440,broad,0.90,"usda:2647440 'Cheese, provolone, sliced'",,,claude-code,2026-11-02
+sl:variant:cheese_oaxaca,usda,2647441,exact,0.90,"usda:2647441 'Cheese, oaxaca, solid'",,,claude-code,2026-11-02
+sl:variant:cheese_queso_fresco,usda,2647442,exact,0.90,"usda:2647442 'Cheese, queso fresco, solid'",,,claude-code,2026-11-02
+sl:variant:cheese_cotija,usda,2647443,exact,0.90,"usda:2647443 'Cheese, cotija, solid'",,,claude-code,2026-11-02
+sl:form:sockeye_salmon_raw,usda,2684440,broad,0.90,"usda:2684440 'Fish, salmon, sockeye, wild caught, raw'",,,claude-code,2026-11-02
+sl:form:atlantic_salmon_farmed_raw,usda,2684441,exact,0.90,"usda:2684441 'Fish, salmon, Atlantic, farm raised, raw'",,,claude-code,2026-11-02
+sl:ingredient:tilapia,usda,2684442,broad,0.90,"usda:2684442 'Fish, tilapia, farm raised, raw'",,,claude-code,2026-11-02
+sl:form:shrimp_raw,usda,2684443,broad,0.90,"usda:2684443 'Crustaceans, shrimp, farm raised, raw'",,,claude-code,2026-11-02
+sl:form:atlantic_cod_raw,usda,2684444,broad,0.90,"usda:2684444 'Fish, cod, Atlantic, wild caught, raw'",,,claude-code,2026-11-02
+sl:form:wild_rice_raw,usda,2710821,exact,0.90,"usda:2710821 'Wild rice, dry, raw'",,,claude-code,2026-11-02
+sl:form:rice_black_raw,usda,2710825,exact,0.90,"usda:2710825 'Rice, black, unenriched, raw'",,,claude-code,2026-11-02
+sl:form:rice_red_raw,usda,2710838,exact,0.90,"usda:2710838 'Rice, red, unenriched, dry, raw'",,,claude-code,2026-11-02
