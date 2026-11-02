@@ -1,0 +1,15 @@
+# JSON individuais do FlavorDB (versionamos só o pacote entities.jsonl.gz)
+data/raw/flavordb/entities/
+
+# FooDB completo é grande (~1 GB) — fica local, fora do git
+data/raw/foodb/
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# relatórios: versionados (são o "produto"), mas o cache python não
+
+# cópias CSV opcionais do banco (build_database.py --csv)
+data/processed/*.csv

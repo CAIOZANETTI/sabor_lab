@@ -1,0 +1,1116 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[EXEMPLO] Chai com especiarias — embasamento científico</title><style>
+body{background:#fcfcfb;color:#0b0b0b;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+max-width:1100px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+h1{margin-bottom:.2rem} h2{margin-top:2.2rem;border-bottom:1px solid #e6e5e1;padding-bottom:.3rem}
+.muted{color:#52514e;font-size:.92em} .card{background:#fff;border:1px solid #e6e5e1;border-radius:8px;padding:1rem;margin:1rem 0}
+.tbl{border-collapse:collapse;width:100%;font-size:.9em} .tbl th{text-align:left;color:#52514e;border-bottom:1px solid #e6e5e1;padding:.35rem}
+.tbl td{border-bottom:1px solid #f0efec;padding:.35rem;vertical-align:top}
+.warn{background:#fff7e6;border-left:3px solid #eda100;padding:.5rem 1rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem} @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+.tbl th{cursor:pointer;user-select:none} .tbl th.asc::after{content:" ▲"} .tbl th.desc::after{content:" ▼"}
+.net-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}
+.net-tools input{flex:1;min-width:220px;padding:.45rem .6rem;border:1px solid #e6e5e1;border-radius:6px;font:inherit}
+button{font:inherit;padding:.35rem .7rem;border:1px solid #e6e5e1;border-radius:6px;background:#fff;cursor:pointer}
+button:hover{border-color:#52514e} #net-tags button{margin:.15rem;padding:.15rem .55rem;border-radius:999px;font-size:.88em}
+#net-tags button.on{background:#0b0b0b;color:#fff;border-color:#0b0b0b}
+.net-legend{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.88em;color:#52514e;margin:.5rem 0}
+.net-legend .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.35rem;vertical-align:-1px}
+.net-legend .bar{display:inline-block;width:22px;height:2px;margin-right:.35rem;vertical-align:3px}
+.net-legend .bar.thick{height:6px;vertical-align:1px}
+.net-wrap{display:grid;grid-template-columns:1fr 280px;gap:1rem} @media(max-width:800px){.net-wrap{grid-template-columns:1fr}}
+#net{height:620px;background:#fff;border:1px solid #e6e5e1;border-radius:8px}
+#net-info{background:#fff;border:1px solid #e6e5e1;border-radius:8px;padding:.8rem 1rem;font-size:.92em;overflow:auto;max-height:620px}
+#net-info h4{margin:.2rem 0 .4rem} #net-info p{margin:.35rem 0}
+div.vis-tooltip{white-space:pre-line;font-family:system-ui,sans-serif;font-size:13px;padding:6px 8px;
+background:#fff;border:1px solid #e6e5e1;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+</style>
+<script src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script src="https://unpkg.com/vis-network@10.1.4/standalone/umd/vis-network.min.js"></script></head><body>
+<h1>[EXEMPLO] Chai com especiarias</h1>
+<p class="muted">Embasamento científico da receita · FlavorDB2 + FlavorGraph</p>
+<p><b>Técnica:</b> infusão no leite</p><p><b>Por que gostei:</b> (preencha: o que você sentiu e por que gostou)</p><p><b>Observações:</b> receita de exemplo para testar o relatório</p><div class='warn'>black_pepper: moléculas de &#x27;pepper&#x27; — no FlavorDB &#x27;Pepper&#x27; é o gênero Piper (pimenta-do-reino)</div>
+<h2>Ingredientes</h2><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>no banco</th>
+      <th>id</th>
+      <th>moléculas</th>
+      <th>obs.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>black_tea</td>
+      <td>black_tea</td>
+      <td>fg:510</td>
+      <td>85</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>milk</td>
+      <td>fg:4204</td>
+      <td>111</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cinnamon</td>
+      <td>cinnamon</td>
+      <td>fg:1368</td>
+      <td>185</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardamom</td>
+      <td>cardamom</td>
+      <td>fg:991</td>
+      <td>173</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ginger</td>
+      <td>ginger</td>
+      <td>fg:2837</td>
+      <td>252</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>clove</td>
+      <td>clove</td>
+      <td>fg:1411</td>
+      <td>177</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>black_pepper</td>
+      <td>black_pepper</td>
+      <td>fg:499</td>
+      <td>225</td>
+      <td>moléculas de 'pepper' — no FlavorDB 'Pepper' é o gênero Piper (pimenta-do-reino)</td>
+    </tr>
+    <tr>
+      <td>sugar</td>
+      <td>sugar</td>
+      <td>fg:6172</td>
+      <td>5</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h2>Por que combina</h2>
+<p class="muted"><b>Química</b> = fração de moléculas de sabor compartilhadas (Jaccard, 0–1).
+<b>Prática</b> = associação do par em &gt;1 milhão de receitas (NPMI, 0–1): mede se aparecem juntos
+<i>mais do que o acaso</i>. Ingredientes onipresentes (alho, cebola, sal) têm NPMI baixo mesmo aparecendo
+juntos com frequência — 0 significa "sem associação especial", não "nunca juntos".</p>
+<div class="card"><ul><li><b>cinnamon + clove</b>: 129 moléculas em comum (Jaccard 0.55); associação clássica em receitas (NPMI 0.41).<br><span class=muted>destaques: (Z)-Ethyl cinnamate (spicy/berry/powdery), Caryophyllene oxide (spicy/fresh/sweet), gingerol (pungent), Caryophyllene (woody/spicy/fried), carnosol (bitter)</span></li><li><b>cinnamon + black_pepper</b>: 144 moléculas em comum (Jaccard 0.54); sem associação acima do acaso em receitas.<br><span class=muted>destaques: AC1LDI49 (bitter), Methyl cis-cinnamate (strawberry/sweet/balsamic), gingerol (pungent), Piperitone (minty/herbal/fresh), Caryophyllene (woody/spicy/fried)</span></li><li><b>cinnamon + cardamom</b>: 124 moléculas em comum (Jaccard 0.53); associação comum em receitas (NPMI 0.28).<br><span class=muted>destaques: Acetyleugenol (carnation/spicy/clove), Citronellal (lemon/citrus/rose), 6753-98-6 (woody), 3-Thujene (woody/herbal/green), Borneol (woody/pine/camphoreous)</span></li><li><b>cardamom + ginger</b>: 145 moléculas em comum (Jaccard 0.52); associação comum em receitas (NPMI 0.27).<br><span class=muted>destaques: Heptane (alkane/ethereal/sweet), (E)-gamma-Bisabolene (citrus/myrrh/opoponax), Acetyleugenol (carnation/spicy/clove), Perilla alcohol (fatty/terpineol/linalool), 1-Terpineol (musty/woody/dry)</span></li><li><b>ginger + black_pepper</b>: 160 moléculas em comum (Jaccard 0.50); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Peruviol (waxy/floral), beta-Bisabolol (lemon/citrus/herbal), Cedrol (soft/cedarwood/sweet), (-)-Zingiberene (fresh/sharp/spicy), Nonane (alkane/gasoline)</span></li><li><b>cardamom + clove</b>: 117 moléculas em comum (Jaccard 0.50); associação clássica em receitas (NPMI 0.40).<br><span class=muted>destaques: Acetyleugenol (carnation/spicy/clove), Valencene (citrus/green/oily), Beta-Terpineol (musty/earthy/pungent), AC1L9CNW (woody/spicy), 6753-98-6 (woody)</span></li><li><b>cardamom + black_pepper</b>: 132 moléculas em comum (Jaccard 0.50); sem associação acima do acaso em receitas.<br><span class=muted>destaques: Tridecane (alkane), Acetyleugenol (carnation/spicy/clove), Citronellal (lemon/citrus/rose), Myrtenal (lime/spicy/jam), Sabinene hydrate (minty/eucalyptus/terpene)</span></li><li><b>clove + black_pepper</b>: 131 moléculas em comum (Jaccard 0.48); sem associação acima do acaso em receitas.<br><span class=muted>destaques: (-)-Zingiberene (fresh/sharp/spicy), gingerol (pungent), Caryophyllene (woody/spicy/fried), carnosol (bitter), Acetyleugenol (carnation/spicy/clove)</span></li></ul></div>
+<h2>Rede de sabor</h2>
+
+<div class="net-tools">
+  <input id="net-search" list="net-labels" placeholder="buscar ingrediente ou molécula…">
+  <datalist id="net-labels"></datalist>
+  <button id="net-reset" type="button">limpar destaque</button>
+  <button id="net-physics" type="button">reorganizar</button>
+</div>
+<div class="net-tags"><span class="muted">notas de sabor:</span> <span id="net-tags"></span></div>
+<div class="net-legend">
+  <span><i class="dot" style="background:#2a78d6"></i>ingrediente da receita</span>
+  <span><i class="dot" style="background:#eb6834"></i>molécula compartilhada (tamanho = nº de ingredientes)</span>
+  <span><i class="bar" style="background:#c9c8c3"></i>contém a molécula</span>
+  <span><i class="bar thick" style="background:#1baf7a"></i>associados em receitas (espessura = força)</span>
+</div>
+<div class="net-wrap"><div id="net"></div>
+  <aside id="net-info"><p class="muted">Clique num nó para ver os detalhes e destacar as conexões.
+  Arraste para reorganizar; role para dar zoom.</p></aside></div>
+<script type="application/json" id="net-data">{"nodes": [{"id": "i:black_tea", "label": "black tea", "kind": "ingredient", "x": 2.326828918379971e-14, "y": -300.0, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "black_tea (fg:510)\n85 moléculas", "info": "<h4>black_tea<\/h4><p>Ingrediente da receita · <code>fg:510<\/code><\/p><p><b>85<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:milk", "label": "milk", "kind": "ingredient", "x": 268.70057685088807, "y": -212.13203435596424, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "milk (fg:4204)\n111 moléculas", "info": "<h4>milk<\/h4><p>Ingrediente da receita · <code>fg:4204<\/code><\/p><p><b>111<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:cinnamon", "label": "cinnamon", "kind": "ingredient", "x": 380.0, "y": 0.0, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "cinnamon (fg:1368)\n185 moléculas", "info": "<h4>cinnamon<\/h4><p>Ingrediente da receita · <code>fg:1368<\/code><\/p><p><b>185<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:cardamom", "label": "cardamom", "kind": "ingredient", "x": 268.70057685088807, "y": 212.13203435596424, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "cardamom (fg:991)\n173 moléculas", "info": "<h4>cardamom<\/h4><p>Ingrediente da receita · <code>fg:991<\/code><\/p><p><b>173<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:ginger", "label": "ginger", "kind": "ingredient", "x": 2.326828918379971e-14, "y": 300.0, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "ginger (fg:2837)\n252 moléculas", "info": "<h4>ginger<\/h4><p>Ingrediente da receita · <code>fg:2837<\/code><\/p><p><b>252<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:clove", "label": "clove", "kind": "ingredient", "x": -268.700576850888, "y": 212.13203435596427, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "clove (fg:1411)\n177 moléculas", "info": "<h4>clove<\/h4><p>Ingrediente da receita · <code>fg:1411<\/code><\/p><p><b>177<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "i:black_pepper", "label": "black pepper", "kind": "ingredient", "x": -380.0, "y": 3.6739403974420595e-14, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "black_pepper (fg:499)\n225 moléculas\nmoléculas de 'pepper' — no FlavorDB 'Pepper' é o gênero Piper (pimenta-do-reino)", "info": "<h4>black_pepper<\/h4><p>Ingrediente da receita · <code>fg:499<\/code><\/p><p><b>225<\/b> moléculas de sabor no banco<\/p><p class='muted'>moléculas de &#x27;pepper&#x27; — no FlavorDB &#x27;Pepper&#x27; é o gênero Piper (pimenta-do-reino)<\/p>", "desc": []}, {"id": "i:sugar", "label": "sugar", "kind": "ingredient", "x": -268.7005768508881, "y": -212.13203435596424, "shape": "dot", "size": 26, "color": {"background": "#2a78d6", "border": "#fcfcfb", "highlight": {"background": "#2a78d6", "border": "#0b0b0b"}}, "font": {"size": 17, "color": "#0b0b0b", "face": "system-ui", "strokeWidth": 4, "strokeColor": "#fcfcfb"}, "title": "sugar (fg:6172)\n5 moléculas", "info": "<h4>sugar<\/h4><p>Ingrediente da receita · <code>fg:6172<\/code><\/p><p><b>5<\/b> moléculas de sabor no banco<\/p>", "desc": []}, {"id": "m:7136", "label": "Acetyleugenol", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Acetyleugenol\naroma/sabor: carnation, spicy, clove, malt, fresh, floral +2\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Acetyleugenol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7136' target='_blank' rel='noopener'>PubChem 7136<\/a><\/p><p><b>Aroma/sabor:<\/b> carnation, spicy, clove, malt, fresh, floral, woody, sweet<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 206.2 · <b>xlogP:<\/b> 2.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 12 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["carnation", "spicy", "clove", "malt", "fresh", "floral", "woody", "sweet"]}, {"id": "m:3473", "label": "gingerol", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "gingerol\naroma/sabor: pungent\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>gingerol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/3473' target='_blank' rel='noopener'>PubChem 3473<\/a><\/p><p><b>Aroma/sabor:<\/b> pungent<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 294.4 · <b>xlogP:<\/b> 2.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 9 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["pungent"]}, {"id": "m:442009", "label": "carnosol", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "carnosol\naroma/sabor: bitter\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>carnosol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/442009' target='_blank' rel='noopener'>PubChem 442009<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 330.4 · <b>xlogP:<\/b> 4.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 12 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:6508206", "label": "6753-98-6", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "6753-98-6\naroma/sabor: woody\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>6753-98-6<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6508206' target='_blank' rel='noopener'>PubChem 6508206<\/a><\/p><p><b>Aroma/sabor:<\/b> woody<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 33 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody"]}, {"id": "m:6989", "label": "Thymol", "kind": "molecule", "shape": "dot", "size": 21.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Thymol\naroma/sabor: herbal, thyme, camphoreous, medicinal, phenolic, pungent, caustic +4\npresente em: black_tea, cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Thymol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6989' target='_blank' rel='noopener'>PubChem 6989<\/a><\/p><p><b>Aroma/sabor:<\/b> herbal, thyme, camphoreous, medicinal, phenolic, pungent, caustic, sweet, medicinal, spicy, aromatic taste, spicy, woody<\/p><p><b>Presente em:<\/b> black_tea, cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 150.2 · <b>xlogP:<\/b> 3.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 65 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["herbal", "thyme", "camphoreous", "medicinal", "phenolic", "pungent, caustic", "sweet, medicinal, spicy", "aromatic taste", "spicy", "woody"]}, {"id": "m:519361", "label": "(5xi,7xi,10xi)-eudesma-4", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(5xi,7xi,10xi)-eudesma-4(14),11-diene\naroma/sabor: herbal\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>(5xi,7xi,10xi)-eudesma-4(14),11-diene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/519361' target='_blank' rel='noopener'>PubChem 519361<\/a><\/p><p><b>Aroma/sabor:<\/b> herbal<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 5.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 17 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["herbal"]}, {"id": "m:111037", "label": "Alpha-Terpinyl Acetate", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Alpha-Terpinyl Acetate\naroma/sabor: citrus, lime, waxy, herbal, sweet, bergamot +2\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Alpha-Terpinyl Acetate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/111037' target='_blank' rel='noopener'>PubChem 111037<\/a><\/p><p><b>Aroma/sabor:<\/b> citrus, lime, waxy, herbal, sweet, bergamot, lavender, pine<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 196.3 · <b>xlogP:<\/b> 2.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 41 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["citrus", "lime", "waxy", "herbal", "sweet", "bergamot", "lavender", "pine"]}, {"id": "m:7794", "label": "Citronellal", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Citronellal\naroma/sabor: lemon, citrus, rose, fatty, herbal, waxy +6\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>Citronellal<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7794' target='_blank' rel='noopener'>PubChem 7794<\/a><\/p><p><b>Aroma/sabor:<\/b> lemon, citrus, rose, fatty, herbal, waxy, floral, sweet, aldehydic, cherry, dry, leaf<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 3.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 19 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["lemon", "citrus", "rose", "fatty", "herbal", "waxy", "floral", "sweet", "aldehydic", "cherry", "dry", "leaf"]}, {"id": "m:6432404", "label": "(+)-gamma-cadinene", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(+)-gamma-cadinene\naroma/sabor: woody\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>(+)-gamma-cadinene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6432404' target='_blank' rel='noopener'>PubChem 6432404<\/a><\/p><p><b>Aroma/sabor:<\/b> woody<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 20 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody"]}, {"id": "m:521253", "label": "(-)-Zingiberene", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(-)-Zingiberene\naroma/sabor: fresh, sharp, spicy\npresente em: ginger, clove, black_pepper", "info": "<h4>(-)-Zingiberene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/521253' target='_blank' rel='noopener'>PubChem 521253<\/a><\/p><p><b>Aroma/sabor:<\/b> fresh, sharp, spicy<\/p><p><b>Presente em:<\/b> ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 5.20<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 6 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["fresh", "sharp", "spicy"]}, {"id": "m:8748", "label": "Beta-Terpineol", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Beta-Terpineol\naroma/sabor: musty, earthy, pungent, woody\npresente em: cardamom, ginger, clove, black_pepper", "info": "<h4>Beta-Terpineol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8748' target='_blank' rel='noopener'>PubChem 8748<\/a><\/p><p><b>Aroma/sabor:<\/b> musty, earthy, pungent, woody<\/p><p><b>Presente em:<\/b> cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 2.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 24 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["musty", "earthy", "pungent", "woody"]}, {"id": "m:8815", "label": "Estragole", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Estragole\naroma/sabor: licorice, spicy, vanilla, alcohol, herbal, fennel +5\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>Estragole<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8815' target='_blank' rel='noopener'>PubChem 8815<\/a><\/p><p><b>Aroma/sabor:<\/b> licorice, spicy, vanilla, alcohol, herbal, fennel, sassafrass, sweet, anise, minty, green<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 148.2 · <b>xlogP:<\/b> 3.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 26 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["licorice", "spicy", "vanilla", "alcohol", "herbal", "fennel", "sassafrass", "sweet", "anise", "minty", "green"]}, {"id": "m:11230", "label": "Terpinen-4-ol", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Terpinen-4-ol\naroma/sabor: musty, pepper, turpentine, woody, sweet, nutmeg +3\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Terpinen-4-ol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/11230' target='_blank' rel='noopener'>PubChem 11230<\/a><\/p><p><b>Aroma/sabor:<\/b> musty, pepper, turpentine, woody, sweet, nutmeg, earthy, pine, herbal pepper flavoring<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 2.20<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 56 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["musty", "pepper", "turpentine", "woody", "sweet", "nutmeg", "earthy", "pine", "herbal pepper flavoring"]}, {"id": "m:637563", "label": "trans-Anethole", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "trans-Anethole\naroma/sabor: licorice, sweet, anise, balsamic, mimosa, sweet taste\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>trans-Anethole<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/637563' target='_blank' rel='noopener'>PubChem 637563<\/a><\/p><p><b>Aroma/sabor:<\/b> licorice, sweet, anise, balsamic, mimosa, sweet taste<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 148.2 · <b>xlogP:<\/b> 3.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 28 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["licorice", "sweet", "anise", "balsamic", "mimosa", "sweet taste"]}, {"id": "m:442501", "label": "(+)-alpha-Terpineol", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "(+)-alpha-Terpineol\naroma/sabor: oily, minty, citrus, lilac, floral, woody +3\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>(+)-alpha-Terpineol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/442501' target='_blank' rel='noopener'>PubChem 442501<\/a><\/p><p><b>Aroma/sabor:<\/b> oily, minty, citrus, lilac, floral, woody, anise, terpene, pine<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 1.80<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 59 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["oily", "minty", "citrus", "lilac", "floral", "woody", "anise", "terpene", "pine"]}, {"id": "m:10364", "label": "Carvacrol", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Carvacrol\naroma/sabor: woody, thymol, spicy, camphoreous, excellent smoke taste,, 1-5 ppm +2\npresente em: cinnamon, ginger, clove, black_pepper", "info": "<h4>Carvacrol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/10364' target='_blank' rel='noopener'>PubChem 10364<\/a><\/p><p><b>Aroma/sabor:<\/b> woody, thymol, spicy, camphoreous, excellent smoke taste,, 1-5 ppm, caraway, thyme<\/p><p><b>Presente em:<\/b> cinnamon, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 150.2 · <b>xlogP:<\/b> 3.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 30 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody", "thymol", "spicy", "camphoreous", "excellent smoke taste,", "1-5 ppm", "caraway", "thyme"]}, {"id": "m:442355", "label": "AC1L9CNW", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "AC1L9CNW\naroma/sabor: woody, spicy\npresente em: cardamom, ginger, clove, black_pepper", "info": "<h4>AC1L9CNW<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/442355' target='_blank' rel='noopener'>PubChem 442355<\/a><\/p><p><b>Aroma/sabor:<\/b> woody, spicy<\/p><p><b>Presente em:<\/b> cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 32 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody", "spicy"]}, {"id": "m:17868", "label": "3-Thujene", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "3-Thujene\naroma/sabor: woody, herbal, green\npresente em: cinnamon, cardamom, clove, black_pepper", "info": "<h4>3-Thujene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/17868' target='_blank' rel='noopener'>PubChem 17868<\/a><\/p><p><b>Aroma/sabor:<\/b> woody, herbal, green<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 136.2 · <b>xlogP:<\/b> 2.80<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 33 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody", "herbal", "green"]}, {"id": "m:5322111", "label": "Caryophyllene", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Caryophyllene\naroma/sabor: woody, spicy, fried\npresente em: cinnamon, clove, black_pepper", "info": "<h4>Caryophyllene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/5322111' target='_blank' rel='noopener'>PubChem 5322111<\/a><\/p><p><b>Aroma/sabor:<\/b> woody, spicy, fried<\/p><p><b>Presente em:<\/b> cinnamon, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 11 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody", "spicy", "fried"]}, {"id": "m:64685", "label": "Borneol", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Borneol\naroma/sabor: woody, pine, camphoreous, fragrant, green, polish@camphor +1\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>Borneol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/64685' target='_blank' rel='noopener'>PubChem 64685<\/a><\/p><p><b>Aroma/sabor:<\/b> woody, pine, camphoreous, fragrant, green, polish@camphor, musty<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 2.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 34 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["woody", "pine", "camphoreous", "fragrant", "green", "polish@camphor", "musty"]}, {"id": "m:159055", "label": "D-Camphor", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "D-Camphor\naroma/sabor: phenolic, minty, camphoreous, medicinal, herbal, woody +5\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>D-Camphor<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/159055' target='_blank' rel='noopener'>PubChem 159055<\/a><\/p><p><b>Aroma/sabor:<\/b> phenolic, minty, camphoreous, medicinal, herbal, woody, bitter, pungent aromatic taste, earthy, pine, spicy<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 152.2 · <b>xlogP:<\/b> 2.20<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 35 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["phenolic", "minty", "camphoreous", "medicinal", "herbal", "woody", "bitter", "pungent aromatic taste", "earthy", "pine", "spicy"]}, {"id": "m:5281515", "label": "Beta-Caryophyllene", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Beta-Caryophyllene\naroma/sabor: spicy, clove, sweet, woody, dry, fried\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Beta-Caryophyllene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/5281515' target='_blank' rel='noopener'>PubChem 5281515<\/a><\/p><p><b>Aroma/sabor:<\/b> spicy, clove, sweet, woody, dry, fried<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 71 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["spicy", "clove", "sweet", "woody", "dry", "fried"]}, {"id": "m:11142", "label": "Beta-Phellandrene", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Beta-Phellandrene\naroma/sabor: minty, terpentine, burning taste\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>Beta-Phellandrene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/11142' target='_blank' rel='noopener'>PubChem 11142<\/a><\/p><p><b>Aroma/sabor:<\/b> minty, terpentine, burning taste<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 136.2 · <b>xlogP:<\/b> 3.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 37 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["minty", "terpentine", "burning taste"]}, {"id": "m:15094", "label": "7-methyl-4-methylidene-1", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "7-methyl-4-methylidene-1-propan-2-yl-2,3,4a,5,6,8a-hexahydro-1H-naphthalene\naroma/sabor: spicy, herbal, woody\npresente em: ginger, clove, black_pepper", "info": "<h4>7-methyl-4-methylidene-1-propan-2-yl-2,3,4a,5,6,8a-hexahydro-1H-naphthalene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/15094' target='_blank' rel='noopener'>PubChem 15094<\/a><\/p><p><b>Aroma/sabor:<\/b> spicy, herbal, woody<\/p><p><b>Presente em:<\/b> ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 14 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["spicy", "herbal", "woody"]}, {"id": "m:86609", "label": ".alpha.-Cubebene", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": ".alpha.-Cubebene\naroma/sabor: waxy, herbal\npresente em: ginger, clove, black_pepper", "info": "<h4>.alpha.-Cubebene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/86609' target='_blank' rel='noopener'>PubChem 86609<\/a><\/p><p><b>Aroma/sabor:<\/b> waxy, herbal<\/p><p><b>Presente em:<\/b> ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 204.4 · <b>xlogP:<\/b> 4.50<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 15 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["waxy", "herbal"]}, {"id": "m:7462", "label": "Alpha-Terpinene", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Alpha-Terpinene\naroma/sabor: lemon, citrus, terpene, medicinal, herbal, woody +2\npresente em: cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Alpha-Terpinene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7462' target='_blank' rel='noopener'>PubChem 7462<\/a><\/p><p><b>Aroma/sabor:<\/b> lemon, citrus, terpene, medicinal, herbal, woody, bitter, camphoraceous<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 136.2 · <b>xlogP:<\/b> 2.80<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 80 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["lemon", "citrus", "terpene", "medicinal", "herbal", "woody", "bitter", "camphoraceous"]}, {"id": "m:18818", "label": "Sabinene", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Sabinene\naroma/sabor: citrus, spicy, pepper, turpentine, woody, terpene +1\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>Sabinene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/18818' target='_blank' rel='noopener'>PubChem 18818<\/a><\/p><p><b>Aroma/sabor:<\/b> citrus, spicy, pepper, turpentine, woody, terpene, pine<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 136.2 · <b>xlogP:<\/b> 3.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 44 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["citrus", "spicy", "pepper", "turpentine", "woody", "terpene", "pine"]}, {"id": "m:6616", "label": "Camphene", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Camphene\naroma/sabor: fir needle, woody, herbal, camphoreous, camphor-like, camphoraceous taste +3\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>Camphene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6616' target='_blank' rel='noopener'>PubChem 6616<\/a><\/p><p><b>Aroma/sabor:<\/b> fir needle, woody, herbal, camphoreous, camphor-like, camphoraceous taste, mothball, oily, warm<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 136.2 · <b>xlogP:<\/b> 3.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 47 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["fir needle", "woody", "herbal", "camphoreous", "camphor-like", "camphoraceous taste", "mothball", "oily", "warm"]}, {"id": "m:985", "label": "palmitic acid", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "palmitic acid\naroma/sabor: fatty, slightly waxy\npresente em: black_tea, milk, cinnamon, cardamom, ginger", "info": "<h4>palmitic acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/985' target='_blank' rel='noopener'>PubChem 985<\/a><\/p><p><b>Aroma/sabor:<\/b> fatty, slightly waxy<\/p><p><b>Presente em:<\/b> black_tea, milk, cinnamon, cardamom, ginger<\/p><p><b>Peso molecular:<\/b> 256.4 · <b>xlogP:<\/b> 6.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 86 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["fatty", "slightly waxy"]}, {"id": "m:8051", "label": "2-Heptanone", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2-Heptanone\naroma/sabor: coconut, soap, herbal, sweet, woody, fruity +6\npresente em: milk, cinnamon, cardamom, ginger, clove", "info": "<h4>2-Heptanone<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8051' target='_blank' rel='noopener'>PubChem 8051<\/a><\/p><p><b>Aroma/sabor:<\/b> coconut, soap, herbal, sweet, woody, fruity, spicy, cinnamon, pear-like flavor, blue cheese, green, nutty<\/p><p><b>Presente em:<\/b> milk, cinnamon, cardamom, ginger, clove<\/p><p><b>Peso molecular:<\/b> 114.2 · <b>xlogP:<\/b> 2.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 91 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["coconut", "soap", "herbal", "sweet", "woody", "fruity", "spicy", "cinnamon", "pear-like flavor", "blue cheese", "green", "nutty"]}, {"id": "m:6549", "label": "Linalool", "kind": "molecule", "shape": "dot", "size": 21.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Linalool\naroma/sabor: lemon, citrus, orange, floral, sweet, woody +7\npresente em: milk, cinnamon, cardamom, ginger, clove, black_pepper", "info": "<h4>Linalool<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/6549' target='_blank' rel='noopener'>PubChem 6549<\/a><\/p><p><b>Aroma/sabor:<\/b> lemon, citrus, orange, floral, sweet, woody, blueberry, bois de rose, lavender, green, spicy, citrus taste, coriander, rose<\/p><p><b>Presente em:<\/b> milk, cinnamon, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 2.70<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 135 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["lemon", "citrus", "orange", "floral", "sweet", "woody", "blueberry", "bois de rose", "lavender", "green", "spicy, citrus taste", "coriander", "rose"]}, {"id": "m:243", "label": "benzoic acid", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "benzoic acid\naroma/sabor: balsamic, urine, bitter taste, pungent, sour\npresente em: black_tea, cinnamon, clove", "info": "<h4>benzoic acid<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/243' target='_blank' rel='noopener'>PubChem 243<\/a><\/p><p><b>Aroma/sabor:<\/b> balsamic, urine, bitter taste, pungent, sour<\/p><p><b>Presente em:<\/b> black_tea, cinnamon, clove<\/p><p><b>Peso molecular:<\/b> 122.1 · <b>xlogP:<\/b> 1.90<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 19 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["balsamic", "urine", "bitter taste", "pungent", "sour"]}, {"id": "m:7461", "label": "Gamma-Terpinene", "kind": "molecule", "shape": "dot", "size": 16.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Gamma-Terpinene\naroma/sabor: lemon, gasoline, tropical, terpene, turpentine, herbal +5\npresente em: cinnamon, cardamom, ginger, black_pepper", "info": "<h4>Gamma-Terpinene<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/7461' target='_blank' rel='noopener'>PubChem 7461<\/a><\/p><p><b>Aroma/sabor:<\/b> lemon, gasoline, tropical, terpene, turpentine, herbal, woody, bitter, oily, lime, citrus<\/p><p><b>Presente em:<\/b> cinnamon, cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 136.2 · <b>xlogP:<\/b> 2.80<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 51 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["lemon", "gasoline", "tropical", "terpene", "turpentine", "herbal", "woody", "bitter", "oily", "lime", "citrus"]}, {"id": "m:8163", "label": "2-Undecanone", "kind": "molecule", "shape": "dot", "size": 18.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "2-Undecanone\naroma/sabor: orange, waxy, fresh, fatty, floral, iris +5\npresente em: milk, cardamom, ginger, clove, black_pepper", "info": "<h4>2-Undecanone<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8163' target='_blank' rel='noopener'>PubChem 8163<\/a><\/p><p><b>Aroma/sabor:<\/b> orange, waxy, fresh, fatty, floral, iris, creamy, fruity, orris, green, rose<\/p><p><b>Presente em:<\/b> milk, cardamom, ginger, clove, black_pepper<\/p><p><b>Peso molecular:<\/b> 170.3 · <b>xlogP:<\/b> 4.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 92 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["orange", "waxy", "fresh", "fatty", "floral", "iris", "creamy", "fruity", "orris", "green", "rose"]}, {"id": "m:667450", "label": "AC1LDI49", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "AC1LDI49\naroma/sabor: bitter\npresente em: cinnamon, black_pepper", "info": "<h4>AC1LDI49<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/667450' target='_blank' rel='noopener'>PubChem 667450<\/a><\/p><p><b>Aroma/sabor:<\/b> bitter<\/p><p><b>Presente em:<\/b> cinnamon, black_pepper<\/p><p><b>Peso molecular:<\/b> 246.3 · <b>xlogP:<\/b> 2.30<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 3 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["bitter"]}, {"id": "m:8900", "label": "Heptane", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Heptane\naroma/sabor: alkane, ethereal, sweet\npresente em: cardamom, ginger", "info": "<h4>Heptane<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/8900' target='_blank' rel='noopener'>PubChem 8900<\/a><\/p><p><b>Aroma/sabor:<\/b> alkane, ethereal, sweet<\/p><p><b>Presente em:<\/b> cardamom, ginger<\/p><p><b>Peso molecular:<\/b> 100.2 · <b>xlogP:<\/b> 4.40<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 3 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["alkane", "ethereal", "sweet"]}, {"id": "m:5356544", "label": "Peruviol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Peruviol\naroma/sabor: waxy, floral\npresente em: ginger, black_pepper", "info": "<h4>Peruviol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/5356544' target='_blank' rel='noopener'>PubChem 5356544<\/a><\/p><p><b>Aroma/sabor:<\/b> waxy, floral<\/p><p><b>Presente em:<\/b> ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 222.4 · <b>xlogP:<\/b> 4.60<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 3 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["waxy", "floral"]}, {"id": "m:27208", "label": "beta-Bisabolol", "kind": "molecule", "shape": "dot", "size": 11.0, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "beta-Bisabolol\naroma/sabor: lemon, citrus, herbal, fresh, floral, sweet +1\npresente em: ginger, black_pepper", "info": "<h4>beta-Bisabolol<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/27208' target='_blank' rel='noopener'>PubChem 27208<\/a><\/p><p><b>Aroma/sabor:<\/b> lemon, citrus, herbal, fresh, floral, sweet, tangy<\/p><p><b>Presente em:<\/b> ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 222.4 · <b>xlogP:<\/b> 4.00<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 3 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["lemon", "citrus", "herbal", "fresh", "floral", "sweet", "tangy"]}, {"id": "m:61130", "label": "Myrtenal", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Myrtenal\naroma/sabor: lime, spicy, jam, pepper, sweet, tonka +5\npresente em: cardamom, ginger, black_pepper", "info": "<h4>Myrtenal<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/61130' target='_blank' rel='noopener'>PubChem 61130<\/a><\/p><p><b>Aroma/sabor:<\/b> lime, spicy, jam, pepper, sweet, tonka, terpene, camphoreous, cinnamon, minty, cool<\/p><p><b>Presente em:<\/b> cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 150.2 · <b>xlogP:<\/b> 2.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 22 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["lime", "spicy", "jam", "pepper", "sweet", "tonka", "terpene", "camphoreous", "cinnamon", "minty", "cool"]}, {"id": "m:62367", "label": "Sabinene hydrate", "kind": "molecule", "shape": "dot", "size": 13.5, "color": {"background": "#eb6834", "border": "#fcfcfb", "highlight": {"background": "#eb6834", "border": "#0b0b0b"}}, "font": {"size": 11, "color": "#52514e", "face": "system-ui"}, "title": "Sabinene hydrate\naroma/sabor: minty, eucalyptus, terpene, green, cool\npresente em: cardamom, ginger, black_pepper", "info": "<h4>Sabinene hydrate<\/h4><p>Molécula · <a href='https://pubchem.ncbi.nlm.nih.gov/compound/62367' target='_blank' rel='noopener'>PubChem 62367<\/a><\/p><p><b>Aroma/sabor:<\/b> minty, eucalyptus, terpene, green, cool<\/p><p><b>Presente em:<\/b> cardamom, ginger, black_pepper<\/p><p><b>Peso molecular:<\/b> 154.3 · <b>xlogP:<\/b> 2.10<\/p><p class='muted'>xlogP &gt; 3 → solúvel em gordura (libera aroma no óleo/manteiga); peso &lt; 150 → volátil (some com cozimento longo).<\/p><p class='muted'>Aparece em 23 ingredientes do banco (quanto menor, mais característica).<\/p>", "desc": ["minty", "eucalyptus", "terpene", "green", "cool"]}], "edges": [{"from": "i:cinnamon", "to": "m:7136", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:7136", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:7136", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:7136", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:7136", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:3473", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:3473", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:3473", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:3473", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:442009", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:442009", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:442009", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:442009", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:6508206", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:6508206", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:6508206", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:6508206", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:6508206", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_tea", "to": "m:6989", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:6989", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:6989", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:6989", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:6989", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:6989", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:519361", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:519361", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:519361", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:519361", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:111037", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:111037", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:111037", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:111037", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:111037", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:7794", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:7794", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:7794", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:7794", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:6432404", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:6432404", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:6432404", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:6432404", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:521253", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:521253", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:521253", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:8748", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:8748", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:8748", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:8748", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:8815", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:8815", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:8815", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:8815", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:11230", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:11230", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:11230", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:11230", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:11230", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:637563", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:637563", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:637563", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:637563", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:442501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:442501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:442501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:442501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:442501", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:10364", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:10364", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:10364", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:10364", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:442355", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:442355", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:442355", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:442355", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:17868", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:17868", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:17868", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:17868", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:5322111", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:5322111", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:5322111", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:64685", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:64685", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:64685", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:64685", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:159055", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:159055", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:159055", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:159055", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:5281515", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:5281515", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:5281515", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:5281515", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:5281515", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:11142", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:11142", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:11142", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:11142", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:15094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:15094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:15094", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:86609", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:86609", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:86609", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:7462", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:7462", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:7462", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:7462", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:7462", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:18818", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:18818", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:18818", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:18818", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:6616", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:6616", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:6616", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:6616", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_tea", "to": "m:985", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:milk", "to": "m:985", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:985", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:985", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:985", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:milk", "to": "m:8051", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:8051", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:8051", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:8051", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:8051", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:milk", "to": "m:6549", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:6549", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:6549", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:6549", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:6549", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:6549", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_tea", "to": "m:243", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:243", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:243", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:7461", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:7461", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:7461", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:7461", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:milk", "to": "m:8163", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:8163", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:8163", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:clove", "to": "m:8163", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:8163", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "m:667450", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:667450", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:8900", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:8900", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:5356544", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:5356544", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:27208", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:27208", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:61130", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:61130", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:61130", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cardamom", "to": "m:62367", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:ginger", "to": "m:62367", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:black_pepper", "to": "m:62367", "kind": "chem", "color": {"color": "#c9c8c3", "highlight": "#52514e"}, "width": 1}, {"from": "i:cinnamon", "to": "i:clove", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 8.563099772547064, "title": "cinnamon + clove\nNPMI 0.41 — associação clássica em receitas"}, {"from": "i:cinnamon", "to": "i:cardamom", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 6.526250274647653, "title": "cinnamon + cardamom\nNPMI 0.28 — associação comum em receitas"}, {"from": "i:cardamom", "to": "i:ginger", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 6.288205075555648, "title": "cardamom + ginger\nNPMI 0.27 — associação comum em receitas"}, {"from": "i:cardamom", "to": "i:clove", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 8.429587944202861, "title": "cardamom + clove\nNPMI 0.40 — associação clássica em receitas"}, {"from": "i:cinnamon", "to": "i:ginger", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 5.931214362868262, "title": "cinnamon + ginger\nNPMI 0.25 — associação comum em receitas"}, {"from": "i:ginger", "to": "i:clove", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 7.817501246918662, "title": "ginger + clove\nNPMI 0.36 — associação clássica em receitas"}, {"from": "i:black_tea", "to": "i:clove", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 5.986381767221779, "title": "black_tea + clove\nNPMI 0.25 — associação comum em receitas"}, {"from": "i:black_tea", "to": "i:cardamom", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 6.750257962872326, "title": "black_tea + cardamom\nNPMI 0.30 — associação comum em receitas"}, {"from": "i:black_tea", "to": "i:ginger", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 3.682358408298587, "title": "black_tea + ginger\nNPMI 0.11 — associação fraca em receitas"}, {"from": "i:black_tea", "to": "i:cinnamon", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 3.2477515006512254, "title": "black_tea + cinnamon\nNPMI 0.08 — associação fraca em receitas"}, {"from": "i:cinnamon", "to": "i:sugar", "kind": "recipe", "color": {"color": "#1baf7a", "highlight": "#0e7a52", "opacity": 0.8}, "width": 4.870427042408849, "title": "cinnamon + sugar\nNPMI 0.18 — associação comum em receitas"}], "tags": ["woody", "herbal", "spicy", "sweet", "citrus", "floral", "green", "camphoreous", "pine", "minty", "terpene", "bitter", "waxy", "lemon", "fresh", "pungent"]}</script>
+
+<h2>Química × prática</h2>
+<div class="grid2"><div style="height:488px; width:100%;">                            <div id="a9761339-bac1-4586-909e-0b02590baa81" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a9761339-bac1-4586-909e-0b02590baa81")) {                    Plotly.newPlot(                        "a9761339-bac1-4586-909e-0b02590baa81",                        [{"colorbar":{"outlinewidth":0,"thickness":10},"colorscale":[[0,"#f3f7fd"],[0.5,"#6da7ec"],[1,"#104281"]],"hovertemplate":"%{y} + %{x}\u003cbr\u003eQu\u00edmica: similaridade molecular (Jaccard): %{z:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","text":[["","0.04","0.03","0.03","0.03","0.04","0.03","0.00"],["0.04","","0.09","0.15","0.12","0.11","0.09","0.05"],["0.03","0.09","","0.53","0.48","0.55","0.54","0.02"],["0.03","0.15","0.53","","0.52","0.50","0.50","0.02"],["0.03","0.12","0.48","0.52","","0.46","0.50","0.02"],["0.04","0.11","0.55","0.50","0.46","","0.48","0.02"],["0.03","0.09","0.54","0.50","0.50","0.48","","0.02"],["0.00","0.05","0.02","0.02","0.02","0.02","0.02",""]],"texttemplate":"%{text}","x":["black tea","milk","cinnamon","cardamom","ginger","clove","black pepper","sugar"],"xgap":2,"y":["black tea","milk","cinnamon","cardamom","ginger","clove","black pepper","sugar"],"ygap":2,"z":{"dtype":"f8","bdata":"AAAAAAAA+H9oL6G9hPaiP3FCSp5lRJ8\u002f\u002fKnx0k1ioD8K9YHWolCfP95Jw+ujNqI\u002fqAczVDGenj8AAAAAAAAAAGgvob2E9qI\u002fAAAAAAAA+H+q9DOnwZ23P8ky6RmRLMM\u002fmVXczumzvz+gyhH6Aaq8PyM+gVRyXrY\u002fAnGh5iQQpz9xQkqeZUSfP6r0M6fBnbc\u002fAAAAAAAA+H9RD\u002fVQD\u002fXgP8ln3WCKfN4\u002f4buNJ3y34T8sFbFUxFLhPwYWWGCBBZY\u002f\u002fKnx0k1ioD\u002fJMukZkSzDP1EP9VAP9eA\u002fAAAAAAAA+H8lSZIkSZLgP6OMgFOUEeA\u002fJvyZ8GfC3z\u002fIpHiBTIqXPwr1gdaiUJ8\u002fmVXczumzvz\u002fJZ91ginzePyVJkiRJkuA\u002fAAAAAAAA+H9k9m4t3LTdPxwho27DJuA\u002fFEVRFEVRlD\u002feScProzaiP6DKEfoBqrw\u002f4buNJ3y34T+jjIBTlBHgP2T2bi3ctN0\u002fAAAAAAAA+H8SQ7fi8O\u002feP3CBC1zgApc\u002fqAczVDGenj8jPoFUcl62PywVsVTEUuE\u002fJvyZ8GfC3z8cIaNuwybgPxJDt+Lw794\u002fAAAAAAAA+H8XbMEWbMGWPwAAAAAAAAAAAnGh5iQQpz8GFlhggQWWP8ikeIFMipc\u002fFEVRFEVRlD9wgQtc4AKXPxdswRZswZY\u002fAAAAAAAA+H8=","shape":"8, 8"},"zmin":0,"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"yaxis":{"autorange":"reversed"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":488,"title":{"text":"Qu\u00edmica: similaridade molecular (Jaccard)"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div><div style="height:488px; width:100%;">                            <div id="51c34e3d-d3ac-47e4-a7dc-e67efb492c8c" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("51c34e3d-d3ac-47e4-a7dc-e67efb492c8c")) {                    Plotly.newPlot(                        "51c34e3d-d3ac-47e4-a7dc-e67efb492c8c",                        [{"colorbar":{"outlinewidth":0,"thickness":10},"colorscale":[[0,"#fdf4ef"],[0.5,"#f19a6f"],[1,"#9a3a12"]],"hovertemplate":"%{y} + %{x}\u003cbr\u003ePr\u00e1tica: co-ocorr\u00eancia em receitas (NPMI): %{z:.2f}\u003cextra\u003e\u003c\u002fextra\u003e","text":[["","0.00","0.08","0.30","0.11","0.25","0.00","0.00"],["0.00","","0.00","0.00","0.00","0.00","0.00","0.00"],["0.08","0.00","","0.28","0.25","0.41","0.00","0.18"],["0.30","0.00","0.28","","0.27","0.40","0.00","0.00"],["0.11","0.00","0.25","0.27","","0.36","0.00","0.00"],["0.25","0.00","0.41","0.40","0.36","","0.00","0.00"],["0.00","0.00","0.00","0.00","0.00","0.00","","0.00"],["0.00","0.00","0.18","0.00","0.00","0.00","0.00",""]],"texttemplate":"%{text}","x":["black tea","milk","cinnamon","cardamom","ginger","clove","black pepper","sugar"],"xgap":2,"y":["black tea","milk","cinnamon","cardamom","ginger","clove","black pepper","sugar"],"ygap":2,"z":{"dtype":"f8","bdata":"AAAAAAAA+H8AAAAAAAAAAJ1PDUfK9rM\u002foWaYn0MA0z9SsHym8Oq6P7C0vB8c5M8\u002fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACdTw1HyvazPwAAAAAAAAAAAAAAAAAA+H+ifRxa4RrSP2StEIQgc88\u002fEuYNOp1A2j8AAAAAAAAAAKGZBXSi9sY\u002foWaYn0MA0z8AAAAAAAAAAKJ9HFrhGtI\u002fAAAAAAAA+H\u002f7NTg7HyfRP71t7Oblt9k\u002fAAAAAAAAAAAAAAAAAAAAAFKwfKbw6ro\u002fAAAAAAAAAABkrRCEIHPPP\u002fs1ODsfJ9E\u002fAAAAAAAA+H\u002fL0f8LH0XXPwAAAAAAAAAAAAAAAAAAAACwtLwfHOTPPwAAAAAAAAAAEuYNOp1A2j+9bezm5bfZP8vR\u002fwsfRdc\u002fAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAChmQV0ovbGPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8=","shape":"8, 8"},"zmin":0,"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"yaxis":{"autorange":"reversed"},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","height":488,"title":{"text":"Pr\u00e1tica: co-ocorr\u00eancia em receitas (NPMI)"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div></div>
+<h2>Perfil sensorial</h2><div style="height:532px; width:100%;">                            <div id="6a2c0566-e450-44b0-96b3-c160a652bc60" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6a2c0566-e450-44b0-96b3-c160a652bc60")) {                    Plotly.newPlot(                        "6a2c0566-e450-44b0-96b3-c160a652bc60",                        [{"hovertemplate":"black_tea: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2}},"name":"black tea","orientation":"h","x":{"dtype":"f8","bdata":"FRUVFRUVhT8SEhISEhJyPxgYGBgYGFg\u002fEhISEhISgj+Uk5OTk5OTP5eWlpaWlpY\u002fHh4eHh4ejj8SEhISEhKSPxgYGBgYGIg\u002fmpmZmZmZqT+XlpaWlpamPx4eHh4eHp4\u002fGxsbGxsbiz+Uk5OTk5OjPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"milk: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":2}},"name":"milk","orientation":"h","x":{"dtype":"f8","bdata":"X0J7Ce0llD8J7SW0l9COPxzHcRzHcYw\u002fE9pLaC+hnT\u002fkOI7jOI6jPxzHcRzHcYw\u002fHMdxHMdxfD8vob2E9hKKP3sJ7SW0l4A\u002fTGgvob2Epj9yHMdxHMehPwntJbSX0J4\u002faC+hvYT2kj9MaC+hvYSmPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"cinnamon: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":2}},"name":"cinnamon","orientation":"h","x":{"dtype":"f8","bdata":"Zzs+BCk3hT8+BCk3Fc1zP4a90p+zHY8\u002fFc0TagFjgj\u002fslf6c7fiAP+yV\u002fpzt+JA\u002fTkXzhFrAmD9nOz4EKTeVP8nqMuyV\u002fpw\u002fgTGJg\u002fetkT+5qWieUAuYP1j6c7bjQ6A\u002fIki5qWieoD+E962R1WWoPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"cardamom: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":2}},"name":"cardamom","orientation":"h","x":{"dtype":"f8","bdata":"EN9BfAfxjT8Q30F8B\u002fFtP15DeQ3lNZQ\u002fcB\u002fBfQT3kT92E9lNZDeRP3wH8R3Ed5A\u002fEN9BfAfxjT9wH8F9BPeRPzSX0VxGc5k\u002fUltJbSW1lT98B\u002fEdxHegP38B\u002fQX0F6A\u002feQ3lNZTXoD9bSW0ltZWkPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"ginger: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","line":{"color":"#fcfcfb","width":2}},"name":"ginger","orientation":"h","x":{"dtype":"f8","bdata":"vvfee++9hz\u002fnnHPOOedsP5VSSimllJI\u002f+N577733jj\u002fXWmuttdaKP5VSSimllJI\u002fCCGEEEIIkT\u002fGGGOMMcaYP8YYY4wxxqA\u002fIYQQQgghlD+EEEIIIYSgP+ecc84555w\u002fSimllFJKmT+llFJKKaWkPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"clove: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#008300","line":{"color":"#fcfcfb","width":2}},"name":"clove","orientation":"h","x":{"dtype":"f8","bdata":"s6asKWvKij93xB1xR9xxP9aUNWVNWYM\u002fEnfEHXFHjD\u002f0BX1BX9CHP9AX9AV9QY8\u002fBn1BX9AXlD8GfUFf0BeUP4O+oC\u002foC5o\u002fJO6IO+KOmD8Sd8QdcUecP4O+oC\u002foC5o\u002fR9wRd8QdoT\u002fEHXFH3BGnPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"black_pepper: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#6250d6","line":{"color":"#fcfcfb","width":2}},"name":"black pepper","orientation":"h","x":{"dtype":"f8","bdata":"1hmpmFudgT\u002fId+Egenx3PzsjFXOrM5I\u002fXJ2RirnViT\u002fwwkH0+C58P7rVGamYW40\u002fLYFN+8kSmD9jbnVGKuaWP077yRLYtJ8\u002foCyBTfvJkj\u002f3kyWwaT+ZPyawaT9ZAps\u002fi7nVGamYmz8Vc6szUjGnPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"},{"hovertemplate":"sugar: %{x:.0%} do perfil \u2014 %{y}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e34948","line":{"color":"#fcfcfb","width":2}},"name":"sugar","orientation":"h","x":{"dtype":"f8","bdata":"AAAAAAAAAACamZmZmZmpPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJqZmZmZmZk\u002fmpmZmZmZqT+amZmZmZmZPw=="},"y":["oily","sour","citrus","waxy","fatty","fresh","spicy","herbal","woody","fruity","green","floral","bitter","sweet"],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"font":{"family":"system-ui, -apple-system, Segoe UI, Roboto, sans-serif","color":"#0b0b0b","size":13},"margin":{"l":10,"r":10,"t":50,"b":10},"hoverlabel":{"font":{"color":"#0b0b0b"},"bgcolor":"white","bordercolor":"#e6e5e1"},"xaxis":{"tickformat":".0%","gridcolor":"#e6e5e1","title":{"text":"fra\u00e7\u00e3o m\u00e9dia das mol\u00e9culas com o descritor"}},"legend":{"orientation":"h","y":-0.15,"x":0},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","barmode":"stack","height":532,"title":{"text":"Perfil sensorial: quem traz cada nota"}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>Moléculas-ponte</h2>
+<p class="muted">Moléculas presentes em 2 ou mais ingredientes, priorizando as mais específicas
+(raras no banco) — são elas que dão "assinatura" à combinação.</p>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>molécula</th>
+      <th>aroma/sabor</th>
+      <th>presente em</th>
+      <th>peso molecular</th>
+      <th>xlogP</th>
+      <th>nº alimentos no banco</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acetyleugenol</td>
+      <td>carnation, spicy, clove, malt, fresh, floral +2</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>206.2</td>
+      <td>2.30</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>gingerol</td>
+      <td>pungent</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>294.4</td>
+      <td>2.50</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>carnosol</td>
+      <td>bitter</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>330.4</td>
+      <td>4.40</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>6753-98-6</td>
+      <td>woody</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.50</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>Thymol</td>
+      <td>herbal, thyme, camphoreous, medicinal, phenolic, pungent, caustic +4</td>
+      <td>black_tea, cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>150.2</td>
+      <td>3.30</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>(5xi,7xi,10xi)-eudesma-4(14),11-diene</td>
+      <td>herbal</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>5.40</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>Alpha-Terpinyl Acetate</td>
+      <td>citrus, lime, waxy, herbal, sweet, bergamot +2</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>196.3</td>
+      <td>2.40</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>Citronellal</td>
+      <td>lemon, citrus, rose, fatty, herbal, waxy +6</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>154.3</td>
+      <td>3.00</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>(+)-gamma-cadinene</td>
+      <td>woody</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.30</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>(-)-Zingiberene</td>
+      <td>fresh, sharp, spicy</td>
+      <td>ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>5.20</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Beta-Terpineol</td>
+      <td>musty, earthy, pungent, woody</td>
+      <td>cardamom, ginger, clove, black_pepper</td>
+      <td>154.3</td>
+      <td>2.50</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Estragole</td>
+      <td>licorice, spicy, vanilla, alcohol, herbal, fennel +5</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>148.2</td>
+      <td>3.40</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>Terpinen-4-ol</td>
+      <td>musty, pepper, turpentine, woody, sweet, nutmeg +3</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>154.3</td>
+      <td>2.20</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <td>trans-Anethole</td>
+      <td>licorice, sweet, anise, balsamic, mimosa, sweet taste</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>148.2</td>
+      <td>3.30</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>(+)-alpha-Terpineol</td>
+      <td>oily, minty, citrus, lilac, floral, woody +3</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>154.3</td>
+      <td>1.80</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>Carvacrol</td>
+      <td>woody, thymol, spicy, camphoreous, excellent smoke taste,, 1-5 ppm +2</td>
+      <td>cinnamon, ginger, clove, black_pepper</td>
+      <td>150.2</td>
+      <td>3.10</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>AC1L9CNW</td>
+      <td>woody, spicy</td>
+      <td>cardamom, ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.50</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>3-Thujene</td>
+      <td>woody, herbal, green</td>
+      <td>cinnamon, cardamom, clove, black_pepper</td>
+      <td>136.2</td>
+      <td>2.80</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>Caryophyllene</td>
+      <td>woody, spicy, fried</td>
+      <td>cinnamon, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.40</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Borneol</td>
+      <td>woody, pine, camphoreous, fragrant, green, polish@camphor +1</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>154.3</td>
+      <td>2.70</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>D-Camphor</td>
+      <td>phenolic, minty, camphoreous, medicinal, herbal, woody +5</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>152.2</td>
+      <td>2.20</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>Beta-Caryophyllene</td>
+      <td>spicy, clove, sweet, woody, dry, fried</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.40</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>Beta-Phellandrene</td>
+      <td>minty, terpentine, burning taste</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>136.2</td>
+      <td>3.40</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <td>7-methyl-4-methylidene-1-propan-2-yl-2,3,4a,5,6,8a-hexahydro-1H-naphthalene</td>
+      <td>spicy, herbal, woody</td>
+      <td>ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.30</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>.alpha.-Cubebene</td>
+      <td>waxy, herbal</td>
+      <td>ginger, clove, black_pepper</td>
+      <td>204.4</td>
+      <td>4.50</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Alpha-Terpinene</td>
+      <td>lemon, citrus, terpene, medicinal, herbal, woody +2</td>
+      <td>cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>136.2</td>
+      <td>2.80</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>Sabinene</td>
+      <td>citrus, spicy, pepper, turpentine, woody, terpene +1</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>136.2</td>
+      <td>3.10</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <td>Camphene</td>
+      <td>fir needle, woody, herbal, camphoreous, camphor-like, camphoraceous taste +3</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>136.2</td>
+      <td>3.30</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>palmitic acid</td>
+      <td>fatty, slightly waxy</td>
+      <td>black_tea, milk, cinnamon, cardamom, ginger</td>
+      <td>256.4</td>
+      <td>6.40</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>2-Heptanone</td>
+      <td>coconut, soap, herbal, sweet, woody, fruity +6</td>
+      <td>milk, cinnamon, cardamom, ginger, clove</td>
+      <td>114.2</td>
+      <td>2.00</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <td>Linalool</td>
+      <td>lemon, citrus, orange, floral, sweet, woody +7</td>
+      <td>milk, cinnamon, cardamom, ginger, clove, black_pepper</td>
+      <td>154.3</td>
+      <td>2.70</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <td>benzoic acid</td>
+      <td>balsamic, urine, bitter taste, pungent, sour</td>
+      <td>black_tea, cinnamon, clove</td>
+      <td>122.1</td>
+      <td>1.90</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Gamma-Terpinene</td>
+      <td>lemon, gasoline, tropical, terpene, turpentine, herbal +5</td>
+      <td>cinnamon, cardamom, ginger, black_pepper</td>
+      <td>136.2</td>
+      <td>2.80</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <td>2-Undecanone</td>
+      <td>orange, waxy, fresh, fatty, floral, iris +5</td>
+      <td>milk, cardamom, ginger, clove, black_pepper</td>
+      <td>170.3</td>
+      <td>4.10</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>AC1LDI49</td>
+      <td>bitter</td>
+      <td>cinnamon, black_pepper</td>
+      <td>246.3</td>
+      <td>2.30</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Heptane</td>
+      <td>alkane, ethereal, sweet</td>
+      <td>cardamom, ginger</td>
+      <td>100.2</td>
+      <td>4.40</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Peruviol</td>
+      <td>waxy, floral</td>
+      <td>ginger, black_pepper</td>
+      <td>222.4</td>
+      <td>4.60</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>beta-Bisabolol</td>
+      <td>lemon, citrus, herbal, fresh, floral, sweet +1</td>
+      <td>ginger, black_pepper</td>
+      <td>222.4</td>
+      <td>4.00</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Myrtenal</td>
+      <td>lime, spicy, jam, pepper, sweet, tonka +5</td>
+      <td>cardamom, ginger, black_pepper</td>
+      <td>150.2</td>
+      <td>2.10</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Sabinene hydrate</td>
+      <td>minty, eucalyptus, terpene, green, cool</td>
+      <td>cardamom, ginger, black_pepper</td>
+      <td>154.3</td>
+      <td>2.10</td>
+      <td>23</td>
+    </tr>
+  </tbody>
+</table>
+<h2>O que acrescentar?</h2>
+<div class="grid2"><div><h3>Clássicas (prática)</h3><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>allspice</td>
+      <td>Spice</td>
+      <td>0.348</td>
+      <td>0.19</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>nutmeg</td>
+      <td>Nut/Seed</td>
+      <td>0.387</td>
+      <td>0.17</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>mutton</td>
+      <td>Meat/Animal Product</td>
+      <td>0.055</td>
+      <td>0.12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>mace</td>
+      <td>Nut/Seed</td>
+      <td>0.053</td>
+      <td>0.12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>star_anise</td>
+      <td>Plant/Vegetable</td>
+      <td>0.366</td>
+      <td>0.11</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>pumpkin</td>
+      <td>Plant/Vegetable</td>
+      <td>0.308</td>
+      <td>0.10</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>curry_leaf</td>
+      <td>Plant/Vegetable</td>
+      <td>0.036</td>
+      <td>0.10</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>molasses</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.058</td>
+      <td>0.10</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>ghee</td>
+      <td>Essential Oil/Fat</td>
+      <td>0.000</td>
+      <td>0.09</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>flour</td>
+      <td>Cereal/Crop/Bean</td>
+      <td>0.087</td>
+      <td>0.08</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>egg</td>
+      <td>Meat/Animal Product</td>
+      <td>0.092</td>
+      <td>0.08</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>raisin</td>
+      <td>Fruit</td>
+      <td>0.039</td>
+      <td>0.08</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table></div>
+<div><h3>Química parecida</h3><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nutmeg</td>
+      <td>Nut/Seed</td>
+      <td>0.387</td>
+      <td>0.17</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>winter_savory</td>
+      <td>Plant/Vegetable</td>
+      <td>0.375</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>star_anise</td>
+      <td>Plant/Vegetable</td>
+      <td>0.366</td>
+      <td>0.11</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>summer_savory</td>
+      <td>Plant/Vegetable</td>
+      <td>0.363</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lime</td>
+      <td>Fruit</td>
+      <td>0.362</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>cumin</td>
+      <td>Spice</td>
+      <td>0.362</td>
+      <td>0.02</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>cassia</td>
+      <td>Plant/Vegetable</td>
+      <td>0.359</td>
+      <td>0.05</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>marjoram</td>
+      <td>Plant/Vegetable</td>
+      <td>0.356</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>fennel</td>
+      <td>Plant/Vegetable</td>
+      <td>0.355</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>carom_seed</td>
+      <td>Plant/Vegetable</td>
+      <td>0.354</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sage</td>
+      <td>Plant/Vegetable</td>
+      <td>0.353</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>oregano</td>
+      <td>Spice</td>
+      <td>0.351</td>
+      <td>0.02</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table></div></div>
+<h3>Ousadas — química alta, sem associação em receitas (combinações pouco exploradas)</h3>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>ingrediente</th>
+      <th>categoria</th>
+      <th>química</th>
+      <th>prática</th>
+      <th>ligações em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>winter_savory</td>
+      <td>Plant/Vegetable</td>
+      <td>0.375</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>summer_savory</td>
+      <td>Plant/Vegetable</td>
+      <td>0.363</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lime</td>
+      <td>Fruit</td>
+      <td>0.362</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>marjoram</td>
+      <td>Plant/Vegetable</td>
+      <td>0.356</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>fennel</td>
+      <td>Plant/Vegetable</td>
+      <td>0.355</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>carom_seed</td>
+      <td>Plant/Vegetable</td>
+      <td>0.354</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sage</td>
+      <td>Plant/Vegetable</td>
+      <td>0.353</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Laurel</td>
+      <td>Plant</td>
+      <td>0.349</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Hyssop Oil</td>
+      <td>Essential Oil</td>
+      <td>0.349</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>rosemary</td>
+      <td>Flower</td>
+      <td>0.345</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>mandarin_orange</td>
+      <td>Fruit</td>
+      <td>0.344</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>parsley</td>
+      <td>Plant/Vegetable</td>
+      <td>0.337</td>
+      <td>0.00</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Tabela de pares</h2><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>a</th>
+      <th>b</th>
+      <th>moléculas em comum</th>
+      <th>jaccard</th>
+      <th>npmi</th>
+      <th>destaques</th>
+      <th>em receitas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cinnamon</td>
+      <td>clove</td>
+      <td>129</td>
+      <td>0.554</td>
+      <td>0.41</td>
+      <td>(Z)-Ethyl cinnamate (spicy/berry/powdery), Caryophyllene oxide (spicy/fresh/sweet), gingerol (pungent), Caryophyllene (woody/spicy/fried), carnosol (bitter)</td>
+      <td>associação clássica em receitas</td>
+    </tr>
+    <tr>
+      <td>cinnamon</td>
+      <td>black_pepper</td>
+      <td>144</td>
+      <td>0.541</td>
+      <td>0.00</td>
+      <td>AC1LDI49 (bitter), Methyl cis-cinnamate (strawberry/sweet/balsamic), gingerol (pungent), Piperitone (minty/herbal/fresh), Caryophyllene (woody/spicy/fried)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>cinnamon</td>
+      <td>cardamom</td>
+      <td>124</td>
+      <td>0.530</td>
+      <td>0.28</td>
+      <td>Acetyleugenol (carnation/spicy/clove), Citronellal (lemon/citrus/rose), 6753-98-6 (woody), 3-Thujene (woody/herbal/green), Borneol (woody/pine/camphoreous)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>cardamom</td>
+      <td>ginger</td>
+      <td>145</td>
+      <td>0.518</td>
+      <td>0.27</td>
+      <td>Heptane (alkane/ethereal/sweet), (E)-gamma-Bisabolene (citrus/myrrh/opoponax), Acetyleugenol (carnation/spicy/clove), Perilla alcohol (fatty/terpineol/linalool), 1-Terpineol (musty/woody/dry)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>ginger</td>
+      <td>black_pepper</td>
+      <td>160</td>
+      <td>0.505</td>
+      <td>0.00</td>
+      <td>Peruviol (waxy/floral), beta-Bisabolol (lemon/citrus/herbal), Cedrol (soft/cedarwood/sweet), (-)-Zingiberene (fresh/sharp/spicy), Nonane (alkane/gasoline)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>cardamom</td>
+      <td>clove</td>
+      <td>117</td>
+      <td>0.502</td>
+      <td>0.40</td>
+      <td>Acetyleugenol (carnation/spicy/clove), Valencene (citrus/green/oily), Beta-Terpineol (musty/earthy/pungent), AC1L9CNW (woody/spicy), 6753-98-6 (woody)</td>
+      <td>associação clássica em receitas</td>
+    </tr>
+    <tr>
+      <td>cardamom</td>
+      <td>black_pepper</td>
+      <td>132</td>
+      <td>0.496</td>
+      <td>0.00</td>
+      <td>Tridecane (alkane), Acetyleugenol (carnation/spicy/clove), Citronellal (lemon/citrus/rose), Myrtenal (lime/spicy/jam), Sabinene hydrate (minty/eucalyptus/terpene)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>clove</td>
+      <td>black_pepper</td>
+      <td>131</td>
+      <td>0.483</td>
+      <td>0.00</td>
+      <td>(-)-Zingiberene (fresh/sharp/spicy), gingerol (pungent), Caryophyllene (woody/spicy/fried), carnosol (bitter), Acetyleugenol (carnation/spicy/clove)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>cinnamon</td>
+      <td>ginger</td>
+      <td>141</td>
+      <td>0.476</td>
+      <td>0.25</td>
+      <td>cis-Methylisoeugenol (bitter/clove/spicy), gingerol (pungent), Linalool A oxide (floral), carnosol (bitter), Acetyleugenol (carnation/spicy/clove)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>ginger</td>
+      <td>clove</td>
+      <td>136</td>
+      <td>0.464</td>
+      <td>0.36</td>
+      <td>(-)-Zingiberene (fresh/sharp/spicy), Chavicol (phenol/medicine/medicinal), gingerol (pungent), l-.alpha.-Cadinol (woody/herbal), alpha-Cadinene (woody/dry)</td>
+      <td>associação clássica em receitas</td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>cardamom</td>
+      <td>37</td>
+      <td>0.150</td>
+      <td>0.00</td>
+      <td>1-Decanol (orange/rose/fatty), Methyl Linoleate (dairy), palmitic acid (fatty/slightly waxy), 2-Heptanone (coconut/soap/herbal), 2-Undecanone (orange/waxy/fresh)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>ginger</td>
+      <td>40</td>
+      <td>0.124</td>
+      <td>0.00</td>
+      <td>2-Undecanol (waxy/cotton/fresh), 2-Tridecanone (coconut/herbal/milky), Decanal (citrus/soap/orange peel), 4-Methyl-2-pentanone (solvent/spicy/herbal), Dodecanal (citrus/fatty/waxy)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>clove</td>
+      <td>29</td>
+      <td>0.112</td>
+      <td>0.00</td>
+      <td>gamma-Decalactone (peach/coconut/caramel), Ethyl Benzoate (dry/celery/wintergreen), 2-Heptanone (coconut/soap/herbal), 2-Undecanone (orange/waxy/fresh), Furfuryl Alcohol (coffee/alcoholic/bitter)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>cinnamon</td>
+      <td>25</td>
+      <td>0.092</td>
+      <td>0.00</td>
+      <td>palmitic acid (fatty/slightly waxy), 2-Heptanone (coconut/soap/herbal), phenol (phenol/plastic/rubber), Linalool (lemon/citrus/orange), Nonanal (citrus/lime/orange peel)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>black_pepper</td>
+      <td>27</td>
+      <td>0.087</td>
+      <td>0.00</td>
+      <td>Pyrrolidine (alkaline/egg/animal), Methyl Hexanoate (pineapple/ethereal/fresh), 2-Undecanone (orange/waxy/fresh), Hexanoic Acid (fatty/sour/sweat), Isovaleric Acid (sour/sweat/acid)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>milk</td>
+      <td>sugar</td>
+      <td>5</td>
+      <td>0.045</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>milk</td>
+      <td>7</td>
+      <td>0.037</td>
+      <td>0.00</td>
+      <td>butyraldehyde (bready/chocolate/creamy), dimethyl sulfoxide (fatty/mushroom/cheesy), Ethyl Benzoate (dry/celery/wintergreen), Pyridine (sour/putrid/fishy), palmitic acid (fatty/slightly waxy)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>clove</td>
+      <td>9</td>
+      <td>0.036</td>
+      <td>0.25</td>
+      <td>benzoic acid (balsamic/urine/bitter taste), Ethyl Benzoate (dry/celery/wintergreen), Thymol (herbal/thyme/camphoreous), Methyl octanoate (orange/vegetable/herbal), cis-3-Hexenal (apple/fatty/fruity)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>cardamom</td>
+      <td>8</td>
+      <td>0.032</td>
+      <td>0.30</td>
+      <td>Citronellic acid (smoky/fatty/floral), Thymol (herbal/thyme/camphoreous), palmitic acid (fatty/slightly waxy), cis-3-Hexenal (apple/fatty/fruity), Ethyl Vinyl Ketone (peppery/mustard/garlic)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>ginger</td>
+      <td>10</td>
+      <td>0.031</td>
+      <td>0.11</td>
+      <td>Perillaldehyde (minty/spicy/fatty), Thymol (herbal/thyme/camphoreous), 1-Penten-3-Ol (butter/pungent/tropical), palmitic acid (fatty/slightly waxy), Methyl octanoate (orange/vegetable/herbal)</td>
+      <td>associação fraca em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>cinnamon</td>
+      <td>8</td>
+      <td>0.031</td>
+      <td>0.08</td>
+      <td>benzoic acid (balsamic/urine/bitter taste), Thymol (herbal/thyme/camphoreous), palmitic acid (fatty/slightly waxy), cis-3-Hexenal (apple/fatty/fruity), Ethyl Vinyl Ketone (peppery/mustard/garlic)</td>
+      <td>associação fraca em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>black_pepper</td>
+      <td>9</td>
+      <td>0.030</td>
+      <td>0.00</td>
+      <td>Dihydrocarveol (minty/spicy/herbal), Perillaldehyde (minty/spicy/fatty), Thymol (herbal/thyme/camphoreous), Methyl octanoate (orange/vegetable/herbal), cis-3-Hexenal (apple/fatty/fruity)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>cardamom</td>
+      <td>sugar</td>
+      <td>4</td>
+      <td>0.023</td>
+      <td>0.00</td>
+      <td>Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>clove</td>
+      <td>sugar</td>
+      <td>4</td>
+      <td>0.022</td>
+      <td>0.00</td>
+      <td>Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>black_pepper</td>
+      <td>sugar</td>
+      <td>5</td>
+      <td>0.022</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>cinnamon</td>
+      <td>sugar</td>
+      <td>4</td>
+      <td>0.022</td>
+      <td>0.18</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), CID 644104 (grassy/very mild)</td>
+      <td>associação comum em receitas</td>
+    </tr>
+    <tr>
+      <td>ginger</td>
+      <td>sugar</td>
+      <td>5</td>
+      <td>0.020</td>
+      <td>0.00</td>
+      <td>Thiamine Hydrochloride (sour/bitter/slight, characteristic), Heptanoic Acid (sour/cheesy/sweat), betaine (bland/sweet/savory), thiamine (bitter/slight, characteristic), CID 644104 (grassy/very mild)</td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+    <tr>
+      <td>black_tea</td>
+      <td>sugar</td>
+      <td>0</td>
+      <td>0.000</td>
+      <td>0.00</td>
+      <td></td>
+      <td>sem associação acima do acaso em receitas</td>
+    </tr>
+  </tbody>
+</table>
+<p class="muted">Fontes: FlavorDB2 (CC BY-NC-SA 3.0) · FlavorGraph (Apache 2.0). Ver data/SOURCES.md.</p>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('net-data').textContent);
+  if (!window.vis) { document.getElementById('net').innerHTML =
+      '<p class="muted">Não foi possível carregar o vis-network (sem internet?).</p>'; return; }
+  const FADE = {background: '#ecebe7', border: '#ecebe7'};
+  const nodes = new vis.DataSet(D.nodes.map(n => Object.assign({}, n, {orig: n.color, origFont: n.font})));
+  const edges = new vis.DataSet(D.edges.map((e, i) => Object.assign({id: i}, e, {orig: e.color})));
+  const net = new vis.Network(document.getElementById('net'), {nodes, edges}, {
+    physics: {solver: 'forceAtlas2Based', stabilization: {iterations: 300},
+              forceAtlas2Based: {gravitationalConstant: -60, springLength: 110, springConstant: 0.05}},
+    interaction: {hover: true, tooltipDelay: 120, keyboard: true},
+    edges: {smooth: false}, nodes: {borderWidth: 2}
+  });
+  net.once('stabilizationIterationsDone', () => net.setOptions({physics: false}));
+  const info = document.getElementById('net-info'), initialInfo = info.innerHTML;
+
+  function highlight(ids) {
+    const keep = new Set(ids);
+    nodes.update(nodes.get().map(n => keep.has(n.id)
+      ? {id: n.id, color: n.orig, font: n.origFont}
+      : {id: n.id, color: FADE, font: Object.assign({}, n.origFont, {color: '#c9c8c3'})}));
+    edges.update(edges.get().map(e => (keep.has(e.from) && keep.has(e.to))
+      ? {id: e.id, color: e.orig} : {id: e.id, color: {color: '#f1f0ec', opacity: 0.4}}));
+  }
+  function reset() {
+    nodes.update(nodes.get().map(n => ({id: n.id, color: n.orig, font: n.origFont})));
+    edges.update(edges.get().map(e => ({id: e.id, color: e.orig})));
+    info.innerHTML = initialInfo; net.unselectAll();
+    document.querySelectorAll('#net-tags button').forEach(b => b.classList.remove('on'));
+  }
+  function focusNode(id) {
+    const n = nodes.get(id); if (!n) return;
+    highlight([id].concat(net.getConnectedNodes(id)));
+    info.innerHTML = n.info;
+    net.selectNodes([id]);
+  }
+  net.on('click', p => p.nodes.length ? focusNode(p.nodes[0]) : reset());
+
+  const dl = document.getElementById('net-labels');
+  D.nodes.forEach(n => { const o = document.createElement('option'); o.value = n.label; dl.appendChild(o); });
+  document.getElementById('net-search').addEventListener('change', ev => {
+    const q = ev.target.value.trim().toLowerCase();
+    const n = D.nodes.find(n => n.label.toLowerCase() === q) ||
+              D.nodes.find(n => n.label.toLowerCase().includes(q));
+    if (n) { focusNode(n.id); net.focus(n.id, {scale: 1.2, animation: true}); }
+  });
+  document.getElementById('net-reset').addEventListener('click', reset);
+  document.getElementById('net-physics').addEventListener('click', () => {
+    net.setOptions({physics: true}); net.stabilize(200);
+    net.once('stabilizationIterationsDone', () => net.setOptions({physics: false}));
+  });
+
+  const tagBox = document.getElementById('net-tags');
+  D.tags.forEach(t => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = t;
+    b.addEventListener('click', () => {
+      const on = !b.classList.contains('on');
+      reset(); if (!on) return; b.classList.add('on');
+      const mols = D.nodes.filter(n => n.desc.includes(t)).map(n => n.id);
+      const ids = new Set(mols); mols.forEach(m => net.getConnectedNodes(m).forEach(x => ids.add(x)));
+      highlight([...ids]);
+      info.innerHTML = '<h4>nota: ' + t + '</h4><p>' + mols.length +
+        ' molécula(s) compartilhada(s) com essa nota, e os ingredientes que as trazem.</p>';
+    });
+    tagBox.appendChild(b);
+  });
+})();
+</script><script>
+document.querySelectorAll('table.tbl').forEach(t => {
+  t.querySelectorAll('th').forEach((th, i) => {
+    th.title = 'clique para ordenar';
+    th.addEventListener('click', () => {
+      const tb = t.tBodies[0], rows = [...tb.rows], asc = th.dataset.asc !== '1';
+      t.querySelectorAll('th').forEach(h => { h.dataset.asc = ''; h.classList.remove('asc', 'desc'); });
+      th.dataset.asc = asc ? '1' : '0'; th.classList.add(asc ? 'asc' : 'desc');
+      rows.sort((a, b) => {
+        const x = a.cells[i].innerText.trim(), y = b.cells[i].innerText.trim();
+        const nx = parseFloat(x), ny = parseFloat(y);
+        const r = (!isNaN(nx) && !isNaN(ny)) ? nx - ny : x.localeCompare(y, 'pt');
+        return asc ? r : -r;
+      });
+      rows.forEach(r => tb.appendChild(r));
+    });
+  });
+});
+</script>
+</body></html>
