@@ -17,3 +17,6 @@ data/processed/*.csv
 
 # USDA FoodData Central bruto (domínio público, re-baixável: scripts/download_nutrition.py)
 data/raw/usda/
+
+# cópia Parquet opcional do catálogo (python scripts/build_catalog.py --parquet)
+data/processed/catalog/

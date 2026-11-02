@@ -12,6 +12,33 @@ licença de cada fonte:
 | **POF 2008-2009, Medidas Referidas** (IBGE) | ~7,9 mil medidas caseiras (colher, xícara, unidade, fatia...) em gramas | Dado público do IBGE, com citação | `data/raw/taco/pof_medidas_caseiras.csv` | idem |
 | **brolesi/taco** (F. F. Brolesi) | normalização da TACO e da POF em CSV | **MIT** (ver `data/raw/taco/LICENSE-brolesi-taco`) | `data/raw/taco/` | idem (commit fixado) |
 
+## Temperatura, percepção e segurança
+
+Estas referências fundamentam o modelo e seus limites; não são dados de
+temperatura ótima para uma receita:
+
+- Talavera K. et al. *Influence of temperature on taste perception.* Cellular
+  and Molecular Life Sciences 64, 377–381 (2007).
+  <https://doi.org/10.1007/s00018-006-6384-0>
+- Lemon CH. *Modulation of taste processing by temperature.* American Journal
+  of Physiology 313, R305–R321 (2017).
+  <https://doi.org/10.1152/ajpregu.00089.2017>
+- *Dynamic Instrumental and Sensory Methods Used to Link Aroma Release and
+  Aroma Perception: A Review.* Molecules 28, 6308 (2023).
+  <https://doi.org/10.3390/molecules28176308>
+- ASHRAE Handbook 2026, capítulo 19, *Thermal Properties of Foods*.
+  <https://handbook.ashrae.org/Handbooks/R26/IP/R26_Ch19/R26_ch19_ip.aspx>
+- USDA FSIS, *At what temperature should I hold hot foods?* e *What is the
+  Danger Zone?* <https://ask.fsis.usda.gov/article/At-what-temperature-should-I-hold-hot-foods>
+  e <https://ask.fsis.usda.gov/article/What-is-the-Danger-Zone>
+- CDC, *Preventing Food Poisoning*.
+  <https://www.cdc.gov/food-safety/prevention/index.html>
+
+O modelo exponencial é uma simplificação empírica. As referências sensoriais
+não provam tempo de repouso ou temperatura preferida universal, e as referências
+USDA são ponto de partida: regras brasileiras e requisitos específicos do
+alimento podem ser mais exigentes.
+
 **Consequências práticas**
 - O repositório pode ser **público**.
 - Qualquer uso dos dados de **sabor** (derivados do FlavorDB) precisa ser
@@ -20,6 +47,14 @@ licença de cada fonte:
   citar as fontes.
 - Para um produto comercial, seria preciso retirar o FlavorDB ou obter licença
   dos autores.
+
+## Catálogo canônico de alimentos
+
+`data/catalog/` organiza os registros das fontes acima em conceitos, variedades,
+partes e formas com proveniência e confiança. Detalhes de licença por arquivo em
+`data/catalog/SOURCES.md`; pesquisa de fontes candidatas (FoodOn, Wikidata, Open
+Food Facts, COL, GRIN, ASFIS...) em `docs/research/ingredient-taxonomy-sources.md`.
+Nenhuma base nova foi importada.
 
 ## Decisões de tratamento (nutrição)
 

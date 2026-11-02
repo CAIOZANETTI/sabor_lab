@@ -18,6 +18,9 @@ página `site/sobre.html`.
 - **Tudo em português e no sistema métrico:** você escreve "2 colheres de sopa
   de azeite" ou "1 cup flour" e o sistema converte para gramas. Unidades
   imperiais (cup, tbsp, oz, lb, °F, inch) são sempre convertidas.
+- **Temperatura de serviço:** calibra uma curva de resfriamento com termômetro,
+  registra degustações na temperatura real e mantém segurança separada da
+  preferência sensorial.
 
 ## Estrutura
 
@@ -31,12 +34,20 @@ data/
     nutrition/                   tabelas de nutrição em Parquet
   dicionario_ingredientes.csv    nomes em português -> sabor + nutrição (82 itens)
   ingredient_aliases.csv         apelidos curados com justificativa
+  catalog/                       catálogo canônico de alimentos (conceitos, variedades,
+                                 partes, formas, táxons, mapeamentos) + inventário das fontes
   experiments/                   suas receitas
   SOURCES.md                     fontes, licenças e citações
 flavorlab/                       pacote Python
   db.py                          banco de sabores: nomes, perfis moleculares
   analysis.py                    química (Jaccard), prática (NPMI), sugestões
   nutrition.py                   banco nutricional, conversão de unidades, cálculo
+  catalog.py                     catálogo canônico: tipos, validação e API de consulta
+  catalog_mapping.py             inventário das fontes e mapeamento lexical conservador
+  thermal.py                     ajuste térmico e previsão de temperatura-alvo
+  temporal_sensory.py            degustações vinculadas à temperatura e ao tempo
+  food_safety.py                 checagens independentes de manutenção/exposição
+  serving_optimizer.py           preferência observada condicionada à segurança
   units.py                       unidades métricas/imperiais, °F->°C, polegadas->cm
   report.py, nutrition_report.py relatório HTML interativo (vis-network + plotly)
 scripts/                         download, build e relatório
@@ -113,6 +124,33 @@ python scripts/recipe_report.py --search-food "queijo minas"   # achar alimento 
 python scripts/recipe_report.py --search pepper     # achar ingrediente (sabor, inglês)
 ```
 
+## Temperatura de serviço e percepção
+
+O exemplo `ENTREVERO_001` é explicitamente sintético: demonstra dois componentes
+sem apresentar seus números como medições. Gere o relatório com:
+
+```bash
+python scripts/temperature_report.py \
+  --input data/experiments/entrevero_temperatura_sintetico.json \
+  --output reports/ENTREVERO_001_temperatura.html
+```
+
+O comando também grava um JSON legível por máquina. Leituras reais precisam
+registrar tempo, temperatura ambiente, posição e resolução da sonda, massa,
+recipiente e condição da amostra. Duas ou mais leituras calibram a aproximação
+exponencial; uma leitura isolada nunca recebe um coeficiente arbitrário.
+
+O módulo sensorial começa com tabelas por faixa de temperatura. Só retorna uma
+estimativa exploratória quando há observações e temperaturas suficientes, uma
+curva côncava e um vértice dentro da faixa medida. A checagem de segurança é
+executada antes da recomendação e seus estados não significam garantia universal
+de alimento seguro.
+
+O coeficiente térmico é empírico para aquele lote e depende de massa, recipiente,
+tampa, ventilação, agitação e posição da sonda. O módulo não usa Jaccard, NPMI,
+XlogP ou contagem de moléculas para inferir volatilização, e não afirma que
+“moléculas se fixam” depois de um período específico.
+
 EX01 (molho de tomate), EX02 (chai) e EX03 (cookies americanos, em unidades
 imperiais) são exemplos e podem ser apagados.
 
@@ -162,6 +200,35 @@ Todas as tabelas são ordenáveis com um clique no cabeçalho.
 As medidas brasileiras usam xícara = 240 ml, colher de sopa = 15 ml e colher de
 chá = 5 ml. As americanas usam as definições exatas: cup = 236,6 ml,
 tbsp = 14,8 ml, tsp = 4,9 ml, oz = 28,35 g, lb = 453,6 g.
+
+## Catálogo canônico de alimentos (`data/catalog/`)
+
+Camada que organiza **todos** os registros das fontes (TACO, USDA, FlavorDB e
+FlavorGraph) em entidades com IDs estáveis (`sl:ingredient:rice`,
+`sl:variant:rice_basmati`, `sl:part:atlantic_salmon_fillet`,
+`sl:form:common_bean_black_raw`), separando conceito, variedade/tipo, parte/corte,
+forma (estado, forma física, preparo) e produto/prato. Fontes, licenças e
+decisões: `data/catalog/SOURCES.md` e `docs/research/ingredient-taxonomy-sources.md`.
+
+```bash
+python scripts/build_catalog.py           # valida e regenera o inventário + reports/catalog_coverage.md
+python scripts/build_catalog.py --check   # falha se o inventário versionado estiver desatualizado
+```
+
+```python
+from flavorlab.catalog import Catalog
+cat = Catalog.load()
+cat.variants("sl:ingredient:rice")             # basmati, jasmim, arbório, tipo 1...
+cat.forms("sl:variant:common_bean_black")      # cru, cozido, enlatado, base seca
+cat.resolve_source("taco", "568")              # Feijão, preto, cru -> forma canônica + confiança
+cat.resolve_source("flavorgraph", "7043")      # "yam": ambíguo, devolve candidatos
+cat.coverage(source="usda")                    # contagem por grupo e status
+```
+
+O inventário (`source_inventory.csv`) tem uma linha por registro de fonte, com
+status `mapped_reviewed`, `mapped_high_confidence`, `mapped_low_confidence`,
+`ambiguous`, `unmapped` ou `excluded_with_reason`. Mapeamentos abaixo de 0,85 de
+confiança exigem revisão; registros não mapeados ficam na fila de curadoria.
 
 ## Tabelas
 

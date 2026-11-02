@@ -1,0 +1,90 @@
+part_id,concept_id,name_pt,name_en,anatomical_or_botanical_part,cut_geometry,edible_portion,attributes,aliases_pt,aliases_en,evidence
+sl:part:common_bean_pod,sl:ingredient:common_bean,vagem,snap bean pod,botanical,,pod with immature seeds,,vagem|feijão-vagem,green bean|snap bean|string bean|french bean pod,"vagem = fruto imaturo de Phaseolus vulgaris (parte, não variedade)"
+sl:part:cowpea_leaf,sl:ingredient:cowpea,folha de feijão-caupi,cowpea leafy tips,botanical,,leaves,,,leafy tips,curadoria inicial
+sl:part:pea_pod,sl:ingredient:pea,ervilha-torta (vagem),edible-podded pea,botanical,,pod,,ervilha torta|ervilha em vagem,snow pea|sugar snap pea|edible podded pea,curadoria inicial
+sl:part:cheese_rind,sl:ingredient:cheese,casca de queijo,cheese rind,product_fraction,,rind,,,rind,curadoria inicial
+sl:part:egg_white,sl:ingredient:chicken_egg,clara,egg white,anatomical,,albumen,,clara de ovo,white|albumen,curadoria inicial
+sl:part:egg_yolk,sl:ingredient:chicken_egg,gema,egg yolk,anatomical,,yolk,,gema de ovo,yolk,curadoria inicial
+sl:part:beef_acem,sl:ingredient:beef,acém,acém (Brazilian cut),cut,peça do dianteiro,músculo e gordura de cobertura conforme a fonte,cut_system=BR,acem,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_alcatra_miolo,sl:ingredient:beef,miolo de alcatra,miolo de alcatra (Brazilian cut),cut,peça do traseiro,músculo e gordura de cobertura conforme a fonte,cut_system=BR,alcatra|miolo de alcatra,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_contra_file,sl:ingredient:beef,contrafilé,contrafilé (Brazilian cut),cut,bife/peça do lombo,músculo e gordura de cobertura conforme a fonte,cut_system=BR,contra-filé|contra file|contrafile,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_contra_file_costela,sl:ingredient:beef,contrafilé de costela,contrafilé de costela (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,contra-filé de costela|ancho,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_capa_contra_file,sl:ingredient:beef,capa de contrafilé,capa de contrafilé (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,capa de contra-filé,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_costela,sl:ingredient:beef,costela bovina,costela bovina (Brazilian cut),cut,peça com osso,músculo e gordura de cobertura conforme a fonte,cut_system=BR,costela,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_coxao_duro,sl:ingredient:beef,coxão duro,coxão duro (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,coxao duro|lagarto plano,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_coxao_mole,sl:ingredient:beef,coxão mole,coxão mole (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,coxao mole|chã de dentro,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_cupim,sl:ingredient:beef,cupim,cupim (Brazilian cut),cut,giba (zebuínos),músculo e gordura de cobertura conforme a fonte,cut_system=BR,cupim,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_file_mignon,sl:ingredient:beef,filé-mignon,filé-mignon (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,file mignon|filé mignon|file mingnon|filé mingnon,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_flanco,sl:ingredient:beef,flanco,flanco (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,flanco,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_fraldinha,sl:ingredient:beef,fraldinha,fraldinha (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,fraldinha,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_lagarto,sl:ingredient:beef,lagarto,lagarto (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,lagarto,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_maminha,sl:ingredient:beef,maminha,maminha (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,maminha,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_musculo,sl:ingredient:beef,músculo,músculo (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,musculo,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_paleta,sl:ingredient:beef,paleta,paleta (Brazilian cut),cut,peça do dianteiro,músculo e gordura de cobertura conforme a fonte,cut_system=BR,paleta,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_patinho,sl:ingredient:beef,patinho,patinho (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,patinho,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_peito,sl:ingredient:beef,peito bovino,peito bovino (Brazilian cut),cut,peça,músculo e gordura de cobertura conforme a fonte,cut_system=BR,peito,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_picanha,sl:ingredient:beef,picanha,picanha (Brazilian cut),cut,peça com capa de gordura,músculo e gordura de cobertura conforme a fonte,cut_system=BR,picanha,,corte bovino brasileiro (TACO); equivalência com cortes dos EUA não é assumida
+sl:part:beef_round,sl:ingredient:beef,round (corte EUA),round,cut,corte primário/subprimário EUA,,cut_system=US,,round,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_chuck,sl:ingredient:beef,chuck (corte EUA),chuck,cut,corte primário/subprimário EUA,,cut_system=US,,chuck,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_loin,sl:ingredient:beef,loin (corte EUA),loin,cut,corte primário/subprimário EUA,,cut_system=US,,loin,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_short_loin,sl:ingredient:beef,short loin (corte EUA),short loin,cut,corte primário/subprimário EUA,,cut_system=US,,short loin,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_rib,sl:ingredient:beef,rib (corte EUA),rib,cut,corte primário/subprimário EUA,,cut_system=US,,rib,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_brisket,sl:ingredient:beef,brisket (corte EUA),brisket,cut,corte primário/subprimário EUA,,cut_system=US,,brisket,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_flank_us,sl:ingredient:beef,flank (corte EUA),flank,cut,corte primário/subprimário EUA,,cut_system=US,,flank,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_tenderloin,sl:ingredient:beef,tenderloin (corte EUA),tenderloin,cut,corte primário/subprimário EUA,,cut_system=US,,tenderloin,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_top_sirloin,sl:ingredient:beef,top sirloin (corte EUA),top sirloin,cut,corte primário/subprimário EUA,,cut_system=US,,top sirloin,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_bottom_sirloin,sl:ingredient:beef,bottom sirloin (corte EUA),bottom sirloin,cut,corte primário/subprimário EUA,,cut_system=US,,bottom sirloin,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_plate,sl:ingredient:beef,plate (corte EUA),plate,cut,corte primário/subprimário EUA,,cut_system=US,,plate|short plate,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_rib_eye,sl:ingredient:beef,rib eye (corte EUA),rib eye,cut,corte primário/subprimário EUA,,cut_system=US,,rib eye|ribeye,corte norte-americano (USDA); sem equivalência automática com cortes brasileiros
+sl:part:beef_liver,sl:ingredient:beef,fígado,liver,organ,,órgão inteiro,,fígado,liver,curadoria inicial
+sl:part:beef_tongue,sl:ingredient:beef,língua,tongue,organ,,órgão inteiro,,língua,tongue,curadoria inicial
+sl:part:beef_tripe,sl:ingredient:beef,bucho,tripe,organ,,órgão inteiro,,bucho,tripe,curadoria inicial
+sl:part:beef_heart,sl:ingredient:beef,coração,heart,organ,,órgão inteiro,,coração,heart,curadoria inicial
+sl:part:beef_brain,sl:ingredient:beef,miolo (cérebro),brain,organ,,órgão inteiro,,miolo (cérebro),brain,curadoria inicial
+sl:part:pork_liver,sl:ingredient:pork,fígado,liver,organ,,órgão inteiro,,fígado,liver,curadoria inicial
+sl:part:pork_ear,sl:ingredient:pork,orelha,ear,organ,,órgão inteiro,,orelha,ear,curadoria inicial
+sl:part:pork_tail,sl:ingredient:pork,rabo,tail,organ,,órgão inteiro,,rabo,tail,curadoria inicial
+sl:part:lamb_liver,sl:ingredient:lamb,fígado,liver,organ,,órgão inteiro,,fígado,liver,curadoria inicial
+sl:part:veal_liver,sl:ingredient:veal,fígado,liver,organ,,órgão inteiro,,fígado,liver,curadoria inicial
+sl:part:pork_loin,sl:ingredient:pork,lombo,loin,cut,,,,lombo,loin,curadoria inicial
+sl:part:pork_chop,sl:ingredient:pork,bisteca,loin chop,cut,,,,bisteca,chop,curadoria inicial
+sl:part:pork_ribs,sl:ingredient:pork,costela suína,spareribs,cut,,,,costela suína,spareribs|ribs|backribs,curadoria inicial
+sl:part:pork_leg,sl:ingredient:pork,pernil,leg,cut,,,,pernil,leg|fresh ham,curadoria inicial
+sl:part:pork_shoulder,sl:ingredient:pork,paleta suína,shoulder,cut,,,,paleta suína,shoulder,curadoria inicial
+sl:part:pork_belly,sl:ingredient:pork,barriga,belly,cut,,,,barriga,belly|pork belly,curadoria inicial
+sl:part:lamb_leg,sl:ingredient:lamb,pernil de cordeiro,leg,cut,,,,,leg,curadoria inicial
+sl:part:lamb_shoulder,sl:ingredient:lamb,paleta de cordeiro,shoulder,cut,,,,,shoulder,curadoria inicial
+sl:part:lamb_loin,sl:ingredient:lamb,lombo de cordeiro,loin,cut,,,,,loin,curadoria inicial
+sl:part:lamb_rib,sl:ingredient:lamb,carré/costela de cordeiro,rib,cut,,,,,rib,curadoria inicial
+sl:part:veal_leg,sl:ingredient:veal,coxão de vitela,leg,cut,,,,,leg,curadoria inicial
+sl:part:veal_shoulder,sl:ingredient:veal,paleta de vitela,shoulder,cut,,,,,shoulder,curadoria inicial
+sl:part:veal_loin,sl:ingredient:veal,lombo de vitela,loin,cut,,,,,loin,curadoria inicial
+sl:part:veal_rib,sl:ingredient:veal,costela de vitela,rib,cut,,,,,rib,curadoria inicial
+sl:part:veal_breast,sl:ingredient:veal,peito de vitela,breast,cut,,,,,breast,curadoria inicial
+sl:part:veal_shank,sl:ingredient:veal,ossobuco/canela de vitela,shank,cut,,,,,shank,curadoria inicial
+sl:part:chicken_breast,sl:ingredient:chicken,peito,breast,cut,,,,peito,breast|chicken breast,curadoria inicial
+sl:part:chicken_thigh,sl:ingredient:chicken,sobrecoxa,thigh,cut,,,,sobrecoxa,thigh,"atenção: no Brasil ""coxa"" = drumstick e ""sobrecoxa"" = thigh"
+sl:part:chicken_drumstick,sl:ingredient:chicken,coxa,drumstick,cut,,,,coxa,drumstick,"atenção: no Brasil ""coxa"" = drumstick e ""sobrecoxa"" = thigh"
+sl:part:chicken_wing,sl:ingredient:chicken,asa,wing,cut,,,,asa,wing,curadoria inicial
+sl:part:chicken_leg,sl:ingredient:chicken,coxa e sobrecoxa,leg (drumstick and thigh),cut,,,,coxa e sobrecoxa,leg|leg quarter,curadoria inicial
+sl:part:chicken_back,sl:ingredient:chicken,dorso,back,cut,,,,dorso|costas,back,curadoria inicial
+sl:part:chicken_neck,sl:ingredient:chicken,pescoço,neck,cut,,,,pescoço,neck,curadoria inicial
+sl:part:chicken_liver,sl:ingredient:chicken,fígado de frango,liver,organ,,,,fígado,liver,curadoria inicial
+sl:part:chicken_heart,sl:ingredient:chicken,coração de frango,heart,organ,,,,coração,heart,curadoria inicial
+sl:part:chicken_gizzard,sl:ingredient:chicken,moela,gizzard,organ,,,,moela,gizzard,curadoria inicial
+sl:part:chicken_skin,sl:ingredient:chicken,pele de frango,skin,anatomical,,,,pele,skin,curadoria inicial
+sl:part:turkey_breast,sl:ingredient:turkey,peito de peru,breast,cut,,,,,breast,curadoria inicial
+sl:part:turkey_thigh,sl:ingredient:turkey,sobrecoxa de peru,thigh,cut,,,,,thigh,curadoria inicial
+sl:part:turkey_drumstick,sl:ingredient:turkey,coxa de peru,drumstick,cut,,,,,drumstick,curadoria inicial
+sl:part:turkey_wing,sl:ingredient:turkey,asa de peru,wing,cut,,,,,wing,curadoria inicial
+sl:part:salmon_fillet,sl:ingredient:salmon,filé de salmão,salmon fillet,cut,filé (lateral sem espinha),"músculo, com ou sem pele",,,fillet,curadoria inicial
+sl:part:atlantic_salmon_fillet,sl:ingredient:atlantic_salmon,filé de salmão-do-atlântico,Atlantic salmon fillet,cut,filé,"músculo, com ou sem pele",,,fillet,curadoria inicial
+sl:part:abadejo_fillet,sl:ingredient:abadejo,filé de abadejo,abadejo fillet,cut,filé,músculo,,,,curadoria inicial
+sl:part:hake_fillet,sl:ingredient:hake,filé de merluza,hake fillet,cut,filé,músculo,,,,curadoria inicial
+sl:part:pescada_fillet,sl:ingredient:pescada,filé de pescada,pescada fillet,cut,filé,músculo,,,,curadoria inicial
+sl:part:cacao_steak,sl:ingredient:dogfish_cacao,posta de cação,cação steak,cut,posta (corte transversal),músculo e cartilagem,,posta,,curadoria inicial
+sl:part:tucunare_fillet,sl:ingredient:tucunare,filé de tucunaré,peacock bass fillet,cut,filé,músculo,,,,curadoria inicial
+sl:part:coconut_meat,sl:ingredient:coconut,polpa de coco,coconut meat,botanical,,endosperma sólido,,polpa|coco ralado,meat|flesh,curadoria inicial
+sl:part:coconut_water,sl:ingredient:coconut,água de coco,coconut water,botanical,,endosperma líquido,,água,water,curadoria inicial
+sl:part:coriander_leaf,sl:ingredient:coriander,folha de coentro,coriander leaf (cilantro),botanical,,folhas,,folha|folhas,leaf|leaves|cilantro,curadoria inicial
+sl:part:coriander_seed,sl:ingredient:coriander,semente de coentro,coriander seed,botanical,,fruto seco,,semente|sementes,seed|seeds,curadoria inicial

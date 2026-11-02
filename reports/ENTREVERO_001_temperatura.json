@@ -1,0 +1,237 @@
+{
+  "experiment_id": "ENTREVERO_001_TEMP_SYNTHETIC",
+  "recipe_id": "ENTREVERO_001",
+  "batch_id": "lote_sintetico_001",
+  "finish_time_local": "2026-11-02T14:00:00-03:00",
+  "data_status": "synthetic_example",
+  "components": [
+    {
+      "component": "entrevero",
+      "conditions": {
+        "food_mass_g": 650,
+        "ambient_temperature_c": 23.0,
+        "container": "panela_ferro",
+        "covered": false,
+        "probe_position": "centro_da_massa",
+        "sensor": {
+          "calibration_status": "synthetic_example",
+          "resolution_c": 0.1
+        },
+        "out_of_control_start_elapsed_min": 0
+      },
+      "thermal_fit": {
+        "ambient_c": 23.0,
+        "k_per_min": 0.030246193944784762,
+        "t0_measured_c": 80.0,
+        "t0_estimated_c": 80.0,
+        "readings": [
+          {
+            "elapsed_min": 0.0,
+            "temperature_c": 80.0
+          },
+          {
+            "elapsed_min": 5.0,
+            "temperature_c": 72.0
+          }
+        ],
+        "predicted_c": [
+          80.0,
+          71.99999999999999
+        ],
+        "residuals_c": [
+          0.0,
+          1.4210854715202004e-14
+        ],
+        "rmse_c": 1.0048591735576161e-14,
+        "r_squared": 1.0,
+        "method": "two_point",
+        "adequate": true,
+        "k_standard_error": null,
+        "sensor_resolution_c": 0.1,
+        "probe_position": "centro_da_massa",
+        "warnings": [],
+        "observed_window_min": 5.0,
+        "units": {
+          "temperature": "°C",
+          "time": "min",
+          "k": "min^-1"
+        }
+      },
+      "target_prediction": {
+        "target_c": 60.0,
+        "target_source": "exploratory",
+        "total_elapsed_min": 14.287197786908223,
+        "remaining_min": 9.287197786908223,
+        "interval_95_total_min": null,
+        "extrapolated": true,
+        "warnings": [
+          "previsão extrapola muito além da janela observada"
+        ]
+      },
+      "target": {
+        "temperature_c": 60.0,
+        "source": "exploratory",
+        "validated_for_recipe": false
+      },
+      "sensory": {
+        "status": "insufficient_data",
+        "n_observations": 0,
+        "n_unique_temperatures": 0,
+        "observed_range_c": null,
+        "preferred_temperature_c": null,
+        "coefficients": null,
+        "rmse": null,
+        "r_squared": null,
+        "reason": "nenhuma nota geral registrada",
+        "temperature_bands": [],
+        "warnings": []
+      },
+      "safety": {
+        "status": "within_time_reference",
+        "allows_serving_optimization": true,
+        "reasons": [
+          "serviço imediato dentro da referência temporal geral de 120 min"
+        ],
+        "limits": {
+          "hot_holding_min_c": 60.0,
+          "room_limit_min": 120.0,
+          "hot_room_limit_min": 60.0,
+          "hot_room_threshold_c": 32.0,
+          "reference": "USDA FSIS; verificar normas brasileiras e regras específicas do alimento"
+        },
+        "warnings": [
+          "isto não confirma cocção, manipulação ou armazenamento seguros"
+        ]
+      },
+      "serving_recommendation": {
+        "status": "insufficient_data",
+        "preferred_temperature_c": null,
+        "target_source": null,
+        "reason": "nenhuma nota geral registrada",
+        "warnings": []
+      },
+      "evidence_ids": [
+        "ENTREVERO_001_TEMP_SYNTHETIC:entrevero:temperature:0",
+        "ENTREVERO_001_TEMP_SYNTHETIC:entrevero:temperature:1"
+      ],
+      "warnings": [
+        "previsão extrapola muito além da janela observada"
+      ]
+    },
+    {
+      "component": "cabotiá_farofa",
+      "conditions": {
+        "food_mass_g": 220,
+        "ambient_temperature_c": 23.0,
+        "container": "travessa_ceramica",
+        "covered": false,
+        "probe_position": "centro_da_porção",
+        "sensor": {
+          "calibration_status": "synthetic_example",
+          "resolution_c": 0.1
+        },
+        "out_of_control_start_elapsed_min": 0
+      },
+      "thermal_fit": {
+        "ambient_c": 23.0,
+        "k_per_min": 0.03883120288819146,
+        "t0_measured_c": 74.0,
+        "t0_estimated_c": 74.0,
+        "readings": [
+          {
+            "elapsed_min": 0.0,
+            "temperature_c": 74.0
+          },
+          {
+            "elapsed_min": 5.0,
+            "temperature_c": 65.0
+          }
+        ],
+        "predicted_c": [
+          74.0,
+          65.0
+        ],
+        "residuals_c": [
+          0.0,
+          0.0
+        ],
+        "rmse_c": 0.0,
+        "r_squared": 1.0,
+        "method": "two_point",
+        "adequate": true,
+        "k_standard_error": null,
+        "sensor_resolution_c": 0.1,
+        "probe_position": "centro_da_porção",
+        "warnings": [],
+        "observed_window_min": 5.0,
+        "units": {
+          "temperature": "°C",
+          "time": "min",
+          "k": "min^-1"
+        }
+      },
+      "target_prediction": {
+        "target_c": 55.0,
+        "target_source": "exploratory",
+        "total_elapsed_min": 12.002969139705348,
+        "remaining_min": 7.002969139705348,
+        "interval_95_total_min": null,
+        "extrapolated": true,
+        "warnings": [
+          "previsão extrapola muito além da janela observada"
+        ]
+      },
+      "target": {
+        "temperature_c": 55.0,
+        "source": "exploratory",
+        "validated_for_recipe": false
+      },
+      "sensory": {
+        "status": "insufficient_data",
+        "n_observations": 0,
+        "n_unique_temperatures": 0,
+        "observed_range_c": null,
+        "preferred_temperature_c": null,
+        "coefficients": null,
+        "rmse": null,
+        "r_squared": null,
+        "reason": "nenhuma nota geral registrada",
+        "temperature_bands": [],
+        "warnings": []
+      },
+      "safety": {
+        "status": "within_time_reference",
+        "allows_serving_optimization": true,
+        "reasons": [
+          "serviço imediato dentro da referência temporal geral de 120 min"
+        ],
+        "limits": {
+          "hot_holding_min_c": 60.0,
+          "room_limit_min": 120.0,
+          "hot_room_limit_min": 60.0,
+          "hot_room_threshold_c": 32.0,
+          "reference": "USDA FSIS; verificar normas brasileiras e regras específicas do alimento"
+        },
+        "warnings": [
+          "isto não confirma cocção, manipulação ou armazenamento seguros"
+        ]
+      },
+      "serving_recommendation": {
+        "status": "insufficient_data",
+        "preferred_temperature_c": null,
+        "target_source": null,
+        "reason": "nenhuma nota geral registrada",
+        "warnings": []
+      },
+      "evidence_ids": [
+        "ENTREVERO_001_TEMP_SYNTHETIC:cabotiá_farofa:temperature:0",
+        "ENTREVERO_001_TEMP_SYNTHETIC:cabotiá_farofa:temperature:1"
+      ],
+      "warnings": [
+        "previsão extrapola muito além da janela observada"
+      ]
+    }
+  ],
+  "model_scope": "empirical_for_recorded_batch_and_conditions",
+  "generated_without_external_calls": true
+}

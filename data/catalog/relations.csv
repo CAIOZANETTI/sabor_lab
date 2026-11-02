@@ -1,0 +1,183 @@
+subject_id,predicate,object_id,context,evidence,confidence
+sl:ingredient:rice_flour,derived_from,sl:ingredient:rice,,moagem do grão,
+sl:form:rice_flour_glutinous,derived_from,sl:variant:rice_glutinous,,moagem do arroz glutinoso,
+sl:ingredient:rice_bran,derived_from,sl:ingredient:rice,,fração do beneficiamento (pericarpo/germe),
+sl:ingredient:rice_noodles,derived_from,sl:ingredient:rice_flour,,massa de farinha de arroz,
+sl:ingredient:rice_bran_oil,derived_from,sl:ingredient:rice_bran,,extração do óleo do farelo,
+sl:ingredient:rice_milk,derived_from,sl:ingredient:rice,,extrato aquoso do grão,
+sl:ingredient:rice_vinegar,derived_from,sl:ingredient:rice,,fermentação acética de mosto de arroz,
+sl:ingredient:risotto,dish_contains,sl:variant:rice_arborio,receita tradicional; carnaroli também usado,curadoria culinária,0.7
+sl:ingredient:arroz_carreteiro,dish_contains,sl:ingredient:rice,,TACO 526 (prato),
+sl:ingredient:arroz_carreteiro,dish_contains,sl:ingredient:charque,,receita tradicional gaúcha,0.8
+sl:ingredient:fried_rice,dish_contains,sl:form:rice_white_cooked,,curadoria culinária,
+sl:ingredient:baiao_de_dois,dish_contains,sl:ingredient:rice,,"TACO 527 ""arroz e feijão-de-corda""",
+sl:ingredient:baiao_de_dois,dish_contains,sl:ingredient:cowpea,,TACO 527: feijão-de-corda = Vigna unguiculata,
+sl:ingredient:rice_fritter,dish_contains,sl:form:rice_white_cooked,,TACO 530,
+sl:ingredient:rice_pudding,dish_contains,sl:ingredient:rice,,curadoria culinária,
+sl:ingredient:cornmeal,derived_from,sl:ingredient:corn,,moagem do grão seco,
+sl:ingredient:corn_flour_flakes,derived_from,sl:ingredient:corn,,flocagem e torra do grão,
+sl:ingredient:corn_flour,derived_from,sl:ingredient:corn,,moagem fina,
+sl:ingredient:masa_harina,derived_from,sl:ingredient:hominy,,moagem do milho nixtamalizado,
+sl:ingredient:hominy,derived_from,sl:ingredient:corn,,nixtamalização,
+sl:ingredient:canjica_kernels,derived_from,sl:variant:corn_dent_white,,degerminação do milho branco,0.8
+sl:ingredient:corn_starch,derived_from,sl:ingredient:corn,,extração de amido (moagem úmida),
+sl:ingredient:corn_grits,derived_from,sl:ingredient:corn,,moagem grossa,
+sl:ingredient:corn_oil,derived_from,sl:ingredient:corn,,extração do óleo do germe,
+sl:ingredient:corn_syrup,derived_from,sl:ingredient:corn_starch,,hidrólise do amido,
+sl:ingredient:curau,dish_contains,sl:form:corn_green_raw,,TACO 29,
+sl:ingredient:pamonha,dish_contains,sl:form:corn_green_raw,,TACO 47,
+sl:ingredient:polenta,dish_contains,sl:ingredient:cornmeal,,TACO 62,
+sl:ingredient:canjica_dish,dish_contains,sl:ingredient:canjica_kernels,,"TACO 20 ""Canjica, com leite integral""",
+sl:ingredient:cuscuz_milho,dish_contains,sl:ingredient:corn_flour_flakes,,TACO 533,0.8
+sl:ingredient:cuscuz_paulista,dish_contains,sl:ingredient:corn_flour_flakes,,TACO 534,0.8
+sl:ingredient:cornbread,dish_contains,sl:ingredient:cornmeal,,curadoria culinária,
+sl:ingredient:wheat_flour,derived_from,sl:ingredient:wheat,,moagem,
+sl:ingredient:bread,derived_from,sl:ingredient:wheat_flour,pão de trigo; há pães de outros cereais,curadoria,0.8
+sl:ingredient:french_roll_br,derived_from,sl:form:wheat_flour_white,,"TACO 53 ""Pão, trigo, francês""",
+sl:ingredient:pasta,derived_from,sl:ingredient:wheat_flour,massa de trigo; há massas de arroz/milho,curadoria,0.8
+sl:ingredient:rye_flour,derived_from,sl:ingredient:rye,,moagem,
+sl:ingredient:chickpea_flour,derived_from,sl:ingredient:chickpea,,moagem,
+sl:ingredient:tofu,derived_from,sl:ingredient:soybean,,coagulação do extrato,
+sl:ingredient:soy_beverage,derived_from,sl:ingredient:soybean,,extração aquosa,
+sl:ingredient:soy_flour,derived_from,sl:ingredient:soybean,,moagem,
+sl:ingredient:soy_sauce,derived_from,sl:ingredient:soybean,,fermentação de soja e trigo,
+sl:ingredient:miso,derived_from,sl:ingredient:soybean,,fermentação com koji,
+sl:ingredient:tempeh,derived_from,sl:ingredient:soybean,,fermentação por Rhizopus,
+sl:ingredient:edamame,derived_from,sl:form:soybean_green_raw,,grão imaturo,
+sl:ingredient:peanut_butter,derived_from,sl:form:peanut_roasted_salted,,moagem do amendoim torrado,0.8
+sl:ingredient:pacoca,derived_from,sl:ingredient:peanut,,TACO 579,
+sl:ingredient:pe_de_moleque,derived_from,sl:ingredient:peanut,,TACO 580,
+sl:ingredient:feijoada,dish_contains,sl:variant:common_bean_black,,TACO 540; receita tradicional,0.9
+sl:ingredient:feijao_tropeiro,dish_contains,sl:ingredient:common_bean,,TACO 539,
+sl:ingredient:feijao_tropeiro,dish_contains,sl:ingredient:cassava_flour,,receita tradicional,0.8
+sl:ingredient:acaraje,dish_contains,sl:variant:cowpea_blackeyed,,TACO 525; receita tradicional,0.9
+sl:ingredient:baked_beans,dish_contains,sl:variant:common_bean_navy,,"USDA ""Beans, baked""",0.7
+sl:ingredient:hummus,dish_contains,sl:form:chickpea_cooked,,curadoria culinária,
+sl:ingredient:condensed_milk,derived_from,sl:ingredient:cow_milk,,evaporação com açúcar,
+sl:ingredient:evaporated_milk,derived_from,sl:ingredient:cow_milk,,evaporação,
+sl:ingredient:cream,derived_from,sl:ingredient:cow_milk,,desnate (fração gorda),
+sl:ingredient:sour_cream,derived_from,sl:ingredient:cream,,fermentação lática,
+sl:ingredient:butter,derived_from,sl:ingredient:cream,,batimento do creme,
+sl:ingredient:ghee,derived_from,sl:ingredient:butter,,clarificação,
+sl:ingredient:yogurt,derived_from,sl:ingredient:milk,,fermentação lática,
+sl:ingredient:fermented_milk,derived_from,sl:ingredient:milk,,fermentação,
+sl:ingredient:buttermilk,derived_from,sl:ingredient:milk,,fermentação/resíduo da manteiga,
+sl:ingredient:kefir,derived_from,sl:ingredient:milk,,fermentação por grãos de kefir,
+sl:ingredient:whey,derived_from,sl:ingredient:milk,,fração do queijo,
+sl:ingredient:doce_de_leite,derived_from,sl:ingredient:cow_milk,,cocção com açúcar,
+sl:ingredient:dairy_drink,derived_from,sl:ingredient:milk,,mistura com soro e leite,
+sl:ingredient:cheese,derived_from,sl:ingredient:milk,,coagulação da caseína,
+sl:ingredient:pao_de_queijo,dish_contains,sl:ingredient:cassava_starch,,receita tradicional (polvilho),
+sl:ingredient:pao_de_queijo,dish_contains,sl:ingredient:cheese,,receita tradicional; tipo de queijo varia (minas meia-cura/parmesão),0.9
+sl:ingredient:mac_and_cheese,dish_contains,sl:ingredient:pasta,,curadoria,
+sl:ingredient:mac_and_cheese,dish_contains,sl:variant:cheese_cheddar,,receita norte-americana típica,0.7
+sl:ingredient:cheese_omelet,dish_contains,sl:ingredient:chicken_egg,,TACO 484,
+sl:ingredient:cheese_omelet,dish_contains,sl:ingredient:cheese,,TACO 484,
+sl:ingredient:charque,derived_from,sl:ingredient:beef,,salga e secagem,
+sl:ingredient:carne_seca,derived_from,sl:ingredient:beef,,salga e secagem,
+sl:ingredient:corned_beef,derived_from,sl:part:beef_brisket,,cura em salmoura (tipicamente peito),
+sl:ingredient:beef_jerky,derived_from,sl:ingredient:beef,,secagem,
+sl:ingredient:hamburger_patty,derived_from,sl:ingredient:beef,,moagem e moldagem,
+sl:ingredient:pork_sausage,derived_from,sl:ingredient:pork,,embutimento,
+sl:ingredient:chicken_sausage,derived_from,sl:ingredient:chicken,,embutimento,
+sl:ingredient:ham,derived_from,sl:part:pork_leg,,cura,
+sl:ingredient:apresuntado,derived_from,sl:ingredient:pork,,cozimento de carne suína prensada,0.85
+sl:ingredient:bacon,derived_from,sl:part:pork_belly,,cura e defumação,
+sl:ingredient:toucinho,derived_from,sl:ingredient:pork,,tecido adiposo subcutâneo,
+sl:ingredient:salami,derived_from,sl:ingredient:pork,,cura e fermentação,0.85
+sl:ingredient:mortadella,derived_from,sl:ingredient:pork,,emulsão cozida,0.85
+sl:ingredient:lard,derived_from,sl:ingredient:pork,,fusão da gordura,
+sl:ingredient:coxinha,dish_contains,sl:ingredient:chicken,,"TACO ""Coxinha de frango, frita""",
+sl:ingredient:empada_frango,dish_contains,sl:ingredient:chicken,,"TACO ""Empada, de frango, pré-cozida""",
+sl:ingredient:strogonoff_frango,dish_contains,sl:ingredient:chicken,,"TACO ""Estrogonofe de frango""",
+sl:ingredient:frango_acafrao,dish_contains,sl:ingredient:chicken,,"TACO ""Frango, com açafrão""",
+sl:ingredient:salpicao,dish_contains,sl:ingredient:chicken,,"TACO ""Salpicão, de frango""",
+sl:ingredient:frango_acafrao,dish_contains,sl:ingredient:turmeric,"""açafrão"" no Brasil costuma designar cúrcuma; pode ser açafrão verdadeiro",homônimo regional,0.5
+sl:ingredient:strogonoff_carne,dish_contains,sl:ingredient:beef,,"TACO ""Estrogonofe de carne""",0.8
+sl:ingredient:bife_a_cavalo,dish_contains,sl:part:beef_contra_file,,"TACO ""Bife à cavalo, com contra filé""",0.8
+sl:ingredient:dobradinha,dish_contains,sl:part:beef_tripe,,"TACO ""Dobradinha""",0.8
+sl:ingredient:vaca_atolada,dish_contains,sl:part:beef_costela,,"TACO ""Vaca atolada""",0.8
+sl:ingredient:sarapatel,dish_contains,sl:ingredient:pork,,"TACO ""Sarapatel""",0.8
+sl:ingredient:barreado,dish_contains,sl:ingredient:beef,,"TACO ""Barreado""",0.8
+sl:ingredient:quibe,dish_contains,sl:ingredient:beef,,"TACO ""Quibe, cru""",0.8
+sl:ingredient:croquete_carne,dish_contains,sl:ingredient:beef,,"TACO ""Croquete, de carne, cru""",0.8
+sl:ingredient:virado_paulista,dish_contains,sl:ingredient:pork,,"TACO ""Virado à paulista""",0.8
+sl:ingredient:quibe,dish_contains,sl:ingredient:bulgur,,receita tradicional,0.9
+sl:ingredient:vaca_atolada,dish_contains,sl:ingredient:cassava,,receita tradicional,0.9
+sl:ingredient:sarapatel,dish_contains,sl:part:pork_liver,miúdos suínos; há versões caprinas,curadoria,0.6
+sl:ingredient:bacalhau,derived_from,sl:ingredient:cod,nome reservado a Gadus spp. pela Portaria MPA 532/2025; produtos antigos podiam usar outros gadídeos,salga e secagem,0.8
+sl:form:atlantic_cod_dried_salted,derived_from,sl:form:atlantic_cod_raw,,salga e secagem,
+sl:ingredient:fish_sauce,derived_from,sl:ingredient:anchovy,tipicamente anchovas,fermentação com sal,0.7
+sl:ingredient:surimi,derived_from,sl:ingredient:alaska_pollock,espécie varia,pasta de peixe,0.6
+sl:ingredient:camarao_baiana,dish_contains,sl:ingredient:shrimp,,"TACO ""Camarão à baiana""",0.8
+sl:ingredient:vatapa,dish_contains,sl:ingredient:shrimp,,"TACO ""Vatapá""",0.8
+sl:ingredient:tacaca,dish_contains,sl:ingredient:tucupi,,"TACO ""Tacacá""",0.8
+sl:ingredient:tuna_salad,dish_contains,sl:ingredient:tuna,,USDA 175160,
+sl:ingredient:orange_juice,derived_from,sl:ingredient:orange,,extração,
+sl:ingredient:apple_sauce,derived_from,sl:ingredient:apple,,cocção e trituração,
+sl:ingredient:grape_juice,derived_from,sl:ingredient:grape,,extração,
+sl:ingredient:raisin,derived_from,sl:ingredient:grape,,secagem,
+sl:ingredient:olive_table,derived_from,sl:ingredient:olive,,cura/fermentação em salmoura,
+sl:ingredient:coconut_milk,derived_from,sl:part:coconut_meat,,extração da polpa,
+sl:ingredient:cocada,derived_from,sl:part:coconut_meat,,TACO 499,
+sl:ingredient:goiabada,derived_from,sl:ingredient:guava,,TACO 198,
+sl:ingredient:tomato_sauce,derived_from,sl:ingredient:tomato,,cocção,
+sl:ingredient:ketchup,derived_from,sl:ingredient:tomato,,concentrado com açúcar e vinagre,
+sl:ingredient:tomato_salad,dish_contains,sl:ingredient:tomato,,TACO 161,
+sl:ingredient:potato_chips,derived_from,sl:ingredient:potato,,fritura em lâminas,
+sl:ingredient:gnocchi,dish_contains,sl:ingredient:potato,,TACO 136,
+sl:ingredient:farofa,dish_contains,sl:ingredient:cassava_flour,,TACO 131,
+sl:ingredient:tapioca_crepe,dish_contains,sl:ingredient:cassava_starch,,TACO 551,
+sl:ingredient:manicoba,dish_contains,sl:ingredient:cassava,folhas de mandioca cozidas,TACO 543,
+sl:ingredient:quibebe,dish_contains,sl:ingredient:pumpkin,,TACO 544,
+sl:ingredient:cake_aipim,dish_contains,sl:ingredient:cassava,,TACO 15,
+sl:ingredient:mayonnaise,derived_from,sl:part:egg_yolk,,emulsão de gema e óleo,0.9
+sl:ingredient:prepared_mustard,derived_from,sl:ingredient:mustard_seed,,moagem com vinagre,
+sl:ingredient:tahini,derived_from,sl:ingredient:sesame,,moagem,
+sl:ingredient:almond_milk,derived_from,sl:ingredient:almond,,extração aquosa,
+sl:ingredient:olive_oil,derived_from,sl:ingredient:olive,,extração de óleo,
+sl:ingredient:soybean_oil,derived_from,sl:ingredient:soybean,,extração de óleo,
+sl:ingredient:sunflower_oil,derived_from,sl:ingredient:sunflower_seed,,extração de óleo,
+sl:ingredient:coconut_oil,derived_from,sl:part:coconut_meat,,extração de óleo,
+sl:ingredient:sesame_oil,derived_from,sl:ingredient:sesame,,extração de óleo,
+sl:ingredient:peanut_oil,derived_from,sl:ingredient:peanut,,extração de óleo,
+sl:ingredient:babassu_oil,derived_from,sl:ingredient:babassu,,extração de óleo,
+sl:ingredient:pequi_oil,derived_from,sl:ingredient:pequi,,extração de óleo,
+sl:ingredient:palm_oil,derived_from,sl:ingredient:oil_palm_fruit,,prensagem do mesocarpo,
+sl:ingredient:canola_oil,derived_from,sl:ingredient:rapeseed,,extração (cultivares de baixo ácido erúcico),
+sl:ingredient:fennel_infusion,derived_from,sl:ingredient:fennel,ou anis (homônimo erva-doce),infusão,0.5
+sl:ingredient:wine,derived_from,sl:ingredient:grape,,fermentação alcoólica,
+sl:ingredient:cachaca,derived_from,sl:ingredient:sugarcane,,destilação do mosto de cana,
+sl:ingredient:sugarcane_juice,derived_from,sl:ingredient:sugarcane,,moagem,
+sl:ingredient:kombucha,derived_from,sl:ingredient:tea,,fermentação simbiótica,
+sl:ingredient:sugar,derived_from,sl:ingredient:sugarcane,no Brasil; também de beterraba,extração e cristalização,0.9
+sl:ingredient:rapadura,derived_from,sl:ingredient:sugarcane_juice,,evaporação,
+sl:ingredient:melado,derived_from,sl:ingredient:sugarcane_juice,,concentração,
+sl:ingredient:cocoa_powder,derived_from,sl:ingredient:cocoa,,moagem da massa desengordurada,
+sl:ingredient:chocolate,derived_from,sl:ingredient:cocoa,,massa de cacau + açúcar,
+sl:ingredient:quindim,derived_from,sl:part:egg_yolk,,"gemas, açúcar e coco",0.9
+sl:ingredient:doce_abobora,derived_from,sl:ingredient:pumpkin,,TACO 500,
+sl:ingredient:banana_doce,derived_from,sl:ingredient:banana,,TACO 176,
+sl:variant:vinegar_apple,derived_from,sl:ingredient:apple,,fermentação acética,
+sl:variant:vinegar_wine_red,derived_from,sl:variant:wine_red,,fermentação acética,
+sl:ingredient:sauerkraut,derived_from,sl:ingredient:cabbage,,fermentação lática,
+sl:ingredient:kimchi,derived_from,sl:ingredient:cabbage,acelga-chinesa (napa) na versão clássica,fermentação lática,0.8
+sl:ingredient:pickles,derived_from,sl:ingredient:cucumber,picles de pepino,conserva ácida,0.8
+sl:ingredient:polvilho_biscuit,derived_from,sl:ingredient:cassava_starch,,TACO 99,
+sl:ingredient:corn_flakes,derived_from,sl:ingredient:corn,,flocagem,
+sl:ingredient:breadcrumbs,derived_from,sl:ingredient:bread,,moagem de pão seco,
+sl:ingredient:toast,derived_from,sl:ingredient:french_roll_br,,TACO 63,
+sl:ingredient:bulgur,derived_from,sl:ingredient:wheat,,parboilização e quebra do grão,
+sl:ingredient:cream_of_rice,derived_from,sl:ingredient:rice_flour,,TACO 27,
+sl:ingredient:cream_of_corn_powder,derived_from,sl:ingredient:corn,,TACO 28,
+sl:ingredient:lasagna,dish_contains,sl:ingredient:pasta,,curadoria,
+sl:ingredient:pizza,dish_contains,sl:ingredient:wheat_flour,,curadoria,
+sl:ingredient:pastel,dish_contains,sl:ingredient:wheat_flour,,curadoria,
+sl:ingredient:yakisoba,dish_contains,sl:ingredient:pasta,,TACO,
+sl:ingredient:tabbouleh,dish_contains,sl:ingredient:bulgur,,TACO,
+sl:ingredient:cabbage_roll,dish_contains,sl:ingredient:cabbage,,TACO,
+sl:ingredient:vegetable_salad_mayo,dish_contains,sl:ingredient:mayonnaise,,TACO,
+sl:ingredient:vegetable_salad_steamed,dish_contains,sl:ingredient:carrot,,TACO,0.7
+sl:ingredient:pasta_bolognese,dish_contains,sl:ingredient:pasta,,TACO,
+sl:ingredient:cuxa,dish_contains,sl:ingredient:hibiscus,vinagreira (Hibiscus sabdariffa),TACO,0.7
+sl:ingredient:pastel_dough,derived_from,sl:ingredient:wheat_flour,,TACO 59,
