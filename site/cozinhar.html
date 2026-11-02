@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mockup do modo cozinha com tarefas paralelas e timer.">
+  <title>Modo cozinha — SaborLab</title>
+  <style>
+    :root { color-scheme:light; --ink:#172019; --muted:#647068; --paper:#f5f1e7;
+      --surface:#fffdf8; --accent:#b94b28; --green:#286044; --gold:#d79b31; --line:#d9d2c3; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.5 system-ui,sans-serif; }
+    button { font:inherit; }
+    nav { display:flex; justify-content:space-between; padding:1rem max(1rem,calc((100% - 1080px)/2)); border-bottom:1px solid var(--line); }
+    nav a { color:var(--ink); text-decoration:none; font-weight:750; }
+    main { width:min(1080px,calc(100% - 2rem)); margin:0 auto; padding:3rem 0 5rem; }
+    .eyebrow { color:var(--accent); font-size:.76rem; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+    h1 { margin:.3rem 0 .7rem; font:700 clamp(2.8rem,8vw,5.7rem)/.92 Georgia,serif; }
+    h2 { margin:.2rem 0 .7rem; font:700 clamp(1.5rem,4vw,2.3rem)/1.1 Georgia,serif; }
+    h3 { margin:.2rem 0 .5rem; }
+    .muted { color:var(--muted); }
+    .summary { display:flex; flex-wrap:wrap; gap:.6rem; margin:1.5rem 0; }
+    .pill { padding:.35rem .7rem; background:var(--surface); border:1px solid var(--line); border-radius:999px; }
+    .layout { display:grid; grid-template-columns:.8fr 1.2fr; gap:1rem; }
+    .panel { padding:1.2rem; background:var(--surface); border:1px solid var(--line); border-radius:20px; }
+    .prep { width:100%; margin:.35rem 0; padding:.7rem; text-align:left; color:var(--ink); background:#fff;
+      border:1px solid var(--line); border-radius:12px; cursor:pointer; }
+    .prep[aria-pressed="true"] { color:var(--muted); text-decoration:line-through; background:#e8eee9; }
+    .now { padding:1.3rem; color:#fff; background:var(--green); border-radius:18px; }
+    .timer { margin:.6rem 0; font:700 clamp(3.3rem,9vw,6rem)/1 ui-monospace,SFMono-Regular,monospace; letter-spacing:-.08em; }
+    .controls { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .controls button { padding:.6rem .9rem; border:0; border-radius:999px; cursor:pointer; font-weight:750; }
+    .primary { color:var(--green); background:#fff; }
+    .secondary { color:#fff; background:#ffffff24; }
+    .lanes { display:grid; gap:.6rem; margin-top:1rem; }
+    .lane { display:grid; grid-template-columns:90px 1fr; gap:.8rem; align-items:center; }
+    .track { min-height:54px; padding:.7rem; background:#eee7d8; border-radius:12px; }
+    .task { display:inline-block; margin:.15rem; padding:.35rem .55rem; border-left:4px solid var(--gold); background:#fff; border-radius:6px; }
+    .next { display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; margin-top:1rem; }
+    .next article { padding:.9rem; background:#faf7ef; border:1px solid var(--line); border-radius:14px; }
+    .knowledge { margin-top:1rem; padding:1rem; background:#fff4d4; border-radius:14px; }
+    .prototype { margin-top:1rem; color:var(--muted); font-size:.86rem; }
+    @media(max-width:760px) { .layout { grid-template-columns:1fr; } .lane { grid-template-columns:1fr; } .next { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html">SaborLab</a><a href="app.html">← escolhas</a></nav>
+  <main>
+    <span class="eyebrow">Mockup · modo cozinha</span>
+    <h1>Jantar mediterrâneo</h1>
+    <p class="muted">Peixe assado, vegetais, grão-de-bico crocante e creme de ervas.</p>
+    <div class="summary"><span class="pill">42 min total</span><span class="pill">18 min ativos</span><span class="pill">24 min passivos</span><span class="pill">1 forno</span><span class="pill">1 frigideira</span></div>
+
+    <div class="layout">
+      <section class="panel">
+        <span class="eyebrow">Mise en place</span><h2>Antes de começar</h2>
+        <button class="prep" aria-pressed="false">□ Lavar e secar os vegetais</button>
+        <button class="prep" aria-pressed="false">□ Cortar em cubos de 2 cm</button>
+        <button class="prep" aria-pressed="false">□ Secar o peixe e separar temperos</button>
+        <button class="prep" aria-pressed="false">□ Escorrer e secar o grão-de-bico</button>
+        <button class="prep" aria-pressed="false">□ Separar assadeira, frigideira e termômetro</button>
+        <div class="knowledge"><strong>Por que secar?</strong><br>Menos água superficial favorece douramento e crocância. O motor final mostrará fonte, condição e limitações de cada explicação.</div>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow">Agora · forno</span>
+        <div class="now"><h2>Preaqueça a 200 °C</h2><p>Enquanto o forno aquece, corte os vegetais e prepare o creme de ervas.</p><div class="timer" id="timer">10:00</div><div class="controls"><button class="primary" id="toggle">Iniciar</button><button class="secondary" id="plus">+1 min</button><button class="secondary" id="done">Concluir</button><button class="secondary" id="reset">Reiniciar</button></div></div>
+
+        <div class="next">
+          <article><span class="eyebrow">Em paralelo</span><h3>Cortar vegetais</h3><p class="muted">8 min · tarefa ativa · bancada</p></article>
+          <article><span class="eyebrow">Em paralelo</span><h3>Creme de ervas</h3><p class="muted">6 min · liquidificador</p></article>
+          <article><span class="eyebrow">Depois</span><h3>Assar peixe</h3><p class="muted">18 min · verificar temperatura e textura</p></article>
+          <article><span class="eyebrow">Descanso</span><h3>Aguardar antes de servir</h3><p class="muted">3 min · etapa passiva</p></article>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel" style="margin-top:1rem">
+      <span class="eyebrow">Cronograma paralelo</span><h2>O que ocupa cada recurso</h2>
+      <div class="lanes">
+        <div class="lane"><strong>Cozinheiro</strong><div class="track"><span class="task">cortar 8 min</span><span class="task">temperar 4 min</span><span class="task">finalizar 3 min</span></div></div>
+        <div class="lane"><strong>Forno</strong><div class="track"><span class="task">preaquecer 10 min</span><span class="task">assar 18 min</span></div></div>
+        <div class="lane"><strong>Frigideira</strong><div class="track"><span class="task">grão-de-bico 9 min</span></div></div>
+        <div class="lane"><strong>Passivo</strong><div class="track"><span class="task">marinar 12 min</span><span class="task">descansar 3 min</span></div></div>
+      </div>
+    </section>
+    <p class="prototype">Demonstração: as durações são ilustrativas. A versão funcional consumirá o grafo de preparo, fontes culinárias e controles de segurança definidos nas demandas 003 e 004.</p>
+  </main>
+  <script>
+    const key='saborlab-cook-demo-v1';
+    let state=JSON.parse(localStorage.getItem(key)||'null')||{status:'pending',remaining:600,endAt:null};
+    const timer=document.getElementById('timer'), toggle=document.getElementById('toggle');
+    function seconds(){return state.status==='running'?Math.max(0,Math.ceil((state.endAt-Date.now())/1000)):state.remaining;}
+    function save(){localStorage.setItem(key,JSON.stringify(state));}
+    function render(){const s=seconds();if(state.status==='running'&&s===0){state.status='completed';state.remaining=0;save();}timer.textContent=`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;toggle.textContent=state.status==='running'?'Pausar':state.status==='completed'?'Concluído':'Iniciar';}
+    toggle.onclick=()=>{if(state.status==='completed')return;if(state.status==='running'){state.remaining=seconds();state.status='paused';state.endAt=null;}else{state.status='running';state.endAt=Date.now()+state.remaining*1000;}save();render();};
+    document.getElementById('plus').onclick=()=>{if(state.status==='running')state.endAt+=60000;else state.remaining+=60;save();render();};
+    document.getElementById('done').onclick=()=>{state={status:'completed',remaining:0,endAt:null};save();render();};
+    document.getElementById('reset').onclick=()=>{state={status:'pending',remaining:600,endAt:null};save();render();};
+    document.querySelectorAll('.prep').forEach(button=>button.onclick=()=>button.setAttribute('aria-pressed',button.getAttribute('aria-pressed')!=='true'));
+    setInterval(render,250);render();
+  </script>
+</body>
+</html>

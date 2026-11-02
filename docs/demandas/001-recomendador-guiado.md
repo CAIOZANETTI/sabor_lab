@@ -1,5 +1,8 @@
 # [SaborLab] Implementar perfis, metas e recomendador guiado sem entrada livre
 
+> **Ordem:** executar depois das demandas 002 e 003. Consumir os contratos de
+> catálogo, preparo e textura definidos nelas; não criar taxonomias paralelas.
+
 ## Responsável pela execução
 
 Claude Code, em branch própria: `claude/guided-recommender`.
@@ -139,20 +142,20 @@ cálculo de nutrientes ou a resolução de ingredientes.
 
 ### 6. Textura
 
-Criar uma taxonomia pequena e versionada para o MVP:
+Consumir a taxonomia pequena e versionada criada pela demanda 003:
 
 - crocante, cremoso, fresco, suculento, picante, ácido, tostado e macio;
 - atributo original do ingrediente;
 - transformações por técnica: assar, fritar, grelhar, cozinhar, bater e servir cru;
 - evidência/justificativa para cada classificação.
 
-Começar com os ingredientes usados nas receitas demonstrativas. Ausência de dado
-deve ser `unknown`, nunca inferida silenciosamente.
+Não duplicar os arquivos de textura ou suas regras. Ausência de dado deve ser
+`unknown`, nunca inferida silenciosamente.
 
 ### 7. Cultura
 
-- Criar estrutura para país/região, curso, prato, ingredientes característicos,
-  técnicas, fontes e nível de adaptação.
+- Consumir ingredientes canônicos da demanda 002 e técnicas da demanda 003 ao
+  estruturar país/região, curso, prato, fontes e nível de adaptação.
 - Diferenciar `tradicional`, `interpretação` e `adaptação`.
 - Não declarar autenticidade a partir de moléculas ou NPMI.
 - Cada afirmação cultural precisa de fonte pública registrada.
