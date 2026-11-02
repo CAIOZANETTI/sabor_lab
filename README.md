@@ -18,6 +18,9 @@ página `site/sobre.html`.
 - **Tudo em português e no sistema métrico:** você escreve "2 colheres de sopa
   de azeite" ou "1 cup flour" e o sistema converte para gramas. Unidades
   imperiais (cup, tbsp, oz, lb, °F, inch) são sempre convertidas.
+- **Temperatura de serviço:** calibra uma curva de resfriamento com termômetro,
+  registra degustações na temperatura real e mantém segurança separada da
+  preferência sensorial.
 
 ## Estrutura
 
@@ -37,6 +40,10 @@ flavorlab/                       pacote Python
   db.py                          banco de sabores: nomes, perfis moleculares
   analysis.py                    química (Jaccard), prática (NPMI), sugestões
   nutrition.py                   banco nutricional, conversão de unidades, cálculo
+  thermal.py                     ajuste térmico e previsão de temperatura-alvo
+  temporal_sensory.py            degustações vinculadas à temperatura e ao tempo
+  food_safety.py                 checagens independentes de manutenção/exposição
+  serving_optimizer.py           preferência observada condicionada à segurança
   units.py                       unidades métricas/imperiais, °F->°C, polegadas->cm
   report.py, nutrition_report.py relatório HTML interativo (vis-network + plotly)
 scripts/                         download, build e relatório
@@ -112,6 +119,33 @@ python scripts/recipe_report.py --recipe R001       # uma receita
 python scripts/recipe_report.py --search-food "queijo minas"   # achar alimento (nutrição)
 python scripts/recipe_report.py --search pepper     # achar ingrediente (sabor, inglês)
 ```
+
+## Temperatura de serviço e percepção
+
+O exemplo `ENTREVERO_001` é explicitamente sintético: demonstra dois componentes
+sem apresentar seus números como medições. Gere o relatório com:
+
+```bash
+python scripts/temperature_report.py \
+  --input data/experiments/entrevero_temperatura_sintetico.json \
+  --output reports/ENTREVERO_001_temperatura.html
+```
+
+O comando também grava um JSON legível por máquina. Leituras reais precisam
+registrar tempo, temperatura ambiente, posição e resolução da sonda, massa,
+recipiente e condição da amostra. Duas ou mais leituras calibram a aproximação
+exponencial; uma leitura isolada nunca recebe um coeficiente arbitrário.
+
+O módulo sensorial começa com tabelas por faixa de temperatura. Só retorna uma
+estimativa exploratória quando há observações e temperaturas suficientes, uma
+curva côncava e um vértice dentro da faixa medida. A checagem de segurança é
+executada antes da recomendação e seus estados não significam garantia universal
+de alimento seguro.
+
+O coeficiente térmico é empírico para aquele lote e depende de massa, recipiente,
+tampa, ventilação, agitação e posição da sonda. O módulo não usa Jaccard, NPMI,
+XlogP ou contagem de moléculas para inferir volatilização, e não afirma que
+“moléculas se fixam” depois de um período específico.
 
 EX01 (molho de tomate), EX02 (chai) e EX03 (cookies americanos, em unidades
 imperiais) são exemplos e podem ser apagados.

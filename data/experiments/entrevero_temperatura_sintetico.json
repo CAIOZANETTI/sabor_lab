@@ -1,0 +1,49 @@
+{
+  "experiment_id": "ENTREVERO_001_TEMP_SYNTHETIC",
+  "recipe_id": "ENTREVERO_001",
+  "batch_id": "lote_sintetico_001",
+  "data_status": "synthetic_example",
+  "finish_time_local": "2026-11-02T14:00:00-03:00",
+  "components": [
+    {
+      "component": "entrevero",
+      "food_mass_g": 650,
+      "ambient_temperature_c": 23.0,
+      "container": "panela_ferro",
+      "covered": false,
+      "probe_position": "centro_da_massa",
+      "sensor": {"calibration_status": "synthetic_example", "resolution_c": 0.1},
+      "perishable": true,
+      "service_mode": "immediate_service",
+      "out_of_control_start_elapsed_min": 0,
+      "measurements": [
+        {"elapsed_min": 0, "temperature_c": 80.0},
+        {"elapsed_min": 5, "temperature_c": 72.0}
+      ],
+      "target": {"temperature_c": 60.0, "source": "exploratory", "validated_for_recipe": false},
+      "tastings": [
+        {"taster_id": "synthetic_01", "elapsed_min": 5, "temperature_c": 72.0, "overall_score": null, "aroma_score": null, "texture_score": null, "presentation_order": 1, "sample_condition": "synthetic_example", "composition": "entrevero_sintetico", "holding_method": "bancada_sintetica", "notes": "sem observação real"}
+      ]
+    },
+    {
+      "component": "cabotiá_farofa",
+      "food_mass_g": 220,
+      "ambient_temperature_c": 23.0,
+      "container": "travessa_ceramica",
+      "covered": false,
+      "probe_position": "centro_da_porção",
+      "sensor": {"calibration_status": "synthetic_example", "resolution_c": 0.1},
+      "perishable": true,
+      "service_mode": "immediate_service",
+      "out_of_control_start_elapsed_min": 0,
+      "measurements": [
+        {"elapsed_min": 0, "temperature_c": 74.0},
+        {"elapsed_min": 5, "temperature_c": 65.0}
+      ],
+      "target": {"temperature_c": 55.0, "source": "exploratory", "validated_for_recipe": false},
+      "tastings": [
+        {"taster_id": "synthetic_01", "elapsed_min": 5, "temperature_c": 65.0, "overall_score": null, "aroma_score": null, "texture_score": null, "presentation_order": 2, "sample_condition": "synthetic_example", "composition": "cabotiá_farofa_castanhas_sintetica", "holding_method": "bancada_sintetica", "notes": "registrar perda de crocância por umidade quando observada"}
+      ]
+    }
+  ]
+}
