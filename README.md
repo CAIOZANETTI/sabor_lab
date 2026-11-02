@@ -1,7 +1,11 @@
-# science_spice
+# SaborLab
 
 Banco de dados experimental de **sabor e nutrição** dos alimentos, para
 elaborar e testar receitas com embasamento científico.
+
+O nome público do projeto é **SaborLab**: sabor molecular, nutrição e cultura
+para criar receitas calculadas. A visão completa do produto é publicada na
+página `site/sobre.html`.
 
 - **Sabor, em nível molecular:** que moléculas aromáticas cada ingrediente tem
   e quais ingredientes compartilham moléculas. É a hipótese do *food pairing*
@@ -58,6 +62,24 @@ python scripts/build_nutrition.py
 Testes: `pip install -r requirements-dev.txt && pytest`. A maioria usa bancos
 sintéticos com respostas conhecidas; há também verificações no banco real,
 como "1 cup de farinha = 125 g" e "nenhuma unidade imperial sobrando".
+
+## Publicação na web
+
+O workflow `.github/workflows/pages.yml` testa o projeto, regenera os relatórios
+e publica um site estático no GitHub Pages a cada atualização da branch `main`.
+Não é necessário manter um servidor Python em execução.
+
+Para conferir o mesmo artefato localmente:
+
+```bash
+python scripts/recipe_report.py
+python scripts/build_site.py --output _site
+python -m http.server 8000 --directory _site
+```
+
+No GitHub, selecione **Settings → Pages → Source: GitHub Actions** uma única vez.
+Depois disso, a publicação é automática e também pode ser iniciada manualmente
+na aba **Actions**.
 
 ## Suas receitas (`data/experiments/`)
 
