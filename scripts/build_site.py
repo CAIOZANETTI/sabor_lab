@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "reports"
+STATIC = ROOT / "site"
 
 
 def report_title(path: Path) -> str:
@@ -23,6 +24,9 @@ def build_site(output: Path) -> list[Path]:
     output = output.resolve()
     reports_output = output / "reports"
     reports_output.mkdir(parents=True, exist_ok=True)
+
+    for page in STATIC.glob("*.html"):
+        shutil.copy2(page, output / page.name)
 
     reports = sorted(REPORTS.glob("*.html"))
     if not reports:
@@ -43,8 +47,8 @@ def build_site(output: Path) -> list[Path]:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Experimentos de sabor molecular e nutrição de receitas.">
-  <title>Science Spice</title>
+  <meta name="description" content="SaborLab: sabor molecular, nutrição e cultura para criar receitas calculadas.">
+  <title>SaborLab</title>
   <style>
     :root {{ color-scheme: light; --ink:#18221c; --muted:#56635a; --paper:#f5f2e9;
       --card:#fffdf7; --accent:#b94824; --line:#d9d4c6; }}
@@ -56,6 +60,9 @@ def build_site(output: Path) -> list[Path]:
       text-transform:uppercase; font-size:.8rem; }}
     h1 {{ max-width:800px; margin:.4rem 0 1rem; font:700 clamp(3rem,9vw,6.8rem)/.92 Georgia,serif; }}
     .intro {{ max-width:720px; color:var(--muted); font-size:1.15rem; }}
+    .actions {{ display:flex; gap:.8rem; flex-wrap:wrap; margin:1.5rem 0 0; }}
+    .button {{ display:inline-block; padding:.7rem 1rem; border-radius:999px; color:#fff;
+      background:var(--accent); text-decoration:none; font-weight:700; }}
     .grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:1rem; margin:3rem 0; }}
     .card {{ min-height:210px; display:flex; flex-direction:column; gap:.7rem;
@@ -71,9 +78,10 @@ def build_site(output: Path) -> list[Path]:
 </head>
 <body>
   <main>
-    <span class="eyebrow">FlavorDB2 + FlavorGraph + TACO + USDA</span>
-    <h1>Science Spice</h1>
-    <p class="intro">Experimentos sobre as moléculas que aproximam ingredientes, as combinações encontradas em mais de um milhão de receitas e a composição nutricional de cada preparo.</p>
+    <span class="eyebrow">Sabor molecular + nutrição + cultura</span>
+    <h1>SaborLab</h1>
+    <p class="intro">Um laboratório para transformar ingredientes em receitas e receitas em escolhas calculadas, combinando sabor, nutrição, porções e contexto cultural.</p>
+    <div class="actions"><a class="button" href="sobre.html">Entenda como funciona</a></div>
     <section class="grid" aria-label="Relatórios disponíveis">
       {''.join(cards)}
     </section>

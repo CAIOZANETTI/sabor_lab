@@ -1,7 +1,11 @@
-# science_spice
+# SaborLab
 
 Banco de dados experimental de **sabor e nutrição** dos alimentos, para
 elaborar e testar receitas com embasamento científico.
+
+O nome público do projeto é **SaborLab**: sabor molecular, nutrição e cultura
+para criar receitas calculadas. A visão completa do produto é publicada na
+página `site/sobre.html`.
 
 - **Sabor, em nível molecular:** que moléculas aromáticas cada ingrediente tem
   e quais ingredientes compartilham moléculas. É a hipótese do *food pairing*
