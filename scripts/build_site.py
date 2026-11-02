@@ -86,7 +86,7 @@ def build_site(output: Path) -> list[Path]:
       {''.join(cards)}
     </section>
     <footer>
-      <p>Projeto experimental e não comercial. Consulte as <a href="https://github.com/CAIOZANETTI/science_spice/blob/main/data/SOURCES.md">fontes, licenças e referências</a> ou veja o <a href="https://github.com/CAIOZANETTI/science_spice">código no GitHub</a>.</p>
+      <p>Projeto experimental e não comercial. Consulte as <a href="https://github.com/CAIOZANETTI/sabor_lab/blob/main/data/SOURCES.md">fontes, licenças e referências</a> ou veja o <a href="https://github.com/CAIOZANETTI/sabor_lab">código no GitHub</a>.</p>
     </footer>
   </main>
 </body>
