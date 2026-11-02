@@ -81,7 +81,7 @@ def build_site(output: Path) -> list[Path]:
     <span class="eyebrow">Sabor molecular + nutrição + cultura</span>
     <h1>SaborLab</h1>
     <p class="intro">Um laboratório para transformar ingredientes em receitas e receitas em escolhas calculadas, combinando sabor, nutrição, porções e contexto cultural.</p>
-    <div class="actions"><a class="button" href="sobre.html">Entenda como funciona</a></div>
+    <div class="actions"><a class="button" href="app.html">Experimentar o mockup</a><a class="button" href="sobre.html">Entenda como funciona</a></div>
     <section class="grid" aria-label="Relatórios disponíveis">
       {''.join(cards)}
     </section>

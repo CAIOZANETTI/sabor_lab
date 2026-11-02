@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo interativo do planejador SaborLab.">
+  <title>Monte sua experiência — SaborLab</title>
+  <style>
+    :root { color-scheme:light; --ink:#172019; --muted:#637067; --paper:#f5f1e7;
+      --surface:#fffdf8; --accent:#b94b28; --green:#286044; --gold:#d79b31; --line:#d9d2c3; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper);
+      font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
+    button { font:inherit; }
+    nav { display:flex; justify-content:space-between; padding:1rem max(1rem,calc((100% - 1120px)/2));
+      border-bottom:1px solid var(--line); }
+    nav a { color:var(--ink); text-decoration:none; font-weight:750; }
+    main { width:min(1120px,calc(100% - 2rem)); margin:0 auto; padding:3rem 0 6rem; }
+    header { display:grid; grid-template-columns:1.4fr .6fr; gap:2rem; align-items:end; margin-bottom:3rem; }
+    .eyebrow { color:var(--accent); font-size:.76rem; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+    h1 { margin:.35rem 0 1rem; font:700 clamp(3rem,8vw,6rem)/.92 Georgia,serif; }
+    h2 { margin:.2rem 0 .7rem; font:700 clamp(1.7rem,4vw,2.5rem)/1.1 Georgia,serif; }
+    h3 { margin:.2rem 0 .5rem; font:700 1.15rem/1.2 Georgia,serif; }
+    .lead,.muted { color:var(--muted); }
+    .prototype { padding:1rem; background:#efe5cf; border:1px solid #ddc99e; border-radius:16px; }
+    .step { margin:1rem 0; padding:1.35rem; background:var(--surface); border:1px solid var(--line); border-radius:20px; }
+    .step-head { display:grid; grid-template-columns:2.5rem 1fr; gap:.8rem; align-items:start; margin-bottom:1rem; }
+    .step-number { display:grid; place-items:center; width:2.3rem; height:2.3rem; color:#fff;
+      background:var(--green); border-radius:50%; font-weight:850; }
+    .choices { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.65rem; }
+    .choice { min-height:88px; padding:.8rem; text-align:left; color:var(--ink); background:#fff;
+      border:1px solid var(--line); border-radius:14px; cursor:pointer; transition:.15s ease; }
+    .choice:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .choice[aria-pressed="true"] { color:#fff; background:var(--green); border-color:var(--green); }
+    .choice strong,.choice small { display:block; }
+    .choice small { margin-top:.25rem; color:var(--muted); }
+    .choice[aria-pressed="true"] small { color:#e3f0e7; }
+    .choice.multi[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); }
+    .generate { display:block; width:100%; margin:1rem 0; padding:1rem; color:#fff; background:var(--accent);
+      border:0; border-radius:999px; font-weight:850; cursor:pointer; }
+    .result { scroll-margin-top:1rem; display:grid; grid-template-columns:1.2fr .8fr; overflow:hidden;
+      margin-top:2rem; background:var(--surface); border:1px solid var(--line); border-radius:24px; }
+    .result-main,.result-side { padding:1.5rem; }
+    .result-side { background:#e9e2d2; }
+    .chips { display:flex; flex-wrap:wrap; gap:.4rem; margin:.8rem 0; }
+    .chip { padding:.25rem .6rem; border:1px solid var(--line); border-radius:999px; font-size:.82rem; }
+    .menu { display:grid; gap:.7rem; margin:1rem 0; }
+    .dish { padding:.9rem; border-left:4px solid var(--gold); background:#faf7ef; }
+    .metric { display:grid; grid-template-columns:105px 1fr 48px; gap:.6rem; align-items:center; margin:.65rem 0; }
+    .bar { height:8px; overflow:hidden; background:#d7d0c1; border-radius:999px; }
+    .bar i { display:block; height:100%; background:var(--green); border-radius:inherit; }
+    .disclaimer { margin-top:1rem; padding:.8rem; color:var(--muted); background:#fff8df; border-radius:12px; font-size:.86rem; }
+    @media(max-width:760px) { header,.result { grid-template-columns:1fr; } main { padding-top:2rem; } }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html">SaborLab</a><a href="sobre.html">como funciona</a></nav>
+  <main>
+    <header>
+      <div><span class="eyebrow">Protótipo interativo</span><h1>Escolha. Combine. Descubra.</h1><p class="lead">Sem formulários e sem digitar: monte uma experiência por escolhas guiadas e veja como o SaborLab poderá responder.</p></div>
+      <aside class="prototype"><strong>Demonstração de interface</strong><br><span class="muted">Os valores nutricionais abaixo são ilustrativos. O motor científico será implementado na próxima etapa.</span></aside>
+    </header>
+
+    <section class="step" data-single="goal">
+      <div class="step-head"><span class="step-number">1</span><div><h2>Qual é o objetivo?</h2><span class="muted">Escolha uma prioridade para esta refeição.</span></div></div>
+      <div class="choices">
+        <button class="choice" data-value="equilibrio" aria-pressed="true"><strong>Equilíbrio</strong><small>Variedade e proporção</small></button>
+        <button class="choice" data-value="perder" aria-pressed="false"><strong>Perder peso</strong><small>Saciedade e energia</small></button>
+        <button class="choice" data-value="massa" aria-pressed="false"><strong>Ganhar massa</strong><small>Proteína e energia</small></button>
+        <button class="choice" data-value="lowcarb" aria-pressed="false"><strong>Low carb</strong><small>Carboidrato controlado</small></button>
+        <button class="choice" data-value="paleo" aria-pressed="false"><strong>Paleo</strong><small>Ingredientes compatíveis</small></button>
+        <button class="choice" data-value="cultura" aria-pressed="false"><strong>Explorar cultura</strong><small>Contexto e tradição</small></button>
+      </div>
+    </section>
+
+    <section class="step" data-single="group">
+      <div class="step-head"><span class="step-number">2</span><div><h2>Para quem?</h2><span class="muted">Perfis prontos evitam digitação no primeiro protótipo.</span></div></div>
+      <div class="choices">
+        <button class="choice" data-value="solo" aria-pressed="false"><strong>Uma pessoa</strong><small>Adulto · porção individual</small></button>
+        <button class="choice" data-value="casal" aria-pressed="true"><strong>Casal</strong><small>Homem 80 kg + mulher 60 kg</small></button>
+        <button class="choice" data-value="quatro" aria-pressed="false"><strong>Quatro adultos</strong><small>4 homens · 90 kg</small></button>
+        <button class="choice" data-value="familia" aria-pressed="false"><strong>Família</strong><small>2 adultos + 2 crianças</small></button>
+      </div>
+    </section>
+
+    <section class="step" data-single="course">
+      <div class="step-head"><span class="step-number">3</span><div><h2>Qual parte da refeição?</h2><span class="muted">O jantar completo equilibra os cursos em conjunto.</span></div></div>
+      <div class="choices">
+        <button class="choice" data-value="entrada" aria-pressed="false"><strong>Entrada</strong><small>Leve e estimulante</small></button>
+        <button class="choice" data-value="principal" aria-pressed="true"><strong>Principal</strong><small>Centro da refeição</small></button>
+        <button class="choice" data-value="sobremesa" aria-pressed="false"><strong>Sobremesa</strong><small>Fechamento e contraste</small></button>
+        <button class="choice" data-value="completo" aria-pressed="false"><strong>Jantar completo</strong><small>Entrada + principal + sobremesa</small></button>
+      </div>
+    </section>
+
+    <section class="step" data-single="culture">
+      <div class="step-head"><span class="step-number">4</span><div><h2>Que cultura vamos conhecer?</h2><span class="muted">A adaptação deve preservar e explicar a origem.</span></div></div>
+      <div class="choices">
+        <button class="choice" data-value="mediterranea" aria-pressed="true"><strong>Mediterrânea</strong><small>Azeite, ervas e vegetais</small></button>
+        <button class="choice" data-value="marroquina" aria-pressed="false"><strong>Marroquina</strong><small>Especiarias e contrastes</small></button>
+        <button class="choice" data-value="tailandesa" aria-pressed="false"><strong>Tailandesa</strong><small>Ácido, doce e picante</small></button>
+        <button class="choice" data-value="brasileira" aria-pressed="false"><strong>Brasileira</strong><small>Ingredientes e regiões</small></button>
+      </div>
+    </section>
+
+    <section class="step" data-multi="texture">
+      <div class="step-head"><span class="step-number">5</span><div><h2>Que sensações você quer?</h2><span class="muted">Escolha até três contrastes.</span></div></div>
+      <div class="choices">
+        <button class="choice multi" data-value="crocante" aria-pressed="true"><strong>Crocante</strong><small>Quebra e tostado</small></button>
+        <button class="choice multi" data-value="cremoso" aria-pressed="true"><strong>Cremoso</strong><small>Corpo e conforto</small></button>
+        <button class="choice multi" data-value="fresco" aria-pressed="false"><strong>Fresco</strong><small>Ervas e acidez</small></button>
+        <button class="choice multi" data-value="suculento" aria-pressed="false"><strong>Suculento</strong><small>Umidade e maciez</small></button>
+        <button class="choice multi" data-value="picante" aria-pressed="false"><strong>Picante</strong><small>Calor e persistência</small></button>
+      </div>
+    </section>
+
+    <button class="generate" id="generate">Montar combinação</button>
+
+    <section class="result" id="result" aria-live="polite">
+      <div class="result-main"><span class="eyebrow">Proposta SaborLab</span><h2 id="result-title">Jantar mediterrâneo equilibrado</h2><div class="chips" id="chips"></div><div class="menu" id="menu"></div><p id="reason"></p></div>
+      <aside class="result-side"><h3>Visão por pessoa</h3><div id="people" class="muted"></div><div id="metrics"></div><div class="disclaimer">Protótipo visual: números demonstrativos, sem finalidade médica. A versão funcional usará TACO, USDA, perfil completo e gasto energético observado quando autorizado.</div></aside>
+    </section>
+  </main>
+  <script>
+    const labels={goal:{equilibrio:'Equilíbrio',perder:'Perder peso',massa:'Ganhar massa',lowcarb:'Low carb',paleo:'Paleo',cultura:'Explorar cultura'},group:{solo:'Uma pessoa',casal:'Casal 80/60 kg',quatro:'4 homens de 90 kg',familia:'Família'},course:{entrada:'Entrada',principal:'Principal',sobremesa:'Sobremesa',completo:'Jantar completo'},culture:{mediterranea:'Mediterrânea',marroquina:'Marroquina',tailandesa:'Tailandesa',brasileira:'Brasileira'}};
+    const state={goal:'equilibrio',group:'casal',course:'principal',culture:'mediterranea',texture:new Set(['crocante','cremoso'])};
+    const plans={
+      mediterranea:{principal:'Peixe assado, grão-de-bico crocante e creme de ervas',entrada:'Tomate, pepino e ervas com pão tostado',sobremesa:'Iogurte, laranja e pistache',completo:'Salada de ervas · peixe com grão-de-bico · iogurte cítrico',why:'Acidez e ervas levantam o peixe; o grão-de-bico cria contraste tostado e o azeite conecta os aromas.'},
+      marroquina:{principal:'Tagine de frango, legumes e amêndoas tostadas',entrada:'Zaalouk de berinjela com pão crocante',sobremesa:'Laranja, canela e água de flor de laranjeira',completo:'Zaalouk · tagine aromático · laranja com canela',why:'Especiarias quentes, fruta e tostado criam camadas; a acidez impede que o prato fique pesado.'},
+      tailandesa:{principal:'Curry verde com legumes, ervas e castanhas',entrada:'Salada fresca de pepino, limão e amendoim',sobremesa:'Manga com coco e gergelim',completo:'Salada ácida · curry verde · manga com coco',why:'Doce, ácido, salgado, picante e aromático são equilibrados; castanhas acrescentam crocância.'},
+      brasileira:{principal:'Moqueca de peixe com farofa crocante de castanhas',entrada:'Vinagrete de feijão-fradinho e ervas',sobremesa:'Abacaxi tostado com coco',completo:'Feijão-fradinho · moqueca com farofa · abacaxi tostado',why:'Coco e peixe ganham contraste com acidez; a farofa traz textura e o coentro amplia o perfil fresco.'}
+    };
+    const goals={equilibrio:[620,30,68,24],perder:[480,34,46,18],massa:[820,48,92,28],lowcarb:[560,38,28,32],paleo:[640,40,52,30],cultura:[650,32,74,25]};
+    const groups={solo:['1 porção individual',1],casal:['2 porções individualizadas',2],quatro:['4 porções reforçadas',4],familia:['4 porções ajustadas por faixa etária',4]};
+
+    document.querySelectorAll('[data-single]').forEach(section=>section.addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;section.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');state[section.dataset.single]=b.dataset.value;render();}));
+    document.querySelector('[data-multi]').addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;const value=b.dataset.value;if(state.texture.has(value)){if(state.texture.size>1)state.texture.delete(value);}else if(state.texture.size<3)state.texture.add(value);document.querySelectorAll('[data-multi] button').forEach(x=>x.setAttribute('aria-pressed',state.texture.has(x.dataset.value)));render();});
+    document.getElementById('generate').addEventListener('click',()=>{render();document.getElementById('result').scrollIntoView({behavior:'smooth'});});
+
+    function render(){
+      const p=plans[state.culture], dish=p[state.course], nutrition=goals[state.goal], group=groups[state.group];
+      document.getElementById('result-title').textContent=`${labels.course[state.course]} ${labels.culture[state.culture].toLowerCase()}: ${dish}`;
+      const chips=document.getElementById('chips');chips.replaceChildren(...[labels.goal[state.goal],group[0],...state.texture].map(t=>{const s=document.createElement('span');s.className='chip';s.textContent=t;return s;}));
+      const menu=document.getElementById('menu');menu.replaceChildren();dish.split(' · ').forEach((name,i)=>{const d=document.createElement('div');d.className='dish';d.innerHTML=`<strong>${state.course==='completo'?['Entrada','Principal','Sobremesa'][i]:'Prato sugerido'}</strong><br>${name}`;menu.appendChild(d);});
+      document.getElementById('reason').textContent=p.why;
+      document.getElementById('people').textContent=`${group[0]}. Total demonstrativo do preparo: ${nutrition[0]*group[1]} kcal.`;
+      const metricData=[['Energia',nutrition[0]+' kcal',nutrition[0]/9],['Proteína',nutrition[1]+' g',nutrition[1]*1.7],['Carboidrato',nutrition[2]+' g',nutrition[2]],['Gordura',nutrition[3]+' g',nutrition[3]*2.5]];
+      const metrics=document.getElementById('metrics');metrics.replaceChildren(...metricData.map(([name,value,width])=>{const row=document.createElement('div');row.className='metric';row.innerHTML=`<span>${name}</span><span class="bar"><i style="width:${Math.min(width,100)}%"></i></span><strong>${value}</strong>`;return row;}));
+    }
+    render();
+  </script>
+</body>
+</html>
