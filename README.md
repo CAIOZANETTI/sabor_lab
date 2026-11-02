@@ -46,6 +46,24 @@ Requer `pip install -r requirements.txt` (pandas, numpy, pyarrow, plotly).
 Testes: `pip install -r requirements-dev.txt && pytest` (usam um banco sintético
 com respostas conhecidas + verificações de integridade no banco real).
 
+## Publicação na web
+
+O workflow `.github/workflows/pages.yml` testa o projeto, regenera os relatórios
+e publica um site estático no GitHub Pages a cada atualização da branch `main`.
+Não é necessário manter um servidor Python em execução.
+
+Para conferir o mesmo artefato localmente:
+
+```bash
+python scripts/recipe_report.py
+python scripts/build_site.py --output _site
+python -m http.server 8000 --directory _site
+```
+
+No GitHub, selecione **Settings → Pages → Source: GitHub Actions** uma única vez.
+Depois disso, a publicação é automática e também pode ser iniciada manualmente
+na aba **Actions**.
+
 ## Tabelas em `data/processed/`
 
 Formato **Parquet**: ~4× menor e ~3× mais rápido de ler que CSV, e preserva os
