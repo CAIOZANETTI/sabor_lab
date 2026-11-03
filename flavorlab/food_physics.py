@@ -58,7 +58,12 @@ def composition_claims(entity_id: str, catalog, *, subject_id: str | None = None
     entidade ou de seus ancestrais. Valor ausente na tabela = fato desconhecido.
     """
     subject = subject_id or entity_id
+    # entidade e ancestrais; se nenhum tiver tabela, variantes/formas do PRÓPRIO conceito (nunca de
+    # subconceitos nem de categorias, que misturariam alimentos diferentes)
     chain = [entity_id] + catalog.ancestors(entity_id)
+    concept = catalog.concepts.get(entity_id)
+    if concept is not None and concept.entity_type != "category":
+        chain += [d for d in catalog.descendants(entity_id) if catalog.concept_of(d) == entity_id]
     mapping = None
     for eid in chain:
         cands = [m for m in catalog.mappings(eid, include_auto=False)
@@ -255,7 +260,8 @@ class StabilityAssessment:
 
     def recommendations(self) -> list[str]:
         """Somente recomendações (sequências de menor risco e alternativas)."""
-        out = [s["recommendation"] for s in self.sequence_options if s["relative_risk"] == "lower"]
+        out = [f'{s["statement"]} — {s["recommendation"]}' for s in self.sequence_options
+               if s["relative_risk"] == "lower"]
         out += [a["recommendation"] for a in self.alternatives]
         return out
 
@@ -266,7 +272,8 @@ def assess_stability(prep: Preparation, rules: list[StabilityRule] | None = None
     risks, protective, sequences, alternatives, claims = [], [], [], [], []
     for r in rules:
         m = _match(r, facts)
-        if m is False:
+        if m is False or (m is None and r.kind == "protective"):
+            # fator protetor só conta quando está presente de fato; ausente/desconhecido não protege
             continue
         certainty = "aplicável" if m is True else "possível (gatilho desconhecido)"
         entry = {"rule_id": r.rule_id, "system": r.system, "statement": r.statement_pt,
@@ -277,7 +284,7 @@ def assess_stability(prep: Preparation, rules: list[StabilityRule] | None = None
         claims.append(new_claim(
             claim_id=f"{prep.preparation_id}:{r.rule_id}", subject_id=prep.preparation_id,
             predicate=f"stability_{r.kind}", value=r.statement_pt, unit=None, evidence_type=r.evidence_type,
-            confidence=entry["confidence"] if r.evidence_type != "culinary_heuristic" or entry["confidence"] != "high" else "moderate",
+            confidence=entry["confidence"],
             source_id=r.source_id, method="regra curada (stability_rules.csv)",
             limitations=r.limitations or "regra qualitativa", context=certainty))
     missing = []
@@ -293,7 +300,7 @@ def assess_stability(prep: Preparation, rules: list[StabilityRule] | None = None
             missing.append(f"teores de gordura/proteína de {c.display_name}")
     missing.append("tempo de aquecimento após cada adição")
     confidence = "qualitative" if (prep.ph is None or prep.temperature_c is None) else "low"
-    sequences.sort(key=lambda s: (s["relative_risk"] != "lower", s["rule_id"]))
+    sequences.sort(key=lambda s: s["relative_risk"] != "lower")   # estável: mantém a ordem das regras
     return StabilityAssessment(prep.preparation_id, risks, protective, sequences, sorted(set(missing), key=missing.index),
                                claims, confidence, alternatives)
 

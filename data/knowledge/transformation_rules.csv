@@ -1,0 +1,54 @@
+rule_id,transformation_id,kind,fact,operator,value,statement_pt,source_id,evidence_type,limitations
+mr_protein,maillard_reaction,necessary,has_protein,true,,exige grupos amino (proteínas/aminoácidos),el_hosry_2025_maillard,documented_physical_rule,
+mr_sugar,maillard_reaction,necessary,has_sugar,true,,exige açúcares redutores,el_hosry_2025_maillard,documented_physical_rule,"o fato disponível é 'açúcares totais' da tabela, usado como indício de açúcares redutores"
+mr_temp,maillard_reaction,critical,temperature_c,known,,acelera com temperatura: sem temperatura informada a conclusão é rebaixada,el_hosry_2025_maillard,documented_physical_rule,
+mr_time,maillard_reaction,critical,duration_s,known,,acelera com o tempo: sem duração informada a conclusão é rebaixada,el_hosry_2025_maillard,documented_physical_rule,
+mr_dry,maillard_reaction,favoring,medium,in,dry|fat,favorecida por atividade de água moderada (meio seco ou gordura),el_hosry_2025_maillard,documented_physical_rule,a_w real não é medida; o meio é indicativo
+mr_moist,maillard_reaction,inhibiting,medium,in,moist,mais lenta com atividade de água muito alta (meio aquoso),el_hosry_2025_maillard,documented_physical_rule,
+mr_acid,maillard_reaction,inhibiting,ph,lt,7,mais lenta em meio ácido (pH < 7),el_hosry_2025_maillard,documented_physical_rule,
+cr_sugar,caramelization,necessary,has_sugar,true,,só carboidratos participam (sem aminoácidos),ding_2025_browning,documented_physical_rule,
+cr_temp,caramelization,critical,temperature_c,known,,temperatura de início depende do açúcar: sem temperatura informada a conclusão é rebaixada,ding_2025_browning,documented_physical_rule,
+cr_hot,caramelization,favoring,temperature_c,ge,160,a fonte cita ~160 °C para sacarose e outros açúcares (valor varia por açúcar),ding_2025_browning,documented_physical_rule,a fonte é inconsistente para frutose (110 °C e 160 °C)
+cr_water_cap,caramelization,inhibiting,medium,in,moist,em meio aquoso a temperatura fica limitada pela ebulição (~100 °C a 1 atm),openstax_chemistry2e_phase,documented_physical_rule,ponto de ebulição depende da pressão (altitude)
+sg_starch,starch_gelatinization,necessary,has_starch,true,,exige amido,wang_2016_starch,documented_physical_rule,
+sg_water,starch_gelatinization,necessary,has_water,true,,exige água (tratamento hidrotérmico),wang_2016_starch,documented_physical_rule,
+sg_temp,starch_gelatinization,critical,temperature_c,known,,sem temperatura universal: sem temperatura informada a conclusão é rebaixada,wang_2016_starch,documented_physical_rule,
+sg_moist,starch_gelatinization,favoring,medium,in,moist|mixed,meio aquoso permite hidratação e inchamento dos grânulos,wang_2016_starch,documented_physical_rule,
+pd_protein,protein_denaturation_heat,necessary,has_protein,true,,exige proteína,openstax_biology2e_proteins,documented_physical_rule,
+pd_heat,protein_denaturation_heat,necessary,heat_applied,true,,exige calor (para a via térmica),openstax_biology2e_proteins,documented_physical_rule,
+pd_temp,protein_denaturation_heat,critical,temperature_c,known,,temperatura depende da proteína: sem temperatura informada a conclusão é rebaixada,openstax_biology2e_proteins,documented_physical_rule,
+pd_temp40,protein_denaturation_heat,favoring,temperature_c,ge,40,miosina começa a desnaturar entre 40 e 60 °C (contexto sous-vide),latoch_2023_sousvide,documented_physical_rule,faixa específica de carne em sous-vide
+ad_protein,acid_denaturation,necessary,has_protein,true,,exige proteína,logren_2022_acid,documented_physical_rule,
+ad_acid,acid_denaturation,necessary,medium,in,acid,o ácido precisa difundir no músculo e baixar o pH,logren_2022_acid,documented_physical_rule,
+ad_time,acid_denaturation,critical,duration_s,known,,depende do tempo de contato: sem duração informada a conclusão é rebaixada,logren_2022_acid,documented_physical_rule,
+ad_ph,acid_denaturation,favoring,ph,lt,4.6,"proteínas desnaturam longe do ponto isoelétrico; caseína tem pH isoelétrico 4,6 (referência para proteínas do leite)",deshwal_2023_css,documented_physical_rule,o pI varia por proteína; pH do meio raramente é medido
+em_fat,emulsification,necessary,has_fat,true,,exige fase oleosa,tan_mcclements_2021_emulsion,documented_physical_rule,
+em_water,emulsification,necessary,has_water,true,,exige fase aquosa,tan_mcclements_2021_emulsion,documented_physical_rule,
+em_emulsifier,emulsification,favoring,emulsifier_present,true,,gotículas estabilizadas por emulsificante,tan_mcclements_2021_emulsion,documented_physical_rule,
+em_agitation,emulsification,favoring,agitation,in,gentle|vigorous,dispersão em gotículas exige agitação/cisalhamento,tan_mcclements_2021_emulsion,documented_physical_rule,intensidade de cisalhamento não é medida
+ps_system,phase_separation,necessary,dairy_or_emulsion,true,,"aplica-se a sistemas lácteos ou emulsões (queijo, leite fermentado, molhos emulsionados)",bartolucci_2025_cacio,documented_physical_rule,grupo/fato curado decide; desconhecido rebaixa a conclusão
+ps_fat,phase_separation,necessary,has_fat,true,,exige gordura para haver óleo livre,deshwal_2023_css,documented_physical_rule,
+ps_protein,phase_separation,necessary,has_protein,true,,agregação proteica exige proteína,bartolucci_2025_cacio,documented_physical_rule,
+ps_temp,phase_separation,critical,temperature_c,known,,risco depende da temperatura: sem temperatura informada a conclusão é rebaixada,bartolucci_2025_cacio,documented_physical_rule,
+ps_heat,phase_separation,favoring,heat_applied,true,,aquecimento favorece agregação de proteínas do queijo e do leite fermentado,gao_2023_postheat,documented_physical_rule,tratamentos industriais curtos; não é limiar culinário
+ps_acid,phase_separation,favoring,is_acidified,true,,pH baixo aumenta a separação de gordura (queijo processado),deshwal_2023_css,documented_physical_rule,transferência de queijo processado para molho caseiro é inferência
+ps_starch,phase_separation,inhibiting,has_starch,true,,amido reduz agregação e adia a formação de grumos,bartolucci_2025_cacio,documented_physical_rule,<1% da massa de queijo não basta; >4% enrijece (sistema pecorino)
+ps_salts,phase_separation,inhibiting,emulsifier_present,true,,sais quelantes de cálcio (citrato/fosfato) estabilizam a emulsão,deshwal_2023_css,documented_physical_rule,citrato <2% da massa de queijo foi insuficiente no molho de pecorino
+ev_water,evaporation_reduction,necessary,has_water,true,,exige água para evaporar,openstax_chemistry2e_phase,documented_physical_rule,
+ev_heat,evaporation_reduction,necessary,heat_applied,true,,redução culinária depende de fornecer energia (vaporização é endotérmica),openstax_chemistry2e_phase,documented_physical_rule,evaporação também ocorre lentamente sem aquecimento
+ev_time,evaporation_reduction,critical,duration_s,known,,quantidade evaporada depende do tempo: sem duração informada a conclusão é rebaixada,openstax_chemistry2e_phase,documented_physical_rule,
+ev_boil,evaporation_reduction,favoring,temperature_c,ge,100,ebulição a 1 atm por volta de 100 °C acelera a vaporização,openstax_chemistry2e_phase,documented_physical_rule,ponto de ebulição cai com a altitude
+hr_water,hydration_rest,necessary,has_water,true,,exige água disponível,saborlab_culinary_curation,culinary_heuristic,heurística culinária sem fonte científica específica
+hr_time,hydration_rest,critical,duration_s,known,,depende do tempo de descanso,saborlab_culinary_curation,culinary_heuristic,heurística culinária sem fonte científica específica
+fm_carb,fermentation_concept,necessary,has_sugar,true,,microrganismos fermentam carboidratos,openstax_microbiology_fermentation,documented_physical_rule,açúcares totais da tabela como indício
+fm_time,fermentation_concept,critical,duration_s,known,,depende de tempo e cultura (não controlados aqui),openstax_microbiology_fermentation,documented_physical_rule,
+lo_fat,lipid_oxidation,necessary,has_fat,true,,exige lipídios,dominguez_2019_lipid_ox,documented_physical_rule,
+lo_heat,lipid_oxidation,favoring,heat_applied,true,,temperatura ativa o oxigênio e acelera a oxidação,dominguez_2019_lipid_ox,documented_physical_rule,
+lo_oxygen,lipid_oxidation,favoring,oxygen_exposure,true,,exposição ao oxigênio aumenta a oxidação,dominguez_2019_lipid_ox,documented_physical_rule,
+lo_time,lipid_oxidation,critical,duration_s,known,,extensão depende do tempo de exposição,dominguez_2019_lipid_ox,documented_physical_rule,
+ml_protein,moisture_loss_softening,necessary,has_protein,true,,exige proteínas musculares,latoch_2023_sousvide,documented_physical_rule,
+ml_water,moisture_loss_softening,necessary,has_water,true,,exige água no tecido,latoch_2023_sousvide,documented_physical_rule,
+ml_heat,moisture_loss_softening,necessary,heat_applied,true,,encolhimento e perda de líquido vêm da desnaturação pelo calor,latoch_2023_sousvide,documented_physical_rule,
+ml_temp,moisture_loss_softening,critical,temperature_c,known,,depende da temperatura interna: sem temperatura informada a conclusão é rebaixada,latoch_2023_sousvide,documented_physical_rule,
+ml_time,moisture_loss_softening,critical,duration_s,known,,conversão do colágeno depende do tempo,latoch_2023_sousvide,documented_physical_rule,
+ml_temp40,moisture_loss_softening,favoring,temperature_c,ge,40,desnaturação da miosina começa entre 40 e 60 °C (sous-vide),latoch_2023_sousvide,documented_physical_rule,faixa do contexto sous-vide

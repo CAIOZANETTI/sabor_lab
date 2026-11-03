@@ -1,0 +1,11 @@
+rule_id,technique_id,applicable_groups,term,statement_pt,source_id,evidence_type,limitations
+tx_roast_crisp,roast_oven,sl:group:vegetables|sl:group:nuts_seeds|sl:group:tubers_roots,crocante,assar no forno tende a deixar a superfície crocante,saborlab_sensory_heuristics,culinary_heuristic,"depende de umidade, corte e tempo; expectativa, não observação"
+tx_airfry_crisp,air_fry,,crocante,air fryer tende a formar superfície crocante,saborlab_sensory_heuristics,culinary_heuristic,"expectativa, não observação"
+tx_deepfry_crisp,deep_fry,,crocante,fritura por imersão tende a formar crosta crocante,saborlab_sensory_heuristics,culinary_heuristic,"expectativa, não observação"
+tx_simmer_viscous,simmer_reduce,,viscoso,redução concentra e espessa o líquido,saborlab_sensory_heuristics,culinary_heuristic,espessamento depende de sólidos e amido presentes
+tx_blend_creamy,blend,,cremoso,bater tende a dar textura cremosa,saborlab_sensory_heuristics,culinary_heuristic,depende da gordura e dos sólidos
+tx_cream_creamy,cream,,cremoso,bater gordura com açúcar resulta em creme,saborlab_sensory_heuristics,culinary_heuristic,expectativa
+tx_boil_soft,boil,sl:group:legumes|sl:group:vegetables|sl:group:tubers_roots|sl:group:cereals,macio,"cozinhar em água tende a amaciar vegetais, grãos e tubérculos",saborlab_sensory_heuristics,culinary_heuristic,depende do tempo e do corte
+tx_pressure_soft,pressure_cook,,macio,cozimento sob pressão tende a amaciar,saborlab_sensory_heuristics,culinary_heuristic,expectativa
+tx_panfry_firm,pan_fry,sl:group:meat|sl:group:poultry|sl:group:seafood,firme,proteínas musculares encolhem e firmam com o calor,latoch_2023_sousvide,documented_physical_rule,grau depende da temperatura interna (não medida)
+tx_gentle_creamy,gentle_heat,sl:group:dairy,cremoso,aquecimento brando de molho lácteo busca textura cremosa,saborlab_sensory_heuristics,culinary_heuristic,objetivo culinário; não garante estabilidade

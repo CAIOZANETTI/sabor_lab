@@ -1,0 +1,15 @@
+rule_id,subject,axis,intensity,statement_pt,source_id,evidence_type,limitations
+sr_kefir_acid,sl:ingredient:kefir,acido,present,kefir tem sabor ácido (tart and acidic),bourrie_2016_kefir,documented_physical_rule,intensidade varia com o produto; pH não medido
+sr_yogurt_acid,sl:ingredient:yogurt,acido,present,"iogurte é acidificado até pH 4,2–4,5",le_ba_2025_yogurt,documented_physical_rule,
+sr_blue_salt,sl:variant:cheese_blue,salgado,high,queijo azul: 1146 mg de sódio/100 g na USDA (usda:172175),usda_sr_legacy,official_food_table,intensidade 'alta' é julgamento culinário sobre o teor da tabela; produto específico pode diferir
+sr_blue_fat,sl:variant:cheese_blue,sensacao_de_gordura,high,"queijo azul: 28,7 g de lipídeos/100 g na USDA (usda:172175)",usda_sr_legacy,official_food_table,'alta' é julgamento sobre o teor; sensação de gordura como gosto ainda é debatida
+sr_butter_fat,sl:ingredient:butter,sensacao_de_gordura,high,"manteiga: 82,4 g de lipídeos/100 g na TACO (taco:261)",taco_4ed,official_food_table,'alta' é julgamento sobre o teor da tabela
+sr_cheese_umami,sl:ingredient:cheese,umami,present,queijos maturados tendem a sabor umami,saborlab_sensory_heuristics,culinary_heuristic,heurística culinária; aminoácidos livres não medidos
+sr_beef_umami,sl:ingredient:beef,umami,present,carne bovina cozida tende a sabor umami,saborlab_sensory_heuristics,culinary_heuristic,heurística culinária
+sr_onion_sweet,sl:ingredient:onion,doce,present,"cebola tem açúcares (4,24 g/100 g na USDA usda:170000); dourada tende a sabor adocicado",usda_sr_legacy,official_food_table,teor da cebola crua; efeito do dourado é qualitativo
+sr_onion_toast,sl:ingredient:onion,aroma:tostado,present,cebola frita/dourada apresenta escurecimento não enzimático,navajas_2022_thermal,documented_physical_rule,depende do ponto do dourado
+sr_garlic_sulfur,sl:ingredient:garlic,aroma:sulfurado,present,alho tem aroma sulfurado característico,saborlab_sensory_heuristics,culinary_heuristic,heurística culinária; compostos não quantificados
+sr_lime_acid,sl:ingredient:lime,acido,high,limões/limas acrescentam acidez,saborlab_sensory_heuristics,culinary_heuristic,heurística culinária; acidez titulável não medida
+sr_chili_pungent,sl:ingredient:chili_pepper,picancia,present,"picância de pimentas vem da capsaicina via TRPV1 (quimestesia, não gosto básico)",rhyu_2021_chemesthesis,documented_physical_rule,teor de capsaicina varia muito
+sr_brassica_bitter,sl:ingredient:broccoli,amargo,present,brócolis tostados podem ter notas amargas,saborlab_sensory_heuristics,culinary_heuristic,heurística culinária
+sr_almond_fat,sl:ingredient:almond,sensacao_de_gordura,present,amêndoa é rica em gordura,saborlab_sensory_heuristics,culinary_heuristic,heurística culinária

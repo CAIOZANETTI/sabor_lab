@@ -84,7 +84,8 @@ class ProcessConditions:
 
 
 # --------------------------------------------------------------------------- composição
-COMPOSITION_FACTS = ("has_protein", "has_sugar", "has_starch", "has_water", "has_fat", "is_acidified")
+COMPOSITION_FACTS = ("has_protein", "has_sugar", "has_starch", "has_water", "has_fat", "is_acidified",
+                     "is_cheese", "is_fermented_dairy", "is_emulsion")
 NUTRIENT_FACTS = {"has_protein": "proteina_g", "has_sugar": "acucares_g", "has_starch": "amido_g",
                   "has_water": "agua_g", "has_fat": "lipideos_g"}
 
@@ -228,7 +229,8 @@ def analyze_transformations(state: IngredientState | None, technique_id: str, co
                             rules: list[TransformationRule] | None = None,
                             composition: Mapping[str, bool | None] | None = None,
                             observations: Iterable[EvidenceClaim] = (),
-                            transformation_ids: Iterable[str] | None = None) -> list[TransformationAssessment]:
+                            transformation_ids: Iterable[str] | None = None,
+                            food_group: str | None = None) -> list[TransformationAssessment]:
     """Avalia cada transformação para um ingrediente (estado), técnica e condições informadas."""
     knowledge = knowledge or CulinaryKnowledge.load()
     rules = rules if rules is not None else load_rules()
@@ -240,6 +242,14 @@ def analyze_transformations(state: IngredientState | None, technique_id: str, co
     facts.update(conditions.provided())
     facts["medium"] = conditions.medium
     facts["heat_applied"] = technique.thermal
+    # sistema lácteo/emulsão (para separação de fases): por fato curado ou grupo do catálogo
+    flags = [facts.get(k) for k in ("is_cheese", "is_fermented_dairy", "is_emulsion")]
+    if any(f is True for f in flags) or food_group == "sl:group:dairy":
+        facts["dairy_or_emulsion"] = True
+    elif food_group is not None:
+        facts["dairy_or_emulsion"] = False
+    else:
+        facts["dairy_or_emulsion"] = None
     facts["technique_category"] = technique.category
     observed = {c.value: c for c in observations
                 if c.predicate == "transformation_observed"
