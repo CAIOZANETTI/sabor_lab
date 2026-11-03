@@ -213,6 +213,35 @@ métricas mede gosto ou preferência.
 python scripts/flavor_wheel.py canela tomate     # gera reports/roda_canela.html e reports/roda_tomate.html
 ```
 
+## Nutrição após preparo (`flavorlab/prepared_nutrition.py`)
+
+O cálculo de receita soma a composição dos ingredientes como estão. A nutrição após
+preparo calcula o que foi **servido**, usando rendimento, retenção, perda de água e
+gordura e porção. Cada valor sai com uma de três marcas: **medido** (registro do
+alimento já preparado × massa), **derivado** (fatores USDA documentados) ou
+**estimado** (aproximação declarada). O que não tem dado fica **desconhecido**, não zero.
+Detalhes e fórmulas estão em `docs/architecture/cooked-nutrition.md`.
+
+```python
+from flavorlab.nutrition import NutritionDB
+from flavorlab.prepared_nutrition import PreparedItem
+ndb = NutritionDB()
+r = ndb.prepared([
+    PreparedItem("arroz", 200, "raw", method="boil", liquid="consumed", cooked_mass_g=560),
+    PreparedItem("fraldinha", 350, "served", food_id="taco:361", method="air_fryer"),
+], portions=2, shares={"Ana": 450, "Bruno": 400})
+r.items[1].yield_status        # 'not_reconstructible': sem peso cru, nenhum rendimento é inventado
+r.total_category["proteina_g"] # categoria mais fraca entre os itens
+```
+
+Numa receita, as colunas opcionais `estado` (cru/cozido/servido), `metodo`,
+`massa_cozida_g` e `massa_servida_g` ativam a seção "Nutrição após preparo" do
+relatório. Sem elas, nada muda.
+
+```bash
+python scripts/build_cooking_factors.py   # fatores USDA -> data/cooking_factors/ + reports/fatores_preparo_cobertura.md
+```
+
 ## Catálogo canônico de alimentos (`data/catalog/`)
 
 Camada que organiza **todos** os registros das fontes (TACO, USDA, FlavorDB e

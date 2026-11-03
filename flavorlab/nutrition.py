@@ -18,6 +18,7 @@ from dataclasses import dataclass, field
 from fractions import Fraction
 from functools import cached_property
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -27,6 +28,9 @@ from .units import COUNT_UNITS, classify, fmt_num, norm_unit
 ROOT = Path(__file__).resolve().parents[1]
 NUTRITION = ROOT / "data" / "processed" / "nutrition"
 DICTIONARY = ROOT / "data" / "dicionario_ingredientes.csv"
+
+# colunas opcionais que ativam o cálculo pós-preparo (flavorlab.prepared_nutrition)
+PREP_KEYS = ("estado", "metodo", "método", "massa_crua_g", "massa_cozida_g", "massa_servida_g")
 
 # nutrientes mostrados por padrão (ordem do relatório)
 MAIN = ["energia_kcal", "proteina_g", "carboidrato_g", "acucares_g", "fibra_g", "lipideos_g",
@@ -94,6 +98,8 @@ class NutritionResult:
     vd: pd.Series                # %VD por porção
     complemented: dict[str, list[str]] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
+    # demanda 007: só preenchido quando a receita informa estado/método de preparo
+    prepared: Any = None
 
 
 class NutritionDB:
@@ -224,8 +230,12 @@ class NutritionDB:
 
     # ------------------------------------------------------------- receita
     def recipe(self, rows: list[dict], portions: float = 1.0) -> NutritionResult:
-        """rows: [{'nome', 'quantidade', 'unidade', 'gramas'?, 'alimento'?}, ...]"""
-        lines, contrib, warnings, complemented = [], [], [], {}
+        """rows: [{'nome', 'quantidade', 'unidade', 'gramas'?, 'alimento'?}, ...]
+
+        Colunas opcionais de preparo (``estado``, ``metodo``, ``massa_cozida_g``...) ativam
+        ``NutritionResult.prepared`` (demanda 007); sem elas o resultado é o de sempre.
+        """
+        lines, contrib, warnings, complemented, prep_rows = [], [], [], {}, []
         for r in rows:
             nome = str(r.get("nome", "")).strip()
             food = self.lookup(nome, r.get("alimento") or None)
@@ -247,13 +257,25 @@ class NutritionDB:
                 complemented[nome] = [self.nutrients.at[k, "nome"] for k in filled]
             lines.append(Line(nome, food, qty, unit, grams, how))
             contrib.append((per100 * grams / 100.0).rename(nome))
+            prep_rows.append({**{k: r.get(k) for k in PREP_KEYS if k in r}, "nome": nome, "massa_g": grams,
+                              "alimento": food.food_id if r.get("alimento") else None,
+                              **{k: r.get(k) for k in ("liquido", "agua", "descascado", "empanado", "duracao_min")
+                                 if k in r}})
 
         table = pd.DataFrame(contrib) if contrib else pd.DataFrame(columns=self.matrix.columns)
         total = table.sum(min_count=1)
         portions = portions if portions and portions > 0 else 1.0
         per_portion = total / portions
         vd = pd.Series({k: per_portion.get(k, np.nan) / v * 100 for k, v in VDR.items()})
-        return NutritionResult(lines, table, total, per_portion, portions, vd, complemented, warnings)
+        result = NutritionResult(lines, table, total, per_portion, portions, vd, complemented, warnings)
+        if any(str(r.get(k) or "").strip() and str(r.get(k)) != "nan" for r in rows for k in PREP_KEYS):
+            result.prepared = self.prepared(prep_rows, portions=portions)
+        return result
+
+    def prepared(self, items, portions: float = 1.0, shares: dict[str, float] | None = None, **kw):
+        """Nutrição após preparo (rendimento, retenção, porção servida). Ver flavorlab.prepared_nutrition."""
+        from .prepared_nutrition import prepared_recipe
+        return prepared_recipe(self, items, portions=portions, shares=shares, **kw)
 
     def label(self, key: str) -> str:
         if key in self.nutrients.index:

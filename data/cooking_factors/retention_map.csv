@@ -1,0 +1,271 @@
+rule_id,match,method_key,condition,retn_code,match_level,notes
+r001,sl:ingredient:beef,grill_broil,,0602,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r002,sl:ingredient:beef,roast_bake,,0601,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r003,sl:ingredient:beef,pan_fry,coated=no,0604,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r004,sl:ingredient:beef,pan_fry,coated=yes,0605,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r005,sl:ingredient:beef,braise,liquid=discarded,0651,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r006,sl:ingredient:beef,braise,liquid=consumed,0652,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r007,sl:ingredient:beef,boil,liquid=discarded,0653,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r008,sl:ingredient:beef,boil,liquid=consumed,0654,group,"corte bovino qualquer: fator de grupo, aproximação de baixa confiança"
+r009,sl:ingredient:veal,grill_broil,,1951,group,
+r010,sl:ingredient:veal,roast_bake,,1954,group,
+r011,sl:ingredient:veal,pan_fry,coated=no,1952,group,
+r012,sl:ingredient:veal,pan_fry,coated=yes,1953,group,
+r013,sl:ingredient:veal,braise,liquid=discarded,2001,group,
+r014,sl:ingredient:veal,braise,liquid=consumed,2002,group,
+r015,sl:ingredient:pork,grill_broil,,1251,group,
+r016,sl:ingredient:pork,roast_bake,,1254,group,
+r017,sl:ingredient:pork,pan_fry,coated=no,1252,group,
+r018,sl:ingredient:pork,pan_fry,coated=yes,1253,group,
+r019,sl:ingredient:pork,boil,liquid=discarded,1301,group,
+r020,sl:ingredient:pork,boil,liquid=consumed,1302,group,
+r021,sl:ingredient:lamb,grill_broil,,1001,group,
+r022,sl:ingredient:lamb,roast_bake,,1004,group,
+r023,sl:ingredient:lamb,boil,liquid=discarded,1055,group,
+r024,sl:ingredient:lamb,boil,liquid=consumed,1056,group,
+r025,sl:ingredient:chicken,grill_broil,,0801,specific,
+r026,sl:ingredient:chicken,roast_bake,,0805,specific,
+r027,sl:ingredient:chicken,pan_fry,coated=no,0803,specific,
+r028,sl:ingredient:chicken,pan_fry,coated=yes,0804,specific,
+r029,sl:ingredient:chicken,deep_fry,coated=no,0803,specific,
+r030,sl:ingredient:chicken,deep_fry,coated=yes,0804,specific,
+r031,sl:ingredient:chicken,boil,liquid=discarded,0855,specific,
+r032,sl:ingredient:chicken,boil,liquid=consumed,0856,specific,
+r033,sl:ingredient:chicken,braise,liquid=discarded,0851,specific,
+r034,sl:ingredient:chicken,braise,liquid=consumed,0852,specific,
+r035,sl:ingredient:poultry,grill_broil,,0801,group,fator de frango aplicado a outra ave
+r036,sl:ingredient:poultry,roast_bake,,0805,group,fator de frango aplicado a outra ave
+r037,sl:ingredient:poultry,pan_fry,coated=no,0803,group,fator de frango aplicado a outra ave
+r038,sl:ingredient:poultry,pan_fry,coated=yes,0804,group,fator de frango aplicado a outra ave
+r039,sl:ingredient:poultry,deep_fry,coated=no,0803,group,fator de frango aplicado a outra ave
+r040,sl:ingredient:poultry,deep_fry,coated=yes,0804,group,fator de frango aplicado a outra ave
+r041,sl:ingredient:poultry,boil,liquid=discarded,0855,group,fator de frango aplicado a outra ave
+r042,sl:ingredient:poultry,boil,liquid=consumed,0856,group,fator de frango aplicado a outra ave
+r043,sl:ingredient:poultry,braise,liquid=discarded,0851,group,fator de frango aplicado a outra ave
+r044,sl:ingredient:poultry,braise,liquid=consumed,0852,group,fator de frango aplicado a outra ave
+r045,sl:ingredient:turkey,roast_bake,,1805,specific,
+r046,sl:ingredient:turkey,boil,liquid=discarded,1851,specific,
+r047,sl:ingredient:turkey,boil,liquid=consumed,1852,specific,
+r048,sl:ingredient:fish,grill_broil,raw_fat_g<5,2305,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r049,sl:ingredient:fish,grill_broil,raw_fat_g>=5,2455,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r050,sl:ingredient:fish,roast_bake,raw_fat_g<5,2301,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r051,sl:ingredient:fish,roast_bake,raw_fat_g>=5,2451,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r052,sl:ingredient:fish,pan_fry,raw_fat_g<5&coated=no,2309,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r053,sl:ingredient:fish,pan_fry,raw_fat_g<5&coated=yes,2310,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r054,sl:ingredient:fish,pan_fry,raw_fat_g>=5&coated=no,2459,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r055,sl:ingredient:fish,pan_fry,raw_fat_g>=5&coated=yes,2460,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r056,sl:ingredient:fish,deep_fry,raw_fat_g<5&coated=no,2309,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r057,sl:ingredient:fish,deep_fry,raw_fat_g<5&coated=yes,2310,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r058,sl:ingredient:fish,deep_fry,raw_fat_g>=5&coated=no,2459,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r059,sl:ingredient:fish,deep_fry,raw_fat_g>=5&coated=yes,2460,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r060,sl:ingredient:fish,boil,raw_fat_g<5&liquid=discarded,2401,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r061,sl:ingredient:fish,boil,raw_fat_g<5&liquid=consumed,2402,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r062,sl:ingredient:fish,boil,raw_fat_g>=5&liquid=discarded,2551,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r063,sl:ingredient:fish,boil,raw_fat_g>=5&liquid=consumed,2552,group,classe de gordura pelo lipídeo do registro cru (limite da própria USDA: 5 g/100 g)
+r064,sl:ingredient:crustaceans,steam,,2770,group,frutos do mar sem casca: fator de grupo
+r065,sl:ingredient:crustaceans,grill_broil,,2753,group,frutos do mar sem casca: fator de grupo
+r066,sl:ingredient:crustaceans,roast_bake,,2750,group,frutos do mar sem casca: fator de grupo
+r067,sl:ingredient:crustaceans,pan_fry,coated=no,2755,group,frutos do mar sem casca: fator de grupo
+r068,sl:ingredient:crustaceans,pan_fry,coated=yes,2756,group,frutos do mar sem casca: fator de grupo
+r069,sl:ingredient:crustaceans,boil,liquid=discarded,2761,group,frutos do mar sem casca: fator de grupo
+r070,sl:ingredient:crustaceans,boil,liquid=consumed,2762,group,frutos do mar sem casca: fator de grupo
+r071,sl:ingredient:mollusks,steam,,2770,group,frutos do mar sem casca: fator de grupo
+r072,sl:ingredient:mollusks,grill_broil,,2753,group,frutos do mar sem casca: fator de grupo
+r073,sl:ingredient:mollusks,roast_bake,,2750,group,frutos do mar sem casca: fator de grupo
+r074,sl:ingredient:mollusks,pan_fry,coated=no,2755,group,frutos do mar sem casca: fator de grupo
+r075,sl:ingredient:mollusks,pan_fry,coated=yes,2756,group,frutos do mar sem casca: fator de grupo
+r076,sl:ingredient:mollusks,boil,liquid=discarded,2761,group,frutos do mar sem casca: fator de grupo
+r077,sl:ingredient:mollusks,boil,liquid=consumed,2762,group,frutos do mar sem casca: fator de grupo
+r078,sl:ingredient:egg,boil,,0105,specific,ovo cozido na casca
+r079,sl:ingredient:egg,pan_fry,,0103,specific,frito ou mexido
+r080,sl:ingredient:egg,roast_bake,,0101,specific,
+r081,sl:ingredient:potato,boil,liquid=discarded&peeled=yes,3308,specific,
+r082,sl:ingredient:potato,boil,liquid=discarded&peeled=no,3307,specific,
+r083,sl:ingredient:potato,boil,liquid=consumed&peeled=yes,3309,specific,
+r084,sl:ingredient:potato,roast_bake,peeled=no,3301,specific,
+r085,sl:ingredient:potato,roast_bake,peeled=yes,3302,specific,assada em travessa
+r086,sl:ingredient:potato,deep_fry,,3315,specific,
+r087,sl:ingredient:potato,pan_fry,,3315,specific,
+r088,sl:ingredient:sweet_potato,boil,liquid=discarded&peeled=yes,3708,specific,
+r089,sl:ingredient:sweet_potato,boil,liquid=discarded&peeled=no,3707,specific,
+r090,sl:ingredient:sweet_potato,boil,liquid=consumed&peeled=yes,3709,specific,
+r091,sl:ingredient:sweet_potato,roast_bake,peeled=no,3701,specific,
+r092,sl:ingredient:sweet_potato,roast_bake,peeled=yes,3702,specific,
+r093,sl:ingredient:sweet_potato,deep_fry,,3710,specific,
+r094,sl:ingredient:sweet_potato,pan_fry,,3710,specific,
+r095,sl:ingredient:carrot,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r096,sl:ingredient:carrot,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r097,sl:ingredient:carrot,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r098,sl:ingredient:carrot,steam,,3464,group,raízes e similares: fator de grupo
+r099,sl:ingredient:carrot,pan_fry,,3460,group,raízes e similares: fator de grupo
+r100,sl:ingredient:carrot,roast_bake,,3451,group,raízes e similares: fator de grupo
+r101,sl:ingredient:beet,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r102,sl:ingredient:beet,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r103,sl:ingredient:beet,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r104,sl:ingredient:beet,steam,,3464,group,raízes e similares: fator de grupo
+r105,sl:ingredient:beet,pan_fry,,3460,group,raízes e similares: fator de grupo
+r106,sl:ingredient:beet,roast_bake,,3451,group,raízes e similares: fator de grupo
+r107,sl:ingredient:turnip,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r108,sl:ingredient:turnip,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r109,sl:ingredient:turnip,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r110,sl:ingredient:turnip,steam,,3464,group,raízes e similares: fator de grupo
+r111,sl:ingredient:turnip,pan_fry,,3460,group,raízes e similares: fator de grupo
+r112,sl:ingredient:turnip,roast_bake,,3451,group,raízes e similares: fator de grupo
+r113,sl:ingredient:radish,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r114,sl:ingredient:radish,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r115,sl:ingredient:radish,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r116,sl:ingredient:radish,steam,,3464,group,raízes e similares: fator de grupo
+r117,sl:ingredient:radish,pan_fry,,3460,group,raízes e similares: fator de grupo
+r118,sl:ingredient:radish,roast_bake,,3451,group,raízes e similares: fator de grupo
+r119,sl:ingredient:cassava,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r120,sl:ingredient:cassava,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r121,sl:ingredient:cassava,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r122,sl:ingredient:cassava,steam,,3464,group,raízes e similares: fator de grupo
+r123,sl:ingredient:cassava,pan_fry,,3460,group,raízes e similares: fator de grupo
+r124,sl:ingredient:cassava,roast_bake,,3451,group,raízes e similares: fator de grupo
+r125,sl:ingredient:yam,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r126,sl:ingredient:yam,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r127,sl:ingredient:yam,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r128,sl:ingredient:yam,steam,,3464,group,raízes e similares: fator de grupo
+r129,sl:ingredient:yam,pan_fry,,3460,group,raízes e similares: fator de grupo
+r130,sl:ingredient:yam,roast_bake,,3451,group,raízes e similares: fator de grupo
+r131,sl:ingredient:inhame,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r132,sl:ingredient:inhame,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r133,sl:ingredient:inhame,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r134,sl:ingredient:inhame,steam,,3464,group,raízes e similares: fator de grupo
+r135,sl:ingredient:inhame,pan_fry,,3460,group,raízes e similares: fator de grupo
+r136,sl:ingredient:inhame,roast_bake,,3451,group,raízes e similares: fator de grupo
+r137,sl:ingredient:taro,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r138,sl:ingredient:taro,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r139,sl:ingredient:taro,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r140,sl:ingredient:taro,steam,,3464,group,raízes e similares: fator de grupo
+r141,sl:ingredient:taro,pan_fry,,3460,group,raízes e similares: fator de grupo
+r142,sl:ingredient:taro,roast_bake,,3451,group,raízes e similares: fator de grupo
+r143,sl:ingredient:mandioquinha,boil,liquid=discarded&water=cover,3455,group,raízes e similares: fator de grupo
+r144,sl:ingredient:mandioquinha,boil,liquid=discarded&water=little,3454,group,raízes e similares: fator de grupo
+r145,sl:ingredient:mandioquinha,boil,liquid=consumed,3456,group,raízes e similares: fator de grupo
+r146,sl:ingredient:mandioquinha,steam,,3464,group,raízes e similares: fator de grupo
+r147,sl:ingredient:mandioquinha,pan_fry,,3460,group,raízes e similares: fator de grupo
+r148,sl:ingredient:mandioquinha,roast_bake,,3451,group,raízes e similares: fator de grupo
+r149,sl:ingredient:tomato,boil,,3751,specific,
+r150,sl:ingredient:tomato,roast_bake,,3751,specific,
+r151,sl:ingredient:tomato,pan_fry,,3752,specific,
+r152,sl:ingredient:tomato,grill_broil,,3752,specific,
+r153,sl:ingredient:lettuce,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r154,sl:ingredient:lettuce,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r155,sl:ingredient:lettuce,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r156,sl:ingredient:lettuce,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r157,sl:ingredient:lettuce,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r158,sl:ingredient:kale,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r159,sl:ingredient:kale,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r160,sl:ingredient:kale,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r161,sl:ingredient:kale,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r162,sl:ingredient:kale,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r163,sl:ingredient:cabbage,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r164,sl:ingredient:cabbage,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r165,sl:ingredient:cabbage,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r166,sl:ingredient:cabbage,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r167,sl:ingredient:cabbage,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r168,sl:ingredient:spinach,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r169,sl:ingredient:spinach,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r170,sl:ingredient:spinach,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r171,sl:ingredient:spinach,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r172,sl:ingredient:spinach,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r173,sl:ingredient:nz_spinach,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r174,sl:ingredient:nz_spinach,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r175,sl:ingredient:nz_spinach,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r176,sl:ingredient:nz_spinach,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r177,sl:ingredient:nz_spinach,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r178,sl:ingredient:arugula,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r179,sl:ingredient:arugula,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r180,sl:ingredient:arugula,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r181,sl:ingredient:arugula,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r182,sl:ingredient:arugula,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r183,sl:ingredient:watercress,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r184,sl:ingredient:watercress,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r185,sl:ingredient:watercress,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r186,sl:ingredient:watercress,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r187,sl:ingredient:watercress,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r188,sl:ingredient:chard,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r189,sl:ingredient:chard,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r190,sl:ingredient:chard,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r191,sl:ingredient:chard,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r192,sl:ingredient:chard,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r193,sl:ingredient:mustard_greens,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r194,sl:ingredient:mustard_greens,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r195,sl:ingredient:mustard_greens,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r196,sl:ingredient:mustard_greens,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r197,sl:ingredient:mustard_greens,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r198,sl:ingredient:taioba,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r199,sl:ingredient:taioba,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r200,sl:ingredient:taioba,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r201,sl:ingredient:taioba,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r202,sl:ingredient:taioba,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r203,sl:ingredient:caruru,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r204,sl:ingredient:caruru,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r205,sl:ingredient:caruru,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r206,sl:ingredient:caruru,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r207,sl:ingredient:caruru,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r208,sl:ingredient:serralha,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r209,sl:ingredient:serralha,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r210,sl:ingredient:serralha,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r211,sl:ingredient:serralha,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r212,sl:ingredient:serralha,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r213,sl:ingredient:almeirao,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r214,sl:ingredient:almeirao,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r215,sl:ingredient:almeirao,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r216,sl:ingredient:almeirao,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r217,sl:ingredient:almeirao,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r218,sl:ingredient:catalonha,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r219,sl:ingredient:catalonha,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r220,sl:ingredient:catalonha,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r221,sl:ingredient:catalonha,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r222,sl:ingredient:catalonha,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r223,sl:ingredient:chicoria,boil,liquid=discarded&water=cover,3005,group,hortaliças folhosas: fator de grupo
+r224,sl:ingredient:chicoria,boil,liquid=discarded&water=little,3004,group,hortaliças folhosas: fator de grupo
+r225,sl:ingredient:chicoria,boil,liquid=consumed,3006,group,hortaliças folhosas: fator de grupo
+r226,sl:ingredient:chicoria,pan_fry,,3015,group,hortaliças folhosas: fator de grupo; saltear (stir fry)
+r227,sl:ingredient:chicoria,roast_bake,,3001,group,hortaliças folhosas: fator de grupo
+r228,sl:ingredient:vegetables,boil,liquid=discarded&water=cover,3775,group,outras hortaliças: fator de grupo
+r229,sl:ingredient:vegetables,boil,liquid=discarded&water=little,3774,group,outras hortaliças: fator de grupo
+r230,sl:ingredient:vegetables,boil,liquid=consumed,3776,group,outras hortaliças: fator de grupo
+r231,sl:ingredient:vegetables,steam,,3784,group,outras hortaliças: fator de grupo
+r232,sl:ingredient:vegetables,pan_fry,,3785,group,outras hortaliças: fator de grupo; saltear (stir fry)
+r233,sl:ingredient:vegetables,deep_fry,,3780,group,outras hortaliças: fator de grupo
+r234,sl:ingredient:vegetables,roast_bake,,3771,group,outras hortaliças: fator de grupo
+r235,sl:ingredient:rice,boil,liquid=discarded,0431,specific,
+r236,sl:ingredient:rice,boil,liquid=consumed,0432,specific,
+r237,sl:ingredient:pasta,boil,liquid=discarded,0381,specific,
+r238,sl:ingredient:pasta,boil,liquid=consumed,0384,specific,
+r239,sl:ingredient:legumes,boil,duration_min>=15&duration_min<=20&liquid=discarded,0501,group,"faixas de tempo da própria USDA (15–20 min, 45–75 min, 2–2,5 h); fora delas não há fator"
+r240,sl:ingredient:legumes,boil,duration_min>=15&duration_min<=20&liquid=consumed,0502,group,"faixas de tempo da própria USDA (15–20 min, 45–75 min, 2–2,5 h); fora delas não há fator"
+r241,sl:ingredient:legumes,boil,duration_min>=45&duration_min<=75&liquid=discarded,0521,group,"faixas de tempo da própria USDA (15–20 min, 45–75 min, 2–2,5 h); fora delas não há fator"
+r242,sl:ingredient:legumes,boil,duration_min>=45&duration_min<=75&liquid=consumed,0522,group,"faixas de tempo da própria USDA (15–20 min, 45–75 min, 2–2,5 h); fora delas não há fator"
+r243,sl:ingredient:legumes,boil,duration_min>=120&duration_min<=150&liquid=discarded,0541,group,"faixas de tempo da própria USDA (15–20 min, 45–75 min, 2–2,5 h); fora delas não há fator"
+r244,sl:ingredient:legumes,boil,duration_min>=120&duration_min<=150&liquid=consumed,0542,group,"faixas de tempo da própria USDA (15–20 min, 45–75 min, 2–2,5 h); fora delas não há fator"
+r245,sl:ingredient:orange,boil,,0270,group,cítricos cozidos: fator de grupo
+r246,sl:ingredient:orange,roast_bake,,0270,group,cítricos cozidos: fator de grupo
+r247,sl:ingredient:orange,pan_fry,,0270,group,cítricos cozidos: fator de grupo
+r248,sl:ingredient:orange,grill_broil,,0270,group,cítricos cozidos: fator de grupo
+r249,sl:ingredient:bitter_orange,boil,,0270,group,cítricos cozidos: fator de grupo
+r250,sl:ingredient:bitter_orange,roast_bake,,0270,group,cítricos cozidos: fator de grupo
+r251,sl:ingredient:bitter_orange,pan_fry,,0270,group,cítricos cozidos: fator de grupo
+r252,sl:ingredient:bitter_orange,grill_broil,,0270,group,cítricos cozidos: fator de grupo
+r253,sl:ingredient:lime,boil,,0270,group,cítricos cozidos: fator de grupo
+r254,sl:ingredient:lime,roast_bake,,0270,group,cítricos cozidos: fator de grupo
+r255,sl:ingredient:lime,pan_fry,,0270,group,cítricos cozidos: fator de grupo
+r256,sl:ingredient:lime,grill_broil,,0270,group,cítricos cozidos: fator de grupo
+r257,sl:ingredient:lemon,boil,,0270,group,cítricos cozidos: fator de grupo
+r258,sl:ingredient:lemon,roast_bake,,0270,group,cítricos cozidos: fator de grupo
+r259,sl:ingredient:lemon,pan_fry,,0270,group,cítricos cozidos: fator de grupo
+r260,sl:ingredient:lemon,grill_broil,,0270,group,cítricos cozidos: fator de grupo
+r261,sl:ingredient:tangerine,boil,,0270,group,cítricos cozidos: fator de grupo
+r262,sl:ingredient:tangerine,roast_bake,,0270,group,cítricos cozidos: fator de grupo
+r263,sl:ingredient:tangerine,pan_fry,,0270,group,cítricos cozidos: fator de grupo
+r264,sl:ingredient:tangerine,grill_broil,,0270,group,cítricos cozidos: fator de grupo
+r265,sl:ingredient:fruits,boil,,0155,group,frutas frescas não cítricas: fator de grupo
+r266,sl:ingredient:fruits,roast_bake,,0151,group,frutas frescas não cítricas: fator de grupo
+r267,sl:ingredient:fruits,pan_fry,,0153,group,frutas frescas não cítricas: fator de grupo
+r268,sl:ingredient:fruits,grill_broil,,0152,group,frutas frescas não cítricas: fator de grupo
+r269,sl:ingredient:cheese,roast_bake,,0001,specific,
+r270,sl:ingredient:cheese,grill_broil,,0003,specific,

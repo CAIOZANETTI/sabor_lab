@@ -1,0 +1,15 @@
+method_key,name_pt,family,technique_ids,cooking_methods,notes
+grill_broil,grelhar ou gratinar (calor direto/radiante),dry_heat,,grill|broiler,"sem técnica equivalente em data/culinary/techniques.csv; USDA 'Broiled or Grilled', 'Grilled', 'Broiled'"
+roast_bake,assar no forno,dry_heat,bake|roast_oven,oven|convection_oven,"USDA 'Baked or Roasted', 'Roasted'"
+air_fry,air fryer (convecção forçada),dry_heat,air_fry,air_fryer,não há rendimento nem retenção USDA para air fryer; não é tratado como forno
+microwave,micro-ondas,microwave,,microwave,USDA 'Microwaved' (só rendimento)
+pan_fry,"fritar em pouca gordura, selar ou refogar",dry_heat_fat,pan_fry|saute,stovetop_pan,"USDA 'Pan-fried', 'Pan-broiled', 'Pan-browned', 'Pan-fried or Sauteed'"
+deep_fry,fritar por imersão,dry_heat_fat,deep_fry,deep_fryer,USDA 'Fried in deep fat'; absorção de óleo exige dado próprio
+fried_unspecified,frito (tipo de fritura não informado),dry_heat_fat,,,só para interpretar nomes de registros (TACO 'frito/frita')
+boil,"cozinhar em líquido (ferver, escalfar, ensopar)",moist_heat,boil,boiling,"USDA 'Poached, Simmered or Stewed'; retenção depende de a água ser descartada ou consumida"
+braise,brasear (dourar e cozinhar em pouco líquido),moist_heat,,,USDA 'Braised'
+steam,cozinhar no vapor,moist_heat,steam,steaming,
+pressure,panela de pressão,moist_heat,pressure_cook,pressure_cooker,sem fator USDA específico
+reduce,reduzir (evaporar líquido),moist_heat,simmer_reduce,,"perda de massa atribuída à água só quando a técnica é redução (método britânico, EuroFIR 2007 §3.2)"
+moist_unspecified,cozido (cocção úmida não detalhada),moist_heat,,,só para interpretar nomes de registros (TACO 'cozido/cozida'); protocolo da TACO não verificado
+dry_unspecified,grelhado/assado (calor seco não detalhado),dry_heat,,,só para interpretar nomes de registros
