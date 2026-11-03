@@ -2,22 +2,22 @@ technique_id,name_pt,category,compatible_equipment,parameters,effects,event_kind
 mise_en_place,separar e medir ingredientes,organization,countertop|mixing_bowl,,,observe,false,saborlab_culinary_curation,
 knife_cut,cortar/ralar/amassar,mechanical,cutting_board|grater|countertop|mixing_bowl,,,cut,false,saborlab_culinary_curation,o corte efetivo é definido por cut_id
 mix,misturar,mechanical,mixing_bowl|countertop,,hydration_rest,mix,false,saborlab_culinary_curation,
-cream,bater (cremar) gordura com açúcar,mechanical,mixer|mixing_bowl,,emulsification,mix,false,saborlab_culinary_curation,incorporação de ar depende da temperatura da gordura (não modelada)
+cream,bater (cremar) gordura com açúcar,mechanical,mixer|mixing_bowl,,emulsification|phase_separation,mix,false,saborlab_culinary_curation,incorporação de ar depende da temperatura da gordura (não modelada)
 shape,modelar/porcionar,mechanical,baking_sheet|countertop,,,mix,false,saborlab_culinary_curation,
-blend,liquidificar/processar,mechanical,blender|food_processor,,emulsification,mix,false,saborlab_culinary_curation,
+blend,liquidificar/processar,mechanical,blender|food_processor,,emulsification|phase_separation,mix,false,saborlab_culinary_curation,
 soften_ambient,amolecer em temperatura ambiente,resting,countertop,temperatura_ambiente=desconhecida,,rest,false,saborlab_culinary_curation,tempo depende da temperatura ambiente; perecíveis seguem os controles de tempo fora de refrigeração
 preheat,preaquecer equipamento,equipment,oven|convection_oven|air_fryer|frying_pan|saucepan|stovetop_burner,,,observe,false,saborlab_culinary_curation,etapa do equipamento; não aquece o alimento
-saute,refogar/saltear,dry_heat_fat,frying_pan|saucepan|stovetop_burner,gordura=sim;agitacao=frequente,maillard_reaction|evaporation_reduction,cook,true,saborlab_culinary_curation,potência do fogo não é inferida de rótulos (baixo/médio/alto)
-pan_fry,fritar em pouca gordura/selar,dry_heat_fat,frying_pan|stovetop_burner,gordura=pouca,maillard_reaction|protein_denaturation_heat|evaporation_reduction,cook,true,saborlab_culinary_curation,
-deep_fry,fritar por imersão,dry_heat_fat,saucepan|stovetop_burner,gordura=imersão,maillard_reaction|protein_denaturation_heat|starch_gelatinization|evaporation_reduction,cook,true,saborlab_culinary_curation,temperatura do óleo exige medição; não inferida
-simmer_reduce,cozinhar em fogo baixo e reduzir,moist_heat,saucepan|stovetop_burner|frying_pan,,evaporation_reduction|starch_gelatinization|protein_denaturation_heat,cook,true,saborlab_culinary_curation,
-boil,ferver/cozinhar em água,moist_heat,saucepan|stovetop_burner,,starch_gelatinization|protein_denaturation_heat|hydration_rest,cook,true,saborlab_culinary_curation,
-steam,cozinhar no vapor,moist_heat,saucepan|stovetop_burner,,starch_gelatinization|protein_denaturation_heat,cook,true,saborlab_culinary_curation,
-pressure_cook,cozinhar sob pressão,moist_heat,pressure_cooker|stovetop_burner,,starch_gelatinization|protein_denaturation_heat|hydration_rest,cook,true,saborlab_culinary_curation,pressão e temperatura internas não são inferidas
+saute,refogar/saltear,dry_heat_fat,frying_pan|saucepan|stovetop_burner,gordura=sim;agitacao=frequente,maillard_reaction|evaporation_reduction|lipid_oxidation|phase_separation,cook,true,saborlab_culinary_curation,potência do fogo não é inferida de rótulos (baixo/médio/alto)
+pan_fry,fritar em pouca gordura/selar,dry_heat_fat,frying_pan|stovetop_burner,gordura=pouca,maillard_reaction|protein_denaturation_heat|evaporation_reduction|moisture_loss_softening|lipid_oxidation,cook,true,saborlab_culinary_curation,
+deep_fry,fritar por imersão,dry_heat_fat,saucepan|stovetop_burner,gordura=imersão,maillard_reaction|protein_denaturation_heat|starch_gelatinization|evaporation_reduction|lipid_oxidation|moisture_loss_softening,cook,true,saborlab_culinary_curation,temperatura do óleo exige medição; não inferida
+simmer_reduce,cozinhar em fogo baixo e reduzir,moist_heat,saucepan|stovetop_burner|frying_pan,,evaporation_reduction|starch_gelatinization|protein_denaturation_heat|phase_separation,cook,true,saborlab_culinary_curation,
+boil,ferver/cozinhar em água,moist_heat,saucepan|stovetop_burner,,starch_gelatinization|protein_denaturation_heat|hydration_rest|moisture_loss_softening|phase_separation,cook,true,saborlab_culinary_curation,
+steam,cozinhar no vapor,moist_heat,saucepan|stovetop_burner,,starch_gelatinization|protein_denaturation_heat|moisture_loss_softening,cook,true,saborlab_culinary_curation,
+pressure_cook,cozinhar sob pressão,moist_heat,pressure_cooker|stovetop_burner,,starch_gelatinization|protein_denaturation_heat|hydration_rest|moisture_loss_softening,cook,true,saborlab_culinary_curation,pressão e temperatura internas não são inferidas
 steep,infusão,moist_heat,saucepan|stovetop_burner,,,mix,true,saborlab_culinary_curation,extração depende de tempo e temperatura do líquido (não modelada)
-bake,assar em forno,dry_heat,oven|convection_oven|baking_sheet,,maillard_reaction|caramelization|starch_gelatinization|protein_denaturation_heat|evaporation_reduction,cook,true,saborlab_culinary_curation,temperatura do forno ≠ temperatura do alimento
-roast_oven,assar carnes/vegetais no forno,dry_heat,oven|convection_oven|baking_sheet,,maillard_reaction|caramelization|protein_denaturation_heat|evaporation_reduction,cook,true,saborlab_culinary_curation,temperatura do forno ≠ temperatura interna
-air_fry,cozinhar na air fryer,dry_heat,air_fryer,,maillard_reaction|protein_denaturation_heat|evaporation_reduction,cook,true,saborlab_culinary_curation,não gera temperatura interna implícita
+bake,assar em forno,dry_heat,oven|convection_oven|baking_sheet,,maillard_reaction|caramelization|starch_gelatinization|protein_denaturation_heat|evaporation_reduction|moisture_loss_softening,cook,true,saborlab_culinary_curation,temperatura do forno ≠ temperatura do alimento
+roast_oven,assar carnes/vegetais no forno,dry_heat,oven|convection_oven|baking_sheet,,maillard_reaction|caramelization|protein_denaturation_heat|evaporation_reduction|moisture_loss_softening|lipid_oxidation,cook,true,saborlab_culinary_curation,temperatura do forno ≠ temperatura interna
+air_fry,cozinhar na air fryer,dry_heat,air_fryer,,maillard_reaction|protein_denaturation_heat|evaporation_reduction|moisture_loss_softening,cook,true,saborlab_culinary_curation,não gera temperatura interna implícita
 acid_marinate,marinar em ácido (ceviche),chemical,mixing_bowl|refrigerator,meio=ácido (limão/vinagre),acid_denaturation,marinate,false,saborlab_culinary_curation,desnaturação ácida não equivale a cocção térmica nem garante segurança
 marinate,marinar,chemical,mixing_bowl|refrigerator,,hydration_rest,marinate,false,saborlab_culinary_curation,
 ferment,fermentar (conceito),biological,mixing_bowl|countertop|refrigerator,,fermentation_concept,rest,false,saborlab_culinary_curation,culturas e condições não são controladas neste módulo
@@ -27,3 +27,4 @@ refrigerate,refrigerar,storage,refrigerator,,,store,false,saborlab_culinary_cura
 strain,coar,mechanical,strainer,,,mix,false,saborlab_culinary_curation,
 finish_plate,finalizar/montar/servir,assembly,countertop|saucepan|frying_pan|baking_sheet,,,observe,false,saborlab_culinary_curation,
 measure_temperature,medir temperatura com termômetro,measurement,kitchen_thermometer,,,measure,false,saborlab_culinary_curation,instrumento; leitura vale para o ponto e instante medidos
+gentle_heat,aquecer em fogo baixo sem ferver,moist_heat,saucepan|frying_pan|stovetop_burner,fervura=não,protein_denaturation_heat|phase_separation|emulsification|evaporation_reduction,cook,true,saborlab_culinary_curation,"intensidade real do fogo não é medida; 'sem ferver' é instrução, não temperatura"
