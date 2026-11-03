@@ -1,0 +1,12 @@
+entity_id,fact,value,statement_pt,source_id,evidence_type,limitations
+sl:ingredient:kefir,is_fermented_dairy,true,kefir é leite fermentado por bactérias láticas e leveduras,prado_2015_kefir,documented_physical_rule,
+sl:ingredient:kefir,is_acidified,true,"kefir tem sabor ácido; pH final relatado entre 4,0 e 4,6",porto_fett_2026_kefir,documented_physical_rule,pH do produto específico desconhecido
+sl:ingredient:yogurt,is_fermented_dairy,true,iogurte é leite fermentado (gel de caseína formado pela acidificação),le_ba_2025_yogurt,documented_physical_rule,
+sl:ingredient:yogurt,is_acidified,true,"iogurte é resfriado ao atingir pH 4,2–4,5",le_ba_2025_yogurt,documented_physical_rule,pH do produto específico desconhecido
+sl:ingredient:cheese,is_cheese,true,queijo (classificação do catálogo),saborlab_catalog,culinary_heuristic,"classificação, não composição"
+sl:variant:cheese_blue,is_blue_cheese,true,queijo azul (classificação do catálogo),saborlab_catalog,culinary_heuristic,"classificação, não composição"
+sl:variant:cheese_roquefort,is_blue_cheese,true,roquefort é queijo de família azul (atributo do catálogo),saborlab_catalog,culinary_heuristic,"classificação, não composição"
+sl:variant:cheese_processed,has_emulsifying_salt,true,queijo processado é fabricado com sais emulsificantes (citratos/fosfatos),deshwal_2023_css,documented_physical_rule,tipo e teor do sal desconhecidos
+sl:ingredient:corn_starch,is_starch_thickener,true,amido estabiliza molho de queijo aquecido e adia a formação de grumos,bartolucci_2025_cacio,documented_physical_rule,testado com amido de milho e pecorino em água
+sl:ingredient:cassava_starch,is_starch_thickener,true,amido usado como espessante,saborlab_culinary_curation,culinary_heuristic,efeito estabilizante não verificado para este amido
+sl:ingredient:wheat_flour,is_starch_thickener,true,farinha de trigo contém amido e é usada como espessante (roux),saborlab_culinary_curation,culinary_heuristic,não há fonte verificada de que farinha impeça coagulação de leite com ácido
