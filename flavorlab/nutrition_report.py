@@ -65,6 +65,53 @@ def _fig_energy_origin(nr: NutritionResult) -> go.Figure:
     return fig
 
 
+CAT_LABEL = {"measured": ("M", "medido"), "derived": ("D", "derivado"), "estimated": ("E", "estimado"),
+             "unknown": ("?", "desconhecido")}
+PATH_LABEL = {"measured_prepared": "registro do alimento preparado", "derived_from_raw": "derivado do cru",
+              "as_recorded": "como registrado (sem preparo)", "not_computable": "fora do cálculo"}
+YIELD_LABEL = {"observed": "pesado", "table": "tabela USDA", "not_reconstructible": "não reconstruível (sem peso cru)",
+               "unknown": "desconhecido", "not_applicable": "—"}
+
+
+def _cell(value, cat: str, nd=1) -> str:
+    mark, name = CAT_LABEL[cat]
+    if cat == "unknown":
+        return f"<td class='num muted' title='{name}'>?</td>"
+    return f"<td class='num' title='{name}'>{_v(value, nd)} <sup>{mark}</sup></td>"
+
+
+def prepared_section(pr, ndb: NutritionDB) -> str:
+    """Nutrição após preparo (demanda 007): medido, derivado e estimado lado a lado, nunca somados às cegas."""
+    keys = [k for k in MAIN]
+    head = "".join(f"<th class='num'>{html.escape(ndb.label(k))}</th>" for k in keys)
+    body = []
+    for it in pr.items:
+        ylab = YIELD_LABEL.get(it.yield_status, it.yield_status)
+        yf = f"{fmt_num(it.yield_factor.factor, 2)} ({ylab})" if it.yield_factor else ylab
+        masses = " / ".join(_v(m, 0) for m in (it.initial_mass_g, it.cooked_mass_g, it.served_mass_g))
+        body.append(f"<tr><td><b>{html.escape(it.name)}</b><br><span class='muted'>"
+                    f"{html.escape(PATH_LABEL.get(it.path, it.path))} · <code>{it.composition_food_id or '—'}</code>"
+                    f"</span></td><td>{html.escape(it.method_key or '—')}</td><td class='num'>{masses}</td>"
+                    f"<td>{html.escape(yf)}</td>"
+                    + "".join(_cell(it.nutrient_totals.get(k), it.category(k)) for k in keys) + "</tr>")
+    tot = "".join(_cell(pr.per_portion.get(k), pr.total_category.get(k, "unknown")) for k in keys)
+    body.append(f"<tr class='tot'><td>Por porção (÷ {fmt_num(pr.portions, 0)})</td><td></td>"
+                f"<td class='num'>{_v(pr.served_mass_g / pr.portions if pr.served_mass_g else None, 0)}</td><td></td>"
+                f"{tot}</tr>")
+    partial = "".join(f"<li>{html.escape(ndb.label(k))}: desconhecido em {html.escape(', '.join(v))} "
+                      "(total parcial)</li>" for k, v in pr.partial.items() if k in keys)
+    warn = "".join(f"<li>{html.escape(w)}</li>" for w in pr.warnings)
+    return (f"<h3>Nutrição após preparo</h3>"
+            "<p class='muted'><sup>M</sup> medido (registro do alimento no estado servido × massa) · "
+            "<sup>D</sup> derivado (fatores USDA de rendimento/retenção) · <sup>E</sup> estimado (aproximação "
+            "declarada) · ? desconhecido. Massas: crua / pronta / servida (g).</p>"
+            f"<div class='scroll'><table class='tbl'><thead><tr><th>ingrediente</th><th>método</th>"
+            f"<th class='num'>massas</th><th>rendimento</th>{head}</tr></thead><tbody>{''.join(body)}</tbody>"
+            f"</table></div>"
+            + (f"<ul class='muted'>{partial}</ul>" if partial else "")
+            + (f"<div class='warn'><ul>{warn}</ul></div>" if warn else ""))
+
+
 def nutrition_section(nr: NutritionResult, ndb: NutritionDB) -> str:
     if not nr.lines:
         return "<h2>Nutrição</h2><p class='muted'>Nenhum ingrediente com quantidade para calcular.</p>"
@@ -119,4 +166,5 @@ def nutrition_section(nr: NutritionResult, ndb: NutritionDB) -> str:
             f"<p class='muted'>Valores por porção ({fmt_num(nr.portions, 0)} porção(ões)), unidades métricas. "
             f"Composição: TACO 4ª ed. (NEPA/UNICAMP) e USDA FoodData Central.</p>"
             f"{warn}<div class='tiles'>{tiles}</div>{table}"
-            f"<div class='grid2'>{figs[0]}{figs[1]}</div><h3>% do valor diário (por porção)</h3>{vd}{notes_html}")
+            f"<div class='grid2'>{figs[0]}{figs[1]}</div><h3>% do valor diário (por porção)</h3>{vd}{notes_html}"
+            + (prepared_section(nr.prepared, ndb) if getattr(nr, "prepared", None) is not None else ""))
