@@ -201,6 +201,18 @@ As medidas brasileiras usam xícara = 240 ml, colher de sopa = 15 ml e colher de
 chá = 5 ml. As americanas usam as definições exatas: cup = 236,6 ml,
 tbsp = 14,8 ml, tsp = 4,9 ml, oz = 28,35 g, lb = 453,6 g.
 
+## Roda de aromas (`flavorlab/flavor_wheel.py`)
+
+Gráfico radial interativo (Plotly) de um ingrediente em destaque: o anel interno
+mostra os descritores das moléculas da fonte (FlavorDB) e as barras externas os
+ingredientes que mais compartilham as moléculas de cada descritor (Jaccard no
+setor). A cor é o NPMI de co-ocorrência em receitas (FlavorGraph). Nenhuma das
+métricas mede gosto ou preferência.
+
+```bash
+python scripts/flavor_wheel.py canela tomate     # gera reports/roda_canela.html e reports/roda_tomate.html
+```
+
 ## Catálogo canônico de alimentos (`data/catalog/`)
 
 Camada que organiza **todos** os registros das fontes (TACO, USDA, FlavorDB e
