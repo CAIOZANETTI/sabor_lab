@@ -94,7 +94,7 @@ tipo de confiança ou evidência.
 | Branch | `claude/cooking-process-graph` |
 | Dependência | 005 incorporada |
 | Resultado | técnicas, cortes, equipamentos, transformações possíveis, DAG e scheduler |
-| Gate Codex | paralelismo determinístico, recursos, caminho crítico, unidades e segurança separada |
+| Gate Codex | paralelismo determinístico, recursos, caminho crítico, projeção visual fiel, unidades e segurança separada |
 
 O PR deve reutilizar o estado e as evidências da fase 1 e integrar o termômetro
 como instrumento. Não criar interface de timer nesta fase.
@@ -108,7 +108,7 @@ houver apenas uma sessão do Claude, seguir a ordem da tabela.
 |---|---|---|---|
 | 3A | [006 — Física e sensorial](006-fisica-sensorial.md) · `claude/food-physics-sensory` | transformações avaliadas, estabilidade do molho, textura, sensorial | regras qualitativas, molho kefir/queijo, possível ≠ observado |
 | 3B | [007 — Nutrição pós-preparo](007-nutricao-pos-preparo.md) · `claude/post-cook-nutrition` | rendimento, retenção, absorção/perda e porção servida | balanço de massa, dupla contagem, fontes e incerteza |
-| 3C | [004 — Modo cozinha](004-modo-cozinha-timers.md) · `claude/cook-mode` | execução do grafo, timers, persistência e acessibilidade | não inventar dados, retomada, atraso e segurança visível |
+| 3C | [004 — Modo cozinha](004-modo-cozinha-timers.md) · `claude/cook-mode` | relatório HTML do fluxo, execução do grafo, timers, persistência e acessibilidade | fluxo fiel ao scheduler, retomada, atraso e segurança visível |
 
 As branches não devem importar código umas das outras antes do merge. Caso 3A,
 3B e 3C ocorram em paralelo, cada PR será atualizado com a `main` pelo Codex na

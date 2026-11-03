@@ -188,6 +188,12 @@ Adicionar uma demonstração ao relatório ou site sem quebrar o modo atual. Mos
 alternativas, componentes, preparo, nutrição, evidências, incertezas e espaço
 para avaliação humana após cozinhar.
 
+O relatório final deve incluir o **fluxo visual da receita** produzido pelas
+demandas 003 e 004: mise en place, tarefas paralelas, caminho crítico, descansos,
+cocção, montagem e serviço. Cada etapa abre seus fatos, evidências e alertas sem
+misturar segurança com preferência sensorial. O fluxo, a lista técnica e o modo
+cozinha devem consumir o mesmo `RecipeProcess`.
+
 ## Fora de escopo
 
 - LLM como fonte de fatos;
